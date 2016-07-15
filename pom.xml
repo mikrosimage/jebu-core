@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ebu.metadata_schema</groupId>
 	<artifactId>jebu-core</artifactId>
-	<version>1.5</version>
+	<version>1.6</version>
 	<description></description>
 	<developers>
 		<developer>
@@ -16,18 +16,29 @@
 				<role>author</role>
 			</roles>
 		</developer>
+		<developer>
+			<id>gma</id>
+			<name>Guillaume Maucomble</name>
+			<email>gma@mikrosimage.eu</email>
+			<organization>Mikros Image</organization>
+			<organizationUrl>http://www.mikrosimage.eu</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
 	</developers>
 	<properties>
 		<!-- Specify character encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Specify java version -->
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<!-- Maven -->
 		<mavenVersion>3.3.3</mavenVersion>
 		<maven.plugin.version>3.3.3</maven.plugin.version>
 	</properties>
 	<build>
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -70,6 +81,23 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 
 	<dependencies>

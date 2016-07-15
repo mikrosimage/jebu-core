@@ -2,8 +2,6 @@ package eu.mikrosimage.xdmat.ebucore.helpers;
 
 import com.google.common.base.Strings;
 
-import ebu.metadata_schema.ebucore_2014.AudioChannelFormatType;
-
 /**
  * 
  * @author Guillaume Maucomble <gma@mikrosimage.eu>
@@ -11,6 +9,8 @@ import ebu.metadata_schema.ebucore_2014.AudioChannelFormatType;
  * @since 1.0.10
  */
 public class AudioChannelFormatTypeHelper {
+	
+	private static final String AUDIO_CHANNEL_PREFIX = "AC";
 
 	private AudioChannelFormatTypeHelper() {}
 	
@@ -29,7 +29,7 @@ public class AudioChannelFormatTypeHelper {
 	 * @return ID of AudioChannel matching channel parameter
 	 */
 	public static final String getAudioChannelIdFromIndex(int index) {
-		return  AudioChannelFormatType.PREFIX + getAudioChannelPrefix(index) ;
+		return  AUDIO_CHANNEL_PREFIX + getAudioChannelPrefix(index) ;
 	}
 
 	/**
@@ -38,11 +38,7 @@ public class AudioChannelFormatTypeHelper {
 	 * @return program index
 	 */
 	public static final int getAudioChannelIndexFromId(String programId) {
-		return AudioProgrammeTypeHelper.getIndexFromId(AudioChannelFormatType.PREFIX + "0001", programId);
-	}
-	
-	public static void main(String[] args) {
-		
+		return AudioProgrammeTypeHelper.getIndexFromId(AUDIO_CHANNEL_PREFIX + "0001", programId);
 	}
 	
 }

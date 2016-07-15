@@ -9,9 +9,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ebu.metadata_schema.ebucore_2014.AudioContentType;
-import ebu.metadata_schema.ebucore_2014.AudioObjectType;
-import ebu.metadata_schema.ebucore_2014.AudioProgrammeType;
+import ebu.metadata_schema.ebucore_2015.AudioContentType;
+import ebu.metadata_schema.ebucore_2015.AudioObjectType;
+import ebu.metadata_schema.ebucore_2015.AudioProgrammeType;
 import eu.mikrosimage.xdmat.ebucore.helpers.AudioContentTypeHelper;
 import eu.mikrosimage.xdmat.ebucore.helpers.AudioObjectTypeHelper;
 import eu.mikrosimage.xdmat.ebucore.helpers.AudioProgrammeTypeHelper;
