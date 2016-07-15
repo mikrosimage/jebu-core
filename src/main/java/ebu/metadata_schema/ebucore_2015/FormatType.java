@@ -243,7 +243,7 @@ public class FormatType {
      */
     public List<FormatType.Medium> getMedium() {
         if (medium == null) {
-            medium = new ArrayList<FormatType.Medium>();
+            medium = new ArrayList<>();
         }
         return this.medium;
     }
@@ -272,7 +272,7 @@ public class FormatType {
      */
     public List<ImageFormatType> getImageFormat() {
         if (imageFormat == null) {
-            imageFormat = new ArrayList<ImageFormatType>();
+            imageFormat = new ArrayList<>();
         }
         return this.imageFormat;
     }
@@ -301,7 +301,7 @@ public class FormatType {
      */
     public List<VideoFormatType> getVideoFormat() {
         if (videoFormat == null) {
-            videoFormat = new ArrayList<VideoFormatType>();
+            videoFormat = new ArrayList<>();
         }
         return this.videoFormat;
     }
@@ -330,7 +330,7 @@ public class FormatType {
      */
     public List<AudioFormatType> getAudioFormat() {
         if (audioFormat == null) {
-            audioFormat = new ArrayList<AudioFormatType>();
+            audioFormat = new ArrayList<>();
         }
         return this.audioFormat;
     }
@@ -359,7 +359,7 @@ public class FormatType {
      */
     public List<AudioFormatExtendedType> getAudioFormatExtended() {
         if (audioFormatExtended == null) {
-            audioFormatExtended = new ArrayList<AudioFormatExtendedType>();
+            audioFormatExtended = new ArrayList<>();
         }
         return this.audioFormatExtended;
     }
@@ -388,7 +388,7 @@ public class FormatType {
      */
     public List<ContainerFormatType> getContainerFormat() {
         if (containerFormat == null) {
-            containerFormat = new ArrayList<ContainerFormatType>();
+            containerFormat = new ArrayList<>();
         }
         return this.containerFormat;
     }
@@ -441,7 +441,7 @@ public class FormatType {
      */
     public List<DataFormatType> getDataFormat() {
         if (dataFormat == null) {
-            dataFormat = new ArrayList<DataFormatType>();
+            dataFormat = new ArrayList<>();
         }
         return this.dataFormat;
     }
@@ -470,7 +470,7 @@ public class FormatType {
      */
     public List<TimecodeFormatType> getTimecodeFormat() {
         if (timecodeFormat == null) {
-            timecodeFormat = new ArrayList<TimecodeFormatType>();
+            timecodeFormat = new ArrayList<>();
         }
         return this.timecodeFormat;
     }
@@ -499,7 +499,7 @@ public class FormatType {
      */
     public List<MetadataFormatType> getMetadataFormat() {
         if (metadataFormat == null) {
-            metadataFormat = new ArrayList<MetadataFormatType>();
+            metadataFormat = new ArrayList<>();
         }
         return this.metadataFormat;
     }
@@ -528,7 +528,7 @@ public class FormatType {
      */
     public List<TimeType> getStart() {
         if (start == null) {
-            start = new ArrayList<TimeType>();
+            start = new ArrayList<>();
         }
         return this.start;
     }
@@ -557,7 +557,7 @@ public class FormatType {
      */
     public List<TimeType> getEnd() {
         if (end == null) {
-            end = new ArrayList<TimeType>();
+            end = new ArrayList<>();
         }
         return this.end;
     }
@@ -586,7 +586,7 @@ public class FormatType {
      */
     public List<DurationType> getDuration() {
         if (duration == null) {
-            duration = new ArrayList<DurationType>();
+            duration = new ArrayList<>();
         }
         return this.duration;
     }
@@ -663,7 +663,7 @@ public class FormatType {
      */
     public List<FormatType.MimeType> getMimeType() {
         if (mimeType == null) {
-            mimeType = new ArrayList<FormatType.MimeType>();
+            mimeType = new ArrayList<>();
         }
         return this.mimeType;
     }
@@ -692,7 +692,7 @@ public class FormatType {
      */
     public List<FormatType.Locator> getLocator() {
         if (locator == null) {
-            locator = new ArrayList<FormatType.Locator>();
+            locator = new ArrayList<>();
         }
         return this.locator;
     }
@@ -793,7 +793,7 @@ public class FormatType {
      */
     public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeString() {
         if (technicalAttributeString == null) {
-            technicalAttributeString = new ArrayList<ebu.metadata_schema.ebucore_2015.String>();
+            technicalAttributeString = new ArrayList<>();
         }
         return this.technicalAttributeString;
     }
@@ -822,7 +822,7 @@ public class FormatType {
      */
     public List<Int8> getTechnicalAttributeByte() {
         if (technicalAttributeByte == null) {
-            technicalAttributeByte = new ArrayList<Int8>();
+            technicalAttributeByte = new ArrayList<>();
         }
         return this.technicalAttributeByte;
     }
@@ -851,7 +851,7 @@ public class FormatType {
      */
     public List<Int16> getTechnicalAttributeShort() {
         if (technicalAttributeShort == null) {
-            technicalAttributeShort = new ArrayList<Int16>();
+            technicalAttributeShort = new ArrayList<>();
         }
         return this.technicalAttributeShort;
     }
@@ -880,7 +880,7 @@ public class FormatType {
      */
     public List<Int32> getTechnicalAttributeInteger() {
         if (technicalAttributeInteger == null) {
-            technicalAttributeInteger = new ArrayList<Int32>();
+            technicalAttributeInteger = new ArrayList<>();
         }
         return this.technicalAttributeInteger;
     }
@@ -909,7 +909,7 @@ public class FormatType {
      */
     public List<Int64> getTechnicalAttributeLong() {
         if (technicalAttributeLong == null) {
-            technicalAttributeLong = new ArrayList<Int64>();
+            technicalAttributeLong = new ArrayList<>();
         }
         return this.technicalAttributeLong;
     }
@@ -938,7 +938,7 @@ public class FormatType {
      */
     public List<UInt8> getTechnicalAttributeUnsignedByte() {
         if (technicalAttributeUnsignedByte == null) {
-            technicalAttributeUnsignedByte = new ArrayList<UInt8>();
+            technicalAttributeUnsignedByte = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedByte;
     }
@@ -967,7 +967,7 @@ public class FormatType {
      */
     public List<UInt16> getTechnicalAttributeUnsignedShort() {
         if (technicalAttributeUnsignedShort == null) {
-            technicalAttributeUnsignedShort = new ArrayList<UInt16>();
+            technicalAttributeUnsignedShort = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedShort;
     }
@@ -996,7 +996,7 @@ public class FormatType {
      */
     public List<UInt32> getTechnicalAttributeUnsignedInteger() {
         if (technicalAttributeUnsignedInteger == null) {
-            technicalAttributeUnsignedInteger = new ArrayList<UInt32>();
+            technicalAttributeUnsignedInteger = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedInteger;
     }
@@ -1025,7 +1025,7 @@ public class FormatType {
      */
     public List<UInt64> getTechnicalAttributeUnsignedLong() {
         if (technicalAttributeUnsignedLong == null) {
-            technicalAttributeUnsignedLong = new ArrayList<UInt64>();
+            technicalAttributeUnsignedLong = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedLong;
     }
@@ -1054,7 +1054,7 @@ public class FormatType {
      */
     public List<Boolean> getTechnicalAttributeBoolean() {
         if (technicalAttributeBoolean == null) {
-            technicalAttributeBoolean = new ArrayList<Boolean>();
+            technicalAttributeBoolean = new ArrayList<>();
         }
         return this.technicalAttributeBoolean;
     }
@@ -1083,7 +1083,7 @@ public class FormatType {
      */
     public List<Float> getTechnicalAttributeFloat() {
         if (technicalAttributeFloat == null) {
-            technicalAttributeFloat = new ArrayList<Float>();
+            technicalAttributeFloat = new ArrayList<>();
         }
         return this.technicalAttributeFloat;
     }
@@ -1112,7 +1112,7 @@ public class FormatType {
      */
     public List<TechnicalAttributeRationalType> getTechnicalAttributeRational() {
         if (technicalAttributeRational == null) {
-            technicalAttributeRational = new ArrayList<TechnicalAttributeRationalType>();
+            technicalAttributeRational = new ArrayList<>();
         }
         return this.technicalAttributeRational;
     }
@@ -1141,7 +1141,7 @@ public class FormatType {
      */
     public List<TechnicalAttributeUriType> getTechnicalAttributeUri() {
         if (technicalAttributeUri == null) {
-            technicalAttributeUri = new ArrayList<TechnicalAttributeUriType>();
+            technicalAttributeUri = new ArrayList<>();
         }
         return this.technicalAttributeUri;
     }

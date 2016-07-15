@@ -104,7 +104,7 @@ public class SubjectType {
      */
     public List<org.purl.dc.elements._1.ElementType> getSubject() {
         if (subject == null) {
-            subject = new ArrayList<org.purl.dc.elements._1.ElementType>();
+            subject = new ArrayList<>();
         }
         return this.subject;
     }
@@ -157,7 +157,7 @@ public class SubjectType {
      */
     public List<ebu.metadata_schema.ebucore_2015.ElementType> getSubjectDefinition() {
         if (subjectDefinition == null) {
-            subjectDefinition = new ArrayList<ebu.metadata_schema.ebucore_2015.ElementType>();
+            subjectDefinition = new ArrayList<>();
         }
         return this.subjectDefinition;
     }

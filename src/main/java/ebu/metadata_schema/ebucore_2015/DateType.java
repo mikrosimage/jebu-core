@@ -190,7 +190,7 @@ public class DateType {
      */
     public List<ElementType> getDate() {
         if (date == null) {
-            date = new ArrayList<ElementType>();
+            date = new ArrayList<>();
         }
         return this.date;
     }
@@ -387,7 +387,7 @@ public class DateType {
      */
     public List<AlternativeDateType> getAlternative() {
         if (alternative == null) {
-            alternative = new ArrayList<AlternativeDateType>();
+            alternative = new ArrayList<>();
         }
         return this.alternative;
     }

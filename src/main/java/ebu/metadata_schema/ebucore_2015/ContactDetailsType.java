@@ -177,7 +177,7 @@ public class ContactDetailsType {
      */
     public List<CompoundNameType> getName() {
         if (name == null) {
-            name = new ArrayList<CompoundNameType>();
+            name = new ArrayList<>();
         }
         return this.name;
     }
@@ -254,7 +254,7 @@ public class ContactDetailsType {
      */
     public List<ElementType> getOtherGivenName() {
         if (otherGivenName == null) {
-            otherGivenName = new ArrayList<ElementType>();
+            otherGivenName = new ArrayList<>();
         }
         return this.otherGivenName;
     }
@@ -451,7 +451,7 @@ public class ContactDetailsType {
      */
     public List<ElementType> getUsername() {
         if (username == null) {
-            username = new ArrayList<ElementType>();
+            username = new ArrayList<>();
         }
         return this.username;
     }
@@ -480,7 +480,7 @@ public class ContactDetailsType {
      */
     public List<ElementType> getNickname() {
         if (nickname == null) {
-            nickname = new ArrayList<ElementType>();
+            nickname = new ArrayList<>();
         }
         return this.nickname;
     }
@@ -533,7 +533,7 @@ public class ContactDetailsType {
      */
     public List<DetailsType> getDetails() {
         if (details == null) {
-            details = new ArrayList<DetailsType>();
+            details = new ArrayList<>();
         }
         return this.details;
     }
@@ -562,7 +562,7 @@ public class ContactDetailsType {
      */
     public List<ContactDetailsType.StageName> getStageName() {
         if (stageName == null) {
-            stageName = new ArrayList<ContactDetailsType.StageName>();
+            stageName = new ArrayList<>();
         }
         return this.stageName;
     }
@@ -639,7 +639,7 @@ public class ContactDetailsType {
      */
     public List<ContactDetailsType.RelatedInformationLink> getRelatedInformationLink() {
         if (relatedInformationLink == null) {
-            relatedInformationLink = new ArrayList<ContactDetailsType.RelatedInformationLink>();
+            relatedInformationLink = new ArrayList<>();
         }
         return this.relatedInformationLink;
     }
@@ -668,7 +668,7 @@ public class ContactDetailsType {
      */
     public List<EntityType> getRelatedContacts() {
         if (relatedContacts == null) {
-            relatedContacts = new ArrayList<EntityType>();
+            relatedContacts = new ArrayList<>();
         }
         return this.relatedContacts;
     }
@@ -697,7 +697,7 @@ public class ContactDetailsType {
      */
     public List<java.lang.String> getSkill() {
         if (skill == null) {
-            skill = new ArrayList<java.lang.String>();
+            skill = new ArrayList<>();
         }
         return this.skill;
     }
@@ -726,7 +726,7 @@ public class ContactDetailsType {
      */
     public List<AffiliationType> getAffiliation() {
         if (affiliation == null) {
-            affiliation = new ArrayList<AffiliationType>();
+            affiliation = new ArrayList<>();
         }
         return this.affiliation;
     }

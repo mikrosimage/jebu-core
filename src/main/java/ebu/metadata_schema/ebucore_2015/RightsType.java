@@ -144,7 +144,7 @@ public class RightsType {
      */
     public List<org.purl.dc.elements._1.ElementType> getRights() {
         if (rights == null) {
-            rights = new ArrayList<org.purl.dc.elements._1.ElementType>();
+            rights = new ArrayList<>();
         }
         return this.rights;
     }
@@ -197,7 +197,7 @@ public class RightsType {
      */
     public List<EntityType> getRightsHolder() {
         if (rightsHolder == null) {
-            rightsHolder = new ArrayList<EntityType>();
+            rightsHolder = new ArrayList<>();
         }
         return this.rightsHolder;
     }
@@ -226,7 +226,7 @@ public class RightsType {
      */
     public List<ebu.metadata_schema.ebucore_2015.ElementType> getExploitationIssues() {
         if (exploitationIssues == null) {
-            exploitationIssues = new ArrayList<ebu.metadata_schema.ebucore_2015.ElementType>();
+            exploitationIssues = new ArrayList<>();
         }
         return this.exploitationIssues;
     }
@@ -255,7 +255,7 @@ public class RightsType {
      */
     public List<ebu.metadata_schema.ebucore_2015.ElementType> getCopyrightStatement() {
         if (copyrightStatement == null) {
-            copyrightStatement = new ArrayList<ebu.metadata_schema.ebucore_2015.ElementType>();
+            copyrightStatement = new ArrayList<>();
         }
         return this.copyrightStatement;
     }
@@ -284,7 +284,7 @@ public class RightsType {
      */
     public List<CoverageType> getCoverage() {
         if (coverage == null) {
-            coverage = new ArrayList<CoverageType>();
+            coverage = new ArrayList<>();
         }
         return this.coverage;
     }
@@ -361,7 +361,7 @@ public class RightsType {
      */
     public List<ebu.metadata_schema.ebucore_2015.ElementType> getDisclaimer() {
         if (disclaimer == null) {
-            disclaimer = new ArrayList<ebu.metadata_schema.ebucore_2015.ElementType>();
+            disclaimer = new ArrayList<>();
         }
         return this.disclaimer;
     }
@@ -390,7 +390,7 @@ public class RightsType {
      */
     public List<IdentifierType> getRightsAttributedId() {
         if (rightsAttributedId == null) {
-            rightsAttributedId = new ArrayList<IdentifierType>();
+            rightsAttributedId = new ArrayList<>();
         }
         return this.rightsAttributedId;
     }
@@ -419,7 +419,7 @@ public class RightsType {
      */
     public List<ContactDetailsType> getContactDetails() {
         if (contactDetails == null) {
-            contactDetails = new ArrayList<ContactDetailsType>();
+            contactDetails = new ArrayList<>();
         }
         return this.contactDetails;
     }

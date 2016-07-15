@@ -1282,7 +1282,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioObject")
     public JAXBElement<AudioObjectType> createAudioObject(AudioObjectType value) {
-        return new JAXBElement<AudioObjectType>(_AudioObject_QNAME, AudioObjectType.class, null, value);
+        return new JAXBElement<>(_AudioObject_QNAME, AudioObjectType.class, null, value);
     }
 
     /**
@@ -1291,7 +1291,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioProgramme")
     public JAXBElement<AudioProgrammeType> createAudioProgramme(AudioProgrammeType value) {
-        return new JAXBElement<AudioProgrammeType>(_AudioProgramme_QNAME, AudioProgrammeType.class, null, value);
+        return new JAXBElement<>(_AudioProgramme_QNAME, AudioProgrammeType.class, null, value);
     }
 
     /**
@@ -1300,7 +1300,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "ebuCoreMain")
     public JAXBElement<EbuCoreMainType> createEbuCoreMain(EbuCoreMainType value) {
-        return new JAXBElement<EbuCoreMainType>(_EbuCoreMain_QNAME, EbuCoreMainType.class, null, value);
+        return new JAXBElement<>(_EbuCoreMain_QNAME, EbuCoreMainType.class, null, value);
     }
 
     /**
@@ -1309,7 +1309,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioChannelFormat")
     public JAXBElement<AudioChannelFormatType> createAudioChannelFormat(AudioChannelFormatType value) {
-        return new JAXBElement<AudioChannelFormatType>(_AudioChannelFormat_QNAME, AudioChannelFormatType.class, null, value);
+        return new JAXBElement<>(_AudioChannelFormat_QNAME, AudioChannelFormatType.class, null, value);
     }
 
     /**
@@ -1318,7 +1318,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioStreamFormat")
     public JAXBElement<AudioStreamFormatType> createAudioStreamFormat(AudioStreamFormatType value) {
-        return new JAXBElement<AudioStreamFormatType>(_AudioStreamFormat_QNAME, AudioStreamFormatType.class, null, value);
+        return new JAXBElement<>(_AudioStreamFormat_QNAME, AudioStreamFormatType.class, null, value);
     }
 
     /**
@@ -1327,7 +1327,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioPackFormat")
     public JAXBElement<AudioPackFormatType> createAudioPackFormat(AudioPackFormatType value) {
-        return new JAXBElement<AudioPackFormatType>(_AudioPackFormat_QNAME, AudioPackFormatType.class, null, value);
+        return new JAXBElement<>(_AudioPackFormat_QNAME, AudioPackFormatType.class, null, value);
     }
 
     /**
@@ -1336,7 +1336,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioTrackUID")
     public JAXBElement<AudioTrackUIDType> createAudioTrackUID(AudioTrackUIDType value) {
-        return new JAXBElement<AudioTrackUIDType>(_AudioTrackUID_QNAME, AudioTrackUIDType.class, null, value);
+        return new JAXBElement<>(_AudioTrackUID_QNAME, AudioTrackUIDType.class, null, value);
     }
 
     /**
@@ -1345,7 +1345,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioTrackFormat")
     public JAXBElement<AudioTrackFormatType> createAudioTrackFormat(AudioTrackFormatType value) {
-        return new JAXBElement<AudioTrackFormatType>(_AudioTrackFormat_QNAME, AudioTrackFormatType.class, null, value);
+        return new JAXBElement<>(_AudioTrackFormat_QNAME, AudioTrackFormatType.class, null, value);
     }
 
     /**
@@ -1354,7 +1354,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioBlockFormat")
     public JAXBElement<AudioBlockFormatType> createAudioBlockFormat(AudioBlockFormatType value) {
-        return new JAXBElement<AudioBlockFormatType>(_AudioBlockFormat_QNAME, AudioBlockFormatType.class, null, value);
+        return new JAXBElement<>(_AudioBlockFormat_QNAME, AudioBlockFormatType.class, null, value);
     }
 
     /**
@@ -1363,7 +1363,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioContent")
     public JAXBElement<AudioContentType> createAudioContent(AudioContentType value) {
-        return new JAXBElement<AudioContentType>(_AudioContent_QNAME, AudioContentType.class, null, value);
+        return new JAXBElement<>(_AudioContent_QNAME, AudioContentType.class, null, value);
     }
 
     /**
@@ -1373,7 +1373,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioContentIDRef", scope = AudioProgrammeType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioProgrammeTypeAudioContentIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioProgrammeTypeAudioContentIDRef_QNAME, Object.class, AudioProgrammeType.class, value);
+        return new JAXBElement<>(_AudioProgrammeTypeAudioContentIDRef_QNAME, Object.class, AudioProgrammeType.class, value);
     }
 
     /**
@@ -1382,7 +1382,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "screenRef", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Boolean> createAudioBlockFormatTypeScreenRef(java.lang.Boolean value) {
-        return new JAXBElement<java.lang.Boolean>(_AudioBlockFormatTypeScreenRef_QNAME, java.lang.Boolean.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeScreenRef_QNAME, java.lang.Boolean.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1391,7 +1391,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "objectDivergence", scope = AudioBlockFormatType.class)
     public JAXBElement<ObjectDivergenceType> createAudioBlockFormatTypeObjectDivergence(ObjectDivergenceType value) {
-        return new JAXBElement<ObjectDivergenceType>(_AudioBlockFormatTypeObjectDivergence_QNAME, ObjectDivergenceType.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeObjectDivergence_QNAME, ObjectDivergenceType.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1400,7 +1400,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "jumpPosition", scope = AudioBlockFormatType.class)
     public JAXBElement<JumpPositionType> createAudioBlockFormatTypeJumpPosition(JumpPositionType value) {
-        return new JAXBElement<JumpPositionType>(_AudioBlockFormatTypeJumpPosition_QNAME, JumpPositionType.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeJumpPosition_QNAME, JumpPositionType.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1409,7 +1409,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "order", scope = AudioBlockFormatType.class)
     public JAXBElement<Integer> createAudioBlockFormatTypeOrder(Integer value) {
-        return new JAXBElement<Integer>(_AudioBlockFormatTypeOrder_QNAME, Integer.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeOrder_QNAME, Integer.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1418,7 +1418,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "importance", scope = AudioBlockFormatType.class)
     public JAXBElement<Integer> createAudioBlockFormatTypeImportance(Integer value) {
-        return new JAXBElement<Integer>(_AudioBlockFormatTypeImportance_QNAME, Integer.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeImportance_QNAME, Integer.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1427,7 +1427,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "equation", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.String> createAudioBlockFormatTypeEquation(java.lang.String value) {
-        return new JAXBElement<java.lang.String>(_AudioBlockFormatTypeEquation_QNAME, java.lang.String.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeEquation_QNAME, java.lang.String.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1436,7 +1436,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "degree", scope = AudioBlockFormatType.class)
     public JAXBElement<Integer> createAudioBlockFormatTypeDegree(Integer value) {
-        return new JAXBElement<Integer>(_AudioBlockFormatTypeDegree_QNAME, Integer.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeDegree_QNAME, Integer.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1445,7 +1445,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "height", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Float> createAudioBlockFormatTypeHeight(java.lang.Float value) {
-        return new JAXBElement<java.lang.Float>(_AudioBlockFormatTypeHeight_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeHeight_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1454,7 +1454,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "cartesian", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Boolean> createAudioBlockFormatTypeCartesian(java.lang.Boolean value) {
-        return new JAXBElement<java.lang.Boolean>(_AudioBlockFormatTypeCartesian_QNAME, java.lang.Boolean.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeCartesian_QNAME, java.lang.Boolean.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1463,7 +1463,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "speakerLabel", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.String> createAudioBlockFormatTypeSpeakerLabel(java.lang.String value) {
-        return new JAXBElement<java.lang.String>(_AudioBlockFormatTypeSpeakerLabel_QNAME, java.lang.String.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeSpeakerLabel_QNAME, java.lang.String.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1472,7 +1472,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "depth", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Float> createAudioBlockFormatTypeDepth(java.lang.Float value) {
-        return new JAXBElement<java.lang.Float>(_AudioBlockFormatTypeDepth_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeDepth_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1481,7 +1481,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "gain", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Float> createAudioBlockFormatTypeGain(java.lang.Float value) {
-        return new JAXBElement<java.lang.Float>(_AudioBlockFormatTypeGain_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeGain_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1490,7 +1490,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "diffuse", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Float> createAudioBlockFormatTypeDiffuse(java.lang.Float value) {
-        return new JAXBElement<java.lang.Float>(_AudioBlockFormatTypeDiffuse_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeDiffuse_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1499,7 +1499,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "matrix", scope = AudioBlockFormatType.class)
     public JAXBElement<MatrixType> createAudioBlockFormatTypeMatrix(MatrixType value) {
-        return new JAXBElement<MatrixType>(_AudioBlockFormatTypeMatrix_QNAME, MatrixType.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeMatrix_QNAME, MatrixType.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1508,7 +1508,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "width", scope = AudioBlockFormatType.class)
     public JAXBElement<java.lang.Float> createAudioBlockFormatTypeWidth(java.lang.Float value) {
-        return new JAXBElement<java.lang.Float>(_AudioBlockFormatTypeWidth_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeWidth_QNAME, java.lang.Float.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1517,7 +1517,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "channelLock", scope = AudioBlockFormatType.class)
     public JAXBElement<ChannelLockType> createAudioBlockFormatTypeChannelLock(ChannelLockType value) {
-        return new JAXBElement<ChannelLockType>(_AudioBlockFormatTypeChannelLock_QNAME, ChannelLockType.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeChannelLock_QNAME, ChannelLockType.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1526,7 +1526,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "zoneExclusion", scope = AudioBlockFormatType.class)
     public JAXBElement<ZoneExclusionType> createAudioBlockFormatTypeZoneExclusion(ZoneExclusionType value) {
-        return new JAXBElement<ZoneExclusionType>(_AudioBlockFormatTypeZoneExclusion_QNAME, ZoneExclusionType.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypeZoneExclusion_QNAME, ZoneExclusionType.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1535,7 +1535,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "position", scope = AudioBlockFormatType.class)
     public JAXBElement<PositionType> createAudioBlockFormatTypePosition(PositionType value) {
-        return new JAXBElement<PositionType>(_AudioBlockFormatTypePosition_QNAME, PositionType.class, AudioBlockFormatType.class, value);
+        return new JAXBElement<>(_AudioBlockFormatTypePosition_QNAME, PositionType.class, AudioBlockFormatType.class, value);
     }
 
     /**
@@ -1545,7 +1545,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioChannelFormatIDRef", scope = AudioPackFormatType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioPackFormatTypeAudioChannelFormatIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioPackFormatTypeAudioChannelFormatIDRef_QNAME, Object.class, AudioPackFormatType.class, value);
+        return new JAXBElement<>(_AudioPackFormatTypeAudioChannelFormatIDRef_QNAME, Object.class, AudioPackFormatType.class, value);
     }
 
     /**
@@ -1555,7 +1555,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioPackFormatIDRef", scope = AudioPackFormatType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioPackFormatTypeAudioPackFormatIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioPackFormatTypeAudioPackFormatIDRef_QNAME, Object.class, AudioPackFormatType.class, value);
+        return new JAXBElement<>(_AudioPackFormatTypeAudioPackFormatIDRef_QNAME, Object.class, AudioPackFormatType.class, value);
     }
 
     /**
@@ -1565,7 +1565,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioComplementaryObjectIDRef", scope = AudioObjectType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioObjectTypeAudioComplementaryObjectIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioObjectTypeAudioComplementaryObjectIDRef_QNAME, Object.class, AudioObjectType.class, value);
+        return new JAXBElement<>(_AudioObjectTypeAudioComplementaryObjectIDRef_QNAME, Object.class, AudioObjectType.class, value);
     }
 
     /**
@@ -1575,7 +1575,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioTrackUIDRef", scope = AudioObjectType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioObjectTypeAudioTrackUIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioObjectTypeAudioTrackUIDRef_QNAME, Object.class, AudioObjectType.class, value);
+        return new JAXBElement<>(_AudioObjectTypeAudioTrackUIDRef_QNAME, Object.class, AudioObjectType.class, value);
     }
 
     /**
@@ -1585,7 +1585,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioObjectIDRef", scope = AudioObjectType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioObjectTypeAudioObjectIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioObjectTypeAudioObjectIDRef_QNAME, Object.class, AudioObjectType.class, value);
+        return new JAXBElement<>(_AudioObjectTypeAudioObjectIDRef_QNAME, Object.class, AudioObjectType.class, value);
     }
 
     /**
@@ -1595,7 +1595,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioPackFormatIDRef", scope = AudioObjectType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioObjectTypeAudioPackFormatIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioPackFormatTypeAudioPackFormatIDRef_QNAME, Object.class, AudioObjectType.class, value);
+        return new JAXBElement<>(_AudioPackFormatTypeAudioPackFormatIDRef_QNAME, Object.class, AudioObjectType.class, value);
     }
 
     /**
@@ -1605,7 +1605,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioObjectIDRef", scope = AudioContentType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioContentTypeAudioObjectIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioObjectTypeAudioObjectIDRef_QNAME, Object.class, AudioContentType.class, value);
+        return new JAXBElement<>(_AudioObjectTypeAudioObjectIDRef_QNAME, Object.class, AudioContentType.class, value);
     }
 
     /**
@@ -1615,7 +1615,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioChannelFormatIDRef", scope = AudioStreamFormatType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioStreamFormatTypeAudioChannelFormatIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioPackFormatTypeAudioChannelFormatIDRef_QNAME, Object.class, AudioStreamFormatType.class, value);
+        return new JAXBElement<>(_AudioPackFormatTypeAudioChannelFormatIDRef_QNAME, Object.class, AudioStreamFormatType.class, value);
     }
 
     /**
@@ -1625,7 +1625,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioTrackFormatIDRef", scope = AudioStreamFormatType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioStreamFormatTypeAudioTrackFormatIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioStreamFormatTypeAudioTrackFormatIDRef_QNAME, Object.class, AudioStreamFormatType.class, value);
+        return new JAXBElement<>(_AudioStreamFormatTypeAudioTrackFormatIDRef_QNAME, Object.class, AudioStreamFormatType.class, value);
     }
 
     /**
@@ -1635,7 +1635,7 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:ebu:metadata-schema:ebuCore_2015", name = "audioPackFormatIDRef", scope = AudioStreamFormatType.class)
     @XmlIDREF
     public JAXBElement<Object> createAudioStreamFormatTypeAudioPackFormatIDRef(Object value) {
-        return new JAXBElement<Object>(_AudioPackFormatTypeAudioPackFormatIDRef_QNAME, Object.class, AudioStreamFormatType.class, value);
+        return new JAXBElement<>(_AudioPackFormatTypeAudioPackFormatIDRef_QNAME, Object.class, AudioStreamFormatType.class, value);
     }
 
 }

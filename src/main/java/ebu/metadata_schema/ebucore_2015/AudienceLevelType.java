@@ -108,7 +108,7 @@ public class AudienceLevelType {
      */
     public List<RegionType> getTargetRegion() {
         if (targetRegion == null) {
-            targetRegion = new ArrayList<RegionType>();
+            targetRegion = new ArrayList<>();
         }
         return this.targetRegion;
     }
@@ -137,7 +137,7 @@ public class AudienceLevelType {
      */
     public List<RegionType> getTargetExclusionRegion() {
         if (targetExclusionRegion == null) {
-            targetExclusionRegion = new ArrayList<RegionType>();
+            targetExclusionRegion = new ArrayList<>();
         }
         return this.targetExclusionRegion;
     }

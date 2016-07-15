@@ -292,7 +292,7 @@ public class VideoFormatType {
      */
     public List<VideoFormatType.Width> getWidth() {
         if (width == null) {
-            width = new ArrayList<VideoFormatType.Width>();
+            width = new ArrayList<>();
         }
         return this.width;
     }
@@ -321,7 +321,7 @@ public class VideoFormatType {
      */
     public List<VideoFormatType.Height> getHeight() {
         if (height == null) {
-            height = new ArrayList<VideoFormatType.Height>();
+            height = new ArrayList<>();
         }
         return this.height;
     }
@@ -398,7 +398,7 @@ public class VideoFormatType {
      */
     public List<AspectRatioType> getAspectRatio() {
         if (aspectRatio == null) {
-            aspectRatio = new ArrayList<AspectRatioType>();
+            aspectRatio = new ArrayList<>();
         }
         return this.aspectRatio;
     }
@@ -619,7 +619,7 @@ public class VideoFormatType {
      */
     public List<VideoFormatType.VideoTrack> getVideoTrack() {
         if (videoTrack == null) {
-            videoTrack = new ArrayList<VideoFormatType.VideoTrack>();
+            videoTrack = new ArrayList<>();
         }
         return this.videoTrack;
     }
@@ -672,7 +672,7 @@ public class VideoFormatType {
      */
     public List<FilterType> getFilter() {
         if (filter == null) {
-            filter = new ArrayList<FilterType>();
+            filter = new ArrayList<>();
         }
         return this.filter;
     }
@@ -701,7 +701,7 @@ public class VideoFormatType {
      */
     public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeString() {
         if (technicalAttributeString == null) {
-            technicalAttributeString = new ArrayList<ebu.metadata_schema.ebucore_2015.String>();
+            technicalAttributeString = new ArrayList<>();
         }
         return this.technicalAttributeString;
     }
@@ -730,7 +730,7 @@ public class VideoFormatType {
      */
     public List<Int8> getTechnicalAttributeByte() {
         if (technicalAttributeByte == null) {
-            technicalAttributeByte = new ArrayList<Int8>();
+            technicalAttributeByte = new ArrayList<>();
         }
         return this.technicalAttributeByte;
     }
@@ -759,7 +759,7 @@ public class VideoFormatType {
      */
     public List<Int16> getTechnicalAttributeShort() {
         if (technicalAttributeShort == null) {
-            technicalAttributeShort = new ArrayList<Int16>();
+            technicalAttributeShort = new ArrayList<>();
         }
         return this.technicalAttributeShort;
     }
@@ -788,7 +788,7 @@ public class VideoFormatType {
      */
     public List<Int32> getTechnicalAttributeInteger() {
         if (technicalAttributeInteger == null) {
-            technicalAttributeInteger = new ArrayList<Int32>();
+            technicalAttributeInteger = new ArrayList<>();
         }
         return this.technicalAttributeInteger;
     }
@@ -817,7 +817,7 @@ public class VideoFormatType {
      */
     public List<Int64> getTechnicalAttributeLong() {
         if (technicalAttributeLong == null) {
-            technicalAttributeLong = new ArrayList<Int64>();
+            technicalAttributeLong = new ArrayList<>();
         }
         return this.technicalAttributeLong;
     }
@@ -846,7 +846,7 @@ public class VideoFormatType {
      */
     public List<UInt8> getTechnicalAttributeUnsignedByte() {
         if (technicalAttributeUnsignedByte == null) {
-            technicalAttributeUnsignedByte = new ArrayList<UInt8>();
+            technicalAttributeUnsignedByte = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedByte;
     }
@@ -875,7 +875,7 @@ public class VideoFormatType {
      */
     public List<UInt16> getTechnicalAttributeUnsignedShort() {
         if (technicalAttributeUnsignedShort == null) {
-            technicalAttributeUnsignedShort = new ArrayList<UInt16>();
+            technicalAttributeUnsignedShort = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedShort;
     }
@@ -904,7 +904,7 @@ public class VideoFormatType {
      */
     public List<UInt32> getTechnicalAttributeUnsignedInteger() {
         if (technicalAttributeUnsignedInteger == null) {
-            technicalAttributeUnsignedInteger = new ArrayList<UInt32>();
+            technicalAttributeUnsignedInteger = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedInteger;
     }
@@ -933,7 +933,7 @@ public class VideoFormatType {
      */
     public List<UInt64> getTechnicalAttributeUnsignedLong() {
         if (technicalAttributeUnsignedLong == null) {
-            technicalAttributeUnsignedLong = new ArrayList<UInt64>();
+            technicalAttributeUnsignedLong = new ArrayList<>();
         }
         return this.technicalAttributeUnsignedLong;
     }
@@ -962,7 +962,7 @@ public class VideoFormatType {
      */
     public List<ebu.metadata_schema.ebucore_2015.Boolean> getTechnicalAttributeBoolean() {
         if (technicalAttributeBoolean == null) {
-            technicalAttributeBoolean = new ArrayList<ebu.metadata_schema.ebucore_2015.Boolean>();
+            technicalAttributeBoolean = new ArrayList<>();
         }
         return this.technicalAttributeBoolean;
     }
@@ -991,7 +991,7 @@ public class VideoFormatType {
      */
     public List<Float> getTechnicalAttributeFloat() {
         if (technicalAttributeFloat == null) {
-            technicalAttributeFloat = new ArrayList<Float>();
+            technicalAttributeFloat = new ArrayList<>();
         }
         return this.technicalAttributeFloat;
     }
@@ -1020,7 +1020,7 @@ public class VideoFormatType {
      */
     public List<TechnicalAttributeRationalType> getTechnicalAttributeRational() {
         if (technicalAttributeRational == null) {
-            technicalAttributeRational = new ArrayList<TechnicalAttributeRationalType>();
+            technicalAttributeRational = new ArrayList<>();
         }
         return this.technicalAttributeRational;
     }
@@ -1049,7 +1049,7 @@ public class VideoFormatType {
      */
     public List<TechnicalAttributeUriType> getTechnicalAttributeUri() {
         if (technicalAttributeUri == null) {
-            technicalAttributeUri = new ArrayList<TechnicalAttributeUriType>();
+            technicalAttributeUri = new ArrayList<>();
         }
         return this.technicalAttributeUri;
     }
@@ -1079,7 +1079,7 @@ public class VideoFormatType {
      */
     public List<Comment> getComment() {
         if (comment == null) {
-            comment = new ArrayList<Comment>();
+            comment = new ArrayList<>();
         }
         return this.comment;
     }

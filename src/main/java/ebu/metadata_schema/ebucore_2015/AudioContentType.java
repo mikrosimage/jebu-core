@@ -89,7 +89,7 @@ public class AudioContentType {
      */
     public List<JAXBElement<Object>> getAudioObjectIDRef() {
         if (audioObjectIDRef == null) {
-            audioObjectIDRef = new ArrayList<JAXBElement<Object>>();
+            audioObjectIDRef = new ArrayList<>();
         }
         return this.audioObjectIDRef;
     }

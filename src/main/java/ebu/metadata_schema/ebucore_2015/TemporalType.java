@@ -84,7 +84,7 @@ public class TemporalType {
      */
     public List<PeriodOfTimeType> getPeriodOfTime() {
         if (periodOfTime == null) {
-            periodOfTime = new ArrayList<PeriodOfTimeType>();
+            periodOfTime = new ArrayList<>();
         }
         return this.periodOfTime;
     }

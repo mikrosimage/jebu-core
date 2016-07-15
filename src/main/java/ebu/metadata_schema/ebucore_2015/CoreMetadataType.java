@@ -227,7 +227,7 @@ public class CoreMetadataType {
      */
     public List<TitleType> getTitle() {
         if (title == null) {
-            title = new ArrayList<TitleType>();
+            title = new ArrayList<>();
         }
         return this.title;
     }
@@ -256,7 +256,7 @@ public class CoreMetadataType {
      */
     public List<AlternativeTitleType> getAlternativeTitle() {
         if (alternativeTitle == null) {
-            alternativeTitle = new ArrayList<AlternativeTitleType>();
+            alternativeTitle = new ArrayList<>();
         }
         return this.alternativeTitle;
     }
@@ -285,7 +285,7 @@ public class CoreMetadataType {
      */
     public List<EntityType> getCreator() {
         if (creator == null) {
-            creator = new ArrayList<EntityType>();
+            creator = new ArrayList<>();
         }
         return this.creator;
     }
@@ -314,7 +314,7 @@ public class CoreMetadataType {
      */
     public List<SubjectType> getSubject() {
         if (subject == null) {
-            subject = new ArrayList<SubjectType>();
+            subject = new ArrayList<>();
         }
         return this.subject;
     }
@@ -343,7 +343,7 @@ public class CoreMetadataType {
      */
     public List<DescriptionType> getDescription() {
         if (description == null) {
-            description = new ArrayList<DescriptionType>();
+            description = new ArrayList<>();
         }
         return this.description;
     }
@@ -372,7 +372,7 @@ public class CoreMetadataType {
      */
     public List<EntityType> getPublisher() {
         if (publisher == null) {
-            publisher = new ArrayList<EntityType>();
+            publisher = new ArrayList<>();
         }
         return this.publisher;
     }
@@ -401,7 +401,7 @@ public class CoreMetadataType {
      */
     public List<EntityType> getContributor() {
         if (contributor == null) {
-            contributor = new ArrayList<EntityType>();
+            contributor = new ArrayList<>();
         }
         return this.contributor;
     }
@@ -430,7 +430,7 @@ public class CoreMetadataType {
      */
     public List<DateType> getDate() {
         if (date == null) {
-            date = new ArrayList<DateType>();
+            date = new ArrayList<>();
         }
         return this.date;
     }
@@ -459,7 +459,7 @@ public class CoreMetadataType {
      */
     public List<TypeType> getType() {
         if (type == null) {
-            type = new ArrayList<TypeType>();
+            type = new ArrayList<>();
         }
         return this.type;
     }
@@ -488,7 +488,7 @@ public class CoreMetadataType {
      */
     public List<FormatType> getFormat() {
         if (format == null) {
-            format = new ArrayList<FormatType>();
+            format = new ArrayList<>();
         }
         return this.format;
     }
@@ -517,7 +517,7 @@ public class CoreMetadataType {
      */
     public List<IdentifierType> getIdentifier() {
         if (identifier == null) {
-            identifier = new ArrayList<IdentifierType>();
+            identifier = new ArrayList<>();
         }
         return this.identifier;
     }
@@ -555,7 +555,7 @@ public class CoreMetadataType {
      */
     public List<ElementType> getSource() {
         if (source == null) {
-            source = new ArrayList<ElementType>();
+            source = new ArrayList<>();
         }
         return this.source;
     }
@@ -584,7 +584,7 @@ public class CoreMetadataType {
      */
     public List<LanguageType> getLanguage() {
         if (language == null) {
-            language = new ArrayList<LanguageType>();
+            language = new ArrayList<>();
         }
         return this.language;
     }
@@ -613,7 +613,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getRelation() {
         if (relation == null) {
-            relation = new ArrayList<RelationType>();
+            relation = new ArrayList<>();
         }
         return this.relation;
     }
@@ -642,7 +642,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsRelatedTo() {
         if (isRelatedTo == null) {
-            isRelatedTo = new ArrayList<RelationType>();
+            isRelatedTo = new ArrayList<>();
         }
         return this.isRelatedTo;
     }
@@ -671,7 +671,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsNextInSequence() {
         if (isNextInSequence == null) {
-            isNextInSequence = new ArrayList<RelationType>();
+            isNextInSequence = new ArrayList<>();
         }
         return this.isNextInSequence;
     }
@@ -700,7 +700,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getFollowsInSequence() {
         if (followsInSequence == null) {
-            followsInSequence = new ArrayList<RelationType>();
+            followsInSequence = new ArrayList<>();
         }
         return this.followsInSequence;
     }
@@ -729,7 +729,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsVersionOf() {
         if (isVersionOf == null) {
-            isVersionOf = new ArrayList<RelationType>();
+            isVersionOf = new ArrayList<>();
         }
         return this.isVersionOf;
     }
@@ -758,7 +758,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasVersion() {
         if (hasVersion == null) {
-            hasVersion = new ArrayList<RelationType>();
+            hasVersion = new ArrayList<>();
         }
         return this.hasVersion;
     }
@@ -787,7 +787,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsReplacedBy() {
         if (isReplacedBy == null) {
-            isReplacedBy = new ArrayList<RelationType>();
+            isReplacedBy = new ArrayList<>();
         }
         return this.isReplacedBy;
     }
@@ -816,7 +816,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getReplaces() {
         if (replaces == null) {
-            replaces = new ArrayList<RelationType>();
+            replaces = new ArrayList<>();
         }
         return this.replaces;
     }
@@ -845,7 +845,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsRequiredBy() {
         if (isRequiredBy == null) {
-            isRequiredBy = new ArrayList<RelationType>();
+            isRequiredBy = new ArrayList<>();
         }
         return this.isRequiredBy;
     }
@@ -874,7 +874,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getRequires() {
         if (requires == null) {
-            requires = new ArrayList<RelationType>();
+            requires = new ArrayList<>();
         }
         return this.requires;
     }
@@ -903,7 +903,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsPartOf() {
         if (isPartOf == null) {
-            isPartOf = new ArrayList<RelationType>();
+            isPartOf = new ArrayList<>();
         }
         return this.isPartOf;
     }
@@ -932,7 +932,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasPart() {
         if (hasPart == null) {
-            hasPart = new ArrayList<RelationType>();
+            hasPart = new ArrayList<>();
         }
         return this.hasPart;
     }
@@ -961,7 +961,7 @@ public class CoreMetadataType {
      */
     public List<CoreMetadataType.HasTrackPart> getHasTrackPart() {
         if (hasTrackPart == null) {
-            hasTrackPart = new ArrayList<CoreMetadataType.HasTrackPart>();
+            hasTrackPart = new ArrayList<>();
         }
         return this.hasTrackPart;
     }
@@ -990,7 +990,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsReferencedBy() {
         if (isReferencedBy == null) {
-            isReferencedBy = new ArrayList<RelationType>();
+            isReferencedBy = new ArrayList<>();
         }
         return this.isReferencedBy;
     }
@@ -1019,7 +1019,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getReferences() {
         if (references == null) {
-            references = new ArrayList<RelationType>();
+            references = new ArrayList<>();
         }
         return this.references;
     }
@@ -1048,7 +1048,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsFormatOf() {
         if (isFormatOf == null) {
-            isFormatOf = new ArrayList<RelationType>();
+            isFormatOf = new ArrayList<>();
         }
         return this.isFormatOf;
     }
@@ -1077,7 +1077,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasFormat() {
         if (hasFormat == null) {
-            hasFormat = new ArrayList<RelationType>();
+            hasFormat = new ArrayList<>();
         }
         return this.hasFormat;
     }
@@ -1106,7 +1106,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsEpisodeOf() {
         if (isEpisodeOf == null) {
-            isEpisodeOf = new ArrayList<RelationType>();
+            isEpisodeOf = new ArrayList<>();
         }
         return this.isEpisodeOf;
     }
@@ -1135,7 +1135,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsSeasonOf() {
         if (isSeasonOf == null) {
-            isSeasonOf = new ArrayList<RelationType>();
+            isSeasonOf = new ArrayList<>();
         }
         return this.isSeasonOf;
     }
@@ -1164,7 +1164,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasEpisode() {
         if (hasEpisode == null) {
-            hasEpisode = new ArrayList<RelationType>();
+            hasEpisode = new ArrayList<>();
         }
         return this.hasEpisode;
     }
@@ -1193,7 +1193,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasSeason() {
         if (hasSeason == null) {
-            hasSeason = new ArrayList<RelationType>();
+            hasSeason = new ArrayList<>();
         }
         return this.hasSeason;
     }
@@ -1222,7 +1222,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasSeries() {
         if (hasSeries == null) {
-            hasSeries = new ArrayList<RelationType>();
+            hasSeries = new ArrayList<>();
         }
         return this.hasSeries;
     }
@@ -1251,7 +1251,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsSeriesOf() {
         if (isSeriesOf == null) {
-            isSeriesOf = new ArrayList<RelationType>();
+            isSeriesOf = new ArrayList<>();
         }
         return this.isSeriesOf;
     }
@@ -1280,7 +1280,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getIsMemberOf() {
         if (isMemberOf == null) {
-            isMemberOf = new ArrayList<RelationType>();
+            isMemberOf = new ArrayList<>();
         }
         return this.isMemberOf;
     }
@@ -1309,7 +1309,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getHasMember() {
         if (hasMember == null) {
-            hasMember = new ArrayList<RelationType>();
+            hasMember = new ArrayList<>();
         }
         return this.hasMember;
     }
@@ -1338,7 +1338,7 @@ public class CoreMetadataType {
      */
     public List<RelationType> getSameAs() {
         if (sameAs == null) {
-            sameAs = new ArrayList<RelationType>();
+            sameAs = new ArrayList<>();
         }
         return this.sameAs;
     }
@@ -1367,7 +1367,7 @@ public class CoreMetadataType {
      */
     public List<CoverageType> getCoverage() {
         if (coverage == null) {
-            coverage = new ArrayList<CoverageType>();
+            coverage = new ArrayList<>();
         }
         return this.coverage;
     }
@@ -1396,7 +1396,7 @@ public class CoreMetadataType {
      */
     public List<RightsType> getRights() {
         if (rights == null) {
-            rights = new ArrayList<RightsType>();
+            rights = new ArrayList<>();
         }
         return this.rights;
     }
@@ -1425,7 +1425,7 @@ public class CoreMetadataType {
      */
     public List<VersionType> getVersion() {
         if (version == null) {
-            version = new ArrayList<VersionType>();
+            version = new ArrayList<>();
         }
         return this.version;
     }
@@ -1454,7 +1454,7 @@ public class CoreMetadataType {
      */
     public List<PublicationHistoryType> getPublicationHistory() {
         if (publicationHistory == null) {
-            publicationHistory = new ArrayList<PublicationHistoryType>();
+            publicationHistory = new ArrayList<>();
         }
         return this.publicationHistory;
     }
@@ -1483,7 +1483,7 @@ public class CoreMetadataType {
      */
     public List<PlanningType> getPlanning() {
         if (planning == null) {
-            planning = new ArrayList<PlanningType>();
+            planning = new ArrayList<>();
         }
         return this.planning;
     }
@@ -1512,7 +1512,7 @@ public class CoreMetadataType {
      */
     public List<RatingType> getRating() {
         if (rating == null) {
-            rating = new ArrayList<RatingType>();
+            rating = new ArrayList<>();
         }
         return this.rating;
     }
@@ -1541,7 +1541,7 @@ public class CoreMetadataType {
      */
     public List<RatingType> getAudienceRating() {
         if (audienceRating == null) {
-            audienceRating = new ArrayList<RatingType>();
+            audienceRating = new ArrayList<>();
         }
         return this.audienceRating;
     }
@@ -1570,7 +1570,7 @@ public class CoreMetadataType {
      */
     public List<EventType> getEvent() {
         if (event == null) {
-            event = new ArrayList<EventType>();
+            event = new ArrayList<>();
         }
         return this.event;
     }
@@ -1599,7 +1599,7 @@ public class CoreMetadataType {
      */
     public List<PartType> getPart() {
         if (part == null) {
-            part = new ArrayList<PartType>();
+            part = new ArrayList<>();
         }
         return this.part;
     }

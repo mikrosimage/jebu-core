@@ -95,7 +95,7 @@ public class EventType {
      */
     public List<ElementType> getName() {
         if (name == null) {
-            name = new ArrayList<ElementType>();
+            name = new ArrayList<>();
         }
         return this.name;
     }
@@ -124,7 +124,7 @@ public class EventType {
      */
     public List<ElementType> getDescription() {
         if (description == null) {
-            description = new ArrayList<ElementType>();
+            description = new ArrayList<>();
         }
         return this.description;
     }
@@ -153,7 +153,7 @@ public class EventType {
      */
     public List<LocationType> getLocation() {
         if (location == null) {
-            location = new ArrayList<LocationType>();
+            location = new ArrayList<>();
         }
         return this.location;
     }

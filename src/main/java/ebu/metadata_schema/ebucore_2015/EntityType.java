@@ -87,7 +87,7 @@ public class EntityType {
      */
     public List<ContactDetailsType> getContactDetails() {
         if (contactDetails == null) {
-            contactDetails = new ArrayList<ContactDetailsType>();
+            contactDetails = new ArrayList<>();
         }
         return this.contactDetails;
     }
@@ -116,7 +116,7 @@ public class EntityType {
      */
     public List<OrganisationDetailsType> getOrganisationDetails() {
         if (organisationDetails == null) {
-            organisationDetails = new ArrayList<OrganisationDetailsType>();
+            organisationDetails = new ArrayList<>();
         }
         return this.organisationDetails;
     }
@@ -145,7 +145,7 @@ public class EntityType {
      */
     public List<EntityType.Role> getRole() {
         if (role == null) {
-            role = new ArrayList<EntityType.Role>();
+            role = new ArrayList<>();
         }
         return this.role;
     }
@@ -174,7 +174,7 @@ public class EntityType {
      */
     public List<AwardType> getAward() {
         if (award == null) {
-            award = new ArrayList<AwardType>();
+            award = new ArrayList<>();
         }
         return this.award;
     }

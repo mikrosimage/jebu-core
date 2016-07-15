@@ -100,7 +100,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioProgrammeType> getAudioProgramme() {
         if (audioProgramme == null) {
-            audioProgramme = new ArrayList<AudioProgrammeType>();
+            audioProgramme = new ArrayList<>();
         }
         return this.audioProgramme;
     }
@@ -130,7 +130,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioContentType> getAudioContent() {
         if (audioContent == null) {
-            audioContent = new ArrayList<AudioContentType>();
+            audioContent = new ArrayList<>();
         }
         return this.audioContent;
     }
@@ -159,7 +159,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioObjectType> getAudioObject() {
         if (audioObject == null) {
-            audioObject = new ArrayList<AudioObjectType>();
+            audioObject = new ArrayList<>();
         }
         return this.audioObject;
     }
@@ -188,7 +188,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioPackFormatType> getAudioPackFormat() {
         if (audioPackFormat == null) {
-            audioPackFormat = new ArrayList<AudioPackFormatType>();
+            audioPackFormat = new ArrayList<>();
         }
         return this.audioPackFormat;
     }
@@ -217,7 +217,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioChannelFormatType> getAudioChannelFormat() {
         if (audioChannelFormat == null) {
-            audioChannelFormat = new ArrayList<AudioChannelFormatType>();
+            audioChannelFormat = new ArrayList<>();
         }
         return this.audioChannelFormat;
     }
@@ -246,7 +246,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioBlockFormatType> getAudioBlockFormat() {
         if (audioBlockFormat == null) {
-            audioBlockFormat = new ArrayList<AudioBlockFormatType>();
+            audioBlockFormat = new ArrayList<>();
         }
         return this.audioBlockFormat;
     }
@@ -276,7 +276,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioStreamFormatType> getAudioStreamFormat() {
         if (audioStreamFormat == null) {
-            audioStreamFormat = new ArrayList<AudioStreamFormatType>();
+            audioStreamFormat = new ArrayList<>();
         }
         return this.audioStreamFormat;
     }
@@ -305,7 +305,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioTrackFormatType> getAudioTrackFormat() {
         if (audioTrackFormat == null) {
-            audioTrackFormat = new ArrayList<AudioTrackFormatType>();
+            audioTrackFormat = new ArrayList<>();
         }
         return this.audioTrackFormat;
     }
@@ -334,7 +334,7 @@ public class AudioFormatExtendedType {
      */
     public List<AudioTrackUIDType> getAudioTrackUID() {
         if (audioTrackUID == null) {
-            audioTrackUID = new ArrayList<AudioTrackUIDType>();
+            audioTrackUID = new ArrayList<>();
         }
         return this.audioTrackUID;
     }

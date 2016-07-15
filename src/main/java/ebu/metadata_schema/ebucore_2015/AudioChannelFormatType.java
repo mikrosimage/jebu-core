@@ -3,11 +3,13 @@ package ebu.metadata_schema.ebucore_2015;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -95,7 +97,7 @@ public class AudioChannelFormatType {
      */
     public List<Frequency> getFrequency() {
         if (frequency == null) {
-            frequency = new ArrayList<Frequency>();
+            frequency = new ArrayList<>();
         }
         return this.frequency;
     }
@@ -125,7 +127,7 @@ public class AudioChannelFormatType {
      */
     public List<AudioBlockFormatType> getAudioBlockFormat() {
         if (audioBlockFormat == null) {
-            audioBlockFormat = new ArrayList<AudioBlockFormatType>();
+            audioBlockFormat = new ArrayList<>();
         }
         return this.audioBlockFormat;
     }

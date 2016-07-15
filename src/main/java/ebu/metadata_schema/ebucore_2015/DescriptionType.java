@@ -113,7 +113,7 @@ public class DescriptionType {
     /**
      *  The EBU core metadata set is built as a refinement of the Dublin
      * 						Core. Free text to provide a description of the resource. The description
-     * 						can be repeated in different languages as specified by the entityType’s lang
+     * 						can be repeated in different languages as specified by the entityTypeï¿½s lang
      * 						attribute. The type of description is defined in the type group of
      * 						attributes.Gets the value of the description property.
      * 
@@ -138,7 +138,7 @@ public class DescriptionType {
      */
     public List<ElementType> getDescription() {
         if (description == null) {
-            description = new ArrayList<ElementType>();
+            description = new ArrayList<>();
         }
         return this.description;
     }

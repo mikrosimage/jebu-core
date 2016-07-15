@@ -61,7 +61,7 @@ public class MatrixType {
      */
     public List<CoefficientType> getCoefficient() {
         if (coefficient == null) {
-            coefficient = new ArrayList<CoefficientType>();
+            coefficient = new ArrayList<>();
         }
         return this.coefficient;
     }

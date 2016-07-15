@@ -86,7 +86,7 @@ public class AddressType {
      */
     public List<ElementType> getAddressLine() {
         if (addressLine == null) {
-            addressLine = new ArrayList<ElementType>();
+            addressLine = new ArrayList<>();
         }
         return this.addressLine;
     }
@@ -163,7 +163,7 @@ public class AddressType {
      */
     public List<java.lang.String> getAddressDeliveryCode() {
         if (addressDeliveryCode == null) {
-            addressDeliveryCode = new ArrayList<java.lang.String>();
+            addressDeliveryCode = new ArrayList<>();
         }
         return this.addressDeliveryCode;
     }

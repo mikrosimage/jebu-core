@@ -121,7 +121,7 @@ public class TypeType {
      */
     public List<ElementType> getType() {
         if (type == null) {
-            type = new ArrayList<ElementType>();
+            type = new ArrayList<>();
         }
         return this.type;
     }
@@ -150,7 +150,7 @@ public class TypeType {
      */
     public List<TypeType.Genre> getGenre() {
         if (genre == null) {
-            genre = new ArrayList<TypeType.Genre>();
+            genre = new ArrayList<>();
         }
         return this.genre;
     }
@@ -179,7 +179,7 @@ public class TypeType {
      */
     public List<TypeType.ObjectType> getObjectType() {
         if (objectType == null) {
-            objectType = new ArrayList<TypeType.ObjectType>();
+            objectType = new ArrayList<>();
         }
         return this.objectType;
     }
@@ -208,7 +208,7 @@ public class TypeType {
      */
     public List<AudienceType> getTargetAudience() {
         if (targetAudience == null) {
-            targetAudience = new ArrayList<AudienceType>();
+            targetAudience = new ArrayList<>();
         }
         return this.targetAudience;
     }
@@ -237,7 +237,7 @@ public class TypeType {
      */
     public List<AudienceType> getAudienceLevel() {
         if (audienceLevel == null) {
-            audienceLevel = new ArrayList<AudienceType>();
+            audienceLevel = new ArrayList<>();
         }
         return this.audienceLevel;
     }

@@ -3,15 +3,17 @@
  */
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import ebu.metadata_schema.ebucore_2014.AudioObjectType;
-import ebu.metadata_schema.ebucore_2014.AudioPackFormatType;
-import ebu.metadata_schema.ebucore_2014.ObjectFactory;
+import ebu.metadata_schema.ebucore_2015.AudioObjectType;
+import ebu.metadata_schema.ebucore_2015.AudioPackFormatType;
+import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
  * @author gma
  *
  */
 public final class AudioPackFormatTypeHelper {
+	
+	private static final String AUDIO_PACK_PREFIX = "AP";
 
 	private AudioPackFormatTypeHelper() {}
 	
@@ -22,7 +24,7 @@ public final class AudioPackFormatTypeHelper {
 	 * @return program index
 	 */
 	public static final int getAudioPackFormatIndexFromId(String audioPackId) {
-		return AudioProgrammeTypeHelper.getIndexFromId(AudioPackFormatType.PREFIX+"0001", audioPackId);
+		return AudioProgrammeTypeHelper.getIndexFromId(AUDIO_PACK_PREFIX+"0001", audioPackId);
 	}
 
 	/**
@@ -31,7 +33,7 @@ public final class AudioPackFormatTypeHelper {
 	 * @return audio pack id
 	 */
 	public static final String getAudioPackFormatIdFromIndex(int audioPackIndex) {
-		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AudioPackFormatType.PREFIX+"0001", audioPackIndex, 4);
+		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AUDIO_PACK_PREFIX+"0001", audioPackIndex, 4);
 	}
 
 	/**

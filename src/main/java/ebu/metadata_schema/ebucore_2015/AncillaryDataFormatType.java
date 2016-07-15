@@ -136,7 +136,7 @@ public class AncillaryDataFormatType {
      */
     public List<BigInteger> getLineNumber() {
         if (lineNumber == null) {
-            lineNumber = new ArrayList<BigInteger>();
+            lineNumber = new ArrayList<>();
         }
         return this.lineNumber;
     }

@@ -94,7 +94,7 @@ public class DetailsType {
      */
     public List<java.lang.String> getEmailAddress() {
         if (emailAddress == null) {
-            emailAddress = new ArrayList<java.lang.String>();
+            emailAddress = new ArrayList<>();
         }
         return this.emailAddress;
     }

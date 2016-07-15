@@ -133,7 +133,7 @@ public class AudioBlockFormatType {
      */
     public List<JAXBElement<?>> getSpeakerLabelAndPositionAndMatrix() {
         if (speakerLabelAndPositionAndMatrix == null) {
-            speakerLabelAndPositionAndMatrix = new ArrayList<JAXBElement<?>>();
+            speakerLabelAndPositionAndMatrix = new ArrayList<>();
         }
         return this.speakerLabelAndPositionAndMatrix;
     }

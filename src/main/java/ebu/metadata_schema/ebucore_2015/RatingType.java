@@ -136,7 +136,7 @@ public class RatingType {
      */
     public List<ElementType> getRatingValue() {
         if (ratingValue == null) {
-            ratingValue = new ArrayList<ElementType>();
+            ratingValue = new ArrayList<>();
         }
         return this.ratingValue;
     }
@@ -165,7 +165,7 @@ public class RatingType {
      */
     public List<java.lang.String> getRatingLink() {
         if (ratingLink == null) {
-            ratingLink = new ArrayList<java.lang.String>();
+            ratingLink = new ArrayList<>();
         }
         return this.ratingLink;
     }
@@ -194,7 +194,7 @@ public class RatingType {
      */
     public List<ElementType> getRatingScaleMaxValue() {
         if (ratingScaleMaxValue == null) {
-            ratingScaleMaxValue = new ArrayList<ElementType>();
+            ratingScaleMaxValue = new ArrayList<>();
         }
         return this.ratingScaleMaxValue;
     }
@@ -223,7 +223,7 @@ public class RatingType {
      */
     public List<ElementType> getRatingScaleMinValue() {
         if (ratingScaleMinValue == null) {
-            ratingScaleMinValue = new ArrayList<ElementType>();
+            ratingScaleMinValue = new ArrayList<>();
         }
         return this.ratingScaleMinValue;
     }
@@ -276,7 +276,7 @@ public class RatingType {
      */
     public List<RegionType> getRatingRegion() {
         if (ratingRegion == null) {
-            ratingRegion = new ArrayList<RegionType>();
+            ratingRegion = new ArrayList<>();
         }
         return this.ratingRegion;
     }
@@ -305,7 +305,7 @@ public class RatingType {
      */
     public List<RegionType> getRatingExclusionRegion() {
         if (ratingExclusionRegion == null) {
-            ratingExclusionRegion = new ArrayList<RegionType>();
+            ratingExclusionRegion = new ArrayList<>();
         }
         return this.ratingExclusionRegion;
     }

@@ -72,7 +72,7 @@ public class AudioObjectInteractionType {
      */
     public List<GainInteractionRangeType> getGainInteractionRange() {
         if (gainInteractionRange == null) {
-            gainInteractionRange = new ArrayList<GainInteractionRangeType>();
+            gainInteractionRange = new ArrayList<>();
         }
         return this.gainInteractionRange;
     }
@@ -101,7 +101,7 @@ public class AudioObjectInteractionType {
      */
     public List<PositionInteractionRangeType> getPositionInteractionRange() {
         if (positionInteractionRange == null) {
-            positionInteractionRange = new ArrayList<PositionInteractionRangeType>();
+            positionInteractionRange = new ArrayList<>();
         }
         return this.positionInteractionRange;
     }

@@ -67,7 +67,7 @@ public class PublicationHistoryType {
      */
     public List<PublicationEventType> getPublicationEvent() {
         if (publicationEvent == null) {
-            publicationEvent = new ArrayList<PublicationEventType>();
+            publicationEvent = new ArrayList<>();
         }
         return this.publicationEvent;
     }

@@ -109,7 +109,7 @@ public class RegionType {
      */
     public List<RegionType.CountryRegion> getCountryRegion() {
         if (countryRegion == null) {
-            countryRegion = new ArrayList<RegionType.CountryRegion>();
+            countryRegion = new ArrayList<>();
         }
         return this.countryRegion;
     }

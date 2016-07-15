@@ -1,8 +1,9 @@
 # jebu-core
 EBUCore XML Schema Java port.
 
-Java port of [TECH 3293](https://tech.ebu.ch/publications/tech3293) EBU CORE METADATA SET (EBUCore) SPECIFICATION v. 1.5, including new [Audio Definition Model](https://tech.ebu.ch/docs/tech/tech3364.pdf)
+Java port of [TECH 3293](https://tech.ebu.ch/publications/tech3294) EBU CORE METADATA SET (EBUCore) SPECIFICATION v. 1.6, including new [Audio Definition Model](https://tech.ebu.ch/docs/tech/tech3364.pdf)
 
+[R-REC-BS.2094-0](https://www.itu.int/rec/R-REC-BS.2094-0-201604-I/en) Common definitions for the audio definition mode
 
 ##How to use
 

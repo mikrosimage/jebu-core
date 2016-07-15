@@ -263,7 +263,7 @@ public class PublicationEventType {
      */
     public List<RegionType> getPublicationRegion() {
         if (publicationRegion == null) {
-            publicationRegion = new ArrayList<RegionType>();
+            publicationRegion = new ArrayList<>();
         }
         return this.publicationRegion;
     }

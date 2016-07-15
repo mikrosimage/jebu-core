@@ -103,7 +103,7 @@ public class AwardType {
      */
     public List<ElementType> getName() {
         if (name == null) {
-            name = new ArrayList<ElementType>();
+            name = new ArrayList<>();
         }
         return this.name;
     }
@@ -132,7 +132,7 @@ public class AwardType {
      */
     public List<ElementType> getDescription() {
         if (description == null) {
-            description = new ArrayList<ElementType>();
+            description = new ArrayList<>();
         }
         return this.description;
     }
@@ -161,7 +161,7 @@ public class AwardType {
      */
     public List<AwardType.Category> getCategory() {
         if (category == null) {
-            category = new ArrayList<AwardType.Category>();
+            category = new ArrayList<>();
         }
         return this.category;
     }
@@ -190,7 +190,7 @@ public class AwardType {
      */
     public List<ElementType> getCeremony() {
         if (ceremony == null) {
-            ceremony = new ArrayList<ElementType>();
+            ceremony = new ArrayList<>();
         }
         return this.ceremony;
     }
@@ -219,7 +219,7 @@ public class AwardType {
      */
     public List<EntityType> getOfficial() {
         if (official == null) {
-            official = new ArrayList<EntityType>();
+            official = new ArrayList<>();
         }
         return this.official;
     }
@@ -248,7 +248,7 @@ public class AwardType {
      */
     public List<AwardType.Date> getDate() {
         if (date == null) {
-            date = new ArrayList<AwardType.Date>();
+            date = new ArrayList<>();
         }
         return this.date;
     }

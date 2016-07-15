@@ -18,8 +18,8 @@ import org.purl.dc.elements._1.ElementType;
 
 /**
  *  The name given to a resource e.g. a media item, media object, sequence.
- * 				For a series – use the series title; for a programme – a programme title; for an
- * 				item – an item title. etc. Titles are recorded as they appear.
+ * 				For a series ï¿½ use the series title; for a programme ï¿½ a programme title; for an
+ * 				item ï¿½ an item title. etc. Titles are recorded as they appear.
  * 
  * <p>Java class for titleType complex type.
  * 
@@ -102,8 +102,8 @@ public class TitleType {
      *  The EBU core metadata set is built as a refinement of the Dublin
      * 						Core. Free-text to provide the main title by which the resource is known.
      * 						The title can be provided in different languages. The language in which the
-     * 						title is provided can be provided using elementType’s lang attribute.
-     * 						Example: ‘the fifth element’ Gets the value of the title property.
+     * 						title is provided can be provided using elementTypeï¿½s lang attribute.
+     * 						Example: ï¿½the fifth elementï¿½ Gets the value of the title property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
@@ -126,7 +126,7 @@ public class TitleType {
      */
     public List<ElementType> getTitle() {
         if (title == null) {
-            title = new ArrayList<ElementType>();
+            title = new ArrayList<>();
         }
         return this.title;
     }

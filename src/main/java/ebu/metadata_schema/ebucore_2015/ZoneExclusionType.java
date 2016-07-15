@@ -61,7 +61,7 @@ public class ZoneExclusionType {
      */
     public List<ZoneType> getZone() {
         if (zone == null) {
-            zone = new ArrayList<ZoneType>();
+            zone = new ArrayList<>();
         }
         return this.zone;
     }

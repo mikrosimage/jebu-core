@@ -125,7 +125,7 @@ public class OrganisationDetailsType {
      */
     public List<CompoundNameType> getOrganisationName() {
         if (organisationName == null) {
-            organisationName = new ArrayList<CompoundNameType>();
+            organisationName = new ArrayList<>();
         }
         return this.organisationName;
     }
@@ -154,7 +154,7 @@ public class OrganisationDetailsType {
      */
     public List<IdentifierType> getOrganisationCode() {
         if (organisationCode == null) {
-            organisationCode = new ArrayList<IdentifierType>();
+            organisationCode = new ArrayList<>();
         }
         return this.organisationCode;
     }
@@ -183,7 +183,7 @@ public class OrganisationDetailsType {
      */
     public List<ElementType> getOrganisationDescription() {
         if (organisationDescription == null) {
-            organisationDescription = new ArrayList<ElementType>();
+            organisationDescription = new ArrayList<>();
         }
         return this.organisationDescription;
     }
@@ -260,7 +260,7 @@ public class OrganisationDetailsType {
      */
     public List<DetailsType> getDetails() {
         if (details == null) {
-            details = new ArrayList<DetailsType>();
+            details = new ArrayList<>();
         }
         return this.details;
     }
@@ -289,7 +289,7 @@ public class OrganisationDetailsType {
      */
     public List<OrganisationDetailsType.RelatedInformationLink> getRelatedInformationLink() {
         if (relatedInformationLink == null) {
-            relatedInformationLink = new ArrayList<OrganisationDetailsType.RelatedInformationLink>();
+            relatedInformationLink = new ArrayList<>();
         }
         return this.relatedInformationLink;
     }
@@ -318,7 +318,7 @@ public class OrganisationDetailsType {
      */
     public List<EntityType> getContacts() {
         if (contacts == null) {
-            contacts = new ArrayList<EntityType>();
+            contacts = new ArrayList<>();
         }
         return this.contacts;
     }

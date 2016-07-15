@@ -59,7 +59,7 @@ public class SpatialType {
      */
     public List<LocationType> getLocation() {
         if (location == null) {
-            location = new ArrayList<LocationType>();
+            location = new ArrayList<>();
         }
         return this.location;
     }

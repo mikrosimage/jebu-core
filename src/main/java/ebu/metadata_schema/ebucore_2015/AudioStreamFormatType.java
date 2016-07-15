@@ -100,7 +100,7 @@ public class AudioStreamFormatType {
      */
     public List<JAXBElement<Object>> getAudioChannelFormatIDRef() {
         if (audioChannelFormatIDRef == null) {
-            audioChannelFormatIDRef = new ArrayList<JAXBElement<Object>>();
+            audioChannelFormatIDRef = new ArrayList<>();
         }
         return this.audioChannelFormatIDRef;
     }
@@ -129,7 +129,7 @@ public class AudioStreamFormatType {
      */
     public List<JAXBElement<Object>> getAudioPackFormatIDRef() {
         if (audioPackFormatIDRef == null) {
-            audioPackFormatIDRef = new ArrayList<JAXBElement<Object>>();
+            audioPackFormatIDRef = new ArrayList<>();
         }
         return this.audioPackFormatIDRef;
     }
@@ -158,7 +158,7 @@ public class AudioStreamFormatType {
      */
     public List<JAXBElement<Object>> getAudioTrackFormatIDRef() {
         if (audioTrackFormatIDRef == null) {
-            audioTrackFormatIDRef = new ArrayList<JAXBElement<Object>>();
+            audioTrackFormatIDRef = new ArrayList<>();
         }
         return this.audioTrackFormatIDRef;
     }

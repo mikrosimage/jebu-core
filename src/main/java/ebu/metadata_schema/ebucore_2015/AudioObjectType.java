@@ -109,7 +109,7 @@ public class AudioObjectType {
      */
     public List<JAXBElement<Object>> getAudioPackFormatIDRef() {
         if (audioPackFormatIDRef == null) {
-            audioPackFormatIDRef = new ArrayList<JAXBElement<Object>>();
+            audioPackFormatIDRef = new ArrayList<>();
         }
         return this.audioPackFormatIDRef;
     }
@@ -138,7 +138,7 @@ public class AudioObjectType {
      */
     public List<JAXBElement<Object>> getAudioObjectIDRef() {
         if (audioObjectIDRef == null) {
-            audioObjectIDRef = new ArrayList<JAXBElement<Object>>();
+            audioObjectIDRef = new ArrayList<>();
         }
         return this.audioObjectIDRef;
     }
@@ -167,7 +167,7 @@ public class AudioObjectType {
      */
     public List<JAXBElement<Object>> getAudioComplementaryObjectIDRef() {
         if (audioComplementaryObjectIDRef == null) {
-            audioComplementaryObjectIDRef = new ArrayList<JAXBElement<Object>>();
+            audioComplementaryObjectIDRef = new ArrayList<>();
         }
         return this.audioComplementaryObjectIDRef;
     }
@@ -196,7 +196,7 @@ public class AudioObjectType {
      */
     public List<JAXBElement<Object>> getAudioTrackUIDRef() {
         if (audioTrackUIDRef == null) {
-            audioTrackUIDRef = new ArrayList<JAXBElement<Object>>();
+            audioTrackUIDRef = new ArrayList<>();
         }
         return this.audioTrackUIDRef;
     }
@@ -225,7 +225,7 @@ public class AudioObjectType {
      */
     public List<AudioObjectInteractionType> getAudioObjectInteraction() {
         if (audioObjectInteraction == null) {
-            audioObjectInteraction = new ArrayList<AudioObjectInteractionType>();
+            audioObjectInteraction = new ArrayList<>();
         }
         return this.audioObjectInteraction;
     }
