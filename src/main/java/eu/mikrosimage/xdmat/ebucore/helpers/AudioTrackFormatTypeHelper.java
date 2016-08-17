@@ -1,7 +1,5 @@
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import ebu.metadata_schema.ebucore_2014.AudioTrackFormatType;
-
 /**
  * 
  * @author Guillaume Maucomble <gma@mikrosimage.eu>
@@ -9,6 +7,8 @@ import ebu.metadata_schema.ebucore_2014.AudioTrackFormatType;
  * @since 1.0.10
  */
 public class AudioTrackFormatTypeHelper {
+	
+	private static final String AUDIO_TRACK_PREFIX = "AT";
 
 	private AudioTrackFormatTypeHelper(){}
 	
@@ -18,7 +18,7 @@ public class AudioTrackFormatTypeHelper {
 	 * @return program index
 	 */
 	public static final int getAudioTrackFormatIndexFromId(String audioTrackId) {
-		return AudioProgrammeTypeHelper.getIndexFromId(AudioTrackFormatType.PREFIX+"0001", audioTrackId);
+		return AudioProgrammeTypeHelper.getIndexFromId(AUDIO_TRACK_PREFIX+"0001", audioTrackId);
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class AudioTrackFormatTypeHelper {
 	 * @return audio pack id
 	 */
 	public static final String getAudioTrackFormatIdFromIndex(int audioTrackIndex) {
-		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AudioTrackFormatType.PREFIX+"0001", audioTrackIndex, 4);
+		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AUDIO_TRACK_PREFIX+"0001", audioTrackIndex, 4);
 	}
 	
 }

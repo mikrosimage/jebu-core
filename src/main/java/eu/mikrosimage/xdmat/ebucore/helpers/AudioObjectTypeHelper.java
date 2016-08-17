@@ -3,15 +3,17 @@
  */
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import ebu.metadata_schema.ebucore_2014.AudioObjectType;
-import ebu.metadata_schema.ebucore_2014.AudioProgrammeType;
-import ebu.metadata_schema.ebucore_2014.ObjectFactory;
+import ebu.metadata_schema.ebucore_2015.AudioObjectType;
+import ebu.metadata_schema.ebucore_2015.AudioProgrammeType;
+import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
  * @author gma
  *
  */
 public final class AudioObjectTypeHelper {
+	
+	private static final String AUDIO_OBJECT_PREFIX = "AO";
 
 	private AudioObjectTypeHelper() {}
 	
@@ -22,7 +24,7 @@ public final class AudioObjectTypeHelper {
 	 * @return program index
 	 */
 	public static final int getAudioObjectIndexFromId(String programId) {
-		return AudioProgrammeTypeHelper.getIndexFromId(AudioObjectType.PREFIX+"1", programId);
+		return AudioProgrammeTypeHelper.getIndexFromId(AUDIO_OBJECT_PREFIX+"1", programId);
 	}
 	
 	/**
@@ -31,7 +33,7 @@ public final class AudioObjectTypeHelper {
 	 * @return program id
 	 */
 	public static final String getAudioObjectIdFromIndex(int programIndex) {
-		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AudioObjectType.PREFIX+"1", programIndex);
+		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AUDIO_OBJECT_PREFIX+"1", programIndex);
 	}
 	
 	/**

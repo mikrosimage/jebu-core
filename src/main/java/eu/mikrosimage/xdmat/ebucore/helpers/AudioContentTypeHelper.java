@@ -5,14 +5,16 @@ package eu.mikrosimage.xdmat.ebucore.helpers;
 
 import com.google.common.base.Preconditions;
 
-import ebu.metadata_schema.ebucore_2014.AudioContentType;
-import ebu.metadata_schema.ebucore_2014.ObjectFactory;
+import ebu.metadata_schema.ebucore_2015.AudioContentType;
+import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
  * @author gma
  *
  */
 public final class AudioContentTypeHelper {
+	
+	private static final String AUDIO_CONTENT_PREFIX = "ACO";
 
 	private AudioContentTypeHelper() {}
 
@@ -22,7 +24,7 @@ public final class AudioContentTypeHelper {
 	 * @return program index
 	 */
 	public static final int getAudioContentIndexFromId(String programId) {
-		return AudioProgrammeTypeHelper.getIndexFromId(AudioContentType.PREFIX+"1", programId);
+		return AudioProgrammeTypeHelper.getIndexFromId(AUDIO_CONTENT_PREFIX+"1", programId);
 	}
 
 	/**
@@ -31,7 +33,7 @@ public final class AudioContentTypeHelper {
 	 * @return program id
 	 */
 	public static final String getAudioContentIdFromIndex(int programIndex) {
-		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AudioContentType.PREFIX+"1", programIndex);
+		return AudioProgrammeTypeHelper.getPrefixedAudioIdFromIndex(AUDIO_CONTENT_PREFIX+"1", programIndex);
 	}
 
 	/**

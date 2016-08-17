@@ -1,14 +1,15 @@
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 
-import ebu.metadata_schema.ebucore_2014.AudioTrackFormatType;
-import ebu.metadata_schema.ebucore_2014.AudioTrackUIDType;
-import ebu.metadata_schema.ebucore_2014.ObjectFactory;
+import ebu.metadata_schema.ebucore_2015.AudioTrackUIDType;
+import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
  * Provides Helpers for creating and reversing uids of {@link AudioTrackUIDType}.
@@ -17,6 +18,8 @@ import ebu.metadata_schema.ebucore_2014.ObjectFactory;
  *
  */
 public final class AudioTrackUIDTypeHelper {
+	
+	private static final String AUDIO_TRACK_UID_PREFIX = "ATU";
 
 	private AudioTrackUIDTypeHelper() {}
 	
@@ -34,7 +37,7 @@ public final class AudioTrackUIDTypeHelper {
 	public static final String getAudioTrackUID(int value) {
 		Preconditions.checkNotNull(value);
 		Preconditions.checkArgument(value>0);
-		return AudioTrackUIDType.PREFIX+Strings.padStart(Integer.toHexString(value), 8, '0');
+		return AUDIO_TRACK_UID_PREFIX+Strings.padStart(Integer.toHexString(value), 8, '0');
 	}
 
 	/**
@@ -53,8 +56,9 @@ public final class AudioTrackUIDTypeHelper {
 	public static final int getAudioTrackIndexFromUid(String uid) 
 			throws NullPointerException, NumberFormatException, IllegalArgumentException {
 		Preconditions.checkNotNull(uid);
-		Preconditions.checkArgument(uid.startsWith(AudioTrackUIDType.PREFIX), "AudioTrackUID must start with " + AudioTrackUIDType.PREFIX + " : " + uid);
-		String hex = uid.substring(AudioTrackFormatType.PREFIX.length()+1);
+		Preconditions.checkArgument(uid.startsWith(AUDIO_TRACK_UID_PREFIX), 
+				"AudioTrackUID must start with " + AUDIO_TRACK_UID_PREFIX + " : " + uid);
+		String hex = uid.substring(AUDIO_TRACK_UID_PREFIX.length()+1);
 		return Integer.parseInt(hex, 16);  
 	}
 	
@@ -71,13 +75,23 @@ public final class AudioTrackUIDTypeHelper {
 		Preconditions.checkArgument(from <= to);
 		Preconditions.checkArgument(from > 0);
 		final ObjectFactory objectFactory = new ObjectFactory();
-		final Set<AudioTrackUIDType> collection = new HashSet<AudioTrackUIDType>();
+		final Set<AudioTrackUIDType> collection = new TreeSet<>((a, b) ->
+			getAudioTrackIndexFromUid(a.getUID()) - getAudioTrackIndexFromUid(b.getUID()));
 		for(int i = from; i <= to ; ++i) {
 			final AudioTrackUIDType audioTrackUIDType = objectFactory.createAudioTrackUIDType();
 			audioTrackUIDType.setUID(AudioTrackUIDTypeHelper.getAudioTrackUID(i));
 			collection.add(audioTrackUIDType);
 		}
 		return collection;
+	}
+	
+	/**
+	 * @see #getAudioTrackUIDList(int, int)
+	 */
+	public static final List<String> getAudioTrackUIDListAsString(int from, int to) {
+		return getAudioTrackUIDList(from, to).stream()
+				.map(AudioTrackUIDType::getUID)
+				.collect(Collectors.toList());
 	}
 
 }
