@@ -1,8 +1,10 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -13,13 +15,15 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
+
 
 /**
  *  To describe awards, decorations and prizes. 
  * 
- * <p>Java class for awardType complex type.
+ * <p>Classe Java pour awardType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="awardType">
@@ -59,39 +63,47 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "awardType", propOrder = {
-    "name",
-    "description",
-    "category",
-    "ceremony",
-    "official",
-    "date"
+    "names",
+    "descriptions",
+    "categories",
+    "ceremonies",
+    "officials",
+    "dates"
 })
-public class AwardType {
+public class AwardType
+    implements Serializable
+{
 
-    @XmlElement(required = true)
-    protected List<ElementType> name;
-    protected List<ElementType> description;
-    protected List<AwardType.Category> category;
-    protected List<ElementType> ceremony;
-    protected List<EntityType> official;
-    protected List<AwardType.Date> date;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "name", required = true)
+    protected List<ElementType> names;
+    @XmlElement(name = "description")
+    protected List<ElementType> descriptions;
+    @XmlElement(name = "category")
+    protected List<AwardType.Category> categories;
+    @XmlElement(name = "ceremony")
+    protected List<ElementType> ceremonies;
+    @XmlElement(name = "official")
+    protected List<EntityType> officials;
+    @XmlElement(name = "date")
+    protected List<AwardType.Date> dates;
     @XmlAttribute(name = "awardId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String awardId;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the names property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
+     * This is why there is not a <CODE>set</CODE> method for the names property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getName().add(newItem);
+     *    getNames().add(newItem);
      * </pre>
      * 
      * 
@@ -101,26 +113,26 @@ public class AwardType {
      * 
      * 
      */
-    public List<ElementType> getName() {
-        if (name == null) {
-            name = new ArrayList<>();
+    public List<ElementType> getNames() {
+        if (names == null) {
+            names = new ArrayList<>();
         }
-        return this.name;
+        return this.names;
     }
 
     /**
-     * Gets the value of the description property.
+     * Gets the value of the descriptions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
+     * This is why there is not a <CODE>set</CODE> method for the descriptions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDescription().add(newItem);
+     *    getDescriptions().add(newItem);
      * </pre>
      * 
      * 
@@ -130,26 +142,26 @@ public class AwardType {
      * 
      * 
      */
-    public List<ElementType> getDescription() {
-        if (description == null) {
-            description = new ArrayList<>();
+    public List<ElementType> getDescriptions() {
+        if (descriptions == null) {
+            descriptions = new ArrayList<>();
         }
-        return this.description;
+        return this.descriptions;
     }
 
     /**
-     * Gets the value of the category property.
+     * Gets the value of the categories property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the category property.
+     * This is why there is not a <CODE>set</CODE> method for the categories property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCategory().add(newItem);
+     *    getCategories().add(newItem);
      * </pre>
      * 
      * 
@@ -159,26 +171,26 @@ public class AwardType {
      * 
      * 
      */
-    public List<AwardType.Category> getCategory() {
-        if (category == null) {
-            category = new ArrayList<>();
+    public List<AwardType.Category> getCategories() {
+        if (categories == null) {
+            categories = new ArrayList<>();
         }
-        return this.category;
+        return this.categories;
     }
 
     /**
-     * Gets the value of the ceremony property.
+     * Gets the value of the ceremonies property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ceremony property.
+     * This is why there is not a <CODE>set</CODE> method for the ceremonies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCeremony().add(newItem);
+     *    getCeremonies().add(newItem);
      * </pre>
      * 
      * 
@@ -188,26 +200,26 @@ public class AwardType {
      * 
      * 
      */
-    public List<ElementType> getCeremony() {
-        if (ceremony == null) {
-            ceremony = new ArrayList<>();
+    public List<ElementType> getCeremonies() {
+        if (ceremonies == null) {
+            ceremonies = new ArrayList<>();
         }
-        return this.ceremony;
+        return this.ceremonies;
     }
 
     /**
-     * Gets the value of the official property.
+     * Gets the value of the officials property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the official property.
+     * This is why there is not a <CODE>set</CODE> method for the officials property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOfficial().add(newItem);
+     *    getOfficials().add(newItem);
      * </pre>
      * 
      * 
@@ -217,26 +229,26 @@ public class AwardType {
      * 
      * 
      */
-    public List<EntityType> getOfficial() {
-        if (official == null) {
-            official = new ArrayList<>();
+    public List<EntityType> getOfficials() {
+        if (officials == null) {
+            officials = new ArrayList<>();
         }
-        return this.official;
+        return this.officials;
     }
 
     /**
-     * Gets the value of the date property.
+     * Gets the value of the dates property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the date property.
+     * This is why there is not a <CODE>set</CODE> method for the dates property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDate().add(newItem);
+     *    getDates().add(newItem);
      * </pre>
      * 
      * 
@@ -246,15 +258,15 @@ public class AwardType {
      * 
      * 
      */
-    public List<AwardType.Date> getDate() {
-        if (date == null) {
-            date = new ArrayList<>();
+    public List<AwardType.Date> getDates() {
+        if (dates == null) {
+            dates = new ArrayList<>();
         }
-        return this.date;
+        return this.dates;
     }
 
     /**
-     * Gets the value of the awardId property.
+     * Obtient la valeur de la propriété awardId.
      * 
      * @return
      *     possible object is
@@ -266,7 +278,7 @@ public class AwardType {
     }
 
     /**
-     * Sets the value of the awardId property.
+     * Définit la valeur de la propriété awardId.
      * 
      * @param value
      *     allowed object is
@@ -279,9 +291,9 @@ public class AwardType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -297,8 +309,11 @@ public class AwardType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Category {
+    public static class Category
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -316,7 +331,7 @@ public class AwardType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -328,7 +343,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -340,7 +355,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -352,7 +367,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -364,7 +379,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -376,7 +391,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -388,7 +403,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -400,7 +415,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -412,7 +427,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -424,7 +439,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -436,7 +451,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -448,7 +463,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -463,9 +478,9 @@ public class AwardType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -481,14 +496,18 @@ public class AwardType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Date {
+    public static class Date
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected java.util.Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -496,8 +515,9 @@ public class AwardType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected java.util.Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -505,7 +525,7 @@ public class AwardType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -517,7 +537,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -529,31 +549,31 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public java.util.Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(java.util.Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -565,7 +585,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -577,7 +597,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -589,7 +609,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -601,31 +621,31 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public java.util.Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(java.util.Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -637,7 +657,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -649,7 +669,7 @@ public class AwardType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -661,7 +681,7 @@ public class AwardType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is

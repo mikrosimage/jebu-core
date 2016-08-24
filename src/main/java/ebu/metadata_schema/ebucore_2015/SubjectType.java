@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -24,9 +25,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 				below. Persons as subjects are also placed here. Genre of the content is placed
  * 				under element Type. 
  * 
- * <p>Java class for subjectType complex type.
+ * <p>Classe Java pour subjectType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="subjectType">
@@ -49,18 +50,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "subjectType", propOrder = {
-    "subject",
+    "subjects",
     "subjectCode",
-    "subjectDefinition",
+    "subjectDefinitions",
     "attributor"
 })
-public class SubjectType {
+public class SubjectType
+    implements Serializable
+{
 
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
-    protected List<org.purl.dc.elements._1.ElementType> subject;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "subject", namespace = "http://purl.org/dc/elements/1.1/")
+    protected List<org.purl.dc.elements._1.ElementType> subjects;
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String subjectCode;
-    protected List<ebu.metadata_schema.ebucore_2015.ElementType> subjectDefinition;
+    @XmlElement(name = "subjectDefinition")
+    protected List<ebu.metadata_schema.ebucore_2015.ElementType> subjectDefinitions;
     protected EntityType attributor;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
@@ -81,18 +86,18 @@ public class SubjectType {
     protected java.lang.String typeLanguage;
 
     /**
-     * To express the subject in the form of free text. Gets the value of the subject property.
+     * To express the subject in the form of free text. Gets the value of the subjects property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subject property.
+     * This is why there is not a <CODE>set</CODE> method for the subjects property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubject().add(newItem);
+     *    getSubjects().add(newItem);
      * </pre>
      * 
      * 
@@ -102,15 +107,15 @@ public class SubjectType {
      * 
      * 
      */
-    public List<org.purl.dc.elements._1.ElementType> getSubject() {
-        if (subject == null) {
-            subject = new ArrayList<>();
+    public List<org.purl.dc.elements._1.ElementType> getSubjects() {
+        if (subjects == null) {
+            subjects = new ArrayList<>();
         }
-        return this.subject;
+        return this.subjects;
     }
 
     /**
-     * Gets the value of the subjectCode property.
+     * Obtient la valeur de la propriété subjectCode.
      * 
      * @return
      *     possible object is
@@ -122,7 +127,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the subjectCode property.
+     * Définit la valeur de la propriété subjectCode.
      * 
      * @param value
      *     allowed object is
@@ -134,18 +139,18 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the subjectDefinition property.
+     * Gets the value of the subjectDefinitions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subjectDefinition property.
+     * This is why there is not a <CODE>set</CODE> method for the subjectDefinitions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubjectDefinition().add(newItem);
+     *    getSubjectDefinitions().add(newItem);
      * </pre>
      * 
      * 
@@ -155,15 +160,15 @@ public class SubjectType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.ElementType> getSubjectDefinition() {
-        if (subjectDefinition == null) {
-            subjectDefinition = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.ElementType> getSubjectDefinitions() {
+        if (subjectDefinitions == null) {
+            subjectDefinitions = new ArrayList<>();
         }
-        return this.subjectDefinition;
+        return this.subjectDefinitions;
     }
 
     /**
-     * Gets the value of the attributor property.
+     * Obtient la valeur de la propriété attributor.
      * 
      * @return
      *     possible object is
@@ -175,7 +180,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the attributor property.
+     * Définit la valeur de la propriété attributor.
      * 
      * @param value
      *     allowed object is
@@ -187,7 +192,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -199,7 +204,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -211,7 +216,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -223,7 +228,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -235,7 +240,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -247,7 +252,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -259,7 +264,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -271,7 +276,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -283,7 +288,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -295,7 +300,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -307,7 +312,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -319,7 +324,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -331,7 +336,7 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -343,7 +348,7 @@ public class SubjectType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

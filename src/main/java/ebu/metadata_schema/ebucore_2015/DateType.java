@@ -1,7 +1,9 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -13,6 +15,7 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.purl.dc.elements._1.ElementType;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
@@ -20,9 +23,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				Typically, Date will be associated e.g. with the creation or availability of the
  * 				resource. 
  * 
- * <p>Java class for dateType complex type.
+ * <p>Classe Java pour dateType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="dateType">
@@ -108,7 +111,7 @@ import org.purl.dc.elements._1.ElementType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "dateType", propOrder = {
-    "date",
+    "dates",
     "created",
     "issued",
     "modified",
@@ -116,13 +119,16 @@ import org.purl.dc.elements._1.ElementType;
     "released",
     "copyrighted",
     "encoded",
-    "alternative",
+    "alternatives",
     "note"
 })
-public class DateType {
+public class DateType
+    implements Serializable
+{
 
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
-    protected List<ElementType> date;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "date", namespace = "http://purl.org/dc/elements/1.1/")
+    protected List<ElementType> dates;
     protected DateType.Created created;
     protected DateType.Issued issued;
     protected DateType.Modified modified;
@@ -130,7 +136,8 @@ public class DateType {
     protected DateType.Released released;
     protected DateType.Copyrighted copyrighted;
     protected DateType.Encoded encoded;
-    protected List<AlternativeDateType> alternative;
+    @XmlElement(name = "alternative")
+    protected List<AlternativeDateType> alternatives;
     protected java.lang.String note;
     @XmlAttribute(name = "precision")
     protected java.lang.String precision;
@@ -167,18 +174,18 @@ public class DateType {
 
     /**
      *  The EBU core metadata set is built as a refinement of the Dublin
-     * 						Core. Gets the value of the date property.
+     * 						Core. Gets the value of the dates property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the date property.
+     * This is why there is not a <CODE>set</CODE> method for the dates property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDate().add(newItem);
+     *    getDates().add(newItem);
      * </pre>
      * 
      * 
@@ -188,15 +195,15 @@ public class DateType {
      * 
      * 
      */
-    public List<ElementType> getDate() {
-        if (date == null) {
-            date = new ArrayList<>();
+    public List<ElementType> getDates() {
+        if (dates == null) {
+            dates = new ArrayList<>();
         }
-        return this.date;
+        return this.dates;
     }
 
     /**
-     * Gets the value of the created property.
+     * Obtient la valeur de la propriété created.
      * 
      * @return
      *     possible object is
@@ -208,7 +215,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the created property.
+     * Définit la valeur de la propriété created.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +227,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the issued property.
+     * Obtient la valeur de la propriété issued.
      * 
      * @return
      *     possible object is
@@ -232,7 +239,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the issued property.
+     * Définit la valeur de la propriété issued.
      * 
      * @param value
      *     allowed object is
@@ -244,7 +251,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the modified property.
+     * Obtient la valeur de la propriété modified.
      * 
      * @return
      *     possible object is
@@ -256,7 +263,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the modified property.
+     * Définit la valeur de la propriété modified.
      * 
      * @param value
      *     allowed object is
@@ -268,7 +275,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the digitised property.
+     * Obtient la valeur de la propriété digitised.
      * 
      * @return
      *     possible object is
@@ -280,7 +287,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the digitised property.
+     * Définit la valeur de la propriété digitised.
      * 
      * @param value
      *     allowed object is
@@ -292,7 +299,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the released property.
+     * Obtient la valeur de la propriété released.
      * 
      * @return
      *     possible object is
@@ -304,7 +311,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the released property.
+     * Définit la valeur de la propriété released.
      * 
      * @param value
      *     allowed object is
@@ -316,7 +323,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the copyrighted property.
+     * Obtient la valeur de la propriété copyrighted.
      * 
      * @return
      *     possible object is
@@ -328,7 +335,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the copyrighted property.
+     * Définit la valeur de la propriété copyrighted.
      * 
      * @param value
      *     allowed object is
@@ -340,7 +347,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the encoded property.
+     * Obtient la valeur de la propriété encoded.
      * 
      * @return
      *     possible object is
@@ -352,7 +359,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the encoded property.
+     * Définit la valeur de la propriété encoded.
      * 
      * @param value
      *     allowed object is
@@ -364,18 +371,18 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the alternative property.
+     * Gets the value of the alternatives property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the alternative property.
+     * This is why there is not a <CODE>set</CODE> method for the alternatives property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAlternative().add(newItem);
+     *    getAlternatives().add(newItem);
      * </pre>
      * 
      * 
@@ -385,15 +392,15 @@ public class DateType {
      * 
      * 
      */
-    public List<AlternativeDateType> getAlternative() {
-        if (alternative == null) {
-            alternative = new ArrayList<>();
+    public List<AlternativeDateType> getAlternatives() {
+        if (alternatives == null) {
+            alternatives = new ArrayList<>();
         }
-        return this.alternative;
+        return this.alternatives;
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -405,7 +412,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -417,7 +424,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the precision property.
+     * Obtient la valeur de la propriété precision.
      * 
      * @return
      *     possible object is
@@ -429,7 +436,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the precision property.
+     * Définit la valeur de la propriété precision.
      * 
      * @param value
      *     allowed object is
@@ -441,7 +448,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -453,7 +460,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -465,7 +472,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -477,7 +484,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -489,7 +496,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -501,7 +508,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -513,7 +520,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -525,7 +532,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -537,7 +544,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -549,7 +556,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -561,7 +568,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -573,7 +580,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -585,7 +592,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -597,7 +604,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -609,7 +616,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -621,7 +628,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -633,7 +640,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -645,7 +652,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -657,7 +664,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -669,7 +676,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -681,7 +688,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -693,7 +700,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -705,7 +712,7 @@ public class DateType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -717,7 +724,7 @@ public class DateType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is
@@ -730,9 +737,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -748,14 +755,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Copyrighted {
+    public static class Copyrighted
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -763,8 +774,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -772,7 +784,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -784,7 +796,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -796,31 +808,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -832,7 +844,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -844,7 +856,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -856,7 +868,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -868,31 +880,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -904,7 +916,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -916,7 +928,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -928,7 +940,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -943,9 +955,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -961,14 +973,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Created {
+    public static class Created
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -976,8 +992,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -985,7 +1002,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -997,7 +1014,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -1009,31 +1026,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -1045,7 +1062,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -1057,7 +1074,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -1069,7 +1086,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -1081,31 +1098,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -1117,7 +1134,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -1129,7 +1146,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -1141,7 +1158,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -1156,9 +1173,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1174,14 +1191,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Digitised {
+    public static class Digitised
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -1189,8 +1210,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -1198,7 +1220,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -1210,7 +1232,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -1222,31 +1244,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -1258,7 +1280,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -1270,7 +1292,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -1282,7 +1304,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -1294,31 +1316,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -1330,7 +1352,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -1342,7 +1364,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -1354,7 +1376,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -1369,9 +1391,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1387,14 +1409,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Encoded {
+    public static class Encoded
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -1402,8 +1428,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -1411,7 +1438,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -1423,7 +1450,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -1435,31 +1462,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -1471,7 +1498,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -1483,7 +1510,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -1495,7 +1522,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -1507,31 +1534,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -1543,7 +1570,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -1555,7 +1582,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -1567,7 +1594,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -1582,9 +1609,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1600,14 +1627,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Issued {
+    public static class Issued
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -1615,8 +1646,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -1624,7 +1656,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -1636,7 +1668,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -1648,31 +1680,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -1684,7 +1716,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -1696,7 +1728,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -1708,7 +1740,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -1720,31 +1752,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -1756,7 +1788,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -1768,7 +1800,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -1780,7 +1812,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -1795,9 +1827,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1813,14 +1845,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Modified {
+    public static class Modified
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -1828,8 +1864,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -1837,7 +1874,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -1849,7 +1886,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -1861,31 +1898,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -1897,7 +1934,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -1909,7 +1946,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -1921,7 +1958,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -1933,31 +1970,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -1969,7 +2006,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -1981,7 +2018,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -1993,7 +2030,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -2008,9 +2045,9 @@ public class DateType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -2026,14 +2063,18 @@ public class DateType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Released {
+    public static class Released
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -2041,8 +2082,9 @@ public class DateType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -2050,7 +2092,7 @@ public class DateType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -2062,7 +2104,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -2074,31 +2116,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -2110,7 +2152,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -2122,7 +2164,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -2134,7 +2176,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -2146,31 +2188,31 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -2182,7 +2224,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -2194,7 +2236,7 @@ public class DateType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -2206,7 +2248,7 @@ public class DateType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is

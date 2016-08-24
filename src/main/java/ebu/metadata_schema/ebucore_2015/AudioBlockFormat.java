@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -10,6 +11,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -17,9 +19,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioBlockFormatType complex type.
+ * <p>Classe Java pour audioBlockFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioBlockFormatType">
@@ -57,31 +59,35 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioBlockFormatType", propOrder = {
-    "speakerLabelAndPositionAndMatrix"
+    "speakerLabelsAndPositionsAndMatrixes"
 })
-public class AudioBlockFormatType {
+@XmlRootElement(name = "audioBlockFormat")
+public class AudioBlockFormat
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElementRefs({
         @XmlElementRef(name = "diffuse", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "channelLock", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "matrix", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "zoneExclusion", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "speakerLabel", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "importance", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "position", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "cartesian", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "height", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "equation", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "gain", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "order", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "depth", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "speakerLabel", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "zoneExclusion", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "importance", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "width", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "gain", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "cartesian", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "depth", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "objectDivergence", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "degree", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "matrix", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "screenRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "jumpPosition", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "order", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "height", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "position", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "jumpPosition", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "degree", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "channelLock", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
     })
-    protected List<JAXBElement<?>> speakerLabelAndPositionAndMatrix;
+    protected List<JAXBElement<? extends Serializable>> speakerLabelsAndPositionsAndMatrixes;
     @XmlAttribute(name = "audioBlockFormatID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -93,53 +99,53 @@ public class AudioBlockFormatType {
     protected java.lang.String duration;
 
     /**
-     * Gets the value of the speakerLabelAndPositionAndMatrix property.
+     * Gets the value of the speakerLabelsAndPositionsAndMatrixes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the speakerLabelAndPositionAndMatrix property.
+     * This is why there is not a <CODE>set</CODE> method for the speakerLabelsAndPositionsAndMatrixes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSpeakerLabelAndPositionAndMatrix().add(newItem);
+     *    getSpeakerLabelsAndPositionsAndMatrixes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
-     * {@link JAXBElement }{@code <}{@link ChannelLockType }{@code >}
-     * {@link JAXBElement }{@code <}{@link MatrixType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ZoneExclusionType }{@code >}
      * {@link JAXBElement }{@code <}{@link java.lang.String }{@code >}
+     * {@link JAXBElement }{@code <}{@link java.lang.String }{@code >}
+     * {@link JAXBElement }{@code <}{@link ZoneExclusionType }{@code >}
      * {@link JAXBElement }{@code <}{@link Integer }{@code >}
-     * {@link JAXBElement }{@code <}{@link PositionType }{@code >}
+     * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
      * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
      * {@link JAXBElement }{@code <}{@link java.lang.Boolean }{@code >}
-     * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
-     * {@link JAXBElement }{@code <}{@link java.lang.String }{@code >}
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
      * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
      * {@link JAXBElement }{@code <}{@link ObjectDivergenceType }{@code >}
-     * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link JAXBElement }{@code <}{@link MatrixType }{@code >}
      * {@link JAXBElement }{@code <}{@link java.lang.Boolean }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link JAXBElement }{@code <}{@link java.lang.Float }{@code >}
+     * {@link JAXBElement }{@code <}{@link PositionType }{@code >}
      * {@link JAXBElement }{@code <}{@link JumpPositionType }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link JAXBElement }{@code <}{@link ChannelLockType }{@code >}
      * 
      * 
      */
-    public List<JAXBElement<?>> getSpeakerLabelAndPositionAndMatrix() {
-        if (speakerLabelAndPositionAndMatrix == null) {
-            speakerLabelAndPositionAndMatrix = new ArrayList<>();
+    public List<JAXBElement<? extends Serializable>> getSpeakerLabelsAndPositionsAndMatrixes() {
+        if (speakerLabelsAndPositionsAndMatrixes == null) {
+            speakerLabelsAndPositionsAndMatrixes = new ArrayList<>();
         }
-        return this.speakerLabelAndPositionAndMatrix;
+        return this.speakerLabelsAndPositionsAndMatrixes;
     }
 
     /**
-     * Gets the value of the audioBlockFormatID property.
+     * Obtient la valeur de la propriété audioBlockFormatID.
      * 
      * @return
      *     possible object is
@@ -151,7 +157,7 @@ public class AudioBlockFormatType {
     }
 
     /**
-     * Sets the value of the audioBlockFormatID property.
+     * Définit la valeur de la propriété audioBlockFormatID.
      * 
      * @param value
      *     allowed object is
@@ -163,7 +169,7 @@ public class AudioBlockFormatType {
     }
 
     /**
-     * Gets the value of the rtime property.
+     * Obtient la valeur de la propriété rtime.
      * 
      * @return
      *     possible object is
@@ -175,7 +181,7 @@ public class AudioBlockFormatType {
     }
 
     /**
-     * Sets the value of the rtime property.
+     * Définit la valeur de la propriété rtime.
      * 
      * @param value
      *     allowed object is
@@ -187,7 +193,7 @@ public class AudioBlockFormatType {
     }
 
     /**
-     * Gets the value of the duration property.
+     * Obtient la valeur de la propriété duration.
      * 
      * @return
      *     possible object is
@@ -199,7 +205,7 @@ public class AudioBlockFormatType {
     }
 
     /**
-     * Sets the value of the duration property.
+     * Définit la valeur de la propriété duration.
      * 
      * @param value
      *     allowed object is

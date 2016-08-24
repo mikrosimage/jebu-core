@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -11,9 +12,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for coefficientType complex type.
+ * <p>Classe Java pour coefficientType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="coefficientType">
@@ -34,8 +35,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "coefficientType", propOrder = {
     "value"
 })
-public class CoefficientType {
+public class CoefficientType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -50,7 +54,7 @@ public class CoefficientType {
     protected java.lang.String phaseVar;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      * @return
      *     possible object is
@@ -62,7 +66,7 @@ public class CoefficientType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +78,7 @@ public class CoefficientType {
     }
 
     /**
-     * Gets the value of the gain property.
+     * Obtient la valeur de la propriété gain.
      * 
      * @return
      *     possible object is
@@ -86,7 +90,7 @@ public class CoefficientType {
     }
 
     /**
-     * Sets the value of the gain property.
+     * Définit la valeur de la propriété gain.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +102,7 @@ public class CoefficientType {
     }
 
     /**
-     * Gets the value of the gainVar property.
+     * Obtient la valeur de la propriété gainVar.
      * 
      * @return
      *     possible object is
@@ -110,7 +114,7 @@ public class CoefficientType {
     }
 
     /**
-     * Sets the value of the gainVar property.
+     * Définit la valeur de la propriété gainVar.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +126,7 @@ public class CoefficientType {
     }
 
     /**
-     * Gets the value of the phase property.
+     * Obtient la valeur de la propriété phase.
      * 
      * @return
      *     possible object is
@@ -134,7 +138,7 @@ public class CoefficientType {
     }
 
     /**
-     * Sets the value of the phase property.
+     * Définit la valeur de la propriété phase.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +150,7 @@ public class CoefficientType {
     }
 
     /**
-     * Gets the value of the phaseVar property.
+     * Obtient la valeur de la propriété phaseVar.
      * 
      * @return
      *     possible object is
@@ -158,7 +162,7 @@ public class CoefficientType {
     }
 
     /**
-     * Sets the value of the phaseVar property.
+     * Définit la valeur de la propriété phaseVar.
      * 
      * @param value
      *     allowed object is

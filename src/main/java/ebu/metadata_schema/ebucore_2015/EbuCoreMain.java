@@ -1,6 +1,8 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -11,14 +13,15 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
  * The root element of EBUCore.
  * 
- * <p>Java class for ebuCoreMainType complex type.
+ * <p>Classe Java pour ebuCoreMainType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="ebuCoreMainType">
@@ -42,14 +45,17 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ebuCoreMainType", propOrder = {
     "coreMetadata",
     "metadataProvider"
 })
-public class EbuCoreMainType {
+@XmlRootElement(name = "ebuCoreMain")
+public class EbuCoreMain
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(required = true)
     protected CoreMetadataType coreMetadata;
     protected EntityType metadataProvider;
@@ -60,8 +66,9 @@ public class EbuCoreMainType {
     @XmlSchemaType(name = "anySimpleType")
     protected java.lang.String version;
     @XmlAttribute(name = "dateLastModified")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dateLastModified;
+    protected Date dateLastModified;
     @XmlAttribute(name = "timeLastModified")
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar timeLastModified;
@@ -78,7 +85,7 @@ public class EbuCoreMainType {
     protected java.lang.String lang;
 
     /**
-     * Gets the value of the coreMetadata property.
+     * Obtient la valeur de la propriété coreMetadata.
      * 
      * @return
      *     possible object is
@@ -90,7 +97,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the coreMetadata property.
+     * Définit la valeur de la propriété coreMetadata.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +109,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Gets the value of the metadataProvider property.
+     * Obtient la valeur de la propriété metadataProvider.
      * 
      * @return
      *     possible object is
@@ -114,7 +121,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the metadataProvider property.
+     * Définit la valeur de la propriété metadataProvider.
      * 
      * @param value
      *     allowed object is
@@ -126,7 +133,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Gets the value of the schema property.
+     * Obtient la valeur de la propriété schema.
      * 
      * @return
      *     possible object is
@@ -138,7 +145,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the schema property.
+     * Définit la valeur de la propriété schema.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +157,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Gets the value of the version property.
+     * Obtient la valeur de la propriété version.
      * 
      * @return
      *     possible object is
@@ -166,7 +173,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the version property.
+     * Définit la valeur de la propriété version.
      * 
      * @param value
      *     allowed object is
@@ -178,31 +185,31 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Gets the value of the dateLastModified property.
+     * Obtient la valeur de la propriété dateLastModified.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getDateLastModified() {
+    public Date getDateLastModified() {
         return dateLastModified;
     }
 
     /**
-     * Sets the value of the dateLastModified property.
+     * Définit la valeur de la propriété dateLastModified.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setDateLastModified(XMLGregorianCalendar value) {
+    public void setDateLastModified(Date value) {
         this.dateLastModified = value;
     }
 
     /**
-     * Gets the value of the timeLastModified property.
+     * Obtient la valeur de la propriété timeLastModified.
      * 
      * @return
      *     possible object is
@@ -214,7 +221,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the timeLastModified property.
+     * Définit la valeur de la propriété timeLastModified.
      * 
      * @param value
      *     allowed object is
@@ -226,7 +233,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Gets the value of the documentId property.
+     * Obtient la valeur de la propriété documentId.
      * 
      * @return
      *     possible object is
@@ -238,7 +245,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the documentId property.
+     * Définit la valeur de la propriété documentId.
      * 
      * @param value
      *     allowed object is
@@ -250,7 +257,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Gets the value of the documentLocation property.
+     * Obtient la valeur de la propriété documentLocation.
      * 
      * @return
      *     possible object is
@@ -262,7 +269,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the documentLocation property.
+     * Définit la valeur de la propriété documentLocation.
      * 
      * @param value
      *     allowed object is
@@ -289,7 +296,7 @@ public class EbuCoreMainType {
     }
 
     /**
-     * Sets the value of the lang property.
+     * Définit la valeur de la propriété lang.
      * 
      * @param value
      *     allowed object is

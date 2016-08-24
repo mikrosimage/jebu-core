@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  To provide rating using classification scheme or custom rating schemes.
  * 			
  * 
- * <p>Java class for ratingType complex type.
+ * <p>Classe Java pour ratingType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="ratingType">
@@ -50,24 +52,33 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ratingType", propOrder = {
-    "ratingValue",
-    "ratingLink",
-    "ratingScaleMaxValue",
-    "ratingScaleMinValue",
+    "ratingValues",
+    "ratingLinks",
+    "ratingScaleMaxValues",
+    "ratingScaleMinValues",
     "ratingProvider",
-    "ratingRegion",
-    "ratingExclusionRegion"
+    "ratingRegions",
+    "ratingExclusionRegions"
 })
-public class RatingType {
+public class RatingType
+    implements Serializable
+{
 
-    protected List<ElementType> ratingValue;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "ratingValue")
+    protected List<ElementType> ratingValues;
+    @XmlElement(name = "ratingLink")
     @XmlSchemaType(name = "anyURI")
-    protected List<java.lang.String> ratingLink;
-    protected List<ElementType> ratingScaleMaxValue;
-    protected List<ElementType> ratingScaleMinValue;
+    protected List<java.lang.String> ratingLinks;
+    @XmlElement(name = "ratingScaleMaxValue")
+    protected List<ElementType> ratingScaleMaxValues;
+    @XmlElement(name = "ratingScaleMinValue")
+    protected List<ElementType> ratingScaleMinValues;
     protected EntityType ratingProvider;
-    protected List<RegionType> ratingRegion;
-    protected List<RegionType> ratingExclusionRegion;
+    @XmlElement(name = "ratingRegion")
+    protected List<RegionType> ratingRegions;
+    @XmlElement(name = "ratingExclusionRegion")
+    protected List<RegionType> ratingExclusionRegions;
     @XmlAttribute(name = "ratingSystem")
     protected java.lang.String ratingSystem;
     @XmlAttribute(name = "ratingEnvironment")
@@ -113,18 +124,18 @@ public class RatingType {
     protected java.lang.String formatLanguage;
 
     /**
-     * Gets the value of the ratingValue property.
+     * Gets the value of the ratingValues property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratingValue property.
+     * This is why there is not a <CODE>set</CODE> method for the ratingValues property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRatingValue().add(newItem);
+     *    getRatingValues().add(newItem);
      * </pre>
      * 
      * 
@@ -134,26 +145,26 @@ public class RatingType {
      * 
      * 
      */
-    public List<ElementType> getRatingValue() {
-        if (ratingValue == null) {
-            ratingValue = new ArrayList<>();
+    public List<ElementType> getRatingValues() {
+        if (ratingValues == null) {
+            ratingValues = new ArrayList<>();
         }
-        return this.ratingValue;
+        return this.ratingValues;
     }
 
     /**
-     * Gets the value of the ratingLink property.
+     * Gets the value of the ratingLinks property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratingLink property.
+     * This is why there is not a <CODE>set</CODE> method for the ratingLinks property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRatingLink().add(newItem);
+     *    getRatingLinks().add(newItem);
      * </pre>
      * 
      * 
@@ -163,26 +174,26 @@ public class RatingType {
      * 
      * 
      */
-    public List<java.lang.String> getRatingLink() {
-        if (ratingLink == null) {
-            ratingLink = new ArrayList<>();
+    public List<java.lang.String> getRatingLinks() {
+        if (ratingLinks == null) {
+            ratingLinks = new ArrayList<>();
         }
-        return this.ratingLink;
+        return this.ratingLinks;
     }
 
     /**
-     * Gets the value of the ratingScaleMaxValue property.
+     * Gets the value of the ratingScaleMaxValues property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratingScaleMaxValue property.
+     * This is why there is not a <CODE>set</CODE> method for the ratingScaleMaxValues property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRatingScaleMaxValue().add(newItem);
+     *    getRatingScaleMaxValues().add(newItem);
      * </pre>
      * 
      * 
@@ -192,26 +203,26 @@ public class RatingType {
      * 
      * 
      */
-    public List<ElementType> getRatingScaleMaxValue() {
-        if (ratingScaleMaxValue == null) {
-            ratingScaleMaxValue = new ArrayList<>();
+    public List<ElementType> getRatingScaleMaxValues() {
+        if (ratingScaleMaxValues == null) {
+            ratingScaleMaxValues = new ArrayList<>();
         }
-        return this.ratingScaleMaxValue;
+        return this.ratingScaleMaxValues;
     }
 
     /**
-     * Gets the value of the ratingScaleMinValue property.
+     * Gets the value of the ratingScaleMinValues property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratingScaleMinValue property.
+     * This is why there is not a <CODE>set</CODE> method for the ratingScaleMinValues property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRatingScaleMinValue().add(newItem);
+     *    getRatingScaleMinValues().add(newItem);
      * </pre>
      * 
      * 
@@ -221,15 +232,15 @@ public class RatingType {
      * 
      * 
      */
-    public List<ElementType> getRatingScaleMinValue() {
-        if (ratingScaleMinValue == null) {
-            ratingScaleMinValue = new ArrayList<>();
+    public List<ElementType> getRatingScaleMinValues() {
+        if (ratingScaleMinValues == null) {
+            ratingScaleMinValues = new ArrayList<>();
         }
-        return this.ratingScaleMinValue;
+        return this.ratingScaleMinValues;
     }
 
     /**
-     * Gets the value of the ratingProvider property.
+     * Obtient la valeur de la propriété ratingProvider.
      * 
      * @return
      *     possible object is
@@ -241,7 +252,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the ratingProvider property.
+     * Définit la valeur de la propriété ratingProvider.
      * 
      * @param value
      *     allowed object is
@@ -253,18 +264,18 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the ratingRegion property.
+     * Gets the value of the ratingRegions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratingRegion property.
+     * This is why there is not a <CODE>set</CODE> method for the ratingRegions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRatingRegion().add(newItem);
+     *    getRatingRegions().add(newItem);
      * </pre>
      * 
      * 
@@ -274,26 +285,26 @@ public class RatingType {
      * 
      * 
      */
-    public List<RegionType> getRatingRegion() {
-        if (ratingRegion == null) {
-            ratingRegion = new ArrayList<>();
+    public List<RegionType> getRatingRegions() {
+        if (ratingRegions == null) {
+            ratingRegions = new ArrayList<>();
         }
-        return this.ratingRegion;
+        return this.ratingRegions;
     }
 
     /**
-     * Gets the value of the ratingExclusionRegion property.
+     * Gets the value of the ratingExclusionRegions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratingExclusionRegion property.
+     * This is why there is not a <CODE>set</CODE> method for the ratingExclusionRegions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRatingExclusionRegion().add(newItem);
+     *    getRatingExclusionRegions().add(newItem);
      * </pre>
      * 
      * 
@@ -303,15 +314,15 @@ public class RatingType {
      * 
      * 
      */
-    public List<RegionType> getRatingExclusionRegion() {
-        if (ratingExclusionRegion == null) {
-            ratingExclusionRegion = new ArrayList<>();
+    public List<RegionType> getRatingExclusionRegions() {
+        if (ratingExclusionRegions == null) {
+            ratingExclusionRegions = new ArrayList<>();
         }
-        return this.ratingExclusionRegion;
+        return this.ratingExclusionRegions;
     }
 
     /**
-     * Gets the value of the ratingSystem property.
+     * Obtient la valeur de la propriété ratingSystem.
      * 
      * @return
      *     possible object is
@@ -323,7 +334,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the ratingSystem property.
+     * Définit la valeur de la propriété ratingSystem.
      * 
      * @param value
      *     allowed object is
@@ -335,7 +346,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the ratingEnvironment property.
+     * Obtient la valeur de la propriété ratingEnvironment.
      * 
      * @return
      *     possible object is
@@ -347,7 +358,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the ratingEnvironment property.
+     * Définit la valeur de la propriété ratingEnvironment.
      * 
      * @param value
      *     allowed object is
@@ -359,7 +370,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the reason property.
+     * Obtient la valeur de la propriété reason.
      * 
      * @return
      *     possible object is
@@ -371,7 +382,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the reason property.
+     * Définit la valeur de la propriété reason.
      * 
      * @param value
      *     allowed object is
@@ -383,7 +394,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the linkToLogo property.
+     * Obtient la valeur de la propriété linkToLogo.
      * 
      * @return
      *     possible object is
@@ -395,7 +406,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the linkToLogo property.
+     * Définit la valeur de la propriété linkToLogo.
      * 
      * @param value
      *     allowed object is
@@ -407,19 +418,19 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the notRated property.
+     * Obtient la valeur de la propriété notRated.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getNotRated() {
+    public java.lang.Boolean isNotRated() {
         return notRated;
     }
 
     /**
-     * Sets the value of the notRated property.
+     * Définit la valeur de la propriété notRated.
      * 
      * @param value
      *     allowed object is
@@ -431,19 +442,19 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the adultContent property.
+     * Obtient la valeur de la propriété adultContent.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getAdultContent() {
+    public java.lang.Boolean isAdultContent() {
         return adultContent;
     }
 
     /**
-     * Sets the value of the adultContent property.
+     * Définit la valeur de la propriété adultContent.
      * 
      * @param value
      *     allowed object is
@@ -455,7 +466,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -467,7 +478,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -479,7 +490,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -491,7 +502,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -503,7 +514,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -515,7 +526,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -527,7 +538,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -539,7 +550,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -551,7 +562,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -563,7 +574,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -575,7 +586,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -587,7 +598,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -599,7 +610,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -611,7 +622,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -623,7 +634,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -635,7 +646,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -647,7 +658,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -659,7 +670,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -671,7 +682,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -683,7 +694,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -695,7 +706,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -707,7 +718,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -719,7 +730,7 @@ public class RatingType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -731,7 +742,7 @@ public class RatingType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is

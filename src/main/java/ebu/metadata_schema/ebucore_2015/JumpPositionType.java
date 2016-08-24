@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for jumpPositionType complex type.
+ * <p>Classe Java pour jumpPositionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="jumpPositionType">
@@ -29,15 +30,17 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "jumpPositionType", propOrder = {
     "value"
 })
-public class JumpPositionType {
+public class JumpPositionType implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected boolean value;
     @XmlAttribute(name = "interpolationLength")
     protected java.lang.Float interpolationLength;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public boolean isValue() {
@@ -45,7 +48,7 @@ public class JumpPositionType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(boolean value) {
@@ -53,7 +56,7 @@ public class JumpPositionType {
     }
 
     /**
-     * Gets the value of the interpolationLength property.
+     * Obtient la valeur de la propriété interpolationLength.
      * 
      * @return
      *     possible object is
@@ -65,7 +68,7 @@ public class JumpPositionType {
     }
 
     /**
-     * Sets the value of the interpolationLength property.
+     * Définit la valeur de la propriété interpolationLength.
      * 
      * @param value
      *     allowed object is

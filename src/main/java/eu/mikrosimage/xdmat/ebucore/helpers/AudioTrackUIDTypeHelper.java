@@ -1,14 +1,12 @@
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
-
-import ebu.metadata_schema.ebucore_2015.AudioTrackUIDType;
+import ebu.metadata_schema.ebucore_2015.AudioTrackUID;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
@@ -35,9 +33,9 @@ public final class AudioTrackUIDTypeHelper {
 	 * 	if value < 0
 	 */ 
 	public static final String getAudioTrackUID(int value) {
-		Preconditions.checkNotNull(value);
-		Preconditions.checkArgument(value>0);
-		return AUDIO_TRACK_UID_PREFIX+Strings.padStart(Integer.toHexString(value), 8, '0');
+		Objects.requireNonNull(value);
+		assert value > 0 : "Value (" + value + ") must be greater than 0";
+		return AUDIO_TRACK_UID_PREFIX+IDHelper.createId(Integer.toHexString(value), 8);
 	}
 
 	/**
@@ -55,9 +53,8 @@ public final class AudioTrackUIDTypeHelper {
 	 */ 
 	public static final int getAudioTrackIndexFromUid(String uid) 
 			throws NullPointerException, NumberFormatException, IllegalArgumentException {
-		Preconditions.checkNotNull(uid);
-		Preconditions.checkArgument(uid.startsWith(AUDIO_TRACK_UID_PREFIX), 
-				"AudioTrackUID must start with " + AUDIO_TRACK_UID_PREFIX + " : " + uid);
+		Objects.requireNonNull(uid);
+		assert uid.startsWith(AUDIO_TRACK_UID_PREFIX) : "AudioTrackUID must start with " + AUDIO_TRACK_UID_PREFIX + " : " + uid;
 		String hex = uid.substring(AUDIO_TRACK_UID_PREFIX.length()+1);
 		return Integer.parseInt(hex, 16);  
 	}
@@ -71,14 +68,14 @@ public final class AudioTrackUIDTypeHelper {
 	 * @return
 	 * 	collection of {@link AudioTrackUIDType}
 	 */
-	public static final Set<AudioTrackUIDType> getAudioTrackUIDList(int from, int to) {
-		Preconditions.checkArgument(from <= to);
-		Preconditions.checkArgument(from > 0);
+	public static final Set<AudioTrackUID> getAudioTrackUIDList(int from, int to) {
+		assert from > 0 && from <= to  : "from ("+from+") must be greater than 0 and smaller than to ("+to+")";
+		
 		final ObjectFactory objectFactory = new ObjectFactory();
-		final Set<AudioTrackUIDType> collection = new TreeSet<>((a, b) ->
+		final Set<AudioTrackUID> collection = new TreeSet<>((a, b) ->
 			getAudioTrackIndexFromUid(a.getUID()) - getAudioTrackIndexFromUid(b.getUID()));
 		for(int i = from; i <= to ; ++i) {
-			final AudioTrackUIDType audioTrackUIDType = objectFactory.createAudioTrackUIDType();
+			final AudioTrackUID audioTrackUIDType = objectFactory.createAudioTrackUID();
 			audioTrackUIDType.setUID(AudioTrackUIDTypeHelper.getAudioTrackUID(i));
 			collection.add(audioTrackUIDType);
 		}
@@ -90,7 +87,7 @@ public final class AudioTrackUIDTypeHelper {
 	 */
 	public static final List<String> getAudioTrackUIDListAsString(int from, int to) {
 		return getAudioTrackUIDList(from, to).stream()
-				.map(AudioTrackUIDType::getUID)
+				.map(AudioTrackUID::getUID)
 				.collect(Collectors.toList());
 	}
 

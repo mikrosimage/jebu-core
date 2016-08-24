@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,9 @@ import javax.xml.bind.annotation.XmlType;
  * 				type provides information on the Ancillary Data packet type. See SMPTE 291M, SMPTE
  * 				436M
  * 
- * <p>Java class for ancillaryDataFormatType complex type.
+ * <p>Classe Java pour ancillaryDataFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="ancillaryDataFormatType">
@@ -45,16 +46,20 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ancillaryDataFormatType", propOrder = {
     "did",
     "sdid",
-    "lineNumber",
+    "lineNumbers",
     "wrappingType"
 })
-public class AncillaryDataFormatType {
+public class AncillaryDataFormatType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(name = "DID")
     protected BigInteger did;
     @XmlElement(name = "SDID")
     protected BigInteger sdid;
-    protected List<BigInteger> lineNumber;
+    @XmlElement(name = "lineNumber")
+    protected List<BigInteger> lineNumbers;
     protected BigInteger wrappingType;
     @XmlAttribute(name = "ancillaryDataFormatId")
     @XmlSchemaType(name = "anyURI")
@@ -65,7 +70,7 @@ public class AncillaryDataFormatType {
     protected java.lang.String ancillaryDataFormatProfile;
 
     /**
-     * Gets the value of the did property.
+     * Obtient la valeur de la propriété did.
      * 
      * @return
      *     possible object is
@@ -77,7 +82,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Sets the value of the did property.
+     * Définit la valeur de la propriété did.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +94,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Gets the value of the sdid property.
+     * Obtient la valeur de la propriété sdid.
      * 
      * @return
      *     possible object is
@@ -101,7 +106,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Sets the value of the sdid property.
+     * Définit la valeur de la propriété sdid.
      * 
      * @param value
      *     allowed object is
@@ -113,18 +118,18 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Gets the value of the lineNumber property.
+     * Gets the value of the lineNumbers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lineNumber property.
+     * This is why there is not a <CODE>set</CODE> method for the lineNumbers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLineNumber().add(newItem);
+     *    getLineNumbers().add(newItem);
      * </pre>
      * 
      * 
@@ -134,15 +139,15 @@ public class AncillaryDataFormatType {
      * 
      * 
      */
-    public List<BigInteger> getLineNumber() {
-        if (lineNumber == null) {
-            lineNumber = new ArrayList<>();
+    public List<BigInteger> getLineNumbers() {
+        if (lineNumbers == null) {
+            lineNumbers = new ArrayList<>();
         }
-        return this.lineNumber;
+        return this.lineNumbers;
     }
 
     /**
-     * Gets the value of the wrappingType property.
+     * Obtient la valeur de la propriété wrappingType.
      * 
      * @return
      *     possible object is
@@ -154,7 +159,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Sets the value of the wrappingType property.
+     * Définit la valeur de la propriété wrappingType.
      * 
      * @param value
      *     allowed object is
@@ -166,7 +171,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Gets the value of the ancillaryDataFormatId property.
+     * Obtient la valeur de la propriété ancillaryDataFormatId.
      * 
      * @return
      *     possible object is
@@ -178,7 +183,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Sets the value of the ancillaryDataFormatId property.
+     * Définit la valeur de la propriété ancillaryDataFormatId.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +195,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Gets the value of the ancillaryDataFormatName property.
+     * Obtient la valeur de la propriété ancillaryDataFormatName.
      * 
      * @return
      *     possible object is
@@ -202,7 +207,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Sets the value of the ancillaryDataFormatName property.
+     * Définit la valeur de la propriété ancillaryDataFormatName.
      * 
      * @param value
      *     allowed object is
@@ -214,7 +219,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Gets the value of the ancillaryDataFormatProfile property.
+     * Obtient la valeur de la propriété ancillaryDataFormatProfile.
      * 
      * @return
      *     possible object is
@@ -226,7 +231,7 @@ public class AncillaryDataFormatType {
     }
 
     /**
-     * Sets the value of the ancillaryDataFormatProfile property.
+     * Définit la valeur de la propriété ancillaryDataFormatProfile.
      * 
      * @param value
      *     allowed object is

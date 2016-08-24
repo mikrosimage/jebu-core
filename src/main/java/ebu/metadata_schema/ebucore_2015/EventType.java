@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * The description of an event and an optional related
  * 				location.
  * 
- * <p>Java class for eventType complex type.
+ * <p>Classe Java pour eventType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="eventType">
@@ -41,15 +43,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "eventType", propOrder = {
-    "name",
-    "description",
-    "location"
+    "names",
+    "descriptions",
+    "locations"
 })
-public class EventType {
+public class EventType
+    implements Serializable
+{
 
-    protected List<ElementType> name;
-    protected List<ElementType> description;
-    protected List<LocationType> location;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "name")
+    protected List<ElementType> names;
+    @XmlElement(name = "description")
+    protected List<ElementType> descriptions;
+    @XmlElement(name = "location")
+    protected List<LocationType> locations;
     @XmlAttribute(name = "eventId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String eventId;
@@ -72,18 +80,18 @@ public class EventType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the names property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
+     * This is why there is not a <CODE>set</CODE> method for the names property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getName().add(newItem);
+     *    getNames().add(newItem);
      * </pre>
      * 
      * 
@@ -93,26 +101,26 @@ public class EventType {
      * 
      * 
      */
-    public List<ElementType> getName() {
-        if (name == null) {
-            name = new ArrayList<>();
+    public List<ElementType> getNames() {
+        if (names == null) {
+            names = new ArrayList<>();
         }
-        return this.name;
+        return this.names;
     }
 
     /**
-     * Gets the value of the description property.
+     * Gets the value of the descriptions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
+     * This is why there is not a <CODE>set</CODE> method for the descriptions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDescription().add(newItem);
+     *    getDescriptions().add(newItem);
      * </pre>
      * 
      * 
@@ -122,26 +130,26 @@ public class EventType {
      * 
      * 
      */
-    public List<ElementType> getDescription() {
-        if (description == null) {
-            description = new ArrayList<>();
+    public List<ElementType> getDescriptions() {
+        if (descriptions == null) {
+            descriptions = new ArrayList<>();
         }
-        return this.description;
+        return this.descriptions;
     }
 
     /**
-     * Gets the value of the location property.
+     * Gets the value of the locations property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
+     * This is why there is not a <CODE>set</CODE> method for the locations property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLocation().add(newItem);
+     *    getLocations().add(newItem);
      * </pre>
      * 
      * 
@@ -151,15 +159,15 @@ public class EventType {
      * 
      * 
      */
-    public List<LocationType> getLocation() {
-        if (location == null) {
-            location = new ArrayList<>();
+    public List<LocationType> getLocations() {
+        if (locations == null) {
+            locations = new ArrayList<>();
         }
-        return this.location;
+        return this.locations;
     }
 
     /**
-     * Gets the value of the eventId property.
+     * Obtient la valeur de la propriété eventId.
      * 
      * @return
      *     possible object is
@@ -171,7 +179,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the eventId property.
+     * Définit la valeur de la propriété eventId.
      * 
      * @param value
      *     allowed object is
@@ -183,7 +191,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -195,7 +203,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -207,7 +215,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -219,7 +227,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -231,7 +239,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -243,7 +251,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -255,7 +263,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -267,7 +275,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -279,7 +287,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -291,7 +299,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -303,7 +311,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -315,7 +323,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -327,7 +335,7 @@ public class EventType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -339,7 +347,7 @@ public class EventType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

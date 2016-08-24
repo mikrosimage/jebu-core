@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,9 +17,9 @@ import org.purl.dc.elements._1.ElementType;
  * The document containing all the core descriptive information regarding
  * 				the resource
  * 
- * <p>Java class for coreMetadataType complex type.
+ * <p>Classe Java pour coreMetadataType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="coreMetadataType">
@@ -99,123 +100,167 @@ import org.purl.dc.elements._1.ElementType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "coreMetadataType", propOrder = {
-    "title",
-    "alternativeTitle",
-    "creator",
-    "subject",
-    "description",
-    "publisher",
-    "contributor",
-    "date",
-    "type",
-    "format",
-    "identifier",
-    "source",
-    "language",
-    "relation",
-    "isRelatedTo",
-    "isNextInSequence",
-    "followsInSequence",
-    "isVersionOf",
-    "hasVersion",
-    "isReplacedBy",
+    "titles",
+    "alternativeTitles",
+    "creators",
+    "subjects",
+    "descriptions",
+    "publishers",
+    "contributors",
+    "dates",
+    "types",
+    "formats",
+    "identifiers",
+    "sources",
+    "languages",
+    "relations",
+    "isRelatedTos",
+    "isNextInSequences",
+    "followsInSequences",
+    "isVersionOves",
+    "hasVersions",
+    "isReplacedBies",
     "replaces",
-    "isRequiredBy",
+    "isRequiredBies",
     "requires",
-    "isPartOf",
-    "hasPart",
-    "hasTrackPart",
-    "isReferencedBy",
+    "isPartOves",
+    "hasParts",
+    "hasTrackParts",
+    "isReferencedBies",
     "references",
-    "isFormatOf",
-    "hasFormat",
-    "isEpisodeOf",
-    "isSeasonOf",
-    "hasEpisode",
-    "hasSeason",
+    "isFormatOves",
+    "hasFormats",
+    "isEpisodeOves",
+    "isSeasonOves",
+    "hasEpisodes",
+    "hasSeasons",
     "hasSeries",
-    "isSeriesOf",
-    "isMemberOf",
-    "hasMember",
+    "isSeriesOves",
+    "isMemberOves",
+    "hasMembers",
     "sameAs",
-    "coverage",
+    "coverages",
     "rights",
-    "version",
-    "publicationHistory",
-    "planning",
-    "rating",
-    "audienceRating",
-    "event",
-    "part"
+    "versions",
+    "publicationHistories",
+    "plannings",
+    "ratings",
+    "audienceRatings",
+    "events",
+    "parts"
 })
 @XmlSeeAlso({
     PartType.class
 })
-public class CoreMetadataType {
+public class CoreMetadataType
+    implements Serializable
+{
 
-    protected List<TitleType> title;
-    protected List<AlternativeTitleType> alternativeTitle;
-    protected List<EntityType> creator;
-    protected List<SubjectType> subject;
-    protected List<DescriptionType> description;
-    protected List<EntityType> publisher;
-    protected List<EntityType> contributor;
-    protected List<DateType> date;
-    protected List<TypeType> type;
-    protected List<FormatType> format;
-    protected List<IdentifierType> identifier;
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
-    protected List<ElementType> source;
-    protected List<LanguageType> language;
-    protected List<RelationType> relation;
-    protected List<RelationType> isRelatedTo;
-    protected List<RelationType> isNextInSequence;
-    protected List<RelationType> followsInSequence;
-    protected List<RelationType> isVersionOf;
-    protected List<RelationType> hasVersion;
-    protected List<RelationType> isReplacedBy;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "title")
+    protected List<TitleType> titles;
+    @XmlElement(name = "alternativeTitle")
+    protected List<AlternativeTitleType> alternativeTitles;
+    @XmlElement(name = "creator")
+    protected List<EntityType> creators;
+    @XmlElement(name = "subject")
+    protected List<SubjectType> subjects;
+    @XmlElement(name = "description")
+    protected List<DescriptionType> descriptions;
+    @XmlElement(name = "publisher")
+    protected List<EntityType> publishers;
+    @XmlElement(name = "contributor")
+    protected List<EntityType> contributors;
+    @XmlElement(name = "date")
+    protected List<DateType> dates;
+    @XmlElement(name = "type")
+    protected List<TypeType> types;
+    @XmlElement(name = "format")
+    protected List<FormatType> formats;
+    @XmlElement(name = "identifier")
+    protected List<IdentifierType> identifiers;
+    @XmlElement(name = "source", namespace = "http://purl.org/dc/elements/1.1/")
+    protected List<ElementType> sources;
+    @XmlElement(name = "language")
+    protected List<LanguageType> languages;
+    @XmlElement(name = "relation")
+    protected List<RelationType> relations;
+    @XmlElement(name = "isRelatedTo")
+    protected List<RelationType> isRelatedTos;
+    @XmlElement(name = "isNextInSequence")
+    protected List<RelationType> isNextInSequences;
+    @XmlElement(name = "followsInSequence")
+    protected List<RelationType> followsInSequences;
+    @XmlElement(name = "isVersionOf")
+    protected List<RelationType> isVersionOves;
+    @XmlElement(name = "hasVersion")
+    protected List<RelationType> hasVersions;
+    @XmlElement(name = "isReplacedBy")
+    protected List<RelationType> isReplacedBies;
     protected List<RelationType> replaces;
-    protected List<RelationType> isRequiredBy;
+    @XmlElement(name = "isRequiredBy")
+    protected List<RelationType> isRequiredBies;
     protected List<RelationType> requires;
-    protected List<RelationType> isPartOf;
-    protected List<RelationType> hasPart;
-    protected List<CoreMetadataType.HasTrackPart> hasTrackPart;
-    protected List<RelationType> isReferencedBy;
+    @XmlElement(name = "isPartOf")
+    protected List<RelationType> isPartOves;
+    @XmlElement(name = "hasPart")
+    protected List<RelationType> hasParts;
+    @XmlElement(name = "hasTrackPart")
+    protected List<CoreMetadataType.HasTrackPart> hasTrackParts;
+    @XmlElement(name = "isReferencedBy")
+    protected List<RelationType> isReferencedBies;
     protected List<RelationType> references;
-    protected List<RelationType> isFormatOf;
-    protected List<RelationType> hasFormat;
-    protected List<RelationType> isEpisodeOf;
-    protected List<RelationType> isSeasonOf;
-    protected List<RelationType> hasEpisode;
-    protected List<RelationType> hasSeason;
+    @XmlElement(name = "isFormatOf")
+    protected List<RelationType> isFormatOves;
+    @XmlElement(name = "hasFormat")
+    protected List<RelationType> hasFormats;
+    @XmlElement(name = "isEpisodeOf")
+    protected List<RelationType> isEpisodeOves;
+    @XmlElement(name = "isSeasonOf")
+    protected List<RelationType> isSeasonOves;
+    @XmlElement(name = "hasEpisode")
+    protected List<RelationType> hasEpisodes;
+    @XmlElement(name = "hasSeason")
+    protected List<RelationType> hasSeasons;
     protected List<RelationType> hasSeries;
-    protected List<RelationType> isSeriesOf;
-    protected List<RelationType> isMemberOf;
-    protected List<RelationType> hasMember;
+    @XmlElement(name = "isSeriesOf")
+    protected List<RelationType> isSeriesOves;
+    @XmlElement(name = "isMemberOf")
+    protected List<RelationType> isMemberOves;
+    @XmlElement(name = "hasMember")
+    protected List<RelationType> hasMembers;
     protected List<RelationType> sameAs;
-    protected List<CoverageType> coverage;
+    @XmlElement(name = "coverage")
+    protected List<CoverageType> coverages;
     protected List<RightsType> rights;
-    protected List<VersionType> version;
-    protected List<PublicationHistoryType> publicationHistory;
-    protected List<PlanningType> planning;
-    protected List<RatingType> rating;
-    protected List<RatingType> audienceRating;
-    protected List<EventType> event;
-    protected List<PartType> part;
+    @XmlElement(name = "version")
+    protected List<VersionType> versions;
+    @XmlElement(name = "publicationHistory")
+    protected List<PublicationHistoryType> publicationHistories;
+    @XmlElement(name = "planning")
+    protected List<PlanningType> plannings;
+    @XmlElement(name = "rating")
+    protected List<RatingType> ratings;
+    @XmlElement(name = "audienceRating")
+    protected List<RatingType> audienceRatings;
+    @XmlElement(name = "event")
+    protected List<EventType> events;
+    @XmlElement(name = "part")
+    protected List<PartType> parts;
 
     /**
-     * Gets the value of the title property.
+     * Gets the value of the titles property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the title property.
+     * This is why there is not a <CODE>set</CODE> method for the titles property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTitle().add(newItem);
+     *    getTitles().add(newItem);
      * </pre>
      * 
      * 
@@ -225,26 +270,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<TitleType> getTitle() {
-        if (title == null) {
-            title = new ArrayList<>();
+    public List<TitleType> getTitles() {
+        if (titles == null) {
+            titles = new ArrayList<>();
         }
-        return this.title;
+        return this.titles;
     }
 
     /**
-     * Gets the value of the alternativeTitle property.
+     * Gets the value of the alternativeTitles property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the alternativeTitle property.
+     * This is why there is not a <CODE>set</CODE> method for the alternativeTitles property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAlternativeTitle().add(newItem);
+     *    getAlternativeTitles().add(newItem);
      * </pre>
      * 
      * 
@@ -254,26 +299,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<AlternativeTitleType> getAlternativeTitle() {
-        if (alternativeTitle == null) {
-            alternativeTitle = new ArrayList<>();
+    public List<AlternativeTitleType> getAlternativeTitles() {
+        if (alternativeTitles == null) {
+            alternativeTitles = new ArrayList<>();
         }
-        return this.alternativeTitle;
+        return this.alternativeTitles;
     }
 
     /**
-     * Gets the value of the creator property.
+     * Gets the value of the creators property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the creator property.
+     * This is why there is not a <CODE>set</CODE> method for the creators property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCreator().add(newItem);
+     *    getCreators().add(newItem);
      * </pre>
      * 
      * 
@@ -283,26 +328,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<EntityType> getCreator() {
-        if (creator == null) {
-            creator = new ArrayList<>();
+    public List<EntityType> getCreators() {
+        if (creators == null) {
+            creators = new ArrayList<>();
         }
-        return this.creator;
+        return this.creators;
     }
 
     /**
-     * Gets the value of the subject property.
+     * Gets the value of the subjects property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subject property.
+     * This is why there is not a <CODE>set</CODE> method for the subjects property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubject().add(newItem);
+     *    getSubjects().add(newItem);
      * </pre>
      * 
      * 
@@ -312,26 +357,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<SubjectType> getSubject() {
-        if (subject == null) {
-            subject = new ArrayList<>();
+    public List<SubjectType> getSubjects() {
+        if (subjects == null) {
+            subjects = new ArrayList<>();
         }
-        return this.subject;
+        return this.subjects;
     }
 
     /**
-     * Gets the value of the description property.
+     * Gets the value of the descriptions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
+     * This is why there is not a <CODE>set</CODE> method for the descriptions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDescription().add(newItem);
+     *    getDescriptions().add(newItem);
      * </pre>
      * 
      * 
@@ -341,26 +386,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<DescriptionType> getDescription() {
-        if (description == null) {
-            description = new ArrayList<>();
+    public List<DescriptionType> getDescriptions() {
+        if (descriptions == null) {
+            descriptions = new ArrayList<>();
         }
-        return this.description;
+        return this.descriptions;
     }
 
     /**
-     * Gets the value of the publisher property.
+     * Gets the value of the publishers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the publisher property.
+     * This is why there is not a <CODE>set</CODE> method for the publishers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPublisher().add(newItem);
+     *    getPublishers().add(newItem);
      * </pre>
      * 
      * 
@@ -370,26 +415,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<EntityType> getPublisher() {
-        if (publisher == null) {
-            publisher = new ArrayList<>();
+    public List<EntityType> getPublishers() {
+        if (publishers == null) {
+            publishers = new ArrayList<>();
         }
-        return this.publisher;
+        return this.publishers;
     }
 
     /**
-     * Gets the value of the contributor property.
+     * Gets the value of the contributors property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the contributor property.
+     * This is why there is not a <CODE>set</CODE> method for the contributors property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getContributor().add(newItem);
+     *    getContributors().add(newItem);
      * </pre>
      * 
      * 
@@ -399,26 +444,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<EntityType> getContributor() {
-        if (contributor == null) {
-            contributor = new ArrayList<>();
+    public List<EntityType> getContributors() {
+        if (contributors == null) {
+            contributors = new ArrayList<>();
         }
-        return this.contributor;
+        return this.contributors;
     }
 
     /**
-     * Gets the value of the date property.
+     * Gets the value of the dates property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the date property.
+     * This is why there is not a <CODE>set</CODE> method for the dates property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDate().add(newItem);
+     *    getDates().add(newItem);
      * </pre>
      * 
      * 
@@ -428,26 +473,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<DateType> getDate() {
-        if (date == null) {
-            date = new ArrayList<>();
+    public List<DateType> getDates() {
+        if (dates == null) {
+            dates = new ArrayList<>();
         }
-        return this.date;
+        return this.dates;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the value of the types property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the type property.
+     * This is why there is not a <CODE>set</CODE> method for the types property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getType().add(newItem);
+     *    getTypes().add(newItem);
      * </pre>
      * 
      * 
@@ -457,26 +502,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<TypeType> getType() {
-        if (type == null) {
-            type = new ArrayList<>();
+    public List<TypeType> getTypes() {
+        if (types == null) {
+            types = new ArrayList<>();
         }
-        return this.type;
+        return this.types;
     }
 
     /**
-     * Gets the value of the format property.
+     * Gets the value of the formats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the format property.
+     * This is why there is not a <CODE>set</CODE> method for the formats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFormat().add(newItem);
+     *    getFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -486,26 +531,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<FormatType> getFormat() {
-        if (format == null) {
-            format = new ArrayList<>();
+    public List<FormatType> getFormats() {
+        if (formats == null) {
+            formats = new ArrayList<>();
         }
-        return this.format;
+        return this.formats;
     }
 
     /**
-     * Gets the value of the identifier property.
+     * Gets the value of the identifiers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the identifier property.
+     * This is why there is not a <CODE>set</CODE> method for the identifiers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIdentifier().add(newItem);
+     *    getIdentifiers().add(newItem);
      * </pre>
      * 
      * 
@@ -515,11 +560,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<IdentifierType> getIdentifier() {
-        if (identifier == null) {
-            identifier = new ArrayList<>();
+    public List<IdentifierType> getIdentifiers() {
+        if (identifiers == null) {
+            identifiers = new ArrayList<>();
         }
-        return this.identifier;
+        return this.identifiers;
     }
 
     /**
@@ -532,18 +577,18 @@ public class CoreMetadataType {
      * 						digital resource. In the case of a digitized analogue recording, it is the
      * 						recording used for digitization which is the source. For commercial
      * 						recordings the label and number is normally given here. Example: Eurovision
-     * 						feed 2007-07-16T19:20:30.45+01:00 Gets the value of the source property.
+     * 						feed 2007-07-16T19:20:30.45+01:00 Gets the value of the sources property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the source property.
+     * This is why there is not a <CODE>set</CODE> method for the sources property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSource().add(newItem);
+     *    getSources().add(newItem);
      * </pre>
      * 
      * 
@@ -553,26 +598,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<ElementType> getSource() {
-        if (source == null) {
-            source = new ArrayList<>();
+    public List<ElementType> getSources() {
+        if (sources == null) {
+            sources = new ArrayList<>();
         }
-        return this.source;
+        return this.sources;
     }
 
     /**
-     * Gets the value of the language property.
+     * Gets the value of the languages property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the language property.
+     * This is why there is not a <CODE>set</CODE> method for the languages property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLanguage().add(newItem);
+     *    getLanguages().add(newItem);
      * </pre>
      * 
      * 
@@ -582,26 +627,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<LanguageType> getLanguage() {
-        if (language == null) {
-            language = new ArrayList<>();
+    public List<LanguageType> getLanguages() {
+        if (languages == null) {
+            languages = new ArrayList<>();
         }
-        return this.language;
+        return this.languages;
     }
 
     /**
-     * Gets the value of the relation property.
+     * Gets the value of the relations property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the relation property.
+     * This is why there is not a <CODE>set</CODE> method for the relations property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRelation().add(newItem);
+     *    getRelations().add(newItem);
      * </pre>
      * 
      * 
@@ -611,26 +656,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getRelation() {
-        if (relation == null) {
-            relation = new ArrayList<>();
+    public List<RelationType> getRelations() {
+        if (relations == null) {
+            relations = new ArrayList<>();
         }
-        return this.relation;
+        return this.relations;
     }
 
     /**
-     * Gets the value of the isRelatedTo property.
+     * Gets the value of the isRelatedTos property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isRelatedTo property.
+     * This is why there is not a <CODE>set</CODE> method for the isRelatedTos property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsRelatedTo().add(newItem);
+     *    getIsRelatedTos().add(newItem);
      * </pre>
      * 
      * 
@@ -640,26 +685,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsRelatedTo() {
-        if (isRelatedTo == null) {
-            isRelatedTo = new ArrayList<>();
+    public List<RelationType> getIsRelatedTos() {
+        if (isRelatedTos == null) {
+            isRelatedTos = new ArrayList<>();
         }
-        return this.isRelatedTo;
+        return this.isRelatedTos;
     }
 
     /**
-     * Gets the value of the isNextInSequence property.
+     * Gets the value of the isNextInSequences property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isNextInSequence property.
+     * This is why there is not a <CODE>set</CODE> method for the isNextInSequences property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsNextInSequence().add(newItem);
+     *    getIsNextInSequences().add(newItem);
      * </pre>
      * 
      * 
@@ -669,26 +714,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsNextInSequence() {
-        if (isNextInSequence == null) {
-            isNextInSequence = new ArrayList<>();
+    public List<RelationType> getIsNextInSequences() {
+        if (isNextInSequences == null) {
+            isNextInSequences = new ArrayList<>();
         }
-        return this.isNextInSequence;
+        return this.isNextInSequences;
     }
 
     /**
-     * Gets the value of the followsInSequence property.
+     * Gets the value of the followsInSequences property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the followsInSequence property.
+     * This is why there is not a <CODE>set</CODE> method for the followsInSequences property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFollowsInSequence().add(newItem);
+     *    getFollowsInSequences().add(newItem);
      * </pre>
      * 
      * 
@@ -698,26 +743,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getFollowsInSequence() {
-        if (followsInSequence == null) {
-            followsInSequence = new ArrayList<>();
+    public List<RelationType> getFollowsInSequences() {
+        if (followsInSequences == null) {
+            followsInSequences = new ArrayList<>();
         }
-        return this.followsInSequence;
+        return this.followsInSequences;
     }
 
     /**
-     * Gets the value of the isVersionOf property.
+     * Gets the value of the isVersionOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isVersionOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isVersionOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsVersionOf().add(newItem);
+     *    getIsVersionOves().add(newItem);
      * </pre>
      * 
      * 
@@ -727,26 +772,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsVersionOf() {
-        if (isVersionOf == null) {
-            isVersionOf = new ArrayList<>();
+    public List<RelationType> getIsVersionOves() {
+        if (isVersionOves == null) {
+            isVersionOves = new ArrayList<>();
         }
-        return this.isVersionOf;
+        return this.isVersionOves;
     }
 
     /**
-     * Gets the value of the hasVersion property.
+     * Gets the value of the hasVersions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasVersion property.
+     * This is why there is not a <CODE>set</CODE> method for the hasVersions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasVersion().add(newItem);
+     *    getHasVersions().add(newItem);
      * </pre>
      * 
      * 
@@ -756,26 +801,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getHasVersion() {
-        if (hasVersion == null) {
-            hasVersion = new ArrayList<>();
+    public List<RelationType> getHasVersions() {
+        if (hasVersions == null) {
+            hasVersions = new ArrayList<>();
         }
-        return this.hasVersion;
+        return this.hasVersions;
     }
 
     /**
-     * Gets the value of the isReplacedBy property.
+     * Gets the value of the isReplacedBies property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isReplacedBy property.
+     * This is why there is not a <CODE>set</CODE> method for the isReplacedBies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsReplacedBy().add(newItem);
+     *    getIsReplacedBies().add(newItem);
      * </pre>
      * 
      * 
@@ -785,11 +830,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsReplacedBy() {
-        if (isReplacedBy == null) {
-            isReplacedBy = new ArrayList<>();
+    public List<RelationType> getIsReplacedBies() {
+        if (isReplacedBies == null) {
+            isReplacedBies = new ArrayList<>();
         }
-        return this.isReplacedBy;
+        return this.isReplacedBies;
     }
 
     /**
@@ -822,18 +867,18 @@ public class CoreMetadataType {
     }
 
     /**
-     * Gets the value of the isRequiredBy property.
+     * Gets the value of the isRequiredBies property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isRequiredBy property.
+     * This is why there is not a <CODE>set</CODE> method for the isRequiredBies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsRequiredBy().add(newItem);
+     *    getIsRequiredBies().add(newItem);
      * </pre>
      * 
      * 
@@ -843,11 +888,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsRequiredBy() {
-        if (isRequiredBy == null) {
-            isRequiredBy = new ArrayList<>();
+    public List<RelationType> getIsRequiredBies() {
+        if (isRequiredBies == null) {
+            isRequiredBies = new ArrayList<>();
         }
-        return this.isRequiredBy;
+        return this.isRequiredBies;
     }
 
     /**
@@ -880,18 +925,18 @@ public class CoreMetadataType {
     }
 
     /**
-     * Gets the value of the isPartOf property.
+     * Gets the value of the isPartOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isPartOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isPartOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsPartOf().add(newItem);
+     *    getIsPartOves().add(newItem);
      * </pre>
      * 
      * 
@@ -901,26 +946,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsPartOf() {
-        if (isPartOf == null) {
-            isPartOf = new ArrayList<>();
+    public List<RelationType> getIsPartOves() {
+        if (isPartOves == null) {
+            isPartOves = new ArrayList<>();
         }
-        return this.isPartOf;
+        return this.isPartOves;
     }
 
     /**
-     * Gets the value of the hasPart property.
+     * Gets the value of the hasParts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasPart property.
+     * This is why there is not a <CODE>set</CODE> method for the hasParts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasPart().add(newItem);
+     *    getHasParts().add(newItem);
      * </pre>
      * 
      * 
@@ -930,26 +975,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getHasPart() {
-        if (hasPart == null) {
-            hasPart = new ArrayList<>();
+    public List<RelationType> getHasParts() {
+        if (hasParts == null) {
+            hasParts = new ArrayList<>();
         }
-        return this.hasPart;
+        return this.hasParts;
     }
 
     /**
-     * Gets the value of the hasTrackPart property.
+     * Gets the value of the hasTrackParts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasTrackPart property.
+     * This is why there is not a <CODE>set</CODE> method for the hasTrackParts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasTrackPart().add(newItem);
+     *    getHasTrackParts().add(newItem);
      * </pre>
      * 
      * 
@@ -959,26 +1004,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<CoreMetadataType.HasTrackPart> getHasTrackPart() {
-        if (hasTrackPart == null) {
-            hasTrackPart = new ArrayList<>();
+    public List<CoreMetadataType.HasTrackPart> getHasTrackParts() {
+        if (hasTrackParts == null) {
+            hasTrackParts = new ArrayList<>();
         }
-        return this.hasTrackPart;
+        return this.hasTrackParts;
     }
 
     /**
-     * Gets the value of the isReferencedBy property.
+     * Gets the value of the isReferencedBies property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isReferencedBy property.
+     * This is why there is not a <CODE>set</CODE> method for the isReferencedBies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsReferencedBy().add(newItem);
+     *    getIsReferencedBies().add(newItem);
      * </pre>
      * 
      * 
@@ -988,11 +1033,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsReferencedBy() {
-        if (isReferencedBy == null) {
-            isReferencedBy = new ArrayList<>();
+    public List<RelationType> getIsReferencedBies() {
+        if (isReferencedBies == null) {
+            isReferencedBies = new ArrayList<>();
         }
-        return this.isReferencedBy;
+        return this.isReferencedBies;
     }
 
     /**
@@ -1025,18 +1070,18 @@ public class CoreMetadataType {
     }
 
     /**
-     * Gets the value of the isFormatOf property.
+     * Gets the value of the isFormatOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isFormatOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isFormatOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsFormatOf().add(newItem);
+     *    getIsFormatOves().add(newItem);
      * </pre>
      * 
      * 
@@ -1046,26 +1091,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsFormatOf() {
-        if (isFormatOf == null) {
-            isFormatOf = new ArrayList<>();
+    public List<RelationType> getIsFormatOves() {
+        if (isFormatOves == null) {
+            isFormatOves = new ArrayList<>();
         }
-        return this.isFormatOf;
+        return this.isFormatOves;
     }
 
     /**
-     * Gets the value of the hasFormat property.
+     * Gets the value of the hasFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the hasFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasFormat().add(newItem);
+     *    getHasFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -1075,26 +1120,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getHasFormat() {
-        if (hasFormat == null) {
-            hasFormat = new ArrayList<>();
+    public List<RelationType> getHasFormats() {
+        if (hasFormats == null) {
+            hasFormats = new ArrayList<>();
         }
-        return this.hasFormat;
+        return this.hasFormats;
     }
 
     /**
-     * Gets the value of the isEpisodeOf property.
+     * Gets the value of the isEpisodeOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isEpisodeOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isEpisodeOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsEpisodeOf().add(newItem);
+     *    getIsEpisodeOves().add(newItem);
      * </pre>
      * 
      * 
@@ -1104,26 +1149,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsEpisodeOf() {
-        if (isEpisodeOf == null) {
-            isEpisodeOf = new ArrayList<>();
+    public List<RelationType> getIsEpisodeOves() {
+        if (isEpisodeOves == null) {
+            isEpisodeOves = new ArrayList<>();
         }
-        return this.isEpisodeOf;
+        return this.isEpisodeOves;
     }
 
     /**
-     * Gets the value of the isSeasonOf property.
+     * Gets the value of the isSeasonOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isSeasonOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isSeasonOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsSeasonOf().add(newItem);
+     *    getIsSeasonOves().add(newItem);
      * </pre>
      * 
      * 
@@ -1133,26 +1178,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsSeasonOf() {
-        if (isSeasonOf == null) {
-            isSeasonOf = new ArrayList<>();
+    public List<RelationType> getIsSeasonOves() {
+        if (isSeasonOves == null) {
+            isSeasonOves = new ArrayList<>();
         }
-        return this.isSeasonOf;
+        return this.isSeasonOves;
     }
 
     /**
-     * Gets the value of the hasEpisode property.
+     * Gets the value of the hasEpisodes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasEpisode property.
+     * This is why there is not a <CODE>set</CODE> method for the hasEpisodes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasEpisode().add(newItem);
+     *    getHasEpisodes().add(newItem);
      * </pre>
      * 
      * 
@@ -1162,26 +1207,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getHasEpisode() {
-        if (hasEpisode == null) {
-            hasEpisode = new ArrayList<>();
+    public List<RelationType> getHasEpisodes() {
+        if (hasEpisodes == null) {
+            hasEpisodes = new ArrayList<>();
         }
-        return this.hasEpisode;
+        return this.hasEpisodes;
     }
 
     /**
-     * Gets the value of the hasSeason property.
+     * Gets the value of the hasSeasons property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasSeason property.
+     * This is why there is not a <CODE>set</CODE> method for the hasSeasons property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasSeason().add(newItem);
+     *    getHasSeasons().add(newItem);
      * </pre>
      * 
      * 
@@ -1191,11 +1236,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getHasSeason() {
-        if (hasSeason == null) {
-            hasSeason = new ArrayList<>();
+    public List<RelationType> getHasSeasons() {
+        if (hasSeasons == null) {
+            hasSeasons = new ArrayList<>();
         }
-        return this.hasSeason;
+        return this.hasSeasons;
     }
 
     /**
@@ -1228,18 +1273,18 @@ public class CoreMetadataType {
     }
 
     /**
-     * Gets the value of the isSeriesOf property.
+     * Gets the value of the isSeriesOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isSeriesOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isSeriesOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsSeriesOf().add(newItem);
+     *    getIsSeriesOves().add(newItem);
      * </pre>
      * 
      * 
@@ -1249,26 +1294,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsSeriesOf() {
-        if (isSeriesOf == null) {
-            isSeriesOf = new ArrayList<>();
+    public List<RelationType> getIsSeriesOves() {
+        if (isSeriesOves == null) {
+            isSeriesOves = new ArrayList<>();
         }
-        return this.isSeriesOf;
+        return this.isSeriesOves;
     }
 
     /**
-     * Gets the value of the isMemberOf property.
+     * Gets the value of the isMemberOves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isMemberOf property.
+     * This is why there is not a <CODE>set</CODE> method for the isMemberOves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIsMemberOf().add(newItem);
+     *    getIsMemberOves().add(newItem);
      * </pre>
      * 
      * 
@@ -1278,26 +1323,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getIsMemberOf() {
-        if (isMemberOf == null) {
-            isMemberOf = new ArrayList<>();
+    public List<RelationType> getIsMemberOves() {
+        if (isMemberOves == null) {
+            isMemberOves = new ArrayList<>();
         }
-        return this.isMemberOf;
+        return this.isMemberOves;
     }
 
     /**
-     * Gets the value of the hasMember property.
+     * Gets the value of the hasMembers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hasMember property.
+     * This is why there is not a <CODE>set</CODE> method for the hasMembers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getHasMember().add(newItem);
+     *    getHasMembers().add(newItem);
      * </pre>
      * 
      * 
@@ -1307,11 +1352,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RelationType> getHasMember() {
-        if (hasMember == null) {
-            hasMember = new ArrayList<>();
+    public List<RelationType> getHasMembers() {
+        if (hasMembers == null) {
+            hasMembers = new ArrayList<>();
         }
-        return this.hasMember;
+        return this.hasMembers;
     }
 
     /**
@@ -1344,18 +1389,18 @@ public class CoreMetadataType {
     }
 
     /**
-     * Gets the value of the coverage property.
+     * Gets the value of the coverages property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the coverage property.
+     * This is why there is not a <CODE>set</CODE> method for the coverages property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCoverage().add(newItem);
+     *    getCoverages().add(newItem);
      * </pre>
      * 
      * 
@@ -1365,11 +1410,11 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<CoverageType> getCoverage() {
-        if (coverage == null) {
-            coverage = new ArrayList<>();
+    public List<CoverageType> getCoverages() {
+        if (coverages == null) {
+            coverages = new ArrayList<>();
         }
-        return this.coverage;
+        return this.coverages;
     }
 
     /**
@@ -1402,18 +1447,18 @@ public class CoreMetadataType {
     }
 
     /**
-     * Gets the value of the version property.
+     * Gets the value of the versions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the version property.
+     * This is why there is not a <CODE>set</CODE> method for the versions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getVersion().add(newItem);
+     *    getVersions().add(newItem);
      * </pre>
      * 
      * 
@@ -1423,26 +1468,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<VersionType> getVersion() {
-        if (version == null) {
-            version = new ArrayList<>();
+    public List<VersionType> getVersions() {
+        if (versions == null) {
+            versions = new ArrayList<>();
         }
-        return this.version;
+        return this.versions;
     }
 
     /**
-     * Gets the value of the publicationHistory property.
+     * Gets the value of the publicationHistories property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the publicationHistory property.
+     * This is why there is not a <CODE>set</CODE> method for the publicationHistories property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPublicationHistory().add(newItem);
+     *    getPublicationHistories().add(newItem);
      * </pre>
      * 
      * 
@@ -1452,26 +1497,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<PublicationHistoryType> getPublicationHistory() {
-        if (publicationHistory == null) {
-            publicationHistory = new ArrayList<>();
+    public List<PublicationHistoryType> getPublicationHistories() {
+        if (publicationHistories == null) {
+            publicationHistories = new ArrayList<>();
         }
-        return this.publicationHistory;
+        return this.publicationHistories;
     }
 
     /**
-     * Gets the value of the planning property.
+     * Gets the value of the plannings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the planning property.
+     * This is why there is not a <CODE>set</CODE> method for the plannings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPlanning().add(newItem);
+     *    getPlannings().add(newItem);
      * </pre>
      * 
      * 
@@ -1481,26 +1526,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<PlanningType> getPlanning() {
-        if (planning == null) {
-            planning = new ArrayList<>();
+    public List<PlanningType> getPlannings() {
+        if (plannings == null) {
+            plannings = new ArrayList<>();
         }
-        return this.planning;
+        return this.plannings;
     }
 
     /**
-     * Gets the value of the rating property.
+     * Gets the value of the ratings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rating property.
+     * This is why there is not a <CODE>set</CODE> method for the ratings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRating().add(newItem);
+     *    getRatings().add(newItem);
      * </pre>
      * 
      * 
@@ -1510,26 +1555,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RatingType> getRating() {
-        if (rating == null) {
-            rating = new ArrayList<>();
+    public List<RatingType> getRatings() {
+        if (ratings == null) {
+            ratings = new ArrayList<>();
         }
-        return this.rating;
+        return this.ratings;
     }
 
     /**
-     * Gets the value of the audienceRating property.
+     * Gets the value of the audienceRatings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audienceRating property.
+     * This is why there is not a <CODE>set</CODE> method for the audienceRatings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudienceRating().add(newItem);
+     *    getAudienceRatings().add(newItem);
      * </pre>
      * 
      * 
@@ -1539,26 +1584,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<RatingType> getAudienceRating() {
-        if (audienceRating == null) {
-            audienceRating = new ArrayList<>();
+    public List<RatingType> getAudienceRatings() {
+        if (audienceRatings == null) {
+            audienceRatings = new ArrayList<>();
         }
-        return this.audienceRating;
+        return this.audienceRatings;
     }
 
     /**
-     * Gets the value of the event property.
+     * Gets the value of the events property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the event property.
+     * This is why there is not a <CODE>set</CODE> method for the events property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEvent().add(newItem);
+     *    getEvents().add(newItem);
      * </pre>
      * 
      * 
@@ -1568,26 +1613,26 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<EventType> getEvent() {
-        if (event == null) {
-            event = new ArrayList<>();
+    public List<EventType> getEvents() {
+        if (events == null) {
+            events = new ArrayList<>();
         }
-        return this.event;
+        return this.events;
     }
 
     /**
-     * Gets the value of the part property.
+     * Gets the value of the parts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the part property.
+     * This is why there is not a <CODE>set</CODE> method for the parts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPart().add(newItem);
+     *    getParts().add(newItem);
      * </pre>
      * 
      * 
@@ -1597,18 +1642,18 @@ public class CoreMetadataType {
      * 
      * 
      */
-    public List<PartType> getPart() {
-        if (part == null) {
-            part = new ArrayList<>();
+    public List<PartType> getParts() {
+        if (parts == null) {
+            parts = new ArrayList<>();
         }
-        return this.part;
+        return this.parts;
     }
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1642,8 +1687,10 @@ public class CoreMetadataType {
     })
     public static class HasTrackPart
         extends RelationType
+        implements Serializable
     {
 
+        private final static long serialVersionUID = -1L;
         @XmlElement(required = true)
         protected AlternativeTitleType trackPartTitle;
         @XmlSchemaType(name = "anyURI")
@@ -1656,7 +1703,7 @@ public class CoreMetadataType {
         protected TimeType sourceEnd;
 
         /**
-         * Gets the value of the trackPartTitle property.
+         * Obtient la valeur de la propriété trackPartTitle.
          * 
          * @return
          *     possible object is
@@ -1668,7 +1715,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the trackPartTitle property.
+         * Définit la valeur de la propriété trackPartTitle.
          * 
          * @param value
          *     allowed object is
@@ -1680,7 +1727,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Gets the value of the destinationId property.
+         * Obtient la valeur de la propriété destinationId.
          * 
          * @return
          *     possible object is
@@ -1692,7 +1739,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the destinationId property.
+         * Définit la valeur de la propriété destinationId.
          * 
          * @param value
          *     allowed object is
@@ -1704,7 +1751,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Gets the value of the destinationStart property.
+         * Obtient la valeur de la propriété destinationStart.
          * 
          * @return
          *     possible object is
@@ -1716,7 +1763,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the destinationStart property.
+         * Définit la valeur de la propriété destinationStart.
          * 
          * @param value
          *     allowed object is
@@ -1728,7 +1775,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Gets the value of the destinationEnd property.
+         * Obtient la valeur de la propriété destinationEnd.
          * 
          * @return
          *     possible object is
@@ -1740,7 +1787,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the destinationEnd property.
+         * Définit la valeur de la propriété destinationEnd.
          * 
          * @param value
          *     allowed object is
@@ -1752,7 +1799,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Gets the value of the sourceId property.
+         * Obtient la valeur de la propriété sourceId.
          * 
          * @return
          *     possible object is
@@ -1764,7 +1811,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the sourceId property.
+         * Définit la valeur de la propriété sourceId.
          * 
          * @param value
          *     allowed object is
@@ -1776,7 +1823,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Gets the value of the sourceStart property.
+         * Obtient la valeur de la propriété sourceStart.
          * 
          * @return
          *     possible object is
@@ -1788,7 +1835,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the sourceStart property.
+         * Définit la valeur de la propriété sourceStart.
          * 
          * @param value
          *     allowed object is
@@ -1800,7 +1847,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Gets the value of the sourceEnd property.
+         * Obtient la valeur de la propriété sourceEnd.
          * 
          * @return
          *     possible object is
@@ -1812,7 +1859,7 @@ public class CoreMetadataType {
         }
 
         /**
-         * Sets the value of the sourceEnd property.
+         * Définit la valeur de la propriété sourceEnd.
          * 
          * @param value
          *     allowed object is

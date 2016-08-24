@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -8,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for elementType complex type.
+ * <p>Classe Java pour elementType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="elementType">
@@ -26,15 +27,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "elementType")
 @XmlSeeAlso({
-    OrganisationDepartmentType.class,
     VersionType.class,
     CompoundNameType.class,
+    OrganisationDepartmentType.class,
     ebu.metadata_schema.ebucore_2015.ContactDetailsType.StageName.class,
     Comment.class
 })
 public class ElementType
     extends org.purl.dc.elements._1.ElementType
+    implements Serializable
 {
 
+    private final static long serialVersionUID = -1L;
 
 }

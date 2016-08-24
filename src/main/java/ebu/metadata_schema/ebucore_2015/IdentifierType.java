@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -21,9 +22,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				is also possible to enter different but unique identifiers for the same resource.
  * 			
  * 
- * <p>Java class for identifierType complex type.
+ * <p>Classe Java pour identifierType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="identifierType">
@@ -33,8 +34,8 @@ import org.purl.dc.elements._1.ElementType;
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}identifier"/>
  *         &lt;element name="attributor" type="{urn:ebu:metadata-schema:ebuCore_2015}entityType" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
  *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}formatGroup"/>
+ *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
  *       &lt;attribute name="note" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -48,28 +49,16 @@ import org.purl.dc.elements._1.ElementType;
     "identifier",
     "attributor"
 })
-public class IdentifierType {
+public class IdentifierType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
     protected ElementType identifier;
     protected EntityType attributor;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
-    @XmlAttribute(name = "typeLabel")
-    protected java.lang.String typeLabel;
-    @XmlAttribute(name = "typeDefinition")
-    protected java.lang.String typeDefinition;
-    @XmlAttribute(name = "typeLink")
-    @XmlSchemaType(name = "anyURI")
-    protected java.lang.String typeLink;
-    @XmlAttribute(name = "typeSource")
-    protected java.lang.String typeSource;
-    @XmlAttribute(name = "typeNamespace")
-    protected java.lang.String typeNamespace;
-    @XmlAttribute(name = "typeLanguage")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "language")
-    protected java.lang.String typeLanguage;
     @XmlAttribute(name = "formatLabel")
     protected java.lang.String formatLabel;
     @XmlAttribute(name = "formatDefinition")
@@ -85,6 +74,21 @@ public class IdentifierType {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "language")
     protected java.lang.String formatLanguage;
+    @XmlAttribute(name = "typeLabel")
+    protected java.lang.String typeLabel;
+    @XmlAttribute(name = "typeDefinition")
+    protected java.lang.String typeDefinition;
+    @XmlAttribute(name = "typeLink")
+    @XmlSchemaType(name = "anyURI")
+    protected java.lang.String typeLink;
+    @XmlAttribute(name = "typeSource")
+    protected java.lang.String typeSource;
+    @XmlAttribute(name = "typeNamespace")
+    protected java.lang.String typeNamespace;
+    @XmlAttribute(name = "typeLanguage")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "language")
+    protected java.lang.String typeLanguage;
 
     /**
      *  The EBU core metadata set is built as a refinement of the Dublin
@@ -101,7 +105,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the identifier property.
+     * Définit la valeur de la propriété identifier.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +117,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the attributor property.
+     * Obtient la valeur de la propriété attributor.
      * 
      * @return
      *     possible object is
@@ -125,7 +129,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the attributor property.
+     * Définit la valeur de la propriété attributor.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +141,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -149,7 +153,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -161,151 +165,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLabel() {
-        return typeLabel;
-    }
-
-    /**
-     * Sets the value of the typeLabel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLabel(java.lang.String value) {
-        this.typeLabel = value;
-    }
-
-    /**
-     * Gets the value of the typeDefinition property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeDefinition() {
-        return typeDefinition;
-    }
-
-    /**
-     * Sets the value of the typeDefinition property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeDefinition(java.lang.String value) {
-        this.typeDefinition = value;
-    }
-
-    /**
-     * Gets the value of the typeLink property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLink() {
-        return typeLink;
-    }
-
-    /**
-     * Sets the value of the typeLink property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLink(java.lang.String value) {
-        this.typeLink = value;
-    }
-
-    /**
-     * Gets the value of the typeSource property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeSource() {
-        return typeSource;
-    }
-
-    /**
-     * Sets the value of the typeSource property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeSource(java.lang.String value) {
-        this.typeSource = value;
-    }
-
-    /**
-     * Gets the value of the typeNamespace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeNamespace() {
-        return typeNamespace;
-    }
-
-    /**
-     * Sets the value of the typeNamespace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeNamespace(java.lang.String value) {
-        this.typeNamespace = value;
-    }
-
-    /**
-     * Gets the value of the typeLanguage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLanguage() {
-        return typeLanguage;
-    }
-
-    /**
-     * Sets the value of the typeLanguage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLanguage(java.lang.String value) {
-        this.typeLanguage = value;
-    }
-
-    /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -317,7 +177,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -329,7 +189,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -341,7 +201,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -353,7 +213,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -365,7 +225,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -377,7 +237,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -389,7 +249,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -401,7 +261,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -413,7 +273,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -425,7 +285,7 @@ public class IdentifierType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -437,7 +297,7 @@ public class IdentifierType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is
@@ -446,6 +306,150 @@ public class IdentifierType {
      */
     public void setFormatLanguage(java.lang.String value) {
         this.formatLanguage = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLabel.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLabel() {
+        return typeLabel;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLabel.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLabel(java.lang.String value) {
+        this.typeLabel = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeDefinition.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeDefinition() {
+        return typeDefinition;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeDefinition.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeDefinition(java.lang.String value) {
+        this.typeDefinition = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLink() {
+        return typeLink;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLink(java.lang.String value) {
+        this.typeLink = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeSource.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeSource() {
+        return typeSource;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeSource.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeSource(java.lang.String value) {
+        this.typeSource = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeNamespace.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeNamespace() {
+        return typeNamespace;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeNamespace.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeNamespace(java.lang.String value) {
+        this.typeNamespace = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLanguage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLanguage() {
+        return typeLanguage;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLanguage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLanguage(java.lang.String value) {
+        this.typeLanguage = value;
     }
 
 }

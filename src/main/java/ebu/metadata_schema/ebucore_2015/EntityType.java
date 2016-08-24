@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -15,9 +17,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * To identify a person, group of persons or organisation
  * 
- * <p>Java class for entityType complex type.
+ * <p>Classe Java pour entityType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="entityType">
@@ -50,15 +52,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "entityType", propOrder = {
     "contactDetails",
     "organisationDetails",
-    "role",
-    "award"
+    "roles",
+    "awards"
 })
-public class EntityType {
+public class EntityType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected List<ContactDetailsType> contactDetails;
     protected List<OrganisationDetailsType> organisationDetails;
-    protected List<EntityType.Role> role;
-    protected List<AwardType> award;
+    @XmlElement(name = "role")
+    protected List<EntityType.Role> roles;
+    @XmlElement(name = "award")
+    protected List<AwardType> awards;
     @XmlAttribute(name = "entityId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String entityId;
@@ -122,18 +129,18 @@ public class EntityType {
     }
 
     /**
-     * Gets the value of the role property.
+     * Gets the value of the roles property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the role property.
+     * This is why there is not a <CODE>set</CODE> method for the roles property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRole().add(newItem);
+     *    getRoles().add(newItem);
      * </pre>
      * 
      * 
@@ -143,26 +150,26 @@ public class EntityType {
      * 
      * 
      */
-    public List<EntityType.Role> getRole() {
-        if (role == null) {
-            role = new ArrayList<>();
+    public List<EntityType.Role> getRoles() {
+        if (roles == null) {
+            roles = new ArrayList<>();
         }
-        return this.role;
+        return this.roles;
     }
 
     /**
-     * Gets the value of the award property.
+     * Gets the value of the awards property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the award property.
+     * This is why there is not a <CODE>set</CODE> method for the awards property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAward().add(newItem);
+     *    getAwards().add(newItem);
      * </pre>
      * 
      * 
@@ -172,15 +179,15 @@ public class EntityType {
      * 
      * 
      */
-    public List<AwardType> getAward() {
-        if (award == null) {
-            award = new ArrayList<>();
+    public List<AwardType> getAwards() {
+        if (awards == null) {
+            awards = new ArrayList<>();
         }
-        return this.award;
+        return this.awards;
     }
 
     /**
-     * Gets the value of the entityId property.
+     * Obtient la valeur de la propriété entityId.
      * 
      * @return
      *     possible object is
@@ -192,7 +199,7 @@ public class EntityType {
     }
 
     /**
-     * Sets the value of the entityId property.
+     * Définit la valeur de la propriété entityId.
      * 
      * @param value
      *     allowed object is
@@ -205,9 +212,9 @@ public class EntityType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -224,8 +231,11 @@ public class EntityType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Role {
+    public static class Role
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "costCentre")
         @XmlSchemaType(name = "anySimpleType")
         protected java.lang.String costCentre;
@@ -246,7 +256,7 @@ public class EntityType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the costCentre property.
+         * Obtient la valeur de la propriété costCentre.
          * 
          * @return
          *     possible object is
@@ -258,7 +268,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the costCentre property.
+         * Définit la valeur de la propriété costCentre.
          * 
          * @param value
          *     allowed object is
@@ -270,7 +280,7 @@ public class EntityType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -282,7 +292,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -294,7 +304,7 @@ public class EntityType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -306,7 +316,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -318,7 +328,7 @@ public class EntityType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -330,7 +340,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -342,7 +352,7 @@ public class EntityType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -354,7 +364,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -366,7 +376,7 @@ public class EntityType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -378,7 +388,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -390,7 +400,7 @@ public class EntityType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -402,7 +412,7 @@ public class EntityType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

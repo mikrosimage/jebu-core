@@ -1,19 +1,24 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 /**
- * <p>Java class for affiliationType complex type.
+ * <p>Classe Java pour affiliationType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="affiliationType">
@@ -53,8 +58,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "startDate",
     "endDate"
 })
-public class AffiliationType {
+public class AffiliationType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(required = true)
     protected OrganisationDetailsType organisation;
     @XmlElement(required = true)
@@ -63,7 +71,7 @@ public class AffiliationType {
     protected AffiliationType.EndDate endDate;
 
     /**
-     * Gets the value of the organisation property.
+     * Obtient la valeur de la propri�t� organisation.
      * 
      * @return
      *     possible object is
@@ -75,7 +83,7 @@ public class AffiliationType {
     }
 
     /**
-     * Sets the value of the organisation property.
+     * D�finit la valeur de la propri�t� organisation.
      * 
      * @param value
      *     allowed object is
@@ -87,7 +95,7 @@ public class AffiliationType {
     }
 
     /**
-     * Gets the value of the startDate property.
+     * Obtient la valeur de la propri�t� startDate.
      * 
      * @return
      *     possible object is
@@ -99,7 +107,7 @@ public class AffiliationType {
     }
 
     /**
-     * Sets the value of the startDate property.
+     * D�finit la valeur de la propri�t� startDate.
      * 
      * @param value
      *     allowed object is
@@ -111,7 +119,7 @@ public class AffiliationType {
     }
 
     /**
-     * Gets the value of the endDate property.
+     * Obtient la valeur de la propri�t� endDate.
      * 
      * @return
      *     possible object is
@@ -123,7 +131,7 @@ public class AffiliationType {
     }
 
     /**
-     * Sets the value of the endDate property.
+     * D�finit la valeur de la propri�t� endDate.
      * 
      * @param value
      *     allowed object is
@@ -136,9 +144,9 @@ public class AffiliationType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -154,14 +162,18 @@ public class AffiliationType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class EndDate {
+    public static class EndDate
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -169,8 +181,9 @@ public class AffiliationType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -178,7 +191,7 @@ public class AffiliationType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propri�t� startYear.
          * 
          * @return
          *     possible object is
@@ -190,7 +203,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * D�finit la valeur de la propri�t� startYear.
          * 
          * @param value
          *     allowed object is
@@ -202,31 +215,31 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propri�t� startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * D�finit la valeur de la propri�t� startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propri�t� startTime.
          * 
          * @return
          *     possible object is
@@ -238,7 +251,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * D�finit la valeur de la propri�t� startTime.
          * 
          * @param value
          *     allowed object is
@@ -250,7 +263,7 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propri�t� endYear.
          * 
          * @return
          *     possible object is
@@ -262,7 +275,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * D�finit la valeur de la propri�t� endYear.
          * 
          * @param value
          *     allowed object is
@@ -274,31 +287,31 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propri�t� endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * D�finit la valeur de la propri�t� endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propri�t� endTime.
          * 
          * @return
          *     possible object is
@@ -310,7 +323,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * D�finit la valeur de la propri�t� endTime.
          * 
          * @param value
          *     allowed object is
@@ -322,7 +335,7 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propri�t� period.
          * 
          * @return
          *     possible object is
@@ -334,7 +347,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the period property.
+         * D�finit la valeur de la propri�t� period.
          * 
          * @param value
          *     allowed object is
@@ -349,9 +362,9 @@ public class AffiliationType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -367,14 +380,18 @@ public class AffiliationType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class StartDate {
+    public static class StartDate
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -382,8 +399,9 @@ public class AffiliationType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -391,7 +409,7 @@ public class AffiliationType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propri�t� startYear.
          * 
          * @return
          *     possible object is
@@ -403,7 +421,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * D�finit la valeur de la propri�t� startYear.
          * 
          * @param value
          *     allowed object is
@@ -415,31 +433,31 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propri�t� startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * D�finit la valeur de la propri�t� startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propri�t� startTime.
          * 
          * @return
          *     possible object is
@@ -451,7 +469,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * D�finit la valeur de la propri�t� startTime.
          * 
          * @param value
          *     allowed object is
@@ -463,7 +481,7 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propri�t� endYear.
          * 
          * @return
          *     possible object is
@@ -475,7 +493,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * D�finit la valeur de la propri�t� endYear.
          * 
          * @param value
          *     allowed object is
@@ -487,31 +505,31 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propri�t� endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * D�finit la valeur de la propri�t� endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propri�t� endTime.
          * 
          * @return
          *     possible object is
@@ -523,7 +541,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * D�finit la valeur de la propri�t� endTime.
          * 
          * @param value
          *     allowed object is
@@ -535,7 +553,7 @@ public class AffiliationType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propri�t� period.
          * 
          * @return
          *     possible object is
@@ -547,7 +565,7 @@ public class AffiliationType {
         }
 
         /**
-         * Sets the value of the period property.
+         * D�finit la valeur de la propri�t� period.
          * 
          * @param value
          *     allowed object is

@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  *  To provide a set of audio technical characteristics. 
  * 
- * <p>Java class for audioFormatType complex type.
+ * <p>Classe Java pour audioFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioFormatType">
@@ -108,26 +109,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "bitRate",
     "bitRateMax",
     "bitRateMode",
-    "audioTrack",
+    "audioTracks",
     "channels",
-    "filter",
-    "technicalAttributeString",
-    "technicalAttributeByte",
-    "technicalAttributeShort",
-    "technicalAttributeInteger",
-    "technicalAttributeLong",
-    "technicalAttributeUnsignedByte",
-    "technicalAttributeUnsignedShort",
-    "technicalAttributeUnsignedInteger",
-    "technicalAttributeUnsignedLong",
-    "technicalAttributeBoolean",
-    "technicalAttributeFloat",
-    "technicalAttributeRational",
-    "technicalAttributeUri",
-    "comment"
+    "filters",
+    "technicalAttributeStrings",
+    "technicalAttributeBytes",
+    "technicalAttributeShorts",
+    "technicalAttributeIntegers",
+    "technicalAttributeLongs",
+    "technicalAttributeUnsignedBytes",
+    "technicalAttributeUnsignedShorts",
+    "technicalAttributeUnsignedIntegers",
+    "technicalAttributeUnsignedLongs",
+    "technicalAttributeBooleen",
+    "technicalAttributeFloats",
+    "technicalAttributeRationals",
+    "technicalAttributeUris",
+    "comments"
 })
-public class AudioFormatType {
+public class AudioFormatType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected AudioFormatType.AudioEncoding audioEncoding;
     protected CodecType codec;
     protected AudioFormatType.AudioTrackConfiguration audioTrackConfiguration;
@@ -138,25 +142,40 @@ public class AudioFormatType {
     protected DimensionType bitRate;
     protected DimensionType bitRateMax;
     protected java.lang.String bitRateMode;
-    protected List<AudioFormatType.AudioTrack> audioTrack;
+    @XmlElement(name = "audioTrack")
+    protected List<AudioFormatType.AudioTrack> audioTracks;
     @XmlSchemaType(name = "nonNegativeInteger")
     protected BigInteger channels;
-    protected List<FilterType> filter;
-    protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeString;
-    protected List<Int8> technicalAttributeByte;
-    protected List<Int16> technicalAttributeShort;
-    protected List<Int32> technicalAttributeInteger;
-    protected List<Int64> technicalAttributeLong;
-    protected List<UInt8> technicalAttributeUnsignedByte;
-    protected List<UInt16> technicalAttributeUnsignedShort;
-    protected List<UInt32> technicalAttributeUnsignedInteger;
-    protected List<UInt64> technicalAttributeUnsignedLong;
-    protected List<ebu.metadata_schema.ebucore_2015.Boolean> technicalAttributeBoolean;
-    protected List<Float> technicalAttributeFloat;
-    @XmlElement(defaultValue = "1")
-    protected List<TechnicalAttributeRationalType> technicalAttributeRational;
-    protected List<TechnicalAttributeUriType> technicalAttributeUri;
-    protected List<Comment> comment;
+    @XmlElement(name = "filter")
+    protected List<FilterType> filters;
+    @XmlElement(name = "technicalAttributeString")
+    protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeStrings;
+    @XmlElement(name = "technicalAttributeByte")
+    protected List<Int8> technicalAttributeBytes;
+    @XmlElement(name = "technicalAttributeShort")
+    protected List<Int16> technicalAttributeShorts;
+    @XmlElement(name = "technicalAttributeInteger")
+    protected List<Int32> technicalAttributeIntegers;
+    @XmlElement(name = "technicalAttributeLong")
+    protected List<Int64> technicalAttributeLongs;
+    @XmlElement(name = "technicalAttributeUnsignedByte")
+    protected List<UInt8> technicalAttributeUnsignedBytes;
+    @XmlElement(name = "technicalAttributeUnsignedShort")
+    protected List<UInt16> technicalAttributeUnsignedShorts;
+    @XmlElement(name = "technicalAttributeUnsignedInteger")
+    protected List<UInt32> technicalAttributeUnsignedIntegers;
+    @XmlElement(name = "technicalAttributeUnsignedLong")
+    protected List<UInt64> technicalAttributeUnsignedLongs;
+    @XmlElement(name = "technicalAttributeBoolean")
+    protected List<ebu.metadata_schema.ebucore_2015.Boolean> technicalAttributeBooleen;
+    @XmlElement(name = "technicalAttributeFloat")
+    protected List<Float> technicalAttributeFloats;
+    @XmlElement(name = "technicalAttributeRational", defaultValue = "1")
+    protected List<TechnicalAttributeRationalType> technicalAttributeRationals;
+    @XmlElement(name = "technicalAttributeUri")
+    protected List<TechnicalAttributeUriType> technicalAttributeUris;
+    @XmlElement(name = "comment")
+    protected List<Comment> comments;
     @XmlAttribute(name = "audioFormatId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String audioFormatId;
@@ -174,7 +193,7 @@ public class AudioFormatType {
     protected java.lang.Boolean audioPresenceFlag;
 
     /**
-     * Gets the value of the audioEncoding property.
+     * Obtient la valeur de la propriété audioEncoding.
      * 
      * @return
      *     possible object is
@@ -186,7 +205,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioEncoding property.
+     * Définit la valeur de la propriété audioEncoding.
      * 
      * @param value
      *     allowed object is
@@ -198,7 +217,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the codec property.
+     * Obtient la valeur de la propriété codec.
      * 
      * @return
      *     possible object is
@@ -210,7 +229,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the codec property.
+     * Définit la valeur de la propriété codec.
      * 
      * @param value
      *     allowed object is
@@ -222,7 +241,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioTrackConfiguration property.
+     * Obtient la valeur de la propriété audioTrackConfiguration.
      * 
      * @return
      *     possible object is
@@ -234,7 +253,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioTrackConfiguration property.
+     * Définit la valeur de la propriété audioTrackConfiguration.
      * 
      * @param value
      *     allowed object is
@@ -246,7 +265,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the samplingRate property.
+     * Obtient la valeur de la propriété samplingRate.
      * 
      * @return
      *     possible object is
@@ -258,7 +277,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the samplingRate property.
+     * Définit la valeur de la propriété samplingRate.
      * 
      * @param value
      *     allowed object is
@@ -270,7 +289,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the sampleSize property.
+     * Obtient la valeur de la propriété sampleSize.
      * 
      * @return
      *     possible object is
@@ -282,7 +301,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the sampleSize property.
+     * Définit la valeur de la propriété sampleSize.
      * 
      * @param value
      *     allowed object is
@@ -294,7 +313,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the sampleType property.
+     * Obtient la valeur de la propriété sampleType.
      * 
      * @return
      *     possible object is
@@ -306,7 +325,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the sampleType property.
+     * Définit la valeur de la propriété sampleType.
      * 
      * @param value
      *     allowed object is
@@ -318,7 +337,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the bitRate property.
+     * Obtient la valeur de la propriété bitRate.
      * 
      * @return
      *     possible object is
@@ -330,7 +349,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the bitRate property.
+     * Définit la valeur de la propriété bitRate.
      * 
      * @param value
      *     allowed object is
@@ -342,7 +361,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the bitRateMax property.
+     * Obtient la valeur de la propriété bitRateMax.
      * 
      * @return
      *     possible object is
@@ -354,7 +373,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the bitRateMax property.
+     * Définit la valeur de la propriété bitRateMax.
      * 
      * @param value
      *     allowed object is
@@ -366,7 +385,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the bitRateMode property.
+     * Obtient la valeur de la propriété bitRateMode.
      * 
      * @return
      *     possible object is
@@ -378,7 +397,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the bitRateMode property.
+     * Définit la valeur de la propriété bitRateMode.
      * 
      * @param value
      *     allowed object is
@@ -390,18 +409,18 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioTrack property.
+     * Gets the value of the audioTracks property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioTrack property.
+     * This is why there is not a <CODE>set</CODE> method for the audioTracks property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioTrack().add(newItem);
+     *    getAudioTracks().add(newItem);
      * </pre>
      * 
      * 
@@ -411,15 +430,15 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<AudioFormatType.AudioTrack> getAudioTrack() {
-        if (audioTrack == null) {
-            audioTrack = new ArrayList<>();
+    public List<AudioFormatType.AudioTrack> getAudioTracks() {
+        if (audioTracks == null) {
+            audioTracks = new ArrayList<>();
         }
-        return this.audioTrack;
+        return this.audioTracks;
     }
 
     /**
-     * Gets the value of the channels property.
+     * Obtient la valeur de la propriété channels.
      * 
      * @return
      *     possible object is
@@ -431,7 +450,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the channels property.
+     * Définit la valeur de la propriété channels.
      * 
      * @param value
      *     allowed object is
@@ -443,18 +462,18 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the filter property.
+     * Gets the value of the filters property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the filter property.
+     * This is why there is not a <CODE>set</CODE> method for the filters property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFilter().add(newItem);
+     *    getFilters().add(newItem);
      * </pre>
      * 
      * 
@@ -464,26 +483,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<FilterType> getFilter() {
-        if (filter == null) {
-            filter = new ArrayList<>();
+    public List<FilterType> getFilters() {
+        if (filters == null) {
+            filters = new ArrayList<>();
         }
-        return this.filter;
+        return this.filters;
     }
 
     /**
-     * Gets the value of the technicalAttributeString property.
+     * Gets the value of the technicalAttributeStrings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeString property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeStrings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeString().add(newItem);
+     *    getTechnicalAttributeStrings().add(newItem);
      * </pre>
      * 
      * 
@@ -493,26 +512,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeString() {
-        if (technicalAttributeString == null) {
-            technicalAttributeString = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeStrings() {
+        if (technicalAttributeStrings == null) {
+            technicalAttributeStrings = new ArrayList<>();
         }
-        return this.technicalAttributeString;
+        return this.technicalAttributeStrings;
     }
 
     /**
-     * Gets the value of the technicalAttributeByte property.
+     * Gets the value of the technicalAttributeBytes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeByte property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBytes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeByte().add(newItem);
+     *    getTechnicalAttributeBytes().add(newItem);
      * </pre>
      * 
      * 
@@ -522,26 +541,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<Int8> getTechnicalAttributeByte() {
-        if (technicalAttributeByte == null) {
-            technicalAttributeByte = new ArrayList<>();
+    public List<Int8> getTechnicalAttributeBytes() {
+        if (technicalAttributeBytes == null) {
+            technicalAttributeBytes = new ArrayList<>();
         }
-        return this.technicalAttributeByte;
+        return this.technicalAttributeBytes;
     }
 
     /**
-     * Gets the value of the technicalAttributeShort property.
+     * Gets the value of the technicalAttributeShorts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShort property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShorts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeShort().add(newItem);
+     *    getTechnicalAttributeShorts().add(newItem);
      * </pre>
      * 
      * 
@@ -551,26 +570,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<Int16> getTechnicalAttributeShort() {
-        if (technicalAttributeShort == null) {
-            technicalAttributeShort = new ArrayList<>();
+    public List<Int16> getTechnicalAttributeShorts() {
+        if (technicalAttributeShorts == null) {
+            technicalAttributeShorts = new ArrayList<>();
         }
-        return this.technicalAttributeShort;
+        return this.technicalAttributeShorts;
     }
 
     /**
-     * Gets the value of the technicalAttributeInteger property.
+     * Gets the value of the technicalAttributeIntegers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeInteger property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeIntegers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeInteger().add(newItem);
+     *    getTechnicalAttributeIntegers().add(newItem);
      * </pre>
      * 
      * 
@@ -580,26 +599,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<Int32> getTechnicalAttributeInteger() {
-        if (technicalAttributeInteger == null) {
-            technicalAttributeInteger = new ArrayList<>();
+    public List<Int32> getTechnicalAttributeIntegers() {
+        if (technicalAttributeIntegers == null) {
+            technicalAttributeIntegers = new ArrayList<>();
         }
-        return this.technicalAttributeInteger;
+        return this.technicalAttributeIntegers;
     }
 
     /**
-     * Gets the value of the technicalAttributeLong property.
+     * Gets the value of the technicalAttributeLongs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLong property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLongs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeLong().add(newItem);
+     *    getTechnicalAttributeLongs().add(newItem);
      * </pre>
      * 
      * 
@@ -609,26 +628,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<Int64> getTechnicalAttributeLong() {
-        if (technicalAttributeLong == null) {
-            technicalAttributeLong = new ArrayList<>();
+    public List<Int64> getTechnicalAttributeLongs() {
+        if (technicalAttributeLongs == null) {
+            technicalAttributeLongs = new ArrayList<>();
         }
-        return this.technicalAttributeLong;
+        return this.technicalAttributeLongs;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedByte property.
+     * Gets the value of the technicalAttributeUnsignedBytes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedByte property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedBytes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedByte().add(newItem);
+     *    getTechnicalAttributeUnsignedBytes().add(newItem);
      * </pre>
      * 
      * 
@@ -638,26 +657,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<UInt8> getTechnicalAttributeUnsignedByte() {
-        if (technicalAttributeUnsignedByte == null) {
-            technicalAttributeUnsignedByte = new ArrayList<>();
+    public List<UInt8> getTechnicalAttributeUnsignedBytes() {
+        if (technicalAttributeUnsignedBytes == null) {
+            technicalAttributeUnsignedBytes = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedByte;
+        return this.technicalAttributeUnsignedBytes;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedShort property.
+     * Gets the value of the technicalAttributeUnsignedShorts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShort property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShorts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedShort().add(newItem);
+     *    getTechnicalAttributeUnsignedShorts().add(newItem);
      * </pre>
      * 
      * 
@@ -667,26 +686,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<UInt16> getTechnicalAttributeUnsignedShort() {
-        if (technicalAttributeUnsignedShort == null) {
-            technicalAttributeUnsignedShort = new ArrayList<>();
+    public List<UInt16> getTechnicalAttributeUnsignedShorts() {
+        if (technicalAttributeUnsignedShorts == null) {
+            technicalAttributeUnsignedShorts = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedShort;
+        return this.technicalAttributeUnsignedShorts;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedInteger property.
+     * Gets the value of the technicalAttributeUnsignedIntegers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedInteger property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedIntegers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedInteger().add(newItem);
+     *    getTechnicalAttributeUnsignedIntegers().add(newItem);
      * </pre>
      * 
      * 
@@ -696,26 +715,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<UInt32> getTechnicalAttributeUnsignedInteger() {
-        if (technicalAttributeUnsignedInteger == null) {
-            technicalAttributeUnsignedInteger = new ArrayList<>();
+    public List<UInt32> getTechnicalAttributeUnsignedIntegers() {
+        if (technicalAttributeUnsignedIntegers == null) {
+            technicalAttributeUnsignedIntegers = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedInteger;
+        return this.technicalAttributeUnsignedIntegers;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedLong property.
+     * Gets the value of the technicalAttributeUnsignedLongs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLong property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLongs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedLong().add(newItem);
+     *    getTechnicalAttributeUnsignedLongs().add(newItem);
      * </pre>
      * 
      * 
@@ -725,26 +744,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<UInt64> getTechnicalAttributeUnsignedLong() {
-        if (technicalAttributeUnsignedLong == null) {
-            technicalAttributeUnsignedLong = new ArrayList<>();
+    public List<UInt64> getTechnicalAttributeUnsignedLongs() {
+        if (technicalAttributeUnsignedLongs == null) {
+            technicalAttributeUnsignedLongs = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedLong;
+        return this.technicalAttributeUnsignedLongs;
     }
 
     /**
-     * Gets the value of the technicalAttributeBoolean property.
+     * Gets the value of the technicalAttributeBooleen property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBoolean property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBooleen property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeBoolean().add(newItem);
+     *    getTechnicalAttributeBooleen().add(newItem);
      * </pre>
      * 
      * 
@@ -754,26 +773,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.Boolean> getTechnicalAttributeBoolean() {
-        if (technicalAttributeBoolean == null) {
-            technicalAttributeBoolean = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.Boolean> getTechnicalAttributeBooleen() {
+        if (technicalAttributeBooleen == null) {
+            technicalAttributeBooleen = new ArrayList<>();
         }
-        return this.technicalAttributeBoolean;
+        return this.technicalAttributeBooleen;
     }
 
     /**
-     * Gets the value of the technicalAttributeFloat property.
+     * Gets the value of the technicalAttributeFloats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloat property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeFloat().add(newItem);
+     *    getTechnicalAttributeFloats().add(newItem);
      * </pre>
      * 
      * 
@@ -783,26 +802,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<Float> getTechnicalAttributeFloat() {
-        if (technicalAttributeFloat == null) {
-            technicalAttributeFloat = new ArrayList<>();
+    public List<Float> getTechnicalAttributeFloats() {
+        if (technicalAttributeFloats == null) {
+            technicalAttributeFloats = new ArrayList<>();
         }
-        return this.technicalAttributeFloat;
+        return this.technicalAttributeFloats;
     }
 
     /**
-     * Gets the value of the technicalAttributeRational property.
+     * Gets the value of the technicalAttributeRationals property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRational property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRationals property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeRational().add(newItem);
+     *    getTechnicalAttributeRationals().add(newItem);
      * </pre>
      * 
      * 
@@ -812,26 +831,26 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<TechnicalAttributeRationalType> getTechnicalAttributeRational() {
-        if (technicalAttributeRational == null) {
-            technicalAttributeRational = new ArrayList<>();
+    public List<TechnicalAttributeRationalType> getTechnicalAttributeRationals() {
+        if (technicalAttributeRationals == null) {
+            technicalAttributeRationals = new ArrayList<>();
         }
-        return this.technicalAttributeRational;
+        return this.technicalAttributeRationals;
     }
 
     /**
-     * Gets the value of the technicalAttributeUri property.
+     * Gets the value of the technicalAttributeUris property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUri property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUris property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUri().add(newItem);
+     *    getTechnicalAttributeUris().add(newItem);
      * </pre>
      * 
      * 
@@ -841,27 +860,27 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<TechnicalAttributeUriType> getTechnicalAttributeUri() {
-        if (technicalAttributeUri == null) {
-            technicalAttributeUri = new ArrayList<>();
+    public List<TechnicalAttributeUriType> getTechnicalAttributeUris() {
+        if (technicalAttributeUris == null) {
+            technicalAttributeUris = new ArrayList<>();
         }
-        return this.technicalAttributeUri;
+        return this.technicalAttributeUris;
     }
 
     /**
      *  To provide additional contextual information on the audio
-     * 						format. Gets the value of the comment property.
+     * 						format. Gets the value of the comments property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comment property.
+     * This is why there is not a <CODE>set</CODE> method for the comments property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getComment().add(newItem);
+     *    getComments().add(newItem);
      * </pre>
      * 
      * 
@@ -871,15 +890,15 @@ public class AudioFormatType {
      * 
      * 
      */
-    public List<Comment> getComment() {
-        if (comment == null) {
-            comment = new ArrayList<>();
+    public List<Comment> getComments() {
+        if (comments == null) {
+            comments = new ArrayList<>();
         }
-        return this.comment;
+        return this.comments;
     }
 
     /**
-     * Gets the value of the audioFormatId property.
+     * Obtient la valeur de la propriété audioFormatId.
      * 
      * @return
      *     possible object is
@@ -891,7 +910,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioFormatId property.
+     * Définit la valeur de la propriété audioFormatId.
      * 
      * @param value
      *     allowed object is
@@ -903,7 +922,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioFormatVersionId property.
+     * Obtient la valeur de la propriété audioFormatVersionId.
      * 
      * @return
      *     possible object is
@@ -915,7 +934,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioFormatVersionId property.
+     * Définit la valeur de la propriété audioFormatVersionId.
      * 
      * @param value
      *     allowed object is
@@ -927,7 +946,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioFormatName property.
+     * Obtient la valeur de la propriété audioFormatName.
      * 
      * @return
      *     possible object is
@@ -939,7 +958,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioFormatName property.
+     * Définit la valeur de la propriété audioFormatName.
      * 
      * @param value
      *     allowed object is
@@ -951,7 +970,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioFormatDefinition property.
+     * Obtient la valeur de la propriété audioFormatDefinition.
      * 
      * @return
      *     possible object is
@@ -963,7 +982,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioFormatDefinition property.
+     * Définit la valeur de la propriété audioFormatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -975,7 +994,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioFormatProfile property.
+     * Obtient la valeur de la propriété audioFormatProfile.
      * 
      * @return
      *     possible object is
@@ -987,7 +1006,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioFormatProfile property.
+     * Définit la valeur de la propriété audioFormatProfile.
      * 
      * @param value
      *     allowed object is
@@ -999,7 +1018,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioFormatProfileLevel property.
+     * Obtient la valeur de la propriété audioFormatProfileLevel.
      * 
      * @return
      *     possible object is
@@ -1011,7 +1030,7 @@ public class AudioFormatType {
     }
 
     /**
-     * Sets the value of the audioFormatProfileLevel property.
+     * Définit la valeur de la propriété audioFormatProfileLevel.
      * 
      * @param value
      *     allowed object is
@@ -1023,19 +1042,19 @@ public class AudioFormatType {
     }
 
     /**
-     * Gets the value of the audioPresenceFlag property.
+     * Obtient la valeur de la propriété audioPresenceFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getAudioPresenceFlag() {
+    public java.lang.Boolean isAudioPresenceFlag() {
         return audioPresenceFlag;
     }
 
     /**
-     * Sets the value of the audioPresenceFlag property.
+     * Définit la valeur de la propriété audioPresenceFlag.
      * 
      * @param value
      *     allowed object is
@@ -1048,9 +1067,9 @@ public class AudioFormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1066,8 +1085,11 @@ public class AudioFormatType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class AudioEncoding {
+    public static class AudioEncoding
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -1085,7 +1107,7 @@ public class AudioFormatType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1097,7 +1119,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1109,7 +1131,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1121,7 +1143,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1133,7 +1155,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1145,7 +1167,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -1157,7 +1179,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -1169,7 +1191,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -1181,7 +1203,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -1193,7 +1215,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -1205,7 +1227,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -1217,7 +1239,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -1232,9 +1254,9 @@ public class AudioFormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1253,8 +1275,11 @@ public class AudioFormatType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class AudioTrack {
+    public static class AudioTrack
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "trackLanguage")
         @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
         @XmlSchemaType(name = "language")
@@ -1282,7 +1307,7 @@ public class AudioFormatType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the trackLanguage property.
+         * Obtient la valeur de la propriété trackLanguage.
          * 
          * @return
          *     possible object is
@@ -1294,7 +1319,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the trackLanguage property.
+         * Définit la valeur de la propriété trackLanguage.
          * 
          * @param value
          *     allowed object is
@@ -1306,7 +1331,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the trackId property.
+         * Obtient la valeur de la propriété trackId.
          * 
          * @return
          *     possible object is
@@ -1318,7 +1343,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the trackId property.
+         * Définit la valeur de la propriété trackId.
          * 
          * @param value
          *     allowed object is
@@ -1330,7 +1355,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the trackName property.
+         * Obtient la valeur de la propriété trackName.
          * 
          * @return
          *     possible object is
@@ -1342,7 +1367,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the trackName property.
+         * Définit la valeur de la propriété trackName.
          * 
          * @param value
          *     allowed object is
@@ -1354,7 +1379,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1366,7 +1391,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1378,7 +1403,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1390,7 +1415,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1402,7 +1427,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1414,7 +1439,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -1426,7 +1451,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -1438,7 +1463,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -1450,7 +1475,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -1462,7 +1487,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -1474,7 +1499,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -1486,7 +1511,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -1501,9 +1526,9 @@ public class AudioFormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1519,8 +1544,11 @@ public class AudioFormatType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class AudioTrackConfiguration {
+    public static class AudioTrackConfiguration
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -1538,7 +1566,7 @@ public class AudioFormatType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1550,7 +1578,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1562,7 +1590,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1574,7 +1602,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1586,7 +1614,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1598,7 +1626,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -1610,7 +1638,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -1622,7 +1650,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -1634,7 +1662,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -1646,7 +1674,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -1658,7 +1686,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -1670,7 +1698,7 @@ public class AudioFormatType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

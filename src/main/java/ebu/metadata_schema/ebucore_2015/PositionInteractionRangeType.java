@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for positionInteractionRangeType complex type.
+ * <p>Classe Java pour positionInteractionRangeType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="positionInteractionRangeType">
@@ -30,8 +31,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "positionInteractionRangeType", propOrder = {
     "value"
 })
-public class PositionInteractionRangeType {
+public class PositionInteractionRangeType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected float value;
     @XmlAttribute(name = "coordinate")
@@ -40,7 +44,7 @@ public class PositionInteractionRangeType {
     protected java.lang.String bound;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public float getValue() {
@@ -48,7 +52,7 @@ public class PositionInteractionRangeType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(float value) {
@@ -56,7 +60,7 @@ public class PositionInteractionRangeType {
     }
 
     /**
-     * Gets the value of the coordinate property.
+     * Obtient la valeur de la propriété coordinate.
      * 
      * @return
      *     possible object is
@@ -68,7 +72,7 @@ public class PositionInteractionRangeType {
     }
 
     /**
-     * Sets the value of the coordinate property.
+     * Définit la valeur de la propriété coordinate.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +84,7 @@ public class PositionInteractionRangeType {
     }
 
     /**
-     * Gets the value of the bound property.
+     * Obtient la valeur de la propriété bound.
      * 
      * @return
      *     possible object is
@@ -92,7 +96,7 @@ public class PositionInteractionRangeType {
     }
 
     /**
-     * Sets the value of the bound property.
+     * Définit la valeur de la propriété bound.
      * 
      * @param value
      *     allowed object is
