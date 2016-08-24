@@ -19,6 +19,9 @@ public class XmlDateAdapter extends XmlAdapter<String, Date>
 
     @Override
     public String marshal(Date v) throws Exception {
+    	if(v==null) {
+    		return "";
+    	}
         synchronized (dateFormat) {
             return dateFormat.format(v);
         }
