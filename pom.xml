@@ -3,8 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ebu.metadata_schema</groupId>
 	<artifactId>jebu-core</artifactId>
-	<version>1.6.1</version>
-	<description></description>
+	<version>1.6.2</version>
+	<description>Java port of TECH 3293 EBU CORE METADATA SET (EBUCore) SPECIFICATION v. 1.6, including Audio Definition Model and 
+R-REC-BS.2094-0 Common definitions for the audio definition mode</description>
 	<developers>
 		<developer>
 			<id>jpe</id>
@@ -102,11 +103,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>19.0</version>
-		</dependency>
-		<dependency>
 			<groupId>org.purl.dc</groupId>
 			<artifactId>jdublin-core</artifactId>
 			<version>2002.12.12</version>
@@ -118,4 +114,10 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<name>jebu-core</name>
+	<url>https://github.com/mikrosimage/jebu-core</url>
+	<organization>
+		<name>Mikros Image</name>
+		<url>https://github.com/mikrosimage</url>
+	</organization>
 </project>
