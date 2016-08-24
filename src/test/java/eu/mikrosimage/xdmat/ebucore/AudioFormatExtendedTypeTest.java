@@ -3,8 +3,6 @@
  */
 package eu.mikrosimage.xdmat.ebucore;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ebu.metadata_schema.ebucore_2015.AudioFormatExtendedType;
-import ebu.metadata_schema.ebucore_2015.AudioTrackUIDType;
+import ebu.metadata_schema.ebucore_2015.AudioTrackUID;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 import eu.mikrosimage.xdmat.ebucore.helpers.AudioTrackUIDTypeHelper;
 
@@ -48,18 +46,18 @@ public class AudioFormatExtendedTypeTest {
 	 */
 	@Test
 	public void ensureSortedAudioTrackUids() {
-		List<AudioTrackUIDType> audioTrackUIDs = audioFormatExtended.getAudioTrackUID();
+		List<AudioTrackUID> audioTrackUIDs = audioFormatExtended.getAudioTrackUIDs();
 		for(int i=16; i>0; i--) {
-			final AudioTrackUIDType audioTrackUID = factory.createAudioTrackUIDType();
+			final AudioTrackUID audioTrackUID = factory.createAudioTrackUID();
 			audioTrackUID.setUID(AudioTrackUIDTypeHelper.getAudioTrackUID(i));
 			audioTrackUIDs.add(audioTrackUID);
 		}
 		
-		final Iterator<AudioTrackUIDType> iterator = audioTrackUIDs.iterator();
+		final Iterator<AudioTrackUID> iterator = audioTrackUIDs.iterator();
 		
 		int previousIndex = 0;
 		while(iterator.hasNext()) {
-			final AudioTrackUIDType next = iterator.next();
+			final AudioTrackUID next = iterator.next();
 			int audioTrackIndexFromUid = AudioTrackUIDTypeHelper.getAudioTrackIndexFromUid(next.getUID());
 //			assertTrue(previousIndex<audioTrackIndexFromUid);
 			previousIndex = audioTrackIndexFromUid;
