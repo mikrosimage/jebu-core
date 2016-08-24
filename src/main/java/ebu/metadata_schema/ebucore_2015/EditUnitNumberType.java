@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -15,9 +16,9 @@ import javax.xml.bind.annotation.XmlValue;
  * 				inverse of the edit rate, or corrected edit rate as the result of
  * 				editUnit=1/(editrate*(factorNumerator/factorDenominator)).
  * 
- * <p>Java class for editUnitNumberType complex type.
+ * <p>Classe Java pour editUnitNumberType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="editUnitNumberType">
@@ -37,8 +38,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "editUnitNumberType", propOrder = {
     "value"
 })
-public class EditUnitNumberType {
+public class EditUnitNumberType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected long value;
     @XmlAttribute(name = "editRate")
@@ -52,7 +56,7 @@ public class EditUnitNumberType {
     protected BigInteger factorDenominator;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public long getValue() {
@@ -60,7 +64,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(long value) {
@@ -68,7 +72,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Gets the value of the editRate property.
+     * Obtient la valeur de la propriété editRate.
      * 
      * @return
      *     possible object is
@@ -80,7 +84,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Sets the value of the editRate property.
+     * Définit la valeur de la propriété editRate.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +96,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Gets the value of the factorNumerator property.
+     * Obtient la valeur de la propriété factorNumerator.
      * 
      * @return
      *     possible object is
@@ -108,7 +112,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Sets the value of the factorNumerator property.
+     * Définit la valeur de la propriété factorNumerator.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +124,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Gets the value of the factorDenominator property.
+     * Obtient la valeur de la propriété factorDenominator.
      * 
      * @return
      *     possible object is
@@ -136,7 +140,7 @@ public class EditUnitNumberType {
     }
 
     /**
-     * Sets the value of the factorDenominator property.
+     * Définit la valeur de la propriété factorDenominator.
      * 
      * @param value
      *     allowed object is

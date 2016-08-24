@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.XmlValue;
  *  A complex Type defining the structure of a technical attribute ot type
  * 				rational 
  * 
- * <p>Java class for rationalType complex type.
+ * <p>Classe Java pour rationalType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="rationalType">
@@ -39,8 +40,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlSeeAlso({
     TechnicalAttributeRationalType.class
 })
-public class RationalType {
+public class RationalType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected long value;
     @XmlAttribute(name = "factorNumerator")
@@ -51,7 +55,7 @@ public class RationalType {
     protected java.lang.String unit;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public long getValue() {
@@ -59,7 +63,7 @@ public class RationalType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(long value) {
@@ -67,7 +71,7 @@ public class RationalType {
     }
 
     /**
-     * Gets the value of the factorNumerator property.
+     * Obtient la valeur de la propriété factorNumerator.
      * 
      * @return
      *     possible object is
@@ -83,7 +87,7 @@ public class RationalType {
     }
 
     /**
-     * Sets the value of the factorNumerator property.
+     * Définit la valeur de la propriété factorNumerator.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +99,7 @@ public class RationalType {
     }
 
     /**
-     * Gets the value of the factorDenominator property.
+     * Obtient la valeur de la propriété factorDenominator.
      * 
      * @return
      *     possible object is
@@ -111,7 +115,7 @@ public class RationalType {
     }
 
     /**
-     * Sets the value of the factorDenominator property.
+     * Définit la valeur de la propriété factorDenominator.
      * 
      * @param value
      *     allowed object is
@@ -123,7 +127,7 @@ public class RationalType {
     }
 
     /**
-     * Gets the value of the unit property.
+     * Obtient la valeur de la propriété unit.
      * 
      * @return
      *     possible object is
@@ -135,7 +139,7 @@ public class RationalType {
     }
 
     /**
-     * Sets the value of the unit property.
+     * Définit la valeur de la propriété unit.
      * 
      * @param value
      *     allowed object is

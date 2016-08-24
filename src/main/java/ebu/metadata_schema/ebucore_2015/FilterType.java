@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,9 +17,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * Complex type for describing filters of any kind
  * 
- * <p>Java class for filterType complex type.
+ * <p>Classe Java pour filterType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="filterType">
@@ -60,17 +61,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "filterType", propOrder = {
-    "trackIdRef",
+    "trackIdReves",
     "filterProfile",
-    "filterSetting"
+    "filterSettings"
 })
-public class FilterType {
+public class FilterType
+    implements Serializable
+{
 
-    @XmlElement(required = true)
-    protected List<Object> trackIdRef;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "trackIdRef", required = true)
+    protected List<Object> trackIdReves;
     @XmlElement(required = true)
     protected FilterType.FilterProfile filterProfile;
-    protected List<FilterType.FilterSetting> filterSetting;
+    @XmlElement(name = "filterSetting")
+    protected List<FilterType.FilterSetting> filterSettings;
     @XmlAttribute(name = "filterOrder")
     @XmlSchemaType(name = "anySimpleType")
     protected java.lang.String filterOrder;
@@ -91,18 +96,18 @@ public class FilterType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the trackIdRef property.
+     * Gets the value of the trackIdReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trackIdRef property.
+     * This is why there is not a <CODE>set</CODE> method for the trackIdReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTrackIdRef().add(newItem);
+     *    getTrackIdReves().add(newItem);
      * </pre>
      * 
      * 
@@ -112,15 +117,15 @@ public class FilterType {
      * 
      * 
      */
-    public List<Object> getTrackIdRef() {
-        if (trackIdRef == null) {
-            trackIdRef = new ArrayList<>();
+    public List<Object> getTrackIdReves() {
+        if (trackIdReves == null) {
+            trackIdReves = new ArrayList<>();
         }
-        return this.trackIdRef;
+        return this.trackIdReves;
     }
 
     /**
-     * Gets the value of the filterProfile property.
+     * Obtient la valeur de la propriété filterProfile.
      * 
      * @return
      *     possible object is
@@ -132,7 +137,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the filterProfile property.
+     * Définit la valeur de la propriété filterProfile.
      * 
      * @param value
      *     allowed object is
@@ -144,18 +149,18 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the filterSetting property.
+     * Gets the value of the filterSettings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the filterSetting property.
+     * This is why there is not a <CODE>set</CODE> method for the filterSettings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFilterSetting().add(newItem);
+     *    getFilterSettings().add(newItem);
      * </pre>
      * 
      * 
@@ -165,15 +170,15 @@ public class FilterType {
      * 
      * 
      */
-    public List<FilterType.FilterSetting> getFilterSetting() {
-        if (filterSetting == null) {
-            filterSetting = new ArrayList<>();
+    public List<FilterType.FilterSetting> getFilterSettings() {
+        if (filterSettings == null) {
+            filterSettings = new ArrayList<>();
         }
-        return this.filterSetting;
+        return this.filterSettings;
     }
 
     /**
-     * Gets the value of the filterOrder property.
+     * Obtient la valeur de la propriété filterOrder.
      * 
      * @return
      *     possible object is
@@ -185,7 +190,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the filterOrder property.
+     * Définit la valeur de la propriété filterOrder.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +202,7 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -209,7 +214,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -221,7 +226,7 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -233,7 +238,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -245,7 +250,7 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -257,7 +262,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +274,7 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -281,7 +286,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -293,7 +298,7 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -305,7 +310,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -317,7 +322,7 @@ public class FilterType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -329,7 +334,7 @@ public class FilterType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -342,9 +347,9 @@ public class FilterType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -360,8 +365,11 @@ public class FilterType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class FilterProfile {
+    public static class FilterProfile
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -379,7 +387,7 @@ public class FilterType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -391,7 +399,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -403,7 +411,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -415,7 +423,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -427,7 +435,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -439,7 +447,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -451,7 +459,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -463,7 +471,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -475,7 +483,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -487,7 +495,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -499,7 +507,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -511,7 +519,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -526,9 +534,9 @@ public class FilterType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -548,36 +556,51 @@ public class FilterType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "technicalAttributeString",
-        "technicalAttributeByte",
-        "technicalAttributeShort",
-        "technicalAttributeInteger",
-        "technicalAttributeLong",
-        "technicalAttributeUnsignedByte",
-        "technicalAttributeUnsignedShort",
-        "technicalAttributeUnsignedInteger",
-        "technicalAttributeUnsignedLong",
-        "technicalAttributeBoolean",
-        "technicalAttributeFloat",
-        "technicalAttributeRational",
-        "technicalAttributeUri"
+        "technicalAttributeStrings",
+        "technicalAttributeBytes",
+        "technicalAttributeShorts",
+        "technicalAttributeIntegers",
+        "technicalAttributeLongs",
+        "technicalAttributeUnsignedBytes",
+        "technicalAttributeUnsignedShorts",
+        "technicalAttributeUnsignedIntegers",
+        "technicalAttributeUnsignedLongs",
+        "technicalAttributeBooleen",
+        "technicalAttributeFloats",
+        "technicalAttributeRationals",
+        "technicalAttributeUris"
     })
-    public static class FilterSetting {
+    public static class FilterSetting
+        implements Serializable
+    {
 
-        protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeString;
-        protected List<Int8> technicalAttributeByte;
-        protected List<Int16> technicalAttributeShort;
-        protected List<Int32> technicalAttributeInteger;
-        protected List<Int64> technicalAttributeLong;
-        protected List<UInt8> technicalAttributeUnsignedByte;
-        protected List<UInt16> technicalAttributeUnsignedShort;
-        protected List<UInt32> technicalAttributeUnsignedInteger;
-        protected List<UInt64> technicalAttributeUnsignedLong;
-        protected List<Boolean> technicalAttributeBoolean;
-        protected List<Float> technicalAttributeFloat;
-        @XmlElement(defaultValue = "1")
-        protected List<TechnicalAttributeRationalType> technicalAttributeRational;
-        protected List<TechnicalAttributeUriType> technicalAttributeUri;
+        private final static long serialVersionUID = -1L;
+        @XmlElement(name = "technicalAttributeString")
+        protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeStrings;
+        @XmlElement(name = "technicalAttributeByte")
+        protected List<Int8> technicalAttributeBytes;
+        @XmlElement(name = "technicalAttributeShort")
+        protected List<Int16> technicalAttributeShorts;
+        @XmlElement(name = "technicalAttributeInteger")
+        protected List<Int32> technicalAttributeIntegers;
+        @XmlElement(name = "technicalAttributeLong")
+        protected List<Int64> technicalAttributeLongs;
+        @XmlElement(name = "technicalAttributeUnsignedByte")
+        protected List<UInt8> technicalAttributeUnsignedBytes;
+        @XmlElement(name = "technicalAttributeUnsignedShort")
+        protected List<UInt16> technicalAttributeUnsignedShorts;
+        @XmlElement(name = "technicalAttributeUnsignedInteger")
+        protected List<UInt32> technicalAttributeUnsignedIntegers;
+        @XmlElement(name = "technicalAttributeUnsignedLong")
+        protected List<UInt64> technicalAttributeUnsignedLongs;
+        @XmlElement(name = "technicalAttributeBoolean")
+        protected List<Boolean> technicalAttributeBooleen;
+        @XmlElement(name = "technicalAttributeFloat")
+        protected List<Float> technicalAttributeFloats;
+        @XmlElement(name = "technicalAttributeRational", defaultValue = "1")
+        protected List<TechnicalAttributeRationalType> technicalAttributeRationals;
+        @XmlElement(name = "technicalAttributeUri")
+        protected List<TechnicalAttributeUriType> technicalAttributeUris;
         @XmlAttribute(name = "filterAttributeOrder")
         @XmlSchemaType(name = "anySimpleType")
         protected java.lang.String filterAttributeOrder;
@@ -598,18 +621,18 @@ public class FilterType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the technicalAttributeString property.
+         * Gets the value of the technicalAttributeStrings property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeString property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeStrings property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeString().add(newItem);
+         *    getTechnicalAttributeStrings().add(newItem);
          * </pre>
          * 
          * 
@@ -619,26 +642,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeString() {
-            if (technicalAttributeString == null) {
-                technicalAttributeString = new ArrayList<>();
+        public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeStrings() {
+            if (technicalAttributeStrings == null) {
+                technicalAttributeStrings = new ArrayList<>();
             }
-            return this.technicalAttributeString;
+            return this.technicalAttributeStrings;
         }
 
         /**
-         * Gets the value of the technicalAttributeByte property.
+         * Gets the value of the technicalAttributeBytes property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeByte property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBytes property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeByte().add(newItem);
+         *    getTechnicalAttributeBytes().add(newItem);
          * </pre>
          * 
          * 
@@ -648,26 +671,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<Int8> getTechnicalAttributeByte() {
-            if (technicalAttributeByte == null) {
-                technicalAttributeByte = new ArrayList<>();
+        public List<Int8> getTechnicalAttributeBytes() {
+            if (technicalAttributeBytes == null) {
+                technicalAttributeBytes = new ArrayList<>();
             }
-            return this.technicalAttributeByte;
+            return this.technicalAttributeBytes;
         }
 
         /**
-         * Gets the value of the technicalAttributeShort property.
+         * Gets the value of the technicalAttributeShorts property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShort property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShorts property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeShort().add(newItem);
+         *    getTechnicalAttributeShorts().add(newItem);
          * </pre>
          * 
          * 
@@ -677,26 +700,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<Int16> getTechnicalAttributeShort() {
-            if (technicalAttributeShort == null) {
-                technicalAttributeShort = new ArrayList<>();
+        public List<Int16> getTechnicalAttributeShorts() {
+            if (technicalAttributeShorts == null) {
+                technicalAttributeShorts = new ArrayList<>();
             }
-            return this.technicalAttributeShort;
+            return this.technicalAttributeShorts;
         }
 
         /**
-         * Gets the value of the technicalAttributeInteger property.
+         * Gets the value of the technicalAttributeIntegers property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeInteger property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeIntegers property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeInteger().add(newItem);
+         *    getTechnicalAttributeIntegers().add(newItem);
          * </pre>
          * 
          * 
@@ -706,26 +729,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<Int32> getTechnicalAttributeInteger() {
-            if (technicalAttributeInteger == null) {
-                technicalAttributeInteger = new ArrayList<>();
+        public List<Int32> getTechnicalAttributeIntegers() {
+            if (technicalAttributeIntegers == null) {
+                technicalAttributeIntegers = new ArrayList<>();
             }
-            return this.technicalAttributeInteger;
+            return this.technicalAttributeIntegers;
         }
 
         /**
-         * Gets the value of the technicalAttributeLong property.
+         * Gets the value of the technicalAttributeLongs property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLong property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLongs property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeLong().add(newItem);
+         *    getTechnicalAttributeLongs().add(newItem);
          * </pre>
          * 
          * 
@@ -735,26 +758,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<Int64> getTechnicalAttributeLong() {
-            if (technicalAttributeLong == null) {
-                technicalAttributeLong = new ArrayList<>();
+        public List<Int64> getTechnicalAttributeLongs() {
+            if (technicalAttributeLongs == null) {
+                technicalAttributeLongs = new ArrayList<>();
             }
-            return this.technicalAttributeLong;
+            return this.technicalAttributeLongs;
         }
 
         /**
-         * Gets the value of the technicalAttributeUnsignedByte property.
+         * Gets the value of the technicalAttributeUnsignedBytes property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedByte property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedBytes property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeUnsignedByte().add(newItem);
+         *    getTechnicalAttributeUnsignedBytes().add(newItem);
          * </pre>
          * 
          * 
@@ -764,26 +787,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<UInt8> getTechnicalAttributeUnsignedByte() {
-            if (technicalAttributeUnsignedByte == null) {
-                technicalAttributeUnsignedByte = new ArrayList<>();
+        public List<UInt8> getTechnicalAttributeUnsignedBytes() {
+            if (technicalAttributeUnsignedBytes == null) {
+                technicalAttributeUnsignedBytes = new ArrayList<>();
             }
-            return this.technicalAttributeUnsignedByte;
+            return this.technicalAttributeUnsignedBytes;
         }
 
         /**
-         * Gets the value of the technicalAttributeUnsignedShort property.
+         * Gets the value of the technicalAttributeUnsignedShorts property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShort property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShorts property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeUnsignedShort().add(newItem);
+         *    getTechnicalAttributeUnsignedShorts().add(newItem);
          * </pre>
          * 
          * 
@@ -793,26 +816,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<UInt16> getTechnicalAttributeUnsignedShort() {
-            if (technicalAttributeUnsignedShort == null) {
-                technicalAttributeUnsignedShort = new ArrayList<>();
+        public List<UInt16> getTechnicalAttributeUnsignedShorts() {
+            if (technicalAttributeUnsignedShorts == null) {
+                technicalAttributeUnsignedShorts = new ArrayList<>();
             }
-            return this.technicalAttributeUnsignedShort;
+            return this.technicalAttributeUnsignedShorts;
         }
 
         /**
-         * Gets the value of the technicalAttributeUnsignedInteger property.
+         * Gets the value of the technicalAttributeUnsignedIntegers property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedInteger property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedIntegers property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeUnsignedInteger().add(newItem);
+         *    getTechnicalAttributeUnsignedIntegers().add(newItem);
          * </pre>
          * 
          * 
@@ -822,26 +845,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<UInt32> getTechnicalAttributeUnsignedInteger() {
-            if (technicalAttributeUnsignedInteger == null) {
-                technicalAttributeUnsignedInteger = new ArrayList<>();
+        public List<UInt32> getTechnicalAttributeUnsignedIntegers() {
+            if (technicalAttributeUnsignedIntegers == null) {
+                technicalAttributeUnsignedIntegers = new ArrayList<>();
             }
-            return this.technicalAttributeUnsignedInteger;
+            return this.technicalAttributeUnsignedIntegers;
         }
 
         /**
-         * Gets the value of the technicalAttributeUnsignedLong property.
+         * Gets the value of the technicalAttributeUnsignedLongs property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLong property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLongs property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeUnsignedLong().add(newItem);
+         *    getTechnicalAttributeUnsignedLongs().add(newItem);
          * </pre>
          * 
          * 
@@ -851,26 +874,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<UInt64> getTechnicalAttributeUnsignedLong() {
-            if (technicalAttributeUnsignedLong == null) {
-                technicalAttributeUnsignedLong = new ArrayList<>();
+        public List<UInt64> getTechnicalAttributeUnsignedLongs() {
+            if (technicalAttributeUnsignedLongs == null) {
+                technicalAttributeUnsignedLongs = new ArrayList<>();
             }
-            return this.technicalAttributeUnsignedLong;
+            return this.technicalAttributeUnsignedLongs;
         }
 
         /**
-         * Gets the value of the technicalAttributeBoolean property.
+         * Gets the value of the technicalAttributeBooleen property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBoolean property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBooleen property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeBoolean().add(newItem);
+         *    getTechnicalAttributeBooleen().add(newItem);
          * </pre>
          * 
          * 
@@ -880,26 +903,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<Boolean> getTechnicalAttributeBoolean() {
-            if (technicalAttributeBoolean == null) {
-                technicalAttributeBoolean = new ArrayList<>();
+        public List<Boolean> getTechnicalAttributeBooleen() {
+            if (technicalAttributeBooleen == null) {
+                technicalAttributeBooleen = new ArrayList<>();
             }
-            return this.technicalAttributeBoolean;
+            return this.technicalAttributeBooleen;
         }
 
         /**
-         * Gets the value of the technicalAttributeFloat property.
+         * Gets the value of the technicalAttributeFloats property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloat property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloats property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeFloat().add(newItem);
+         *    getTechnicalAttributeFloats().add(newItem);
          * </pre>
          * 
          * 
@@ -909,26 +932,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<Float> getTechnicalAttributeFloat() {
-            if (technicalAttributeFloat == null) {
-                technicalAttributeFloat = new ArrayList<>();
+        public List<Float> getTechnicalAttributeFloats() {
+            if (technicalAttributeFloats == null) {
+                technicalAttributeFloats = new ArrayList<>();
             }
-            return this.technicalAttributeFloat;
+            return this.technicalAttributeFloats;
         }
 
         /**
-         * Gets the value of the technicalAttributeRational property.
+         * Gets the value of the technicalAttributeRationals property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRational property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRationals property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeRational().add(newItem);
+         *    getTechnicalAttributeRationals().add(newItem);
          * </pre>
          * 
          * 
@@ -938,26 +961,26 @@ public class FilterType {
          * 
          * 
          */
-        public List<TechnicalAttributeRationalType> getTechnicalAttributeRational() {
-            if (technicalAttributeRational == null) {
-                technicalAttributeRational = new ArrayList<>();
+        public List<TechnicalAttributeRationalType> getTechnicalAttributeRationals() {
+            if (technicalAttributeRationals == null) {
+                technicalAttributeRationals = new ArrayList<>();
             }
-            return this.technicalAttributeRational;
+            return this.technicalAttributeRationals;
         }
 
         /**
-         * Gets the value of the technicalAttributeUri property.
+         * Gets the value of the technicalAttributeUris property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUri property.
+         * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUris property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getTechnicalAttributeUri().add(newItem);
+         *    getTechnicalAttributeUris().add(newItem);
          * </pre>
          * 
          * 
@@ -967,15 +990,15 @@ public class FilterType {
          * 
          * 
          */
-        public List<TechnicalAttributeUriType> getTechnicalAttributeUri() {
-            if (technicalAttributeUri == null) {
-                technicalAttributeUri = new ArrayList<>();
+        public List<TechnicalAttributeUriType> getTechnicalAttributeUris() {
+            if (technicalAttributeUris == null) {
+                technicalAttributeUris = new ArrayList<>();
             }
-            return this.technicalAttributeUri;
+            return this.technicalAttributeUris;
         }
 
         /**
-         * Gets the value of the filterAttributeOrder property.
+         * Obtient la valeur de la propriété filterAttributeOrder.
          * 
          * @return
          *     possible object is
@@ -987,7 +1010,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the filterAttributeOrder property.
+         * Définit la valeur de la propriété filterAttributeOrder.
          * 
          * @param value
          *     allowed object is
@@ -999,7 +1022,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1011,7 +1034,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1023,7 +1046,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1035,7 +1058,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1047,7 +1070,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1059,7 +1082,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -1071,7 +1094,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -1083,7 +1106,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -1095,7 +1118,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -1107,7 +1130,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -1119,7 +1142,7 @@ public class FilterType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -1131,7 +1154,7 @@ public class FilterType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

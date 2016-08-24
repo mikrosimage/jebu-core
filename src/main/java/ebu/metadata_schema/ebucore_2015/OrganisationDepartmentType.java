@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for organisationDepartmentType complex type.
+ * <p>Classe Java pour organisationDepartmentType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="organisationDepartmentType">
@@ -29,14 +30,16 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "organisationDepartmentType")
 public class OrganisationDepartmentType
     extends ElementType
+    implements Serializable
 {
 
+    private final static long serialVersionUID = -1L;
     @XmlAttribute(name = "departmentId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String departmentId;
 
     /**
-     * Gets the value of the departmentId property.
+     * Obtient la valeur de la propriété departmentId.
      * 
      * @return
      *     possible object is
@@ -48,7 +51,7 @@ public class OrganisationDepartmentType
     }
 
     /**
-     * Sets the value of the departmentId property.
+     * Définit la valeur de la propriété departmentId.
      * 
      * @param value
      *     allowed object is

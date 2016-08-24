@@ -1,14 +1,15 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,23 +17,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioPackFormatType complex type.
+ * <p>Classe Java pour audioChannelFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="audioPackFormatType">
+ * &lt;complexType name="audioChannelFormatType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="audioChannelFormatIDRef" type="{http://www.w3.org/2001/XMLSchema}IDREF" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="audioPackFormatIDRef" type="{http://www.w3.org/2001/XMLSchema}IDREF" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{urn:ebu:metadata-schema:ebuCore_2015}frequency" maxOccurs="2" minOccurs="0"/>
+ *         &lt;element ref="{urn:ebu:metadata-schema:ebuCore_2015}audioBlockFormat" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
- *       &lt;attribute name="absoluteDistance" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       &lt;attribute name="audioPackFormatID" type="{http://www.w3.org/2001/XMLSchema}ID" />
- *       &lt;attribute name="audioPackFormatName" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="importance" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="audioChannelFormatName" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="audioChannelFormatID" type="{http://www.w3.org/2001/XMLSchema}ID" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -41,27 +40,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "audioPackFormatType", propOrder = {
-    "audioChannelFormatIDRef",
-    "audioPackFormatIDRef"
+@XmlType(name = "audioChannelFormatType", propOrder = {
+    "frequencies",
+    "audioBlockFormats"
 })
-public class AudioPackFormatType {
+@XmlRootElement(name = "audioChannelFormat")
+public class AudioChannelFormat
+    implements Serializable
+{
 
-    @XmlElementRef(name = "audioChannelFormatIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioChannelFormatIDRef;
-    @XmlElementRef(name = "audioPackFormatIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioPackFormatIDRef;
-    @XmlAttribute(name = "absoluteDistance")
-    protected java.lang.Float absoluteDistance;
-    @XmlAttribute(name = "audioPackFormatID")
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "frequency")
+    protected List<Frequency> frequencies;
+    @XmlElement(name = "audioBlockFormat", required = true)
+    protected List<AudioBlockFormat> audioBlockFormats;
+    @XmlAttribute(name = "audioChannelFormatName")
+    protected java.lang.String audioChannelFormatName;
+    @XmlAttribute(name = "audioChannelFormatID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     @XmlSchemaType(name = "ID")
-    protected java.lang.String audioPackFormatID;
-    @XmlAttribute(name = "audioPackFormatName")
-    protected java.lang.String audioPackFormatName;
-    @XmlAttribute(name = "importance")
-    protected Integer importance;
+    protected java.lang.String audioChannelFormatID;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -79,161 +78,115 @@ public class AudioPackFormatType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the audioChannelFormatIDRef property.
+     * Sets a high or low cut-off frequency for the audio in
+     * 						Hz.Gets the value of the frequencies property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioChannelFormatIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the frequencies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioChannelFormatIDRef().add(newItem);
+     *    getFrequencies().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link Object }{@code >}
+     * {@link Frequency }
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioChannelFormatIDRef() {
-        if (audioChannelFormatIDRef == null) {
-            audioChannelFormatIDRef = new ArrayList<>();
+    public List<Frequency> getFrequencies() {
+        if (frequencies == null) {
+            frequencies = new ArrayList<>();
         }
-        return this.audioChannelFormatIDRef;
+        return this.frequencies;
     }
 
     /**
-     * Gets the value of the audioPackFormatIDRef property.
+     * A division of the channel in time. Multiple blocks in the channel
+     * 						provide the dynamic information.Gets the value of the audioBlockFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioPackFormatIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioBlockFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioPackFormatIDRef().add(newItem);
+     *    getAudioBlockFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link Object }{@code >}
+     * {@link AudioBlockFormat }
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioPackFormatIDRef() {
-        if (audioPackFormatIDRef == null) {
-            audioPackFormatIDRef = new ArrayList<>();
+    public List<AudioBlockFormat> getAudioBlockFormats() {
+        if (audioBlockFormats == null) {
+            audioBlockFormats = new ArrayList<>();
         }
-        return this.audioPackFormatIDRef;
+        return this.audioBlockFormats;
     }
 
     /**
-     * Gets the value of the absoluteDistance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.Float }
-     *     
-     */
-    public java.lang.Float getAbsoluteDistance() {
-        return absoluteDistance;
-    }
-
-    /**
-     * Sets the value of the absoluteDistance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.Float }
-     *     
-     */
-    public void setAbsoluteDistance(java.lang.Float value) {
-        this.absoluteDistance = value;
-    }
-
-    /**
-     * Gets the value of the audioPackFormatID property.
+     * Obtient la valeur de la propriété audioChannelFormatName.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.String }
      *     
      */
-    public java.lang.String getAudioPackFormatID() {
-        return audioPackFormatID;
+    public java.lang.String getAudioChannelFormatName() {
+        return audioChannelFormatName;
     }
 
     /**
-     * Sets the value of the audioPackFormatID property.
+     * Définit la valeur de la propriété audioChannelFormatName.
      * 
      * @param value
      *     allowed object is
      *     {@link java.lang.String }
      *     
      */
-    public void setAudioPackFormatID(java.lang.String value) {
-        this.audioPackFormatID = value;
+    public void setAudioChannelFormatName(java.lang.String value) {
+        this.audioChannelFormatName = value;
     }
 
     /**
-     * Gets the value of the audioPackFormatName property.
+     * Obtient la valeur de la propriété audioChannelFormatID.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.String }
      *     
      */
-    public java.lang.String getAudioPackFormatName() {
-        return audioPackFormatName;
+    public java.lang.String getAudioChannelFormatID() {
+        return audioChannelFormatID;
     }
 
     /**
-     * Sets the value of the audioPackFormatName property.
+     * Définit la valeur de la propriété audioChannelFormatID.
      * 
      * @param value
      *     allowed object is
      *     {@link java.lang.String }
      *     
      */
-    public void setAudioPackFormatName(java.lang.String value) {
-        this.audioPackFormatName = value;
+    public void setAudioChannelFormatID(java.lang.String value) {
+        this.audioChannelFormatID = value;
     }
 
     /**
-     * Gets the value of the importance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getImportance() {
-        return importance;
-    }
-
-    /**
-     * Sets the value of the importance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setImportance(Integer value) {
-        this.importance = value;
-    }
-
-    /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -245,7 +198,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -257,7 +210,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -269,7 +222,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -281,7 +234,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -293,7 +246,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -305,7 +258,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -317,7 +270,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -329,7 +282,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -341,7 +294,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -353,7 +306,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -365,7 +318,7 @@ public class AudioPackFormatType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

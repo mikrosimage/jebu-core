@@ -3,8 +3,7 @@
  */
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import ebu.metadata_schema.ebucore_2015.AudioObjectType;
-import ebu.metadata_schema.ebucore_2015.AudioProgrammeType;
+import ebu.metadata_schema.ebucore_2015.AudioObject;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
@@ -44,9 +43,9 @@ public final class AudioObjectTypeHelper {
 	 * 	Name of the object
 	 * @return Simple {@link AudioObjectType} 
 	 */
-	public static final AudioObjectType create(int programIndex, String audioObjectName) {
+	public static final AudioObject create(int programIndex, String audioObjectName) {
 		final ObjectFactory objectFactory = new ObjectFactory();
-		final AudioObjectType audioObject = objectFactory.createAudioObjectType();
+		final AudioObject audioObject = objectFactory.createAudioObject();
 		audioObject.setAudioObjectID(AudioObjectTypeHelper.getAudioObjectIdFromIndex(programIndex));
 		audioObject.setAudioObjectName(audioObjectName);
 		return audioObject;

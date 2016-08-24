@@ -1,18 +1,20 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for audioObjectInteractionType complex type.
+ * <p>Classe Java pour audioObjectInteractionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioObjectInteractionType">
@@ -34,13 +36,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioObjectInteractionType", propOrder = {
-    "gainInteractionRange",
-    "positionInteractionRange"
+    "gainInteractionRanges",
+    "positionInteractionRanges"
 })
-public class AudioObjectInteractionType {
+public class AudioObjectInteractionType
+    implements Serializable
+{
 
-    protected List<GainInteractionRangeType> gainInteractionRange;
-    protected List<PositionInteractionRangeType> positionInteractionRange;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "gainInteractionRange")
+    protected List<GainInteractionRangeType> gainInteractionRanges;
+    @XmlElement(name = "positionInteractionRange")
+    protected List<PositionInteractionRangeType> positionInteractionRanges;
     @XmlAttribute(name = "onOffInteract")
     protected java.lang.Boolean onOffInteract;
     @XmlAttribute(name = "gainInteract")
@@ -49,18 +56,18 @@ public class AudioObjectInteractionType {
     protected java.lang.Boolean positionInteract;
 
     /**
-     * Gets the value of the gainInteractionRange property.
+     * Gets the value of the gainInteractionRanges property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gainInteractionRange property.
+     * This is why there is not a <CODE>set</CODE> method for the gainInteractionRanges property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getGainInteractionRange().add(newItem);
+     *    getGainInteractionRanges().add(newItem);
      * </pre>
      * 
      * 
@@ -70,26 +77,26 @@ public class AudioObjectInteractionType {
      * 
      * 
      */
-    public List<GainInteractionRangeType> getGainInteractionRange() {
-        if (gainInteractionRange == null) {
-            gainInteractionRange = new ArrayList<>();
+    public List<GainInteractionRangeType> getGainInteractionRanges() {
+        if (gainInteractionRanges == null) {
+            gainInteractionRanges = new ArrayList<>();
         }
-        return this.gainInteractionRange;
+        return this.gainInteractionRanges;
     }
 
     /**
-     * Gets the value of the positionInteractionRange property.
+     * Gets the value of the positionInteractionRanges property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the positionInteractionRange property.
+     * This is why there is not a <CODE>set</CODE> method for the positionInteractionRanges property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPositionInteractionRange().add(newItem);
+     *    getPositionInteractionRanges().add(newItem);
      * </pre>
      * 
      * 
@@ -99,27 +106,27 @@ public class AudioObjectInteractionType {
      * 
      * 
      */
-    public List<PositionInteractionRangeType> getPositionInteractionRange() {
-        if (positionInteractionRange == null) {
-            positionInteractionRange = new ArrayList<>();
+    public List<PositionInteractionRangeType> getPositionInteractionRanges() {
+        if (positionInteractionRanges == null) {
+            positionInteractionRanges = new ArrayList<>();
         }
-        return this.positionInteractionRange;
+        return this.positionInteractionRanges;
     }
 
     /**
-     * Gets the value of the onOffInteract property.
+     * Obtient la valeur de la propriété onOffInteract.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getOnOffInteract() {
+    public java.lang.Boolean isOnOffInteract() {
         return onOffInteract;
     }
 
     /**
-     * Sets the value of the onOffInteract property.
+     * Définit la valeur de la propriété onOffInteract.
      * 
      * @param value
      *     allowed object is
@@ -131,19 +138,19 @@ public class AudioObjectInteractionType {
     }
 
     /**
-     * Gets the value of the gainInteract property.
+     * Obtient la valeur de la propriété gainInteract.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getGainInteract() {
+    public java.lang.Boolean isGainInteract() {
         return gainInteract;
     }
 
     /**
-     * Sets the value of the gainInteract property.
+     * Définit la valeur de la propriété gainInteract.
      * 
      * @param value
      *     allowed object is
@@ -155,19 +162,19 @@ public class AudioObjectInteractionType {
     }
 
     /**
-     * Gets the value of the positionInteract property.
+     * Obtient la valeur de la propriété positionInteract.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getPositionInteract() {
+    public java.lang.Boolean isPositionInteract() {
         return positionInteract;
     }
 
     /**
-     * Sets the value of the positionInteract property.
+     * Définit la valeur de la propriété positionInteract.
      * 
      * @param value
      *     allowed object is

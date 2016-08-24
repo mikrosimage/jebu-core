@@ -3,12 +3,11 @@
  */
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import ebu.metadata_schema.ebucore_2015.AudioObjectType;
-import ebu.metadata_schema.ebucore_2015.AudioPackFormatType;
+import ebu.metadata_schema.ebucore_2015.AudioPackFormat;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
- * @author gma
+ *
  *
  */
 public final class AudioPackFormatTypeHelper {
@@ -45,9 +44,9 @@ public final class AudioPackFormatTypeHelper {
 	 * 	Name of the pack
 	 * @return Simple {@link AudioObjectType} 
 	 */
-	public static final AudioPackFormatType create(String audioPackName, int audioPackIndex) {
+	public static final AudioPackFormat create(String audioPackName, int audioPackIndex) {
 		final ObjectFactory objectFactory = new ObjectFactory();
-		final AudioPackFormatType audioPack = objectFactory.createAudioPackFormatType();
+		final AudioPackFormat audioPack = objectFactory.createAudioPackFormat();
 		audioPack.setAudioPackFormatID(AudioPackFormatTypeHelper.getAudioPackFormatIdFromIndex(audioPackIndex));
 		audioPack.setAudioPackFormatName(audioPackName);
 		audioPack.setTypeLabel("0001");

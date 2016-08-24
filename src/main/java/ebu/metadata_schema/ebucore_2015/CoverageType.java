@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -21,9 +22,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				in preference to numeric identifiers such as sets of coordinates or date
  * 				ranges.
  * 
- * <p>Java class for coverageType complex type.
+ * <p>Classe Java pour coverageType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="coverageType">
@@ -48,8 +49,11 @@ import org.purl.dc.elements._1.ElementType;
     "temporal",
     "spatial"
 })
-public class CoverageType {
+public class CoverageType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
     protected ElementType coverage;
     protected TemporalType temporal;
@@ -84,7 +88,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the coverage property.
+     * Définit la valeur de la propriété coverage.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +100,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the temporal property.
+     * Obtient la valeur de la propriété temporal.
      * 
      * @return
      *     possible object is
@@ -108,7 +112,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the temporal property.
+     * Définit la valeur de la propriété temporal.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +124,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the spatial property.
+     * Obtient la valeur de la propriété spatial.
      * 
      * @return
      *     possible object is
@@ -132,7 +136,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the spatial property.
+     * Définit la valeur de la propriété spatial.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +148,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -156,7 +160,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +172,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -180,7 +184,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +196,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -204,7 +208,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -216,7 +220,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -228,7 +232,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -240,7 +244,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -252,7 +256,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -264,7 +268,7 @@ public class CoverageType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -276,7 +280,7 @@ public class CoverageType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

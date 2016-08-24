@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  Provides address details for an organisation or contact.
  * 			
  * 
- * <p>Java class for addressType complex type.
+ * <p>Classe Java pour addressType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="addressType">
@@ -48,33 +50,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addressType", propOrder = {
-    "addressLine",
+    "addressLines",
     "addressTownCity",
     "addressCountyState",
-    "addressDeliveryCode",
+    "addressDeliveryCodes",
     "country"
 })
-public class AddressType {
+public class AddressType
+    implements Serializable
+{
 
-    protected List<ElementType> addressLine;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "addressLine")
+    protected List<ElementType> addressLines;
     protected ElementType addressTownCity;
     protected ElementType addressCountyState;
-    protected List<java.lang.String> addressDeliveryCode;
+    @XmlElement(name = "addressDeliveryCode")
+    protected List<java.lang.String> addressDeliveryCodes;
     protected AddressType.Country country;
 
     /**
-     * Gets the value of the addressLine property.
+     * Gets the value of the addressLines property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addressLine property.
+     * This is why there is not a <CODE>set</CODE> method for the addressLines property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAddressLine().add(newItem);
+     *    getAddressLines().add(newItem);
      * </pre>
      * 
      * 
@@ -84,15 +91,15 @@ public class AddressType {
      * 
      * 
      */
-    public List<ElementType> getAddressLine() {
-        if (addressLine == null) {
-            addressLine = new ArrayList<>();
+    public List<ElementType> getAddressLines() {
+        if (addressLines == null) {
+            addressLines = new ArrayList<>();
         }
-        return this.addressLine;
+        return this.addressLines;
     }
 
     /**
-     * Gets the value of the addressTownCity property.
+     * Obtient la valeur de la propriété addressTownCity.
      * 
      * @return
      *     possible object is
@@ -104,7 +111,7 @@ public class AddressType {
     }
 
     /**
-     * Sets the value of the addressTownCity property.
+     * Définit la valeur de la propriété addressTownCity.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +123,7 @@ public class AddressType {
     }
 
     /**
-     * Gets the value of the addressCountyState property.
+     * Obtient la valeur de la propriété addressCountyState.
      * 
      * @return
      *     possible object is
@@ -128,7 +135,7 @@ public class AddressType {
     }
 
     /**
-     * Sets the value of the addressCountyState property.
+     * Définit la valeur de la propriété addressCountyState.
      * 
      * @param value
      *     allowed object is
@@ -140,18 +147,18 @@ public class AddressType {
     }
 
     /**
-     * Gets the value of the addressDeliveryCode property.
+     * Gets the value of the addressDeliveryCodes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addressDeliveryCode property.
+     * This is why there is not a <CODE>set</CODE> method for the addressDeliveryCodes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAddressDeliveryCode().add(newItem);
+     *    getAddressDeliveryCodes().add(newItem);
      * </pre>
      * 
      * 
@@ -161,15 +168,15 @@ public class AddressType {
      * 
      * 
      */
-    public List<java.lang.String> getAddressDeliveryCode() {
-        if (addressDeliveryCode == null) {
-            addressDeliveryCode = new ArrayList<>();
+    public List<java.lang.String> getAddressDeliveryCodes() {
+        if (addressDeliveryCodes == null) {
+            addressDeliveryCodes = new ArrayList<>();
         }
-        return this.addressDeliveryCode;
+        return this.addressDeliveryCodes;
     }
 
     /**
-     * Gets the value of the country property.
+     * Obtient la valeur de la propriété country.
      * 
      * @return
      *     possible object is
@@ -181,7 +188,7 @@ public class AddressType {
     }
 
     /**
-     * Sets the value of the country property.
+     * Définit la valeur de la propriété country.
      * 
      * @param value
      *     allowed object is
@@ -194,9 +201,9 @@ public class AddressType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -212,8 +219,11 @@ public class AddressType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Country {
+    public static class Country
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -231,7 +241,7 @@ public class AddressType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -243,7 +253,7 @@ public class AddressType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -255,7 +265,7 @@ public class AddressType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -267,7 +277,7 @@ public class AddressType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -279,7 +289,7 @@ public class AddressType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -291,7 +301,7 @@ public class AddressType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -303,7 +313,7 @@ public class AddressType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -315,7 +325,7 @@ public class AddressType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -327,7 +337,7 @@ public class AddressType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -339,7 +349,7 @@ public class AddressType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -351,7 +361,7 @@ public class AddressType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -363,7 +373,7 @@ public class AddressType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

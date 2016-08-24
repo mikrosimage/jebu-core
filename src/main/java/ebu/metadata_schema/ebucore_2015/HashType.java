@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -15,9 +16,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  *  To provide hash details. 
  * 
- * <p>Java class for hashType complex type.
+ * <p>Classe Java pour hashType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="hashType">
@@ -47,8 +48,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "hashValue",
     "hashFunction"
 })
-public class HashType {
+public class HashType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(required = true, type = java.lang.String.class)
     @XmlJavaTypeAdapter(HexBinaryAdapter.class)
     @XmlSchemaType(name = "hexBinary")
@@ -57,7 +61,7 @@ public class HashType {
     protected HashType.HashFunction hashFunction;
 
     /**
-     * Gets the value of the hashValue property.
+     * Obtient la valeur de la propriété hashValue.
      * 
      * @return
      *     possible object is
@@ -69,7 +73,7 @@ public class HashType {
     }
 
     /**
-     * Sets the value of the hashValue property.
+     * Définit la valeur de la propriété hashValue.
      * 
      * @param value
      *     allowed object is
@@ -81,7 +85,7 @@ public class HashType {
     }
 
     /**
-     * Gets the value of the hashFunction property.
+     * Obtient la valeur de la propriété hashFunction.
      * 
      * @return
      *     possible object is
@@ -93,7 +97,7 @@ public class HashType {
     }
 
     /**
-     * Sets the value of the hashFunction property.
+     * Définit la valeur de la propriété hashFunction.
      * 
      * @param value
      *     allowed object is
@@ -106,9 +110,9 @@ public class HashType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -124,8 +128,11 @@ public class HashType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class HashFunction {
+    public static class HashFunction
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -143,7 +150,7 @@ public class HashType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -155,7 +162,7 @@ public class HashType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -167,7 +174,7 @@ public class HashType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -179,7 +186,7 @@ public class HashType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -191,7 +198,7 @@ public class HashType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -203,7 +210,7 @@ public class HashType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -215,7 +222,7 @@ public class HashType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -227,7 +234,7 @@ public class HashType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -239,7 +246,7 @@ public class HashType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -251,7 +258,7 @@ public class HashType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -263,7 +270,7 @@ public class HashType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -275,7 +282,7 @@ public class HashType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

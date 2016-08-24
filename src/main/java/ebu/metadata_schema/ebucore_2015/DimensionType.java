@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.XmlValue;
 /**
  *  To provide a dimension associated with a unit. 
  * 
- * <p>Java class for dimensionType complex type.
+ * <p>Classe Java pour dimensionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="dimensionType">
@@ -38,8 +39,11 @@ import javax.xml.bind.annotation.XmlValue;
     ebu.metadata_schema.ebucore_2015.VideoFormatType.Width.class,
     ebu.metadata_schema.ebucore_2015.VideoFormatType.Height.class
 })
-public class DimensionType {
+public class DimensionType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     @XmlSchemaType(name = "nonNegativeInteger")
     protected BigInteger value;
@@ -47,7 +51,7 @@ public class DimensionType {
     protected java.lang.String unit;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      * @return
      *     possible object is
@@ -59,7 +63,7 @@ public class DimensionType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      * @param value
      *     allowed object is
@@ -71,7 +75,7 @@ public class DimensionType {
     }
 
     /**
-     * Gets the value of the unit property.
+     * Obtient la valeur de la propriété unit.
      * 
      * @return
      *     possible object is
@@ -83,7 +87,7 @@ public class DimensionType {
     }
 
     /**
-     * Sets the value of the unit property.
+     * Définit la valeur de la propriété unit.
      * 
      * @param value
      *     allowed object is

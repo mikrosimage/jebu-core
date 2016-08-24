@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for screenWidthType complex type.
+ * <p>Classe Java pour screenWidthType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="screenWidthType">
@@ -30,8 +31,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "screenWidthType", propOrder = {
     "value"
 })
-public class ScreenWidthType {
+public class ScreenWidthType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected float value;
     @XmlAttribute(name = "azimuth")
@@ -40,7 +44,7 @@ public class ScreenWidthType {
     protected java.lang.Float x;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public float getValue() {
@@ -48,7 +52,7 @@ public class ScreenWidthType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(float value) {
@@ -56,7 +60,7 @@ public class ScreenWidthType {
     }
 
     /**
-     * Gets the value of the azimuth property.
+     * Obtient la valeur de la propriété azimuth.
      * 
      * @return
      *     possible object is
@@ -68,7 +72,7 @@ public class ScreenWidthType {
     }
 
     /**
-     * Sets the value of the azimuth property.
+     * Définit la valeur de la propriété azimuth.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +84,7 @@ public class ScreenWidthType {
     }
 
     /**
-     * Gets the value of the x property.
+     * Obtient la valeur de la propriété x.
      * 
      * @return
      *     possible object is
@@ -92,7 +96,7 @@ public class ScreenWidthType {
     }
 
     /**
-     * Sets the value of the x property.
+     * Définit la valeur de la propriété x.
      * 
      * @param value
      *     allowed object is

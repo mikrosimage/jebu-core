@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -13,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioTrackFormatType complex type.
+ * <p>Classe Java pour audioTrackFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioTrackFormatType">
@@ -38,8 +40,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "audioTrackFormatType", propOrder = {
     "audioStreamFormatIDRef"
 })
-public class AudioTrackFormatType {
+@XmlRootElement(name = "audioTrackFormat")
+public class AudioTrackFormat
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
     protected Object audioStreamFormatIDRef;
@@ -67,7 +73,7 @@ public class AudioTrackFormatType {
     protected java.lang.String formatLanguage;
 
     /**
-     * Gets the value of the audioStreamFormatIDRef property.
+     * Obtient la valeur de la propriété audioStreamFormatIDRef.
      * 
      * @return
      *     possible object is
@@ -79,7 +85,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the audioStreamFormatIDRef property.
+     * Définit la valeur de la propriété audioStreamFormatIDRef.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +97,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the audioTrackFormatID property.
+     * Obtient la valeur de la propriété audioTrackFormatID.
      * 
      * @return
      *     possible object is
@@ -103,7 +109,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the audioTrackFormatID property.
+     * Définit la valeur de la propriété audioTrackFormatID.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +121,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the audioTrackFormatName property.
+     * Obtient la valeur de la propriété audioTrackFormatName.
      * 
      * @return
      *     possible object is
@@ -127,7 +133,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the audioTrackFormatName property.
+     * Définit la valeur de la propriété audioTrackFormatName.
      * 
      * @param value
      *     allowed object is
@@ -139,7 +145,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -151,7 +157,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -163,7 +169,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -175,7 +181,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -187,7 +193,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -199,7 +205,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -211,7 +217,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -223,7 +229,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -235,7 +241,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -247,7 +253,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -259,7 +265,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -271,7 +277,7 @@ public class AudioTrackFormatType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is

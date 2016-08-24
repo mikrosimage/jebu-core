@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * To indicate e.g. specific place and location aspects of the resource in
  * 				complement to Description.
  * 
- * <p>Java class for locationType complex type.
+ * <p>Classe Java pour locationType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="locationType">
@@ -59,8 +60,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "code",
     "region"
 })
-public class LocationType {
+public class LocationType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected ElementType name;
     protected ElementType description;
     protected LocationType.Coordinates coordinates;
@@ -89,7 +93,7 @@ public class LocationType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the name property.
+     * Obtient la valeur de la propriété name.
      * 
      * @return
      *     possible object is
@@ -101,7 +105,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the name property.
+     * Définit la valeur de la propriété name.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +117,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the description property.
+     * Obtient la valeur de la propriété description.
      * 
      * @return
      *     possible object is
@@ -125,7 +129,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the description property.
+     * Définit la valeur de la propriété description.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +141,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the coordinates property.
+     * Obtient la valeur de la propriété coordinates.
      * 
      * @return
      *     possible object is
@@ -149,7 +153,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the coordinates property.
+     * Définit la valeur de la propriété coordinates.
      * 
      * @param value
      *     allowed object is
@@ -161,7 +165,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the code property.
+     * Obtient la valeur de la propriété code.
      * 
      * @return
      *     possible object is
@@ -173,7 +177,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the code property.
+     * Définit la valeur de la propriété code.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +189,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the region property.
+     * Obtient la valeur de la propriété region.
      * 
      * @return
      *     possible object is
@@ -197,7 +201,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the region property.
+     * Définit la valeur de la propriété region.
      * 
      * @param value
      *     allowed object is
@@ -209,7 +213,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -221,7 +225,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -233,7 +237,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the locationId property.
+     * Obtient la valeur de la propriété locationId.
      * 
      * @return
      *     possible object is
@@ -245,7 +249,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the locationId property.
+     * Définit la valeur de la propriété locationId.
      * 
      * @param value
      *     allowed object is
@@ -257,7 +261,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -269,7 +273,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -281,7 +285,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -293,7 +297,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -305,7 +309,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -317,7 +321,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -329,7 +333,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -341,7 +345,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -353,7 +357,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -365,7 +369,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -377,7 +381,7 @@ public class LocationType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -389,7 +393,7 @@ public class LocationType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -402,9 +406,9 @@ public class LocationType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -427,8 +431,11 @@ public class LocationType {
         "posy",
         "posx"
     })
-    public static class Coordinates {
+    public static class Coordinates
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         protected float posy;
         protected float posx;
         @XmlAttribute(name = "formatLabel")
@@ -448,7 +455,7 @@ public class LocationType {
         protected java.lang.String formatLanguage;
 
         /**
-         * Gets the value of the posy property.
+         * Obtient la valeur de la propriété posy.
          * 
          */
         public float getPosy() {
@@ -456,7 +463,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the posy property.
+         * Définit la valeur de la propriété posy.
          * 
          */
         public void setPosy(float value) {
@@ -464,7 +471,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the posx property.
+         * Obtient la valeur de la propriété posx.
          * 
          */
         public float getPosx() {
@@ -472,7 +479,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the posx property.
+         * Définit la valeur de la propriété posx.
          * 
          */
         public void setPosx(float value) {
@@ -480,7 +487,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the formatLabel property.
+         * Obtient la valeur de la propriété formatLabel.
          * 
          * @return
          *     possible object is
@@ -492,7 +499,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the formatLabel property.
+         * Définit la valeur de la propriété formatLabel.
          * 
          * @param value
          *     allowed object is
@@ -504,7 +511,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the formatDefinition property.
+         * Obtient la valeur de la propriété formatDefinition.
          * 
          * @return
          *     possible object is
@@ -516,7 +523,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the formatDefinition property.
+         * Définit la valeur de la propriété formatDefinition.
          * 
          * @param value
          *     allowed object is
@@ -528,7 +535,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the formatLink property.
+         * Obtient la valeur de la propriété formatLink.
          * 
          * @return
          *     possible object is
@@ -540,7 +547,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the formatLink property.
+         * Définit la valeur de la propriété formatLink.
          * 
          * @param value
          *     allowed object is
@@ -552,7 +559,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the formatSource property.
+         * Obtient la valeur de la propriété formatSource.
          * 
          * @return
          *     possible object is
@@ -564,7 +571,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the formatSource property.
+         * Définit la valeur de la propriété formatSource.
          * 
          * @param value
          *     allowed object is
@@ -576,7 +583,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the formatNamespace property.
+         * Obtient la valeur de la propriété formatNamespace.
          * 
          * @return
          *     possible object is
@@ -588,7 +595,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the formatNamespace property.
+         * Définit la valeur de la propriété formatNamespace.
          * 
          * @param value
          *     allowed object is
@@ -600,7 +607,7 @@ public class LocationType {
         }
 
         /**
-         * Gets the value of the formatLanguage property.
+         * Obtient la valeur de la propriété formatLanguage.
          * 
          * @return
          *     possible object is
@@ -612,7 +619,7 @@ public class LocationType {
         }
 
         /**
-         * Sets the value of the formatLanguage property.
+         * Définit la valeur de la propriété formatLanguage.
          * 
          * @param value
          *     allowed object is

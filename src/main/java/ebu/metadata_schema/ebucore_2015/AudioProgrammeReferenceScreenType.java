@@ -1,15 +1,16 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for audioProgrammeReferenceScreenType complex type.
+ * <p>Classe Java pour audioProgrammeReferenceScreenType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioProgrammeReferenceScreenType">
@@ -33,14 +34,17 @@ import javax.xml.bind.annotation.XmlType;
     "screenCentrePosition",
     "screenWidth"
 })
-public class AudioProgrammeReferenceScreenType {
+public class AudioProgrammeReferenceScreenType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected java.lang.Float aspectRatio;
     protected ScreenCentrePositionType screenCentrePosition;
     protected ScreenWidthType screenWidth;
 
     /**
-     * Gets the value of the aspectRatio property.
+     * Obtient la valeur de la propriété aspectRatio.
      * 
      * @return
      *     possible object is
@@ -52,7 +56,7 @@ public class AudioProgrammeReferenceScreenType {
     }
 
     /**
-     * Sets the value of the aspectRatio property.
+     * Définit la valeur de la propriété aspectRatio.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +68,7 @@ public class AudioProgrammeReferenceScreenType {
     }
 
     /**
-     * Gets the value of the screenCentrePosition property.
+     * Obtient la valeur de la propriété screenCentrePosition.
      * 
      * @return
      *     possible object is
@@ -76,7 +80,7 @@ public class AudioProgrammeReferenceScreenType {
     }
 
     /**
-     * Sets the value of the screenCentrePosition property.
+     * Définit la valeur de la propriété screenCentrePosition.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +92,7 @@ public class AudioProgrammeReferenceScreenType {
     }
 
     /**
-     * Gets the value of the screenWidth property.
+     * Obtient la valeur de la propriété screenWidth.
      * 
      * @return
      *     possible object is
@@ -100,7 +104,7 @@ public class AudioProgrammeReferenceScreenType {
     }
 
     /**
-     * Sets the value of the screenWidth property.
+     * Définit la valeur de la propriété screenWidth.
      * 
      * @param value
      *     allowed object is

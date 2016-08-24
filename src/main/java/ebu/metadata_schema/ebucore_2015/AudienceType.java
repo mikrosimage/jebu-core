@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -13,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audienceType complex type.
+ * <p>Classe Java pour audienceType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audienceType">
@@ -25,8 +27,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="targetRegion" type="{urn:ebu:metadata-schema:ebuCore_2015}regionType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="targetExclusionRegion" type="{urn:ebu:metadata-schema:ebuCore_2015}regionType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
  *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}formatGroup"/>
+ *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
  *       &lt;attribute name="reason" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="linkToLogo" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *       &lt;attribute name="notRated" type="{http://www.w3.org/2001/XMLSchema}boolean" />
@@ -40,13 +42,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audienceType", propOrder = {
-    "targetRegion",
-    "targetExclusionRegion"
+    "targetRegions",
+    "targetExclusionRegions"
 })
-public class AudienceType {
+public class AudienceType
+    implements Serializable
+{
 
-    protected List<RegionType> targetRegion;
-    protected List<RegionType> targetExclusionRegion;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "targetRegion")
+    protected List<RegionType> targetRegions;
+    @XmlElement(name = "targetExclusionRegion")
+    protected List<RegionType> targetExclusionRegions;
     @XmlAttribute(name = "reason")
     protected java.lang.String reason;
     @XmlAttribute(name = "linkToLogo")
@@ -56,21 +63,6 @@ public class AudienceType {
     protected java.lang.Boolean notRated;
     @XmlAttribute(name = "adultContent")
     protected java.lang.Boolean adultContent;
-    @XmlAttribute(name = "typeLabel")
-    protected java.lang.String typeLabel;
-    @XmlAttribute(name = "typeDefinition")
-    protected java.lang.String typeDefinition;
-    @XmlAttribute(name = "typeLink")
-    @XmlSchemaType(name = "anyURI")
-    protected java.lang.String typeLink;
-    @XmlAttribute(name = "typeSource")
-    protected java.lang.String typeSource;
-    @XmlAttribute(name = "typeNamespace")
-    protected java.lang.String typeNamespace;
-    @XmlAttribute(name = "typeLanguage")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "language")
-    protected java.lang.String typeLanguage;
     @XmlAttribute(name = "formatLabel")
     protected java.lang.String formatLabel;
     @XmlAttribute(name = "formatDefinition")
@@ -86,20 +78,35 @@ public class AudienceType {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "language")
     protected java.lang.String formatLanguage;
+    @XmlAttribute(name = "typeLabel")
+    protected java.lang.String typeLabel;
+    @XmlAttribute(name = "typeDefinition")
+    protected java.lang.String typeDefinition;
+    @XmlAttribute(name = "typeLink")
+    @XmlSchemaType(name = "anyURI")
+    protected java.lang.String typeLink;
+    @XmlAttribute(name = "typeSource")
+    protected java.lang.String typeSource;
+    @XmlAttribute(name = "typeNamespace")
+    protected java.lang.String typeNamespace;
+    @XmlAttribute(name = "typeLanguage")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "language")
+    protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the targetRegion property.
+     * Gets the value of the targetRegions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the targetRegion property.
+     * This is why there is not a <CODE>set</CODE> method for the targetRegions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTargetRegion().add(newItem);
+     *    getTargetRegions().add(newItem);
      * </pre>
      * 
      * 
@@ -109,26 +116,26 @@ public class AudienceType {
      * 
      * 
      */
-    public List<RegionType> getTargetRegion() {
-        if (targetRegion == null) {
-            targetRegion = new ArrayList<>();
+    public List<RegionType> getTargetRegions() {
+        if (targetRegions == null) {
+            targetRegions = new ArrayList<>();
         }
-        return this.targetRegion;
+        return this.targetRegions;
     }
 
     /**
-     * Gets the value of the targetExclusionRegion property.
+     * Gets the value of the targetExclusionRegions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the targetExclusionRegion property.
+     * This is why there is not a <CODE>set</CODE> method for the targetExclusionRegions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTargetExclusionRegion().add(newItem);
+     *    getTargetExclusionRegions().add(newItem);
      * </pre>
      * 
      * 
@@ -138,15 +145,15 @@ public class AudienceType {
      * 
      * 
      */
-    public List<RegionType> getTargetExclusionRegion() {
-        if (targetExclusionRegion == null) {
-            targetExclusionRegion = new ArrayList<>();
+    public List<RegionType> getTargetExclusionRegions() {
+        if (targetExclusionRegions == null) {
+            targetExclusionRegions = new ArrayList<>();
         }
-        return this.targetExclusionRegion;
+        return this.targetExclusionRegions;
     }
 
     /**
-     * Gets the value of the reason property.
+     * Obtient la valeur de la propriété reason.
      * 
      * @return
      *     possible object is
@@ -158,7 +165,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the reason property.
+     * Définit la valeur de la propriété reason.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +177,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the linkToLogo property.
+     * Obtient la valeur de la propriété linkToLogo.
      * 
      * @return
      *     possible object is
@@ -182,7 +189,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the linkToLogo property.
+     * Définit la valeur de la propriété linkToLogo.
      * 
      * @param value
      *     allowed object is
@@ -194,19 +201,19 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the notRated property.
+     * Obtient la valeur de la propriété notRated.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getNotRated() {
+    public java.lang.Boolean isNotRated() {
         return notRated;
     }
 
     /**
-     * Sets the value of the notRated property.
+     * Définit la valeur de la propriété notRated.
      * 
      * @param value
      *     allowed object is
@@ -218,19 +225,19 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the adultContent property.
+     * Obtient la valeur de la propriété adultContent.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getAdultContent() {
+    public java.lang.Boolean isAdultContent() {
         return adultContent;
     }
 
     /**
-     * Sets the value of the adultContent property.
+     * Définit la valeur de la propriété adultContent.
      * 
      * @param value
      *     allowed object is
@@ -242,151 +249,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLabel() {
-        return typeLabel;
-    }
-
-    /**
-     * Sets the value of the typeLabel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLabel(java.lang.String value) {
-        this.typeLabel = value;
-    }
-
-    /**
-     * Gets the value of the typeDefinition property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeDefinition() {
-        return typeDefinition;
-    }
-
-    /**
-     * Sets the value of the typeDefinition property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeDefinition(java.lang.String value) {
-        this.typeDefinition = value;
-    }
-
-    /**
-     * Gets the value of the typeLink property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLink() {
-        return typeLink;
-    }
-
-    /**
-     * Sets the value of the typeLink property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLink(java.lang.String value) {
-        this.typeLink = value;
-    }
-
-    /**
-     * Gets the value of the typeSource property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeSource() {
-        return typeSource;
-    }
-
-    /**
-     * Sets the value of the typeSource property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeSource(java.lang.String value) {
-        this.typeSource = value;
-    }
-
-    /**
-     * Gets the value of the typeNamespace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeNamespace() {
-        return typeNamespace;
-    }
-
-    /**
-     * Sets the value of the typeNamespace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeNamespace(java.lang.String value) {
-        this.typeNamespace = value;
-    }
-
-    /**
-     * Gets the value of the typeLanguage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLanguage() {
-        return typeLanguage;
-    }
-
-    /**
-     * Sets the value of the typeLanguage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLanguage(java.lang.String value) {
-        this.typeLanguage = value;
-    }
-
-    /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -398,7 +261,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -410,7 +273,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -422,7 +285,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -434,7 +297,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -446,7 +309,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -458,7 +321,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -470,7 +333,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -482,7 +345,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -494,7 +357,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -506,7 +369,7 @@ public class AudienceType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -518,7 +381,7 @@ public class AudienceType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is
@@ -527,6 +390,150 @@ public class AudienceType {
      */
     public void setFormatLanguage(java.lang.String value) {
         this.formatLanguage = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLabel.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLabel() {
+        return typeLabel;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLabel.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLabel(java.lang.String value) {
+        this.typeLabel = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeDefinition.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeDefinition() {
+        return typeDefinition;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeDefinition.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeDefinition(java.lang.String value) {
+        this.typeDefinition = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLink() {
+        return typeLink;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLink(java.lang.String value) {
+        this.typeLink = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeSource.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeSource() {
+        return typeSource;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeSource.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeSource(java.lang.String value) {
+        this.typeSource = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeNamespace.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeNamespace() {
+        return typeNamespace;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeNamespace.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeNamespace(java.lang.String value) {
+        this.typeNamespace = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLanguage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLanguage() {
+        return typeLanguage;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLanguage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLanguage(java.lang.String value) {
+        this.typeLanguage = value;
     }
 
 }

@@ -3,9 +3,9 @@
  */
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import com.google.common.base.Preconditions;
+import java.util.Objects;
 
-import ebu.metadata_schema.ebucore_2015.AudioContentType;
+import ebu.metadata_schema.ebucore_2015.AudioContent;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;
 
 /**
@@ -50,14 +50,13 @@ public final class AudioContentTypeHelper {
 	 * @throws IllegalArgumentException
 	 * 	One of the argument is invalid
 	 */
-	public static final AudioContentType create(int programIndex, String audioProgramName, String language) 
+	public static final AudioContent create(int programIndex, String audioProgramName, String language) 
 			throws NullPointerException, IllegalArgumentException{
-		Preconditions.checkNotNull(programIndex);
-		Preconditions.checkArgument(programIndex>0);
-		Preconditions.checkNotNull(audioProgramName);
-		Preconditions.checkNotNull(language);
+		Objects.requireNonNull(programIndex);
+		Objects.requireNonNull(audioProgramName);
+		Objects.requireNonNull(language);
 		final ObjectFactory objectFactory = new ObjectFactory();
-		final AudioContentType audioContent = objectFactory.createAudioContentType();
+		final AudioContent audioContent = objectFactory.createAudioContent();
 		audioContent.setAudioContentID(AudioContentTypeHelper.getAudioContentIdFromIndex(programIndex));
 		audioContent.setAudioContentLanguage(language);
 		audioContent.setAudioContentName(audioProgramName);

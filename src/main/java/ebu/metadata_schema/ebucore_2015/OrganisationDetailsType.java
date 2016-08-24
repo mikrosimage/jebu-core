@@ -1,26 +1,29 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
  *  To provide information on the details needed to contact and locate an
  * 				organisation. 
  * 
- * <p>Java class for organisationDetailsType complex type.
+ * <p>Classe Java pour organisationDetailsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="organisationDetailsType">
@@ -57,24 +60,31 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "organisationDetailsType", propOrder = {
-    "organisationName",
-    "organisationCode",
-    "organisationDescription",
+    "organisationNames",
+    "organisationCodes",
+    "organisationDescriptions",
     "organisationNationality",
     "organisationDepartment",
     "details",
-    "relatedInformationLink",
+    "relatedInformationLinks",
     "contacts"
 })
-public class OrganisationDetailsType {
+public class OrganisationDetailsType
+    implements Serializable
+{
 
-    protected List<CompoundNameType> organisationName;
-    protected List<IdentifierType> organisationCode;
-    protected List<ElementType> organisationDescription;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "organisationName")
+    protected List<CompoundNameType> organisationNames;
+    @XmlElement(name = "organisationCode")
+    protected List<IdentifierType> organisationCodes;
+    @XmlElement(name = "organisationDescription")
+    protected List<ElementType> organisationDescriptions;
     protected java.lang.String organisationNationality;
     protected OrganisationDepartmentType organisationDepartment;
     protected List<DetailsType> details;
-    protected List<OrganisationDetailsType.RelatedInformationLink> relatedInformationLink;
+    @XmlElement(name = "relatedInformationLink")
+    protected List<OrganisationDetailsType.RelatedInformationLink> relatedInformationLinks;
     protected List<EntityType> contacts;
     @XmlAttribute(name = "organisationId")
     @XmlSchemaType(name = "anyURI")
@@ -83,8 +93,9 @@ public class OrganisationDetailsType {
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String linkToLogo;
     @XmlAttribute(name = "lastUpdate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar lastUpdate;
+    protected Date lastUpdate;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -102,18 +113,18 @@ public class OrganisationDetailsType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the organisationName property.
+     * Gets the value of the organisationNames property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the organisationName property.
+     * This is why there is not a <CODE>set</CODE> method for the organisationNames property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOrganisationName().add(newItem);
+     *    getOrganisationNames().add(newItem);
      * </pre>
      * 
      * 
@@ -123,26 +134,26 @@ public class OrganisationDetailsType {
      * 
      * 
      */
-    public List<CompoundNameType> getOrganisationName() {
-        if (organisationName == null) {
-            organisationName = new ArrayList<>();
+    public List<CompoundNameType> getOrganisationNames() {
+        if (organisationNames == null) {
+            organisationNames = new ArrayList<>();
         }
-        return this.organisationName;
+        return this.organisationNames;
     }
 
     /**
-     * Gets the value of the organisationCode property.
+     * Gets the value of the organisationCodes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the organisationCode property.
+     * This is why there is not a <CODE>set</CODE> method for the organisationCodes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOrganisationCode().add(newItem);
+     *    getOrganisationCodes().add(newItem);
      * </pre>
      * 
      * 
@@ -152,26 +163,26 @@ public class OrganisationDetailsType {
      * 
      * 
      */
-    public List<IdentifierType> getOrganisationCode() {
-        if (organisationCode == null) {
-            organisationCode = new ArrayList<>();
+    public List<IdentifierType> getOrganisationCodes() {
+        if (organisationCodes == null) {
+            organisationCodes = new ArrayList<>();
         }
-        return this.organisationCode;
+        return this.organisationCodes;
     }
 
     /**
-     * Gets the value of the organisationDescription property.
+     * Gets the value of the organisationDescriptions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the organisationDescription property.
+     * This is why there is not a <CODE>set</CODE> method for the organisationDescriptions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOrganisationDescription().add(newItem);
+     *    getOrganisationDescriptions().add(newItem);
      * </pre>
      * 
      * 
@@ -181,15 +192,15 @@ public class OrganisationDetailsType {
      * 
      * 
      */
-    public List<ElementType> getOrganisationDescription() {
-        if (organisationDescription == null) {
-            organisationDescription = new ArrayList<>();
+    public List<ElementType> getOrganisationDescriptions() {
+        if (organisationDescriptions == null) {
+            organisationDescriptions = new ArrayList<>();
         }
-        return this.organisationDescription;
+        return this.organisationDescriptions;
     }
 
     /**
-     * Gets the value of the organisationNationality property.
+     * Obtient la valeur de la propriété organisationNationality.
      * 
      * @return
      *     possible object is
@@ -201,7 +212,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the organisationNationality property.
+     * Définit la valeur de la propriété organisationNationality.
      * 
      * @param value
      *     allowed object is
@@ -213,7 +224,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the organisationDepartment property.
+     * Obtient la valeur de la propriété organisationDepartment.
      * 
      * @return
      *     possible object is
@@ -225,7 +236,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the organisationDepartment property.
+     * Définit la valeur de la propriété organisationDepartment.
      * 
      * @param value
      *     allowed object is
@@ -266,18 +277,18 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the relatedInformationLink property.
+     * Gets the value of the relatedInformationLinks property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the relatedInformationLink property.
+     * This is why there is not a <CODE>set</CODE> method for the relatedInformationLinks property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRelatedInformationLink().add(newItem);
+     *    getRelatedInformationLinks().add(newItem);
      * </pre>
      * 
      * 
@@ -287,11 +298,11 @@ public class OrganisationDetailsType {
      * 
      * 
      */
-    public List<OrganisationDetailsType.RelatedInformationLink> getRelatedInformationLink() {
-        if (relatedInformationLink == null) {
-            relatedInformationLink = new ArrayList<>();
+    public List<OrganisationDetailsType.RelatedInformationLink> getRelatedInformationLinks() {
+        if (relatedInformationLinks == null) {
+            relatedInformationLinks = new ArrayList<>();
         }
-        return this.relatedInformationLink;
+        return this.relatedInformationLinks;
     }
 
     /**
@@ -324,7 +335,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the organisationId property.
+     * Obtient la valeur de la propriété organisationId.
      * 
      * @return
      *     possible object is
@@ -336,7 +347,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the organisationId property.
+     * Définit la valeur de la propriété organisationId.
      * 
      * @param value
      *     allowed object is
@@ -348,7 +359,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the linkToLogo property.
+     * Obtient la valeur de la propriété linkToLogo.
      * 
      * @return
      *     possible object is
@@ -360,7 +371,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the linkToLogo property.
+     * Définit la valeur de la propriété linkToLogo.
      * 
      * @param value
      *     allowed object is
@@ -372,31 +383,31 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the lastUpdate property.
+     * Obtient la valeur de la propriété lastUpdate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getLastUpdate() {
+    public Date getLastUpdate() {
         return lastUpdate;
     }
 
     /**
-     * Sets the value of the lastUpdate property.
+     * Définit la valeur de la propriété lastUpdate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setLastUpdate(XMLGregorianCalendar value) {
+    public void setLastUpdate(Date value) {
         this.lastUpdate = value;
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -408,7 +419,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -420,7 +431,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -432,7 +443,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -444,7 +455,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -456,7 +467,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -468,7 +479,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -480,7 +491,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -492,7 +503,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -504,7 +515,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -516,7 +527,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -528,7 +539,7 @@ public class OrganisationDetailsType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -541,9 +552,9 @@ public class OrganisationDetailsType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -561,8 +572,11 @@ public class OrganisationDetailsType {
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class RelatedInformationLink {
+    public static class RelatedInformationLink
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlValue
         @XmlSchemaType(name = "anyURI")
         protected java.lang.String value;
@@ -583,7 +597,7 @@ public class OrganisationDetailsType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the value property.
+         * Obtient la valeur de la propriété value.
          * 
          * @return
          *     possible object is
@@ -595,7 +609,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the value property.
+         * Définit la valeur de la propriété value.
          * 
          * @param value
          *     allowed object is
@@ -607,7 +621,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -619,7 +633,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -631,7 +645,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -643,7 +657,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -655,7 +669,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -667,7 +681,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -679,7 +693,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -691,7 +705,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -703,7 +717,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -715,7 +729,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -727,7 +741,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -739,7 +753,7 @@ public class OrganisationDetailsType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

@@ -1,26 +1,29 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
  *  To provide all the information necessary to contact and locate a person.
  * 			
  * 
- * <p>Java class for contactDetailsType complex type.
+ * <p>Classe Java pour contactDetailsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="contactDetailsType">
@@ -82,61 +85,77 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "contactDetailsType", propOrder = {
-    "name",
     "givenName",
     "familyName",
-    "otherGivenName",
+    "otherGivenNames",
     "suffix",
     "salutation",
+    "names",
     "birthDate",
     "deathDate",
     "birthPlace",
     "deathPlace",
     "nationality",
-    "username",
-    "nickname",
+    "usernames",
+    "nicknames",
     "occupation",
     "details",
-    "stageName",
+    "stageNames",
     "guest",
     "gender",
-    "relatedInformationLink",
+    "relatedInformationLinks",
     "relatedContacts",
-    "skill",
-    "affiliation"
+    "skills",
+    "affiliations"
 })
-public class ContactDetailsType {
+public class ContactDetailsType
+    implements Serializable
+{
 
-    protected List<CompoundNameType> name;
+    private final static long serialVersionUID = -1L;
     protected ElementType givenName;
     protected ElementType familyName;
-    protected List<ElementType> otherGivenName;
+    @XmlElement(name = "otherGivenName")
+    protected List<ElementType> otherGivenNames;
     protected ElementType suffix;
     protected ElementType salutation;
+    @XmlElement(name = "name")
+    protected List<CompoundNameType> names;
+    @XmlElement(type = java.lang.String.class)
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar birthDate;
+    protected Date birthDate;
+    @XmlElement(type = java.lang.String.class)
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar deathDate;
+    protected Date deathDate;
     protected java.lang.String birthPlace;
     protected java.lang.String deathPlace;
     protected java.lang.String nationality;
-    protected List<ElementType> username;
-    protected List<ElementType> nickname;
+    @XmlElement(name = "username")
+    protected List<ElementType> usernames;
+    @XmlElement(name = "nickname")
+    protected List<ElementType> nicknames;
     protected ElementType occupation;
     protected List<DetailsType> details;
-    protected List<ContactDetailsType.StageName> stageName;
+    @XmlElement(name = "stageName")
+    protected List<ContactDetailsType.StageName> stageNames;
     protected java.lang.Boolean guest;
     protected ElementType gender;
-    protected List<ContactDetailsType.RelatedInformationLink> relatedInformationLink;
+    @XmlElement(name = "relatedInformationLink")
+    protected List<ContactDetailsType.RelatedInformationLink> relatedInformationLinks;
     protected List<EntityType> relatedContacts;
-    protected List<java.lang.String> skill;
-    protected List<AffiliationType> affiliation;
+    @XmlElement(name = "skill")
+    protected List<java.lang.String> skills;
+    @XmlElement(name = "affiliation")
+    protected List<AffiliationType> affiliations;
     @XmlAttribute(name = "contactId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String contactId;
     @XmlAttribute(name = "lastUpdate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar lastUpdate;
+    protected Date lastUpdate;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -154,36 +173,7 @@ public class ContactDetailsType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the name property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the name property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CompoundNameType }
-     * 
-     * 
-     */
-    public List<CompoundNameType> getName() {
-        if (name == null) {
-            name = new ArrayList<>();
-        }
-        return this.name;
-    }
-
-    /**
-     * Gets the value of the givenName property.
+     * Obtient la valeur de la propriété givenName.
      * 
      * @return
      *     possible object is
@@ -195,7 +185,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the givenName property.
+     * Définit la valeur de la propriété givenName.
      * 
      * @param value
      *     allowed object is
@@ -207,7 +197,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the familyName property.
+     * Obtient la valeur de la propriété familyName.
      * 
      * @return
      *     possible object is
@@ -219,7 +209,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the familyName property.
+     * Définit la valeur de la propriété familyName.
      * 
      * @param value
      *     allowed object is
@@ -231,18 +221,18 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the otherGivenName property.
+     * Gets the value of the otherGivenNames property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the otherGivenName property.
+     * This is why there is not a <CODE>set</CODE> method for the otherGivenNames property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOtherGivenName().add(newItem);
+     *    getOtherGivenNames().add(newItem);
      * </pre>
      * 
      * 
@@ -252,15 +242,15 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<ElementType> getOtherGivenName() {
-        if (otherGivenName == null) {
-            otherGivenName = new ArrayList<>();
+    public List<ElementType> getOtherGivenNames() {
+        if (otherGivenNames == null) {
+            otherGivenNames = new ArrayList<>();
         }
-        return this.otherGivenName;
+        return this.otherGivenNames;
     }
 
     /**
-     * Gets the value of the suffix property.
+     * Obtient la valeur de la propriété suffix.
      * 
      * @return
      *     possible object is
@@ -272,7 +262,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the suffix property.
+     * Définit la valeur de la propriété suffix.
      * 
      * @param value
      *     allowed object is
@@ -284,7 +274,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the salutation property.
+     * Obtient la valeur de la propriété salutation.
      * 
      * @return
      *     possible object is
@@ -296,7 +286,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the salutation property.
+     * Définit la valeur de la propriété salutation.
      * 
      * @param value
      *     allowed object is
@@ -308,55 +298,84 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the birthDate property.
+     * Gets the value of the names property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the names property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getNames().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CompoundNameType }
+     * 
+     * 
+     */
+    public List<CompoundNameType> getNames() {
+        if (names == null) {
+            names = new ArrayList<>();
+        }
+        return this.names;
+    }
+
+    /**
+     * Obtient la valeur de la propriété birthDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
     /**
-     * Sets the value of the birthDate property.
+     * Définit la valeur de la propriété birthDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setBirthDate(XMLGregorianCalendar value) {
+    public void setBirthDate(Date value) {
         this.birthDate = value;
     }
 
     /**
-     * Gets the value of the deathDate property.
+     * Obtient la valeur de la propriété deathDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getDeathDate() {
+    public Date getDeathDate() {
         return deathDate;
     }
 
     /**
-     * Sets the value of the deathDate property.
+     * Définit la valeur de la propriété deathDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setDeathDate(XMLGregorianCalendar value) {
+    public void setDeathDate(Date value) {
         this.deathDate = value;
     }
 
     /**
-     * Gets the value of the birthPlace property.
+     * Obtient la valeur de la propriété birthPlace.
      * 
      * @return
      *     possible object is
@@ -368,7 +387,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the birthPlace property.
+     * Définit la valeur de la propriété birthPlace.
      * 
      * @param value
      *     allowed object is
@@ -380,7 +399,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the deathPlace property.
+     * Obtient la valeur de la propriété deathPlace.
      * 
      * @return
      *     possible object is
@@ -392,7 +411,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the deathPlace property.
+     * Définit la valeur de la propriété deathPlace.
      * 
      * @param value
      *     allowed object is
@@ -404,7 +423,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the nationality property.
+     * Obtient la valeur de la propriété nationality.
      * 
      * @return
      *     possible object is
@@ -416,7 +435,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the nationality property.
+     * Définit la valeur de la propriété nationality.
      * 
      * @param value
      *     allowed object is
@@ -428,18 +447,18 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the username property.
+     * Gets the value of the usernames property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the username property.
+     * This is why there is not a <CODE>set</CODE> method for the usernames property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getUsername().add(newItem);
+     *    getUsernames().add(newItem);
      * </pre>
      * 
      * 
@@ -449,26 +468,26 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<ElementType> getUsername() {
-        if (username == null) {
-            username = new ArrayList<>();
+    public List<ElementType> getUsernames() {
+        if (usernames == null) {
+            usernames = new ArrayList<>();
         }
-        return this.username;
+        return this.usernames;
     }
 
     /**
-     * Gets the value of the nickname property.
+     * Gets the value of the nicknames property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nickname property.
+     * This is why there is not a <CODE>set</CODE> method for the nicknames property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getNickname().add(newItem);
+     *    getNicknames().add(newItem);
      * </pre>
      * 
      * 
@@ -478,15 +497,15 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<ElementType> getNickname() {
-        if (nickname == null) {
-            nickname = new ArrayList<>();
+    public List<ElementType> getNicknames() {
+        if (nicknames == null) {
+            nicknames = new ArrayList<>();
         }
-        return this.nickname;
+        return this.nicknames;
     }
 
     /**
-     * Gets the value of the occupation property.
+     * Obtient la valeur de la propriété occupation.
      * 
      * @return
      *     possible object is
@@ -498,7 +517,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the occupation property.
+     * Définit la valeur de la propriété occupation.
      * 
      * @param value
      *     allowed object is
@@ -539,18 +558,18 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the stageName property.
+     * Gets the value of the stageNames property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stageName property.
+     * This is why there is not a <CODE>set</CODE> method for the stageNames property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStageName().add(newItem);
+     *    getStageNames().add(newItem);
      * </pre>
      * 
      * 
@@ -560,27 +579,27 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<ContactDetailsType.StageName> getStageName() {
-        if (stageName == null) {
-            stageName = new ArrayList<>();
+    public List<ContactDetailsType.StageName> getStageNames() {
+        if (stageNames == null) {
+            stageNames = new ArrayList<>();
         }
-        return this.stageName;
+        return this.stageNames;
     }
 
     /**
-     * Gets the value of the guest property.
+     * Obtient la valeur de la propriété guest.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getGuest() {
+    public java.lang.Boolean isGuest() {
         return guest;
     }
 
     /**
-     * Sets the value of the guest property.
+     * Définit la valeur de la propriété guest.
      * 
      * @param value
      *     allowed object is
@@ -592,7 +611,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the gender property.
+     * Obtient la valeur de la propriété gender.
      * 
      * @return
      *     possible object is
@@ -604,7 +623,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the gender property.
+     * Définit la valeur de la propriété gender.
      * 
      * @param value
      *     allowed object is
@@ -616,18 +635,18 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the relatedInformationLink property.
+     * Gets the value of the relatedInformationLinks property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the relatedInformationLink property.
+     * This is why there is not a <CODE>set</CODE> method for the relatedInformationLinks property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRelatedInformationLink().add(newItem);
+     *    getRelatedInformationLinks().add(newItem);
      * </pre>
      * 
      * 
@@ -637,11 +656,11 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<ContactDetailsType.RelatedInformationLink> getRelatedInformationLink() {
-        if (relatedInformationLink == null) {
-            relatedInformationLink = new ArrayList<>();
+    public List<ContactDetailsType.RelatedInformationLink> getRelatedInformationLinks() {
+        if (relatedInformationLinks == null) {
+            relatedInformationLinks = new ArrayList<>();
         }
-        return this.relatedInformationLink;
+        return this.relatedInformationLinks;
     }
 
     /**
@@ -674,18 +693,18 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the skill property.
+     * Gets the value of the skills property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the skill property.
+     * This is why there is not a <CODE>set</CODE> method for the skills property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSkill().add(newItem);
+     *    getSkills().add(newItem);
      * </pre>
      * 
      * 
@@ -695,26 +714,26 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<java.lang.String> getSkill() {
-        if (skill == null) {
-            skill = new ArrayList<>();
+    public List<java.lang.String> getSkills() {
+        if (skills == null) {
+            skills = new ArrayList<>();
         }
-        return this.skill;
+        return this.skills;
     }
 
     /**
-     * Gets the value of the affiliation property.
+     * Gets the value of the affiliations property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the affiliation property.
+     * This is why there is not a <CODE>set</CODE> method for the affiliations property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAffiliation().add(newItem);
+     *    getAffiliations().add(newItem);
      * </pre>
      * 
      * 
@@ -724,15 +743,15 @@ public class ContactDetailsType {
      * 
      * 
      */
-    public List<AffiliationType> getAffiliation() {
-        if (affiliation == null) {
-            affiliation = new ArrayList<>();
+    public List<AffiliationType> getAffiliations() {
+        if (affiliations == null) {
+            affiliations = new ArrayList<>();
         }
-        return this.affiliation;
+        return this.affiliations;
     }
 
     /**
-     * Gets the value of the contactId property.
+     * Obtient la valeur de la propriété contactId.
      * 
      * @return
      *     possible object is
@@ -744,7 +763,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the contactId property.
+     * Définit la valeur de la propriété contactId.
      * 
      * @param value
      *     allowed object is
@@ -756,31 +775,31 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the lastUpdate property.
+     * Obtient la valeur de la propriété lastUpdate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getLastUpdate() {
+    public Date getLastUpdate() {
         return lastUpdate;
     }
 
     /**
-     * Sets the value of the lastUpdate property.
+     * Définit la valeur de la propriété lastUpdate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setLastUpdate(XMLGregorianCalendar value) {
+    public void setLastUpdate(Date value) {
         this.lastUpdate = value;
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -792,7 +811,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -804,7 +823,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -816,7 +835,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -828,7 +847,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -840,7 +859,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -852,7 +871,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -864,7 +883,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -876,7 +895,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -888,7 +907,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -900,7 +919,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -912,7 +931,7 @@ public class ContactDetailsType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -925,9 +944,9 @@ public class ContactDetailsType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -945,8 +964,11 @@ public class ContactDetailsType {
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class RelatedInformationLink {
+    public static class RelatedInformationLink
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlValue
         @XmlSchemaType(name = "anyURI")
         protected java.lang.String value;
@@ -967,7 +989,7 @@ public class ContactDetailsType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the value property.
+         * Obtient la valeur de la propriété value.
          * 
          * @return
          *     possible object is
@@ -979,7 +1001,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the value property.
+         * Définit la valeur de la propriété value.
          * 
          * @param value
          *     allowed object is
@@ -991,7 +1013,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1003,7 +1025,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1015,7 +1037,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1027,7 +1049,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1039,7 +1061,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1051,7 +1073,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -1063,7 +1085,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -1075,7 +1097,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -1087,7 +1109,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -1099,7 +1121,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -1111,7 +1133,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -1123,7 +1145,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -1138,9 +1160,9 @@ public class ContactDetailsType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1158,8 +1180,10 @@ public class ContactDetailsType {
     @XmlType(name = "")
     public static class StageName
         extends ElementType
+        implements Serializable
     {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -1177,7 +1201,7 @@ public class ContactDetailsType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1189,7 +1213,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1201,7 +1225,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1213,7 +1237,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1225,7 +1249,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1237,7 +1261,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -1249,7 +1273,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -1261,7 +1285,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -1273,7 +1297,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -1285,7 +1309,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -1297,7 +1321,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -1309,7 +1333,7 @@ public class ContactDetailsType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

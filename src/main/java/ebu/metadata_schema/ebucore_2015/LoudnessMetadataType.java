@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -10,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  *  A set of loudness parameters 
  * 
- * <p>Java class for loudnessMetadataType complex type.
+ * <p>Classe Java pour loudnessMetadataType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="loudnessMetadataType">
@@ -45,8 +46,11 @@ import javax.xml.bind.annotation.XmlType;
     "maxShortTerm",
     "dialogLoudness"
 })
-public class LoudnessMetadataType {
+public class LoudnessMetadataType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected java.lang.Float integratedLoudness;
     protected java.lang.Float loudnessRange;
     protected java.lang.Float maxTruePeak;
@@ -61,7 +65,7 @@ public class LoudnessMetadataType {
     protected java.lang.String loudnessCorrectionType;
 
     /**
-     * Gets the value of the integratedLoudness property.
+     * Obtient la valeur de la propriété integratedLoudness.
      * 
      * @return
      *     possible object is
@@ -73,7 +77,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the integratedLoudness property.
+     * Définit la valeur de la propriété integratedLoudness.
      * 
      * @param value
      *     allowed object is
@@ -85,7 +89,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the loudnessRange property.
+     * Obtient la valeur de la propriété loudnessRange.
      * 
      * @return
      *     possible object is
@@ -97,7 +101,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the loudnessRange property.
+     * Définit la valeur de la propriété loudnessRange.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +113,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the maxTruePeak property.
+     * Obtient la valeur de la propriété maxTruePeak.
      * 
      * @return
      *     possible object is
@@ -121,7 +125,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the maxTruePeak property.
+     * Définit la valeur de la propriété maxTruePeak.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +137,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the maxMomentary property.
+     * Obtient la valeur de la propriété maxMomentary.
      * 
      * @return
      *     possible object is
@@ -145,7 +149,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the maxMomentary property.
+     * Définit la valeur de la propriété maxMomentary.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +161,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the maxShortTerm property.
+     * Obtient la valeur de la propriété maxShortTerm.
      * 
      * @return
      *     possible object is
@@ -169,7 +173,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the maxShortTerm property.
+     * Définit la valeur de la propriété maxShortTerm.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +185,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the dialogLoudness property.
+     * Obtient la valeur de la propriété dialogLoudness.
      * 
      * @return
      *     possible object is
@@ -193,7 +197,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the dialogLoudness property.
+     * Définit la valeur de la propriété dialogLoudness.
      * 
      * @param value
      *     allowed object is
@@ -205,7 +209,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the loudnessMethod property.
+     * Obtient la valeur de la propriété loudnessMethod.
      * 
      * @return
      *     possible object is
@@ -217,7 +221,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the loudnessMethod property.
+     * Définit la valeur de la propriété loudnessMethod.
      * 
      * @param value
      *     allowed object is
@@ -229,7 +233,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the loudnessRecType property.
+     * Obtient la valeur de la propriété loudnessRecType.
      * 
      * @return
      *     possible object is
@@ -241,7 +245,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the loudnessRecType property.
+     * Définit la valeur de la propriété loudnessRecType.
      * 
      * @param value
      *     allowed object is
@@ -253,7 +257,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Gets the value of the loudnessCorrectionType property.
+     * Obtient la valeur de la propriété loudnessCorrectionType.
      * 
      * @return
      *     possible object is
@@ -265,7 +269,7 @@ public class LoudnessMetadataType {
     }
 
     /**
-     * Sets the value of the loudnessCorrectionType property.
+     * Définit la valeur de la propriété loudnessCorrectionType.
      * 
      * @param value
      *     allowed object is

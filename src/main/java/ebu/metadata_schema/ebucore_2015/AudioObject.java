@@ -1,14 +1,17 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +19,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioObjectType complex type.
+ * <p>Classe Java pour audioObjectType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioObjectType">
@@ -48,23 +51,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioObjectType", propOrder = {
-    "audioPackFormatIDRef",
-    "audioObjectIDRef",
-    "audioComplementaryObjectIDRef",
-    "audioTrackUIDRef",
-    "audioObjectInteraction"
+    "audioPackFormatIDReves",
+    "audioObjectIDReves",
+    "audioComplementaryObjectIDReves",
+    "audioTrackUIDReves",
+    "audioObjectInteractions"
 })
-public class AudioObjectType {
+@XmlRootElement(name = "audioObject")
+public class AudioObject
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElementRef(name = "audioPackFormatIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioPackFormatIDRef;
+    protected List<JAXBElement<Object>> audioPackFormatIDReves;
     @XmlElementRef(name = "audioObjectIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioObjectIDRef;
+    protected List<JAXBElement<Object>> audioObjectIDReves;
     @XmlElementRef(name = "audioComplementaryObjectIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioComplementaryObjectIDRef;
+    protected List<JAXBElement<Object>> audioComplementaryObjectIDReves;
     @XmlElementRef(name = "audioTrackUIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioTrackUIDRef;
-    protected List<AudioObjectInteractionType> audioObjectInteraction;
+    protected List<JAXBElement<Object>> audioTrackUIDReves;
+    @XmlElement(name = "audioObjectInteraction")
+    protected List<AudioObjectInteractionType> audioObjectInteractions;
     @XmlAttribute(name = "audioObjectID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -86,18 +94,18 @@ public class AudioObjectType {
     protected java.lang.Boolean disableDucking;
 
     /**
-     * Gets the value of the audioPackFormatIDRef property.
+     * Gets the value of the audioPackFormatIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioPackFormatIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioPackFormatIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioPackFormatIDRef().add(newItem);
+     *    getAudioPackFormatIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -107,26 +115,26 @@ public class AudioObjectType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioPackFormatIDRef() {
-        if (audioPackFormatIDRef == null) {
-            audioPackFormatIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioPackFormatIDReves() {
+        if (audioPackFormatIDReves == null) {
+            audioPackFormatIDReves = new ArrayList<>();
         }
-        return this.audioPackFormatIDRef;
+        return this.audioPackFormatIDReves;
     }
 
     /**
-     * Gets the value of the audioObjectIDRef property.
+     * Gets the value of the audioObjectIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioObjectIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioObjectIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioObjectIDRef().add(newItem);
+     *    getAudioObjectIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -136,26 +144,26 @@ public class AudioObjectType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioObjectIDRef() {
-        if (audioObjectIDRef == null) {
-            audioObjectIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioObjectIDReves() {
+        if (audioObjectIDReves == null) {
+            audioObjectIDReves = new ArrayList<>();
         }
-        return this.audioObjectIDRef;
+        return this.audioObjectIDReves;
     }
 
     /**
-     * Gets the value of the audioComplementaryObjectIDRef property.
+     * Gets the value of the audioComplementaryObjectIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioComplementaryObjectIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioComplementaryObjectIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioComplementaryObjectIDRef().add(newItem);
+     *    getAudioComplementaryObjectIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -165,26 +173,26 @@ public class AudioObjectType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioComplementaryObjectIDRef() {
-        if (audioComplementaryObjectIDRef == null) {
-            audioComplementaryObjectIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioComplementaryObjectIDReves() {
+        if (audioComplementaryObjectIDReves == null) {
+            audioComplementaryObjectIDReves = new ArrayList<>();
         }
-        return this.audioComplementaryObjectIDRef;
+        return this.audioComplementaryObjectIDReves;
     }
 
     /**
-     * Gets the value of the audioTrackUIDRef property.
+     * Gets the value of the audioTrackUIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioTrackUIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioTrackUIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioTrackUIDRef().add(newItem);
+     *    getAudioTrackUIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -194,26 +202,26 @@ public class AudioObjectType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioTrackUIDRef() {
-        if (audioTrackUIDRef == null) {
-            audioTrackUIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioTrackUIDReves() {
+        if (audioTrackUIDReves == null) {
+            audioTrackUIDReves = new ArrayList<>();
         }
-        return this.audioTrackUIDRef;
+        return this.audioTrackUIDReves;
     }
 
     /**
-     * Gets the value of the audioObjectInteraction property.
+     * Gets the value of the audioObjectInteractions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioObjectInteraction property.
+     * This is why there is not a <CODE>set</CODE> method for the audioObjectInteractions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioObjectInteraction().add(newItem);
+     *    getAudioObjectInteractions().add(newItem);
      * </pre>
      * 
      * 
@@ -223,15 +231,15 @@ public class AudioObjectType {
      * 
      * 
      */
-    public List<AudioObjectInteractionType> getAudioObjectInteraction() {
-        if (audioObjectInteraction == null) {
-            audioObjectInteraction = new ArrayList<>();
+    public List<AudioObjectInteractionType> getAudioObjectInteractions() {
+        if (audioObjectInteractions == null) {
+            audioObjectInteractions = new ArrayList<>();
         }
-        return this.audioObjectInteraction;
+        return this.audioObjectInteractions;
     }
 
     /**
-     * Gets the value of the audioObjectID property.
+     * Obtient la valeur de la propriété audioObjectID.
      * 
      * @return
      *     possible object is
@@ -243,7 +251,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Sets the value of the audioObjectID property.
+     * Définit la valeur de la propriété audioObjectID.
      * 
      * @param value
      *     allowed object is
@@ -255,7 +263,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the audioObjectName property.
+     * Obtient la valeur de la propriété audioObjectName.
      * 
      * @return
      *     possible object is
@@ -267,7 +275,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Sets the value of the audioObjectName property.
+     * Définit la valeur de la propriété audioObjectName.
      * 
      * @param value
      *     allowed object is
@@ -279,7 +287,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the start property.
+     * Obtient la valeur de la propriété start.
      * 
      * @return
      *     possible object is
@@ -291,7 +299,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Sets the value of the start property.
+     * Définit la valeur de la propriété start.
      * 
      * @param value
      *     allowed object is
@@ -303,7 +311,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the duration property.
+     * Obtient la valeur de la propriété duration.
      * 
      * @return
      *     possible object is
@@ -315,7 +323,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Sets the value of the duration property.
+     * Définit la valeur de la propriété duration.
      * 
      * @param value
      *     allowed object is
@@ -327,14 +335,14 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the dialogue property.
+     * Obtient la valeur de la propriété dialogue.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public Integer getDialogue() {
+    public int getDialogue() {
         if (dialogue == null) {
             return  0;
         } else {
@@ -343,7 +351,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Sets the value of the dialogue property.
+     * Définit la valeur de la propriété dialogue.
      * 
      * @param value
      *     allowed object is
@@ -355,7 +363,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the importance property.
+     * Obtient la valeur de la propriété importance.
      * 
      * @return
      *     possible object is
@@ -367,7 +375,7 @@ public class AudioObjectType {
     }
 
     /**
-     * Sets the value of the importance property.
+     * Définit la valeur de la propriété importance.
      * 
      * @param value
      *     allowed object is
@@ -379,19 +387,19 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the interact property.
+     * Obtient la valeur de la propriété interact.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getInteract() {
+    public java.lang.Boolean isInteract() {
         return interact;
     }
 
     /**
-     * Sets the value of the interact property.
+     * Définit la valeur de la propriété interact.
      * 
      * @param value
      *     allowed object is
@@ -403,19 +411,19 @@ public class AudioObjectType {
     }
 
     /**
-     * Gets the value of the disableDucking property.
+     * Obtient la valeur de la propriété disableDucking.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getDisableDucking() {
+    public java.lang.Boolean isDisableDucking() {
         return disableDucking;
     }
 
     /**
-     * Sets the value of the disableDucking property.
+     * Définit la valeur de la propriété disableDucking.
      * 
      * @param value
      *     allowed object is

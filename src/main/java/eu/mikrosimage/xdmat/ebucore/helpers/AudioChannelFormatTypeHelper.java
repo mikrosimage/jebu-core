@@ -1,7 +1,5 @@
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import com.google.common.base.Strings;
-
 /**
  * 
  * @author Guillaume Maucomble <gma@mikrosimage.eu>
@@ -20,7 +18,7 @@ public class AudioChannelFormatTypeHelper {
 	 * @return Prefix of AudioChannel matching channel parameter
 	 */
 	public static final String getAudioChannelPrefix(int index) {
-		return "0001" + Strings.padStart(String.valueOf(index), 4, '0');
+		return "0001" + IDHelper.createId(String.valueOf(index), 4);
 	}
 	/**
 	 * 

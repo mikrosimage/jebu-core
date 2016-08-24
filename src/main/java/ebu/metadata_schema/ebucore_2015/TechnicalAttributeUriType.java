@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -15,9 +16,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  A complex Type defining the structure of a technical attribute ot type
  * 				anyURI. 
  * 
- * <p>Java class for technicalAttributeUriType complex type.
+ * <p>Classe Java pour technicalAttributeUriType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="technicalAttributeUriType">
@@ -35,8 +36,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "technicalAttributeUriType", propOrder = {
     "value"
 })
-public class TechnicalAttributeUriType {
+public class TechnicalAttributeUriType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String value;
@@ -57,7 +61,7 @@ public class TechnicalAttributeUriType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      * @return
      *     possible object is
@@ -69,7 +73,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      * @param value
      *     allowed object is
@@ -81,7 +85,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -93,7 +97,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -105,7 +109,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -117,7 +121,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +133,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -141,7 +145,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -153,7 +157,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -165,7 +169,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -177,7 +181,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -189,7 +193,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -201,7 +205,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -213,7 +217,7 @@ public class TechnicalAttributeUriType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

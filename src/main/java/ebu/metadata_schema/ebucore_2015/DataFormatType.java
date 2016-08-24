@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -17,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  A group of attributes to provide a set of techncial attributes on data
  * 				provided with the resource. 
  * 
- * <p>Java class for dataFormatType complex type.
+ * <p>Classe Java pour dataFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="dataFormatType">
@@ -52,46 +53,65 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "dataFormatType", propOrder = {
-    "captioningFormat",
-    "subtitlingFormat",
-    "ancillaryDataFormat",
+    "captioningFormats",
+    "subtitlingFormats",
+    "ancillaryDataFormats",
     "codec",
-    "technicalAttributeString",
-    "technicalAttributeByte",
-    "technicalAttributeShort",
-    "technicalAttributeInteger",
-    "technicalAttributeLong",
-    "technicalAttributeUnsignedByte",
-    "technicalAttributeUnsignedShort",
-    "technicalAttributeUnsignedInteger",
-    "technicalAttributeUnsignedLong",
-    "technicalAttributeBoolean",
-    "technicalAttributeFloat",
-    "technicalAttributeRational",
-    "technicalAttributeUri",
-    "comment"
+    "technicalAttributeStrings",
+    "technicalAttributeBytes",
+    "technicalAttributeShorts",
+    "technicalAttributeIntegers",
+    "technicalAttributeLongs",
+    "technicalAttributeUnsignedBytes",
+    "technicalAttributeUnsignedShorts",
+    "technicalAttributeUnsignedIntegers",
+    "technicalAttributeUnsignedLongs",
+    "technicalAttributeBooleen",
+    "technicalAttributeFloats",
+    "technicalAttributeRationals",
+    "technicalAttributeUris",
+    "comments"
 })
-public class DataFormatType {
+public class DataFormatType
+    implements Serializable
+{
 
-    protected List<CaptioningFormatType> captioningFormat;
-    protected List<SubtitlingFormatType> subtitlingFormat;
-    protected List<AncillaryDataFormatType> ancillaryDataFormat;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "captioningFormat")
+    protected List<CaptioningFormatType> captioningFormats;
+    @XmlElement(name = "subtitlingFormat")
+    protected List<SubtitlingFormatType> subtitlingFormats;
+    @XmlElement(name = "ancillaryDataFormat")
+    protected List<AncillaryDataFormatType> ancillaryDataFormats;
     protected CodecType codec;
-    protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeString;
-    protected List<Int8> technicalAttributeByte;
-    protected List<Int16> technicalAttributeShort;
-    protected List<Int32> technicalAttributeInteger;
-    protected List<Int64> technicalAttributeLong;
-    protected List<UInt8> technicalAttributeUnsignedByte;
-    protected List<UInt16> technicalAttributeUnsignedShort;
-    protected List<UInt32> technicalAttributeUnsignedInteger;
-    protected List<UInt64> technicalAttributeUnsignedLong;
-    protected List<ebu.metadata_schema.ebucore_2015.Boolean> technicalAttributeBoolean;
-    protected List<Float> technicalAttributeFloat;
-    @XmlElement(defaultValue = "1")
-    protected List<TechnicalAttributeRationalType> technicalAttributeRational;
-    protected List<TechnicalAttributeUriType> technicalAttributeUri;
-    protected List<Comment> comment;
+    @XmlElement(name = "technicalAttributeString")
+    protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeStrings;
+    @XmlElement(name = "technicalAttributeByte")
+    protected List<Int8> technicalAttributeBytes;
+    @XmlElement(name = "technicalAttributeShort")
+    protected List<Int16> technicalAttributeShorts;
+    @XmlElement(name = "technicalAttributeInteger")
+    protected List<Int32> technicalAttributeIntegers;
+    @XmlElement(name = "technicalAttributeLong")
+    protected List<Int64> technicalAttributeLongs;
+    @XmlElement(name = "technicalAttributeUnsignedByte")
+    protected List<UInt8> technicalAttributeUnsignedBytes;
+    @XmlElement(name = "technicalAttributeUnsignedShort")
+    protected List<UInt16> technicalAttributeUnsignedShorts;
+    @XmlElement(name = "technicalAttributeUnsignedInteger")
+    protected List<UInt32> technicalAttributeUnsignedIntegers;
+    @XmlElement(name = "technicalAttributeUnsignedLong")
+    protected List<UInt64> technicalAttributeUnsignedLongs;
+    @XmlElement(name = "technicalAttributeBoolean")
+    protected List<ebu.metadata_schema.ebucore_2015.Boolean> technicalAttributeBooleen;
+    @XmlElement(name = "technicalAttributeFloat")
+    protected List<Float> technicalAttributeFloats;
+    @XmlElement(name = "technicalAttributeRational", defaultValue = "1")
+    protected List<TechnicalAttributeRationalType> technicalAttributeRationals;
+    @XmlElement(name = "technicalAttributeUri")
+    protected List<TechnicalAttributeUriType> technicalAttributeUris;
+    @XmlElement(name = "comment")
+    protected List<Comment> comments;
     @XmlAttribute(name = "dataFormatId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String dataFormatId;
@@ -119,18 +139,18 @@ public class DataFormatType {
     protected java.lang.Boolean dataPresenceFlag;
 
     /**
-     * Gets the value of the captioningFormat property.
+     * Gets the value of the captioningFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the captioningFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the captioningFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCaptioningFormat().add(newItem);
+     *    getCaptioningFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -140,26 +160,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<CaptioningFormatType> getCaptioningFormat() {
-        if (captioningFormat == null) {
-            captioningFormat = new ArrayList<>();
+    public List<CaptioningFormatType> getCaptioningFormats() {
+        if (captioningFormats == null) {
+            captioningFormats = new ArrayList<>();
         }
-        return this.captioningFormat;
+        return this.captioningFormats;
     }
 
     /**
-     * Gets the value of the subtitlingFormat property.
+     * Gets the value of the subtitlingFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subtitlingFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the subtitlingFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubtitlingFormat().add(newItem);
+     *    getSubtitlingFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -169,26 +189,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<SubtitlingFormatType> getSubtitlingFormat() {
-        if (subtitlingFormat == null) {
-            subtitlingFormat = new ArrayList<>();
+    public List<SubtitlingFormatType> getSubtitlingFormats() {
+        if (subtitlingFormats == null) {
+            subtitlingFormats = new ArrayList<>();
         }
-        return this.subtitlingFormat;
+        return this.subtitlingFormats;
     }
 
     /**
-     * Gets the value of the ancillaryDataFormat property.
+     * Gets the value of the ancillaryDataFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ancillaryDataFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the ancillaryDataFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAncillaryDataFormat().add(newItem);
+     *    getAncillaryDataFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -198,15 +218,15 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<AncillaryDataFormatType> getAncillaryDataFormat() {
-        if (ancillaryDataFormat == null) {
-            ancillaryDataFormat = new ArrayList<>();
+    public List<AncillaryDataFormatType> getAncillaryDataFormats() {
+        if (ancillaryDataFormats == null) {
+            ancillaryDataFormats = new ArrayList<>();
         }
-        return this.ancillaryDataFormat;
+        return this.ancillaryDataFormats;
     }
 
     /**
-     * Gets the value of the codec property.
+     * Obtient la valeur de la propriété codec.
      * 
      * @return
      *     possible object is
@@ -218,7 +238,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the codec property.
+     * Définit la valeur de la propriété codec.
      * 
      * @param value
      *     allowed object is
@@ -230,18 +250,18 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the technicalAttributeString property.
+     * Gets the value of the technicalAttributeStrings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeString property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeStrings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeString().add(newItem);
+     *    getTechnicalAttributeStrings().add(newItem);
      * </pre>
      * 
      * 
@@ -251,26 +271,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeString() {
-        if (technicalAttributeString == null) {
-            technicalAttributeString = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeStrings() {
+        if (technicalAttributeStrings == null) {
+            technicalAttributeStrings = new ArrayList<>();
         }
-        return this.technicalAttributeString;
+        return this.technicalAttributeStrings;
     }
 
     /**
-     * Gets the value of the technicalAttributeByte property.
+     * Gets the value of the technicalAttributeBytes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeByte property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBytes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeByte().add(newItem);
+     *    getTechnicalAttributeBytes().add(newItem);
      * </pre>
      * 
      * 
@@ -280,26 +300,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<Int8> getTechnicalAttributeByte() {
-        if (technicalAttributeByte == null) {
-            technicalAttributeByte = new ArrayList<>();
+    public List<Int8> getTechnicalAttributeBytes() {
+        if (technicalAttributeBytes == null) {
+            technicalAttributeBytes = new ArrayList<>();
         }
-        return this.technicalAttributeByte;
+        return this.technicalAttributeBytes;
     }
 
     /**
-     * Gets the value of the technicalAttributeShort property.
+     * Gets the value of the technicalAttributeShorts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShort property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShorts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeShort().add(newItem);
+     *    getTechnicalAttributeShorts().add(newItem);
      * </pre>
      * 
      * 
@@ -309,26 +329,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<Int16> getTechnicalAttributeShort() {
-        if (technicalAttributeShort == null) {
-            technicalAttributeShort = new ArrayList<>();
+    public List<Int16> getTechnicalAttributeShorts() {
+        if (technicalAttributeShorts == null) {
+            technicalAttributeShorts = new ArrayList<>();
         }
-        return this.technicalAttributeShort;
+        return this.technicalAttributeShorts;
     }
 
     /**
-     * Gets the value of the technicalAttributeInteger property.
+     * Gets the value of the technicalAttributeIntegers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeInteger property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeIntegers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeInteger().add(newItem);
+     *    getTechnicalAttributeIntegers().add(newItem);
      * </pre>
      * 
      * 
@@ -338,26 +358,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<Int32> getTechnicalAttributeInteger() {
-        if (technicalAttributeInteger == null) {
-            technicalAttributeInteger = new ArrayList<>();
+    public List<Int32> getTechnicalAttributeIntegers() {
+        if (technicalAttributeIntegers == null) {
+            technicalAttributeIntegers = new ArrayList<>();
         }
-        return this.technicalAttributeInteger;
+        return this.technicalAttributeIntegers;
     }
 
     /**
-     * Gets the value of the technicalAttributeLong property.
+     * Gets the value of the technicalAttributeLongs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLong property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLongs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeLong().add(newItem);
+     *    getTechnicalAttributeLongs().add(newItem);
      * </pre>
      * 
      * 
@@ -367,26 +387,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<Int64> getTechnicalAttributeLong() {
-        if (technicalAttributeLong == null) {
-            technicalAttributeLong = new ArrayList<>();
+    public List<Int64> getTechnicalAttributeLongs() {
+        if (technicalAttributeLongs == null) {
+            technicalAttributeLongs = new ArrayList<>();
         }
-        return this.technicalAttributeLong;
+        return this.technicalAttributeLongs;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedByte property.
+     * Gets the value of the technicalAttributeUnsignedBytes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedByte property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedBytes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedByte().add(newItem);
+     *    getTechnicalAttributeUnsignedBytes().add(newItem);
      * </pre>
      * 
      * 
@@ -396,26 +416,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<UInt8> getTechnicalAttributeUnsignedByte() {
-        if (technicalAttributeUnsignedByte == null) {
-            technicalAttributeUnsignedByte = new ArrayList<>();
+    public List<UInt8> getTechnicalAttributeUnsignedBytes() {
+        if (technicalAttributeUnsignedBytes == null) {
+            technicalAttributeUnsignedBytes = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedByte;
+        return this.technicalAttributeUnsignedBytes;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedShort property.
+     * Gets the value of the technicalAttributeUnsignedShorts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShort property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShorts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedShort().add(newItem);
+     *    getTechnicalAttributeUnsignedShorts().add(newItem);
      * </pre>
      * 
      * 
@@ -425,26 +445,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<UInt16> getTechnicalAttributeUnsignedShort() {
-        if (technicalAttributeUnsignedShort == null) {
-            technicalAttributeUnsignedShort = new ArrayList<>();
+    public List<UInt16> getTechnicalAttributeUnsignedShorts() {
+        if (technicalAttributeUnsignedShorts == null) {
+            technicalAttributeUnsignedShorts = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedShort;
+        return this.technicalAttributeUnsignedShorts;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedInteger property.
+     * Gets the value of the technicalAttributeUnsignedIntegers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedInteger property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedIntegers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedInteger().add(newItem);
+     *    getTechnicalAttributeUnsignedIntegers().add(newItem);
      * </pre>
      * 
      * 
@@ -454,26 +474,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<UInt32> getTechnicalAttributeUnsignedInteger() {
-        if (technicalAttributeUnsignedInteger == null) {
-            technicalAttributeUnsignedInteger = new ArrayList<>();
+    public List<UInt32> getTechnicalAttributeUnsignedIntegers() {
+        if (technicalAttributeUnsignedIntegers == null) {
+            technicalAttributeUnsignedIntegers = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedInteger;
+        return this.technicalAttributeUnsignedIntegers;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedLong property.
+     * Gets the value of the technicalAttributeUnsignedLongs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLong property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLongs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedLong().add(newItem);
+     *    getTechnicalAttributeUnsignedLongs().add(newItem);
      * </pre>
      * 
      * 
@@ -483,26 +503,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<UInt64> getTechnicalAttributeUnsignedLong() {
-        if (technicalAttributeUnsignedLong == null) {
-            technicalAttributeUnsignedLong = new ArrayList<>();
+    public List<UInt64> getTechnicalAttributeUnsignedLongs() {
+        if (technicalAttributeUnsignedLongs == null) {
+            technicalAttributeUnsignedLongs = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedLong;
+        return this.technicalAttributeUnsignedLongs;
     }
 
     /**
-     * Gets the value of the technicalAttributeBoolean property.
+     * Gets the value of the technicalAttributeBooleen property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBoolean property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBooleen property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeBoolean().add(newItem);
+     *    getTechnicalAttributeBooleen().add(newItem);
      * </pre>
      * 
      * 
@@ -512,26 +532,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.Boolean> getTechnicalAttributeBoolean() {
-        if (technicalAttributeBoolean == null) {
-            technicalAttributeBoolean = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.Boolean> getTechnicalAttributeBooleen() {
+        if (technicalAttributeBooleen == null) {
+            technicalAttributeBooleen = new ArrayList<>();
         }
-        return this.technicalAttributeBoolean;
+        return this.technicalAttributeBooleen;
     }
 
     /**
-     * Gets the value of the technicalAttributeFloat property.
+     * Gets the value of the technicalAttributeFloats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloat property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeFloat().add(newItem);
+     *    getTechnicalAttributeFloats().add(newItem);
      * </pre>
      * 
      * 
@@ -541,26 +561,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<Float> getTechnicalAttributeFloat() {
-        if (technicalAttributeFloat == null) {
-            technicalAttributeFloat = new ArrayList<>();
+    public List<Float> getTechnicalAttributeFloats() {
+        if (technicalAttributeFloats == null) {
+            technicalAttributeFloats = new ArrayList<>();
         }
-        return this.technicalAttributeFloat;
+        return this.technicalAttributeFloats;
     }
 
     /**
-     * Gets the value of the technicalAttributeRational property.
+     * Gets the value of the technicalAttributeRationals property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRational property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRationals property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeRational().add(newItem);
+     *    getTechnicalAttributeRationals().add(newItem);
      * </pre>
      * 
      * 
@@ -570,26 +590,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<TechnicalAttributeRationalType> getTechnicalAttributeRational() {
-        if (technicalAttributeRational == null) {
-            technicalAttributeRational = new ArrayList<>();
+    public List<TechnicalAttributeRationalType> getTechnicalAttributeRationals() {
+        if (technicalAttributeRationals == null) {
+            technicalAttributeRationals = new ArrayList<>();
         }
-        return this.technicalAttributeRational;
+        return this.technicalAttributeRationals;
     }
 
     /**
-     * Gets the value of the technicalAttributeUri property.
+     * Gets the value of the technicalAttributeUris property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUri property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUris property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUri().add(newItem);
+     *    getTechnicalAttributeUris().add(newItem);
      * </pre>
      * 
      * 
@@ -599,26 +619,26 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<TechnicalAttributeUriType> getTechnicalAttributeUri() {
-        if (technicalAttributeUri == null) {
-            technicalAttributeUri = new ArrayList<>();
+    public List<TechnicalAttributeUriType> getTechnicalAttributeUris() {
+        if (technicalAttributeUris == null) {
+            technicalAttributeUris = new ArrayList<>();
         }
-        return this.technicalAttributeUri;
+        return this.technicalAttributeUris;
     }
 
     /**
-     *  To provide additional contextual information. Gets the value of the comment property.
+     *  To provide additional contextual information. Gets the value of the comments property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comment property.
+     * This is why there is not a <CODE>set</CODE> method for the comments property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getComment().add(newItem);
+     *    getComments().add(newItem);
      * </pre>
      * 
      * 
@@ -628,15 +648,15 @@ public class DataFormatType {
      * 
      * 
      */
-    public List<Comment> getComment() {
-        if (comment == null) {
-            comment = new ArrayList<>();
+    public List<Comment> getComments() {
+        if (comments == null) {
+            comments = new ArrayList<>();
         }
-        return this.comment;
+        return this.comments;
     }
 
     /**
-     * Gets the value of the dataFormatId property.
+     * Obtient la valeur de la propriété dataFormatId.
      * 
      * @return
      *     possible object is
@@ -648,7 +668,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataFormatId property.
+     * Définit la valeur de la propriété dataFormatId.
      * 
      * @param value
      *     allowed object is
@@ -660,7 +680,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataFormatVersionId property.
+     * Obtient la valeur de la propriété dataFormatVersionId.
      * 
      * @return
      *     possible object is
@@ -672,7 +692,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataFormatVersionId property.
+     * Définit la valeur de la propriété dataFormatVersionId.
      * 
      * @param value
      *     allowed object is
@@ -684,7 +704,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataFormatName property.
+     * Obtient la valeur de la propriété dataFormatName.
      * 
      * @return
      *     possible object is
@@ -696,7 +716,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataFormatName property.
+     * Définit la valeur de la propriété dataFormatName.
      * 
      * @param value
      *     allowed object is
@@ -708,7 +728,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataFormatDefinition property.
+     * Obtient la valeur de la propriété dataFormatDefinition.
      * 
      * @return
      *     possible object is
@@ -720,7 +740,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataFormatDefinition property.
+     * Définit la valeur de la propriété dataFormatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -732,7 +752,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataTrackId property.
+     * Obtient la valeur de la propriété dataTrackId.
      * 
      * @return
      *     possible object is
@@ -744,7 +764,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataTrackId property.
+     * Définit la valeur de la propriété dataTrackId.
      * 
      * @param value
      *     allowed object is
@@ -756,7 +776,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataTrackName property.
+     * Obtient la valeur de la propriété dataTrackName.
      * 
      * @return
      *     possible object is
@@ -768,7 +788,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataTrackName property.
+     * Définit la valeur de la propriété dataTrackName.
      * 
      * @param value
      *     allowed object is
@@ -780,7 +800,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataTrackLanguage property.
+     * Obtient la valeur de la propriété dataTrackLanguage.
      * 
      * @return
      *     possible object is
@@ -792,7 +812,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataTrackLanguage property.
+     * Définit la valeur de la propriété dataTrackLanguage.
      * 
      * @param value
      *     allowed object is
@@ -804,7 +824,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataFormatProfile property.
+     * Obtient la valeur de la propriété dataFormatProfile.
      * 
      * @return
      *     possible object is
@@ -816,7 +836,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataFormatProfile property.
+     * Définit la valeur de la propriété dataFormatProfile.
      * 
      * @param value
      *     allowed object is
@@ -828,7 +848,7 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataFormatProfileLevel property.
+     * Obtient la valeur de la propriété dataFormatProfileLevel.
      * 
      * @return
      *     possible object is
@@ -840,7 +860,7 @@ public class DataFormatType {
     }
 
     /**
-     * Sets the value of the dataFormatProfileLevel property.
+     * Définit la valeur de la propriété dataFormatProfileLevel.
      * 
      * @param value
      *     allowed object is
@@ -852,19 +872,19 @@ public class DataFormatType {
     }
 
     /**
-     * Gets the value of the dataPresenceFlag property.
+     * Obtient la valeur de la propriété dataPresenceFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getDataPresenceFlag() {
+    public java.lang.Boolean isDataPresenceFlag() {
         return dataPresenceFlag;
     }
 
     /**
-     * Sets the value of the dataPresenceFlag property.
+     * Définit la valeur de la propriété dataPresenceFlag.
      * 
      * @param value
      *     allowed object is

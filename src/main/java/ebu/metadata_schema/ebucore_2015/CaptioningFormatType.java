@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  Used to provide information on the captioning format and purpose
  * 			
  * 
- * <p>Java class for captioningFormatType complex type.
+ * <p>Classe Java pour captioningFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="captioningFormatType">
@@ -42,8 +43,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "captioningFormatType")
-public class CaptioningFormatType {
+public class CaptioningFormatType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlAttribute(name = "captioningFormatId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String captioningFormatId;
@@ -100,7 +104,7 @@ public class CaptioningFormatType {
     protected java.lang.String formatLanguage;
 
     /**
-     * Gets the value of the captioningFormatId property.
+     * Obtient la valeur de la propriété captioningFormatId.
      * 
      * @return
      *     possible object is
@@ -112,7 +116,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the captioningFormatId property.
+     * Définit la valeur de la propriété captioningFormatId.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +128,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the captioningFormatName property.
+     * Obtient la valeur de la propriété captioningFormatName.
      * 
      * @return
      *     possible object is
@@ -136,7 +140,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the captioningFormatName property.
+     * Définit la valeur de la propriété captioningFormatName.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +152,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the captioningFormatProfile property.
+     * Obtient la valeur de la propriété captioningFormatProfile.
      * 
      * @return
      *     possible object is
@@ -160,7 +164,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the captioningFormatProfile property.
+     * Définit la valeur de la propriété captioningFormatProfile.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +176,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the trackId property.
+     * Obtient la valeur de la propriété trackId.
      * 
      * @return
      *     possible object is
@@ -184,7 +188,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the trackId property.
+     * Définit la valeur de la propriété trackId.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +200,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the trackName property.
+     * Obtient la valeur de la propriété trackName.
      * 
      * @return
      *     possible object is
@@ -208,7 +212,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the trackName property.
+     * Définit la valeur de la propriété trackName.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +224,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the captioningSourceUri property.
+     * Obtient la valeur de la propriété captioningSourceUri.
      * 
      * @return
      *     possible object is
@@ -232,7 +236,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the captioningSourceUri property.
+     * Définit la valeur de la propriété captioningSourceUri.
      * 
      * @param value
      *     allowed object is
@@ -244,7 +248,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the language property.
+     * Obtient la valeur de la propriété language.
      * 
      * @return
      *     possible object is
@@ -256,7 +260,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the language property.
+     * Définit la valeur de la propriété language.
      * 
      * @param value
      *     allowed object is
@@ -268,19 +272,19 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the closed property.
+     * Obtient la valeur de la propriété closed.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getClosed() {
+    public java.lang.Boolean isClosed() {
         return closed;
     }
 
     /**
-     * Sets the value of the closed property.
+     * Définit la valeur de la propriété closed.
      * 
      * @param value
      *     allowed object is
@@ -292,19 +296,19 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the captioningPresenceFlag property.
+     * Obtient la valeur de la propriété captioningPresenceFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getCaptioningPresenceFlag() {
+    public java.lang.Boolean isCaptioningPresenceFlag() {
         return captioningPresenceFlag;
     }
 
     /**
-     * Sets the value of the captioningPresenceFlag property.
+     * Définit la valeur de la propriété captioningPresenceFlag.
      * 
      * @param value
      *     allowed object is
@@ -316,7 +320,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -328,7 +332,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -340,7 +344,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -352,7 +356,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -364,7 +368,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -376,7 +380,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -388,7 +392,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -400,7 +404,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -412,7 +416,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -424,7 +428,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -436,7 +440,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -448,7 +452,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -460,7 +464,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -472,7 +476,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -484,7 +488,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -496,7 +500,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -508,7 +512,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -520,7 +524,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -532,7 +536,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -544,7 +548,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -556,7 +560,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -568,7 +572,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -580,7 +584,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -592,7 +596,7 @@ public class CaptioningFormatType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is

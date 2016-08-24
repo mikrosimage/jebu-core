@@ -1,20 +1,24 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
  *  To describe a period of time e.g. historical. 
  * 
- * <p>Java class for periodOfTimeType complex type.
+ * <p>Classe Java pour periodOfTimeType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="periodOfTimeType">
@@ -36,8 +40,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "periodOfTimeType", propOrder = {
     "periodName"
 })
-public class PeriodOfTimeType {
+public class PeriodOfTimeType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected ElementType periodName;
     @XmlAttribute(name = "periodId")
     @XmlSchemaType(name = "anyURI")
@@ -46,8 +53,9 @@ public class PeriodOfTimeType {
     @XmlSchemaType(name = "gYear")
     protected XMLGregorianCalendar startYear;
     @XmlAttribute(name = "startDate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDate;
+    protected Date startDate;
     @XmlAttribute(name = "startTime")
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar startTime;
@@ -55,8 +63,9 @@ public class PeriodOfTimeType {
     @XmlSchemaType(name = "gYear")
     protected XMLGregorianCalendar endYear;
     @XmlAttribute(name = "endDate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endDate;
+    protected Date endDate;
     @XmlAttribute(name = "endTime")
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar endTime;
@@ -64,7 +73,7 @@ public class PeriodOfTimeType {
     protected java.lang.String period;
 
     /**
-     * Gets the value of the periodName property.
+     * Obtient la valeur de la propriété periodName.
      * 
      * @return
      *     possible object is
@@ -76,7 +85,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the periodName property.
+     * Définit la valeur de la propriété periodName.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +97,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Gets the value of the periodId property.
+     * Obtient la valeur de la propriété periodId.
      * 
      * @return
      *     possible object is
@@ -100,7 +109,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the periodId property.
+     * Définit la valeur de la propriété periodId.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +121,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Gets the value of the startYear property.
+     * Obtient la valeur de la propriété startYear.
      * 
      * @return
      *     possible object is
@@ -124,7 +133,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the startYear property.
+     * Définit la valeur de la propriété startYear.
      * 
      * @param value
      *     allowed object is
@@ -136,31 +145,31 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Gets the value of the startDate property.
+     * Obtient la valeur de la propriété startDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
     /**
-     * Sets the value of the startDate property.
+     * Définit la valeur de la propriété startDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setStartDate(XMLGregorianCalendar value) {
+    public void setStartDate(Date value) {
         this.startDate = value;
     }
 
     /**
-     * Gets the value of the startTime property.
+     * Obtient la valeur de la propriété startTime.
      * 
      * @return
      *     possible object is
@@ -172,7 +181,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the startTime property.
+     * Définit la valeur de la propriété startTime.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +193,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Gets the value of the endYear property.
+     * Obtient la valeur de la propriété endYear.
      * 
      * @return
      *     possible object is
@@ -196,7 +205,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the endYear property.
+     * Définit la valeur de la propriété endYear.
      * 
      * @param value
      *     allowed object is
@@ -208,31 +217,31 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Gets the value of the endDate property.
+     * Obtient la valeur de la propriété endDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
     /**
-     * Sets the value of the endDate property.
+     * Définit la valeur de la propriété endDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setEndDate(XMLGregorianCalendar value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
     /**
-     * Gets the value of the endTime property.
+     * Obtient la valeur de la propriété endTime.
      * 
      * @return
      *     possible object is
@@ -244,7 +253,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the endTime property.
+     * Définit la valeur de la propriété endTime.
      * 
      * @param value
      *     allowed object is
@@ -256,7 +265,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Gets the value of the period property.
+     * Obtient la valeur de la propriété period.
      * 
      * @return
      *     possible object is
@@ -268,7 +277,7 @@ public class PeriodOfTimeType {
     }
 
     /**
-     * Sets the value of the period property.
+     * Définit la valeur de la propriété period.
      * 
      * @param value
      *     allowed object is

@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -9,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioProgrammeType complex type.
+ * <p>Classe Java pour audioProgrammeType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioProgrammeType">
@@ -29,8 +31,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="loudnessMetadata" type="{urn:ebu:metadata-schema:ebuCore_2015}loudnessMetadataType" minOccurs="0"/>
  *         &lt;element name="audioProgrammeReferenceScreen" type="{urn:ebu:metadata-schema:ebuCore_2015}audioProgrammeReferenceScreenType" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}formatGroup"/>
  *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
+ *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}formatGroup"/>
  *       &lt;attribute name="audioProgrammeID" use="required" type="{http://www.w3.org/2001/XMLSchema}ID" />
  *       &lt;attribute name="audioProgrammeName" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="audioProgrammeLanguage" type="{http://www.w3.org/2001/XMLSchema}language" />
@@ -46,14 +48,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioProgrammeType", propOrder = {
-    "audioContentIDRef",
+    "audioContentIDReves",
     "loudnessMetadata",
     "audioProgrammeReferenceScreen"
 })
-public class AudioProgrammeType {
+@XmlRootElement(name = "audioProgramme")
+public class AudioProgramme
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElementRef(name = "audioContentIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioContentIDRef;
+    protected List<JAXBElement<Object>> audioContentIDReves;
     protected LoudnessMetadataType loudnessMetadata;
     protected AudioProgrammeReferenceScreenType audioProgrammeReferenceScreen;
     @XmlAttribute(name = "audioProgrammeID", required = true)
@@ -73,21 +79,6 @@ public class AudioProgrammeType {
     protected java.lang.String end;
     @XmlAttribute(name = "maxDuckingDepth")
     protected java.lang.Float maxDuckingDepth;
-    @XmlAttribute(name = "formatLabel")
-    protected java.lang.String formatLabel;
-    @XmlAttribute(name = "formatDefinition")
-    protected java.lang.String formatDefinition;
-    @XmlAttribute(name = "formatLink")
-    @XmlSchemaType(name = "anyURI")
-    protected java.lang.String formatLink;
-    @XmlAttribute(name = "formatSource")
-    protected java.lang.String formatSource;
-    @XmlAttribute(name = "formatNamespace")
-    protected java.lang.String formatNamespace;
-    @XmlAttribute(name = "formatLanguage")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "language")
-    protected java.lang.String formatLanguage;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -103,20 +94,35 @@ public class AudioProgrammeType {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "language")
     protected java.lang.String typeLanguage;
+    @XmlAttribute(name = "formatLabel")
+    protected java.lang.String formatLabel;
+    @XmlAttribute(name = "formatDefinition")
+    protected java.lang.String formatDefinition;
+    @XmlAttribute(name = "formatLink")
+    @XmlSchemaType(name = "anyURI")
+    protected java.lang.String formatLink;
+    @XmlAttribute(name = "formatSource")
+    protected java.lang.String formatSource;
+    @XmlAttribute(name = "formatNamespace")
+    protected java.lang.String formatNamespace;
+    @XmlAttribute(name = "formatLanguage")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "language")
+    protected java.lang.String formatLanguage;
 
     /**
-     * Gets the value of the audioContentIDRef property.
+     * Gets the value of the audioContentIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioContentIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioContentIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioContentIDRef().add(newItem);
+     *    getAudioContentIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -126,15 +132,15 @@ public class AudioProgrammeType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioContentIDRef() {
-        if (audioContentIDRef == null) {
-            audioContentIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioContentIDReves() {
+        if (audioContentIDReves == null) {
+            audioContentIDReves = new ArrayList<>();
         }
-        return this.audioContentIDRef;
+        return this.audioContentIDReves;
     }
 
     /**
-     * Gets the value of the loudnessMetadata property.
+     * Obtient la valeur de la propriété loudnessMetadata.
      * 
      * @return
      *     possible object is
@@ -146,7 +152,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the loudnessMetadata property.
+     * Définit la valeur de la propriété loudnessMetadata.
      * 
      * @param value
      *     allowed object is
@@ -158,7 +164,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the audioProgrammeReferenceScreen property.
+     * Obtient la valeur de la propriété audioProgrammeReferenceScreen.
      * 
      * @return
      *     possible object is
@@ -170,7 +176,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the audioProgrammeReferenceScreen property.
+     * Définit la valeur de la propriété audioProgrammeReferenceScreen.
      * 
      * @param value
      *     allowed object is
@@ -182,7 +188,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the audioProgrammeID property.
+     * Obtient la valeur de la propriété audioProgrammeID.
      * 
      * @return
      *     possible object is
@@ -194,7 +200,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the audioProgrammeID property.
+     * Définit la valeur de la propriété audioProgrammeID.
      * 
      * @param value
      *     allowed object is
@@ -206,7 +212,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the audioProgrammeName property.
+     * Obtient la valeur de la propriété audioProgrammeName.
      * 
      * @return
      *     possible object is
@@ -218,7 +224,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the audioProgrammeName property.
+     * Définit la valeur de la propriété audioProgrammeName.
      * 
      * @param value
      *     allowed object is
@@ -230,7 +236,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the audioProgrammeLanguage property.
+     * Obtient la valeur de la propriété audioProgrammeLanguage.
      * 
      * @return
      *     possible object is
@@ -242,7 +248,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the audioProgrammeLanguage property.
+     * Définit la valeur de la propriété audioProgrammeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -254,7 +260,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the start property.
+     * Obtient la valeur de la propriété start.
      * 
      * @return
      *     possible object is
@@ -266,7 +272,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the start property.
+     * Définit la valeur de la propriété start.
      * 
      * @param value
      *     allowed object is
@@ -278,7 +284,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the end property.
+     * Obtient la valeur de la propriété end.
      * 
      * @return
      *     possible object is
@@ -290,7 +296,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the end property.
+     * Définit la valeur de la propriété end.
      * 
      * @param value
      *     allowed object is
@@ -302,7 +308,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the maxDuckingDepth property.
+     * Obtient la valeur de la propriété maxDuckingDepth.
      * 
      * @return
      *     possible object is
@@ -314,7 +320,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the maxDuckingDepth property.
+     * Définit la valeur de la propriété maxDuckingDepth.
      * 
      * @param value
      *     allowed object is
@@ -326,151 +332,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getFormatLabel() {
-        return formatLabel;
-    }
-
-    /**
-     * Sets the value of the formatLabel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setFormatLabel(java.lang.String value) {
-        this.formatLabel = value;
-    }
-
-    /**
-     * Gets the value of the formatDefinition property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getFormatDefinition() {
-        return formatDefinition;
-    }
-
-    /**
-     * Sets the value of the formatDefinition property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setFormatDefinition(java.lang.String value) {
-        this.formatDefinition = value;
-    }
-
-    /**
-     * Gets the value of the formatLink property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getFormatLink() {
-        return formatLink;
-    }
-
-    /**
-     * Sets the value of the formatLink property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setFormatLink(java.lang.String value) {
-        this.formatLink = value;
-    }
-
-    /**
-     * Gets the value of the formatSource property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getFormatSource() {
-        return formatSource;
-    }
-
-    /**
-     * Sets the value of the formatSource property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setFormatSource(java.lang.String value) {
-        this.formatSource = value;
-    }
-
-    /**
-     * Gets the value of the formatNamespace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getFormatNamespace() {
-        return formatNamespace;
-    }
-
-    /**
-     * Sets the value of the formatNamespace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setFormatNamespace(java.lang.String value) {
-        this.formatNamespace = value;
-    }
-
-    /**
-     * Gets the value of the formatLanguage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getFormatLanguage() {
-        return formatLanguage;
-    }
-
-    /**
-     * Sets the value of the formatLanguage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setFormatLanguage(java.lang.String value) {
-        this.formatLanguage = value;
-    }
-
-    /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -482,7 +344,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -494,7 +356,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -506,7 +368,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -518,7 +380,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -530,7 +392,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -542,7 +404,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -554,7 +416,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -566,7 +428,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -578,7 +440,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -590,7 +452,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -602,7 +464,7 @@ public class AudioProgrammeType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -611,6 +473,150 @@ public class AudioProgrammeType {
      */
     public void setTypeLanguage(java.lang.String value) {
         this.typeLanguage = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété formatLabel.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getFormatLabel() {
+        return formatLabel;
+    }
+
+    /**
+     * Définit la valeur de la propriété formatLabel.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setFormatLabel(java.lang.String value) {
+        this.formatLabel = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété formatDefinition.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getFormatDefinition() {
+        return formatDefinition;
+    }
+
+    /**
+     * Définit la valeur de la propriété formatDefinition.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setFormatDefinition(java.lang.String value) {
+        this.formatDefinition = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété formatLink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getFormatLink() {
+        return formatLink;
+    }
+
+    /**
+     * Définit la valeur de la propriété formatLink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setFormatLink(java.lang.String value) {
+        this.formatLink = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété formatSource.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getFormatSource() {
+        return formatSource;
+    }
+
+    /**
+     * Définit la valeur de la propriété formatSource.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setFormatSource(java.lang.String value) {
+        this.formatSource = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété formatNamespace.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getFormatNamespace() {
+        return formatNamespace;
+    }
+
+    /**
+     * Définit la valeur de la propriété formatNamespace.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setFormatNamespace(java.lang.String value) {
+        this.formatNamespace = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété formatLanguage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getFormatLanguage() {
+        return formatLanguage;
+    }
+
+    /**
+     * Définit la valeur de la propriété formatLanguage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setFormatLanguage(java.lang.String value) {
+        this.formatLanguage = value;
     }
 
 }

@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for screenCentrePositionType complex type.
+ * <p>Classe Java pour screenCentrePositionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="screenCentrePositionType">
@@ -34,8 +35,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "screenCentrePositionType", propOrder = {
     "value"
 })
-public class ScreenCentrePositionType {
+public class ScreenCentrePositionType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected float value;
     @XmlAttribute(name = "azimuth")
@@ -52,7 +56,7 @@ public class ScreenCentrePositionType {
     protected java.lang.Float z;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public float getValue() {
@@ -60,7 +64,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(float value) {
@@ -68,7 +72,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Gets the value of the azimuth property.
+     * Obtient la valeur de la propriété azimuth.
      * 
      * @return
      *     possible object is
@@ -80,7 +84,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the azimuth property.
+     * Définit la valeur de la propriété azimuth.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +96,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Gets the value of the elevation property.
+     * Obtient la valeur de la propriété elevation.
      * 
      * @return
      *     possible object is
@@ -104,7 +108,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the elevation property.
+     * Définit la valeur de la propriété elevation.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +120,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Gets the value of the distance property.
+     * Obtient la valeur de la propriété distance.
      * 
      * @return
      *     possible object is
@@ -128,7 +132,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the distance property.
+     * Définit la valeur de la propriété distance.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +144,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Gets the value of the x property.
+     * Obtient la valeur de la propriété x.
      * 
      * @return
      *     possible object is
@@ -152,7 +156,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the x property.
+     * Définit la valeur de la propriété x.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +168,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Gets the value of the y property.
+     * Obtient la valeur de la propriété y.
      * 
      * @return
      *     possible object is
@@ -176,7 +180,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the y property.
+     * Définit la valeur de la propriété y.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +192,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Gets the value of the z property.
+     * Obtient la valeur de la propriété z.
      * 
      * @return
      *     possible object is
@@ -200,7 +204,7 @@ public class ScreenCentrePositionType {
     }
 
     /**
-     * Sets the value of the z property.
+     * Définit la valeur de la propriété z.
      * 
      * @param value
      *     allowed object is

@@ -1,8 +1,10 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,6 +16,7 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.purl.dc.elements._1.ElementType;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
@@ -27,9 +30,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				used as description. A description can be provided in different languages.
  * 			
  * 
- * <p>Java class for descriptionType complex type.
+ * <p>Classe Java pour descriptionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="descriptionType">
@@ -39,8 +42,8 @@ import org.purl.dc.elements._1.ElementType;
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}description" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="attributor" type="{urn:ebu:metadata-schema:ebuCore_2015}entityType" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
  *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}dateGroup"/>
+ *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
  *       &lt;attribute name="length" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
  *       &lt;attribute name="geographicalScope" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="geographicalExclusionScope" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -55,13 +58,16 @@ import org.purl.dc.elements._1.ElementType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "descriptionType", propOrder = {
-    "description",
+    "descriptions",
     "attributor"
 })
-public class DescriptionType {
+public class DescriptionType
+    implements Serializable
+{
 
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
-    protected List<ElementType> description;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "description", namespace = "http://purl.org/dc/elements/1.1/")
+    protected List<ElementType> descriptions;
     protected EntityType attributor;
     @XmlAttribute(name = "length")
     @XmlSchemaType(name = "positiveInteger")
@@ -74,6 +80,28 @@ public class DescriptionType {
     protected java.lang.Boolean castFlag;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
+    @XmlAttribute(name = "startYear")
+    @XmlSchemaType(name = "gYear")
+    protected XMLGregorianCalendar startYear;
+    @XmlAttribute(name = "startDate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
+    @XmlSchemaType(name = "date")
+    protected Date startDate;
+    @XmlAttribute(name = "startTime")
+    @XmlSchemaType(name = "time")
+    protected XMLGregorianCalendar startTime;
+    @XmlAttribute(name = "endYear")
+    @XmlSchemaType(name = "gYear")
+    protected XMLGregorianCalendar endYear;
+    @XmlAttribute(name = "endDate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
+    @XmlSchemaType(name = "date")
+    protected Date endDate;
+    @XmlAttribute(name = "endTime")
+    @XmlSchemaType(name = "time")
+    protected XMLGregorianCalendar endTime;
+    @XmlAttribute(name = "period")
+    protected java.lang.String period;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -89,44 +117,24 @@ public class DescriptionType {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "language")
     protected java.lang.String typeLanguage;
-    @XmlAttribute(name = "startYear")
-    @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar startYear;
-    @XmlAttribute(name = "startDate")
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDate;
-    @XmlAttribute(name = "startTime")
-    @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar startTime;
-    @XmlAttribute(name = "endYear")
-    @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar endYear;
-    @XmlAttribute(name = "endDate")
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endDate;
-    @XmlAttribute(name = "endTime")
-    @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar endTime;
-    @XmlAttribute(name = "period")
-    protected java.lang.String period;
 
     /**
      *  The EBU core metadata set is built as a refinement of the Dublin
      * 						Core. Free text to provide a description of the resource. The description
-     * 						can be repeated in different languages as specified by the entityType�s lang
+     * 						can be repeated in different languages as specified by the entityType’s lang
      * 						attribute. The type of description is defined in the type group of
-     * 						attributes.Gets the value of the description property.
+     * 						attributes.Gets the value of the descriptions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
+     * This is why there is not a <CODE>set</CODE> method for the descriptions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDescription().add(newItem);
+     *    getDescriptions().add(newItem);
      * </pre>
      * 
      * 
@@ -136,15 +144,15 @@ public class DescriptionType {
      * 
      * 
      */
-    public List<ElementType> getDescription() {
-        if (description == null) {
-            description = new ArrayList<>();
+    public List<ElementType> getDescriptions() {
+        if (descriptions == null) {
+            descriptions = new ArrayList<>();
         }
-        return this.description;
+        return this.descriptions;
     }
 
     /**
-     * Gets the value of the attributor property.
+     * Obtient la valeur de la propriété attributor.
      * 
      * @return
      *     possible object is
@@ -156,7 +164,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the attributor property.
+     * Définit la valeur de la propriété attributor.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +176,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the length property.
+     * Obtient la valeur de la propriété length.
      * 
      * @return
      *     possible object is
@@ -180,7 +188,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the length property.
+     * Définit la valeur de la propriété length.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +200,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the geographicalScope property.
+     * Obtient la valeur de la propriété geographicalScope.
      * 
      * @return
      *     possible object is
@@ -204,7 +212,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the geographicalScope property.
+     * Définit la valeur de la propriété geographicalScope.
      * 
      * @param value
      *     allowed object is
@@ -216,7 +224,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the geographicalExclusionScope property.
+     * Obtient la valeur de la propriété geographicalExclusionScope.
      * 
      * @return
      *     possible object is
@@ -228,7 +236,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the geographicalExclusionScope property.
+     * Définit la valeur de la propriété geographicalExclusionScope.
      * 
      * @param value
      *     allowed object is
@@ -240,19 +248,19 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the castFlag property.
+     * Obtient la valeur de la propriété castFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getCastFlag() {
+    public java.lang.Boolean isCastFlag() {
         return castFlag;
     }
 
     /**
-     * Sets the value of the castFlag property.
+     * Définit la valeur de la propriété castFlag.
      * 
      * @param value
      *     allowed object is
@@ -264,7 +272,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -276,7 +284,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -288,151 +296,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLabel() {
-        return typeLabel;
-    }
-
-    /**
-     * Sets the value of the typeLabel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLabel(java.lang.String value) {
-        this.typeLabel = value;
-    }
-
-    /**
-     * Gets the value of the typeDefinition property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeDefinition() {
-        return typeDefinition;
-    }
-
-    /**
-     * Sets the value of the typeDefinition property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeDefinition(java.lang.String value) {
-        this.typeDefinition = value;
-    }
-
-    /**
-     * Gets the value of the typeLink property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLink() {
-        return typeLink;
-    }
-
-    /**
-     * Sets the value of the typeLink property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLink(java.lang.String value) {
-        this.typeLink = value;
-    }
-
-    /**
-     * Gets the value of the typeSource property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeSource() {
-        return typeSource;
-    }
-
-    /**
-     * Sets the value of the typeSource property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeSource(java.lang.String value) {
-        this.typeSource = value;
-    }
-
-    /**
-     * Gets the value of the typeNamespace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeNamespace() {
-        return typeNamespace;
-    }
-
-    /**
-     * Sets the value of the typeNamespace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeNamespace(java.lang.String value) {
-        this.typeNamespace = value;
-    }
-
-    /**
-     * Gets the value of the typeLanguage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTypeLanguage() {
-        return typeLanguage;
-    }
-
-    /**
-     * Sets the value of the typeLanguage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTypeLanguage(java.lang.String value) {
-        this.typeLanguage = value;
-    }
-
-    /**
-     * Gets the value of the startYear property.
+     * Obtient la valeur de la propriété startYear.
      * 
      * @return
      *     possible object is
@@ -444,7 +308,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the startYear property.
+     * Définit la valeur de la propriété startYear.
      * 
      * @param value
      *     allowed object is
@@ -456,31 +320,31 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the startDate property.
+     * Obtient la valeur de la propriété startDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
     /**
-     * Sets the value of the startDate property.
+     * Définit la valeur de la propriété startDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setStartDate(XMLGregorianCalendar value) {
+    public void setStartDate(Date value) {
         this.startDate = value;
     }
 
     /**
-     * Gets the value of the startTime property.
+     * Obtient la valeur de la propriété startTime.
      * 
      * @return
      *     possible object is
@@ -492,7 +356,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the startTime property.
+     * Définit la valeur de la propriété startTime.
      * 
      * @param value
      *     allowed object is
@@ -504,7 +368,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the endYear property.
+     * Obtient la valeur de la propriété endYear.
      * 
      * @return
      *     possible object is
@@ -516,7 +380,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the endYear property.
+     * Définit la valeur de la propriété endYear.
      * 
      * @param value
      *     allowed object is
@@ -528,31 +392,31 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the endDate property.
+     * Obtient la valeur de la propriété endDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
     /**
-     * Sets the value of the endDate property.
+     * Définit la valeur de la propriété endDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setEndDate(XMLGregorianCalendar value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
     /**
-     * Gets the value of the endTime property.
+     * Obtient la valeur de la propriété endTime.
      * 
      * @return
      *     possible object is
@@ -564,7 +428,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the endTime property.
+     * Définit la valeur de la propriété endTime.
      * 
      * @param value
      *     allowed object is
@@ -576,7 +440,7 @@ public class DescriptionType {
     }
 
     /**
-     * Gets the value of the period property.
+     * Obtient la valeur de la propriété period.
      * 
      * @return
      *     possible object is
@@ -588,7 +452,7 @@ public class DescriptionType {
     }
 
     /**
-     * Sets the value of the period property.
+     * Définit la valeur de la propriété period.
      * 
      * @param value
      *     allowed object is
@@ -597,6 +461,150 @@ public class DescriptionType {
      */
     public void setPeriod(java.lang.String value) {
         this.period = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLabel.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLabel() {
+        return typeLabel;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLabel.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLabel(java.lang.String value) {
+        this.typeLabel = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeDefinition.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeDefinition() {
+        return typeDefinition;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeDefinition.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeDefinition(java.lang.String value) {
+        this.typeDefinition = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLink() {
+        return typeLink;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLink(java.lang.String value) {
+        this.typeLink = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeSource.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeSource() {
+        return typeSource;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeSource.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeSource(java.lang.String value) {
+        this.typeSource = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeNamespace.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeNamespace() {
+        return typeNamespace;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeNamespace.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeNamespace(java.lang.String value) {
+        this.typeNamespace = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLanguage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTypeLanguage() {
+        return typeLanguage;
+    }
+
+    /**
+     * Définit la valeur de la propriété typeLanguage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTypeLanguage(java.lang.String value) {
+        this.typeLanguage = value;
     }
 
 }

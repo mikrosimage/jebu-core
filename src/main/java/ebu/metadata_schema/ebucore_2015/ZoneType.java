@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for zoneType complex type.
+ * <p>Classe Java pour zoneType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="zoneType">
@@ -34,8 +35,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "zoneType", propOrder = {
     "value"
 })
-public class ZoneType {
+public class ZoneType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected java.lang.String value;
     @XmlAttribute(name = "minX")
@@ -52,7 +56,7 @@ public class ZoneType {
     protected java.lang.Float maxZ;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      * @return
      *     possible object is
@@ -64,7 +68,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +80,7 @@ public class ZoneType {
     }
 
     /**
-     * Gets the value of the minX property.
+     * Obtient la valeur de la propriété minX.
      * 
      * @return
      *     possible object is
@@ -88,7 +92,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the minX property.
+     * Définit la valeur de la propriété minX.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +104,7 @@ public class ZoneType {
     }
 
     /**
-     * Gets the value of the maxX property.
+     * Obtient la valeur de la propriété maxX.
      * 
      * @return
      *     possible object is
@@ -112,7 +116,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the maxX property.
+     * Définit la valeur de la propriété maxX.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +128,7 @@ public class ZoneType {
     }
 
     /**
-     * Gets the value of the minY property.
+     * Obtient la valeur de la propriété minY.
      * 
      * @return
      *     possible object is
@@ -136,7 +140,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the minY property.
+     * Définit la valeur de la propriété minY.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +152,7 @@ public class ZoneType {
     }
 
     /**
-     * Gets the value of the maxY property.
+     * Obtient la valeur de la propriété maxY.
      * 
      * @return
      *     possible object is
@@ -160,7 +164,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the maxY property.
+     * Définit la valeur de la propriété maxY.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +176,7 @@ public class ZoneType {
     }
 
     /**
-     * Gets the value of the minZ property.
+     * Obtient la valeur de la propriété minZ.
      * 
      * @return
      *     possible object is
@@ -184,7 +188,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the minZ property.
+     * Définit la valeur de la propriété minZ.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +200,7 @@ public class ZoneType {
     }
 
     /**
-     * Gets the value of the maxZ property.
+     * Obtient la valeur de la propriété maxZ.
      * 
      * @return
      *     possible object is
@@ -208,7 +212,7 @@ public class ZoneType {
     }
 
     /**
-     * Sets the value of the maxZ property.
+     * Définit la valeur de la propriété maxZ.
      * 
      * @param value
      *     allowed object is

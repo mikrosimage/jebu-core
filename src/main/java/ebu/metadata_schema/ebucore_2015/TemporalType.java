@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for temporalType complex type.
+ * <p>Classe Java pour temporalType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="temporalType">
@@ -36,12 +37,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "temporalType", propOrder = {
-    "periodOfTime"
+    "periodOfTimes"
 })
-public class TemporalType {
+public class TemporalType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(name = "PeriodOfTime")
-    protected List<PeriodOfTimeType> periodOfTime;
+    protected List<PeriodOfTimeType> periodOfTimes;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
     @XmlAttribute(name = "typeLabel")
@@ -61,18 +65,18 @@ public class TemporalType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the periodOfTime property.
+     * Gets the value of the periodOfTimes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the periodOfTime property.
+     * This is why there is not a <CODE>set</CODE> method for the periodOfTimes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPeriodOfTime().add(newItem);
+     *    getPeriodOfTimes().add(newItem);
      * </pre>
      * 
      * 
@@ -82,15 +86,15 @@ public class TemporalType {
      * 
      * 
      */
-    public List<PeriodOfTimeType> getPeriodOfTime() {
-        if (periodOfTime == null) {
-            periodOfTime = new ArrayList<>();
+    public List<PeriodOfTimeType> getPeriodOfTimes() {
+        if (periodOfTimes == null) {
+            periodOfTimes = new ArrayList<>();
         }
-        return this.periodOfTime;
+        return this.periodOfTimes;
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -102,7 +106,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -114,7 +118,7 @@ public class TemporalType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -126,7 +130,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -138,7 +142,7 @@ public class TemporalType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -150,7 +154,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -162,7 +166,7 @@ public class TemporalType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -174,7 +178,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -186,7 +190,7 @@ public class TemporalType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -198,7 +202,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -210,7 +214,7 @@ public class TemporalType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -222,7 +226,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -234,7 +238,7 @@ public class TemporalType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -246,7 +250,7 @@ public class TemporalType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
