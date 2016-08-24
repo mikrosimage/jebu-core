@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +22,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				describe the physical or digital manifestation of the resource, use the FORMAT
  * 				element. 
  * 
- * <p>Java class for typeType complex type.
+ * <p>Classe Java pour typeType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="typeType">
@@ -64,20 +65,27 @@ import org.purl.dc.elements._1.ElementType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "typeType", propOrder = {
-    "type",
-    "genre",
-    "objectType",
-    "targetAudience",
-    "audienceLevel"
+    "types",
+    "genres",
+    "objectTypes",
+    "targetAudiences",
+    "audienceLevels"
 })
-public class TypeType {
+public class TypeType
+    implements Serializable
+{
 
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
-    protected List<ElementType> type;
-    protected List<TypeType.Genre> genre;
-    protected List<TypeType.ObjectType> objectType;
-    protected List<AudienceType> targetAudience;
-    protected List<AudienceType> audienceLevel;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "type", namespace = "http://purl.org/dc/elements/1.1/")
+    protected List<ElementType> types;
+    @XmlElement(name = "genre")
+    protected List<TypeType.Genre> genres;
+    @XmlElement(name = "objectType")
+    protected List<TypeType.ObjectType> objectTypes;
+    @XmlElement(name = "targetAudience")
+    protected List<AudienceType> targetAudiences;
+    @XmlElement(name = "audienceLevel")
+    protected List<AudienceType> audienceLevels;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
     @XmlAttribute(name = "typeLabel")
@@ -98,18 +106,18 @@ public class TypeType {
 
     /**
      *  The EBU core metadata set is built as a refinement of the Dublin
-     * 						Core. Gets the value of the type property.
+     * 						Core. Gets the value of the types property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the type property.
+     * This is why there is not a <CODE>set</CODE> method for the types property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getType().add(newItem);
+     *    getTypes().add(newItem);
      * </pre>
      * 
      * 
@@ -119,26 +127,26 @@ public class TypeType {
      * 
      * 
      */
-    public List<ElementType> getType() {
-        if (type == null) {
-            type = new ArrayList<>();
+    public List<ElementType> getTypes() {
+        if (types == null) {
+            types = new ArrayList<>();
         }
-        return this.type;
+        return this.types;
     }
 
     /**
-     * Gets the value of the genre property.
+     * Gets the value of the genres property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the genre property.
+     * This is why there is not a <CODE>set</CODE> method for the genres property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getGenre().add(newItem);
+     *    getGenres().add(newItem);
      * </pre>
      * 
      * 
@@ -148,26 +156,26 @@ public class TypeType {
      * 
      * 
      */
-    public List<TypeType.Genre> getGenre() {
-        if (genre == null) {
-            genre = new ArrayList<>();
+    public List<TypeType.Genre> getGenres() {
+        if (genres == null) {
+            genres = new ArrayList<>();
         }
-        return this.genre;
+        return this.genres;
     }
 
     /**
-     * Gets the value of the objectType property.
+     * Gets the value of the objectTypes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the objectType property.
+     * This is why there is not a <CODE>set</CODE> method for the objectTypes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getObjectType().add(newItem);
+     *    getObjectTypes().add(newItem);
      * </pre>
      * 
      * 
@@ -177,26 +185,26 @@ public class TypeType {
      * 
      * 
      */
-    public List<TypeType.ObjectType> getObjectType() {
-        if (objectType == null) {
-            objectType = new ArrayList<>();
+    public List<TypeType.ObjectType> getObjectTypes() {
+        if (objectTypes == null) {
+            objectTypes = new ArrayList<>();
         }
-        return this.objectType;
+        return this.objectTypes;
     }
 
     /**
-     * Gets the value of the targetAudience property.
+     * Gets the value of the targetAudiences property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the targetAudience property.
+     * This is why there is not a <CODE>set</CODE> method for the targetAudiences property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTargetAudience().add(newItem);
+     *    getTargetAudiences().add(newItem);
      * </pre>
      * 
      * 
@@ -206,26 +214,26 @@ public class TypeType {
      * 
      * 
      */
-    public List<AudienceType> getTargetAudience() {
-        if (targetAudience == null) {
-            targetAudience = new ArrayList<>();
+    public List<AudienceType> getTargetAudiences() {
+        if (targetAudiences == null) {
+            targetAudiences = new ArrayList<>();
         }
-        return this.targetAudience;
+        return this.targetAudiences;
     }
 
     /**
-     * Gets the value of the audienceLevel property.
+     * Gets the value of the audienceLevels property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audienceLevel property.
+     * This is why there is not a <CODE>set</CODE> method for the audienceLevels property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudienceLevel().add(newItem);
+     *    getAudienceLevels().add(newItem);
      * </pre>
      * 
      * 
@@ -235,15 +243,15 @@ public class TypeType {
      * 
      * 
      */
-    public List<AudienceType> getAudienceLevel() {
-        if (audienceLevel == null) {
-            audienceLevel = new ArrayList<>();
+    public List<AudienceType> getAudienceLevels() {
+        if (audienceLevels == null) {
+            audienceLevels = new ArrayList<>();
         }
-        return this.audienceLevel;
+        return this.audienceLevels;
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -255,7 +263,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -267,7 +275,7 @@ public class TypeType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -279,7 +287,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -291,7 +299,7 @@ public class TypeType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -303,7 +311,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -315,7 +323,7 @@ public class TypeType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -327,7 +335,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -339,7 +347,7 @@ public class TypeType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -351,7 +359,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -363,7 +371,7 @@ public class TypeType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -375,7 +383,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -387,7 +395,7 @@ public class TypeType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -399,7 +407,7 @@ public class TypeType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -412,9 +420,9 @@ public class TypeType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -431,8 +439,11 @@ public class TypeType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Genre {
+    public static class Genre
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "level")
         @XmlSchemaType(name = "anySimpleType")
         protected java.lang.String level;
@@ -453,7 +464,7 @@ public class TypeType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the level property.
+         * Obtient la valeur de la propriété level.
          * 
          * @return
          *     possible object is
@@ -465,7 +476,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the level property.
+         * Définit la valeur de la propriété level.
          * 
          * @param value
          *     allowed object is
@@ -477,7 +488,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -489,7 +500,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -501,7 +512,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -513,7 +524,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -525,7 +536,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -537,7 +548,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -549,7 +560,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -561,7 +572,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -573,7 +584,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -585,7 +596,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -597,7 +608,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -609,7 +620,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -624,9 +635,9 @@ public class TypeType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -642,8 +653,11 @@ public class TypeType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class ObjectType {
+    public static class ObjectType
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -661,7 +675,7 @@ public class TypeType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -673,7 +687,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -685,7 +699,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -697,7 +711,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -709,7 +723,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -721,7 +735,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -733,7 +747,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -745,7 +759,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -757,7 +771,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -769,7 +783,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -781,7 +795,7 @@ public class TypeType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -793,7 +807,7 @@ public class TypeType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

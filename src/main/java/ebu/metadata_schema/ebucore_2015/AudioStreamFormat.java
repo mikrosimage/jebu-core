@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -9,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioStreamFormatType complex type.
+ * <p>Classe Java pour audioStreamFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioStreamFormatType">
@@ -41,18 +43,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioStreamFormatType", propOrder = {
-    "audioChannelFormatIDRef",
-    "audioPackFormatIDRef",
-    "audioTrackFormatIDRef"
+    "audioChannelFormatIDReves",
+    "audioPackFormatIDReves",
+    "audioTrackFormatIDReves"
 })
-public class AudioStreamFormatType {
+@XmlRootElement(name = "audioStreamFormat")
+public class AudioStreamFormat
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElementRef(name = "audioChannelFormatIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioChannelFormatIDRef;
+    protected List<JAXBElement<Object>> audioChannelFormatIDReves;
     @XmlElementRef(name = "audioPackFormatIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioPackFormatIDRef;
+    protected List<JAXBElement<Object>> audioPackFormatIDReves;
     @XmlElementRef(name = "audioTrackFormatIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioTrackFormatIDRef;
+    protected List<JAXBElement<Object>> audioTrackFormatIDReves;
     @XmlAttribute(name = "audioStreamFormatID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -77,18 +83,18 @@ public class AudioStreamFormatType {
     protected java.lang.String formatLanguage;
 
     /**
-     * Gets the value of the audioChannelFormatIDRef property.
+     * Gets the value of the audioChannelFormatIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioChannelFormatIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioChannelFormatIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioChannelFormatIDRef().add(newItem);
+     *    getAudioChannelFormatIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -98,26 +104,26 @@ public class AudioStreamFormatType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioChannelFormatIDRef() {
-        if (audioChannelFormatIDRef == null) {
-            audioChannelFormatIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioChannelFormatIDReves() {
+        if (audioChannelFormatIDReves == null) {
+            audioChannelFormatIDReves = new ArrayList<>();
         }
-        return this.audioChannelFormatIDRef;
+        return this.audioChannelFormatIDReves;
     }
 
     /**
-     * Gets the value of the audioPackFormatIDRef property.
+     * Gets the value of the audioPackFormatIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioPackFormatIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioPackFormatIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioPackFormatIDRef().add(newItem);
+     *    getAudioPackFormatIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -127,26 +133,26 @@ public class AudioStreamFormatType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioPackFormatIDRef() {
-        if (audioPackFormatIDRef == null) {
-            audioPackFormatIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioPackFormatIDReves() {
+        if (audioPackFormatIDReves == null) {
+            audioPackFormatIDReves = new ArrayList<>();
         }
-        return this.audioPackFormatIDRef;
+        return this.audioPackFormatIDReves;
     }
 
     /**
-     * Gets the value of the audioTrackFormatIDRef property.
+     * Gets the value of the audioTrackFormatIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioTrackFormatIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioTrackFormatIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioTrackFormatIDRef().add(newItem);
+     *    getAudioTrackFormatIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -156,15 +162,15 @@ public class AudioStreamFormatType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioTrackFormatIDRef() {
-        if (audioTrackFormatIDRef == null) {
-            audioTrackFormatIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioTrackFormatIDReves() {
+        if (audioTrackFormatIDReves == null) {
+            audioTrackFormatIDReves = new ArrayList<>();
         }
-        return this.audioTrackFormatIDRef;
+        return this.audioTrackFormatIDReves;
     }
 
     /**
-     * Gets the value of the audioStreamFormatID property.
+     * Obtient la valeur de la propriété audioStreamFormatID.
      * 
      * @return
      *     possible object is
@@ -176,7 +182,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the audioStreamFormatID property.
+     * Définit la valeur de la propriété audioStreamFormatID.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +194,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the audioStreamFormatName property.
+     * Obtient la valeur de la propriété audioStreamFormatName.
      * 
      * @return
      *     possible object is
@@ -200,7 +206,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the audioStreamFormatName property.
+     * Définit la valeur de la propriété audioStreamFormatName.
      * 
      * @param value
      *     allowed object is
@@ -212,7 +218,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -224,7 +230,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -236,7 +242,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -248,7 +254,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -260,7 +266,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -272,7 +278,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -284,7 +290,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -296,7 +302,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -308,7 +314,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -320,7 +326,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -332,7 +338,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -344,7 +350,7 @@ public class AudioStreamFormatType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is

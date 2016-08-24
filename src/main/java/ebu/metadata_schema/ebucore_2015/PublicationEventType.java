@@ -1,23 +1,28 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
  *  To describe when, where, in which formats and under which rights
  * 				conditions the resource has been distributed. 
  * 
- * <p>Java class for publicationEventType complex type.
+ * <p>Classe Java pour publicationEventType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="publicationEventType">
@@ -57,20 +62,28 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "publicationService",
     "publicationMedium",
     "publicationChannel",
-    "publicationRegion"
+    "publicationRegions"
 })
-public class PublicationEventType {
+public class PublicationEventType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
+    @XmlElement(type = java.lang.String.class)
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar publicationDate;
+    protected Date publicationDate;
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar publicationTime;
+    @XmlElement(type = java.lang.String.class)
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar scheduleDate;
+    protected Date scheduleDate;
     protected PublicationServiceType publicationService;
     protected PublicationMediumType publicationMedium;
     protected PublicationChannelType publicationChannel;
-    protected List<RegionType> publicationRegion;
+    @XmlElement(name = "publicationRegion")
+    protected List<RegionType> publicationRegions;
     @XmlAttribute(name = "publicationEventId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String publicationEventId;
@@ -96,31 +109,31 @@ public class PublicationEventType {
     protected java.lang.String rightsIDRefs;
 
     /**
-     * Gets the value of the publicationDate property.
+     * Obtient la valeur de la propriété publicationDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getPublicationDate() {
+    public Date getPublicationDate() {
         return publicationDate;
     }
 
     /**
-     * Sets the value of the publicationDate property.
+     * Définit la valeur de la propriété publicationDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setPublicationDate(XMLGregorianCalendar value) {
+    public void setPublicationDate(Date value) {
         this.publicationDate = value;
     }
 
     /**
-     * Gets the value of the publicationTime property.
+     * Obtient la valeur de la propriété publicationTime.
      * 
      * @return
      *     possible object is
@@ -132,7 +145,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the publicationTime property.
+     * Définit la valeur de la propriété publicationTime.
      * 
      * @param value
      *     allowed object is
@@ -144,31 +157,31 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the scheduleDate property.
+     * Obtient la valeur de la propriété scheduleDate.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public XMLGregorianCalendar getScheduleDate() {
+    public Date getScheduleDate() {
         return scheduleDate;
     }
 
     /**
-     * Sets the value of the scheduleDate property.
+     * Définit la valeur de la propriété scheduleDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link java.lang.String }
      *     
      */
-    public void setScheduleDate(XMLGregorianCalendar value) {
+    public void setScheduleDate(Date value) {
         this.scheduleDate = value;
     }
 
     /**
-     * Gets the value of the publicationService property.
+     * Obtient la valeur de la propriété publicationService.
      * 
      * @return
      *     possible object is
@@ -180,7 +193,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the publicationService property.
+     * Définit la valeur de la propriété publicationService.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +205,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the publicationMedium property.
+     * Obtient la valeur de la propriété publicationMedium.
      * 
      * @return
      *     possible object is
@@ -204,7 +217,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the publicationMedium property.
+     * Définit la valeur de la propriété publicationMedium.
      * 
      * @param value
      *     allowed object is
@@ -216,7 +229,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the publicationChannel property.
+     * Obtient la valeur de la propriété publicationChannel.
      * 
      * @return
      *     possible object is
@@ -228,7 +241,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the publicationChannel property.
+     * Définit la valeur de la propriété publicationChannel.
      * 
      * @param value
      *     allowed object is
@@ -240,18 +253,18 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the publicationRegion property.
+     * Gets the value of the publicationRegions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the publicationRegion property.
+     * This is why there is not a <CODE>set</CODE> method for the publicationRegions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPublicationRegion().add(newItem);
+     *    getPublicationRegions().add(newItem);
      * </pre>
      * 
      * 
@@ -261,15 +274,15 @@ public class PublicationEventType {
      * 
      * 
      */
-    public List<RegionType> getPublicationRegion() {
-        if (publicationRegion == null) {
-            publicationRegion = new ArrayList<>();
+    public List<RegionType> getPublicationRegions() {
+        if (publicationRegions == null) {
+            publicationRegions = new ArrayList<>();
         }
-        return this.publicationRegion;
+        return this.publicationRegions;
     }
 
     /**
-     * Gets the value of the publicationEventId property.
+     * Obtient la valeur de la propriété publicationEventId.
      * 
      * @return
      *     possible object is
@@ -281,7 +294,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the publicationEventId property.
+     * Définit la valeur de la propriété publicationEventId.
      * 
      * @param value
      *     allowed object is
@@ -293,7 +306,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the publicationEventName property.
+     * Obtient la valeur de la propriété publicationEventName.
      * 
      * @return
      *     possible object is
@@ -305,7 +318,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the publicationEventName property.
+     * Définit la valeur de la propriété publicationEventName.
      * 
      * @param value
      *     allowed object is
@@ -317,19 +330,19 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the firstShowing property.
+     * Obtient la valeur de la propriété firstShowing.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getFirstShowing() {
+    public java.lang.Boolean isFirstShowing() {
         return firstShowing;
     }
 
     /**
-     * Sets the value of the firstShowing property.
+     * Définit la valeur de la propriété firstShowing.
      * 
      * @param value
      *     allowed object is
@@ -341,19 +354,19 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the lastShowing property.
+     * Obtient la valeur de la propriété lastShowing.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getLastShowing() {
+    public java.lang.Boolean isLastShowing() {
         return lastShowing;
     }
 
     /**
-     * Sets the value of the lastShowing property.
+     * Définit la valeur de la propriété lastShowing.
      * 
      * @param value
      *     allowed object is
@@ -365,19 +378,19 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the live property.
+     * Obtient la valeur de la propriété live.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getLive() {
+    public java.lang.Boolean isLive() {
         return live;
     }
 
     /**
-     * Sets the value of the live property.
+     * Définit la valeur de la propriété live.
      * 
      * @param value
      *     allowed object is
@@ -389,19 +402,19 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the liveProduction property.
+     * Obtient la valeur de la propriété liveProduction.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getLiveProduction() {
+    public java.lang.Boolean isLiveProduction() {
         return liveProduction;
     }
 
     /**
-     * Sets the value of the liveProduction property.
+     * Définit la valeur de la propriété liveProduction.
      * 
      * @param value
      *     allowed object is
@@ -413,19 +426,19 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the free property.
+     * Obtient la valeur de la propriété free.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getFree() {
+    public java.lang.Boolean isFree() {
         return free;
     }
 
     /**
-     * Sets the value of the free property.
+     * Définit la valeur de la propriété free.
      * 
      * @param value
      *     allowed object is
@@ -437,7 +450,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -449,7 +462,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -461,7 +474,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the formatIdRef property.
+     * Obtient la valeur de la propriété formatIdRef.
      * 
      * @return
      *     possible object is
@@ -473,7 +486,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the formatIdRef property.
+     * Définit la valeur de la propriété formatIdRef.
      * 
      * @param value
      *     allowed object is
@@ -485,7 +498,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Gets the value of the rightsIDRefs property.
+     * Obtient la valeur de la propriété rightsIDRefs.
      * 
      * @return
      *     possible object is
@@ -497,7 +510,7 @@ public class PublicationEventType {
     }
 
     /**
-     * Sets the value of the rightsIDRefs property.
+     * Définit la valeur de la propriété rightsIDRefs.
      * 
      * @param value
      *     allowed object is

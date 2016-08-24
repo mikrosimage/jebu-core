@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  To provide information to the language used for signing and its purpose
  * 			
  * 
- * <p>Java class for signingFormatType complex type.
+ * <p>Classe Java pour signingFormatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="signingFormatType">
@@ -41,8 +42,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "signingFormatType")
-public class SigningFormatType {
+public class SigningFormatType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlAttribute(name = "signingFormatId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String signingFormatId;
@@ -97,7 +101,7 @@ public class SigningFormatType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the signingFormatId property.
+     * Obtient la valeur de la propriété signingFormatId.
      * 
      * @return
      *     possible object is
@@ -109,7 +113,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the signingFormatId property.
+     * Définit la valeur de la propriété signingFormatId.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +125,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the signingFormatVersionId property.
+     * Obtient la valeur de la propriété signingFormatVersionId.
      * 
      * @return
      *     possible object is
@@ -133,7 +137,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the signingFormatVersionId property.
+     * Définit la valeur de la propriété signingFormatVersionId.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +149,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the signingFormatName property.
+     * Obtient la valeur de la propriété signingFormatName.
      * 
      * @return
      *     possible object is
@@ -157,7 +161,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the signingFormatName property.
+     * Définit la valeur de la propriété signingFormatName.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +173,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the trackId property.
+     * Obtient la valeur de la propriété trackId.
      * 
      * @return
      *     possible object is
@@ -181,7 +185,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the trackId property.
+     * Définit la valeur de la propriété trackId.
      * 
      * @param value
      *     allowed object is
@@ -193,7 +197,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the trackName property.
+     * Obtient la valeur de la propriété trackName.
      * 
      * @return
      *     possible object is
@@ -205,7 +209,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the trackName property.
+     * Définit la valeur de la propriété trackName.
      * 
      * @param value
      *     allowed object is
@@ -217,7 +221,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the signingSourceUri property.
+     * Obtient la valeur de la propriété signingSourceUri.
      * 
      * @return
      *     possible object is
@@ -229,7 +233,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the signingSourceUri property.
+     * Définit la valeur de la propriété signingSourceUri.
      * 
      * @param value
      *     allowed object is
@@ -241,7 +245,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the language property.
+     * Obtient la valeur de la propriété language.
      * 
      * @return
      *     possible object is
@@ -253,7 +257,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the language property.
+     * Définit la valeur de la propriété language.
      * 
      * @param value
      *     allowed object is
@@ -265,19 +269,19 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the signingPresenceFlag property.
+     * Obtient la valeur de la propriété signingPresenceFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getSigningPresenceFlag() {
+    public java.lang.Boolean isSigningPresenceFlag() {
         return signingPresenceFlag;
     }
 
     /**
-     * Sets the value of the signingPresenceFlag property.
+     * Définit la valeur de la propriété signingPresenceFlag.
      * 
      * @param value
      *     allowed object is
@@ -289,7 +293,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -301,7 +305,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -313,7 +317,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -325,7 +329,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -337,7 +341,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -349,7 +353,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -361,7 +365,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -373,7 +377,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -385,7 +389,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -397,7 +401,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -409,7 +413,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -421,7 +425,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is
@@ -433,7 +437,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -445,7 +449,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -457,7 +461,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -469,7 +473,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -481,7 +485,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -493,7 +497,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -505,7 +509,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -517,7 +521,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -529,7 +533,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -541,7 +545,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -553,7 +557,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -565,7 +569,7 @@ public class SigningFormatType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

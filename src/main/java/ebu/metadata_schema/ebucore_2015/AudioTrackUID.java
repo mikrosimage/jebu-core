@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -13,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioTrackUIDType complex type.
+ * <p>Classe Java pour audioTrackUIDType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioTrackUIDType">
@@ -42,8 +44,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "audioTrackFormatIDRef",
     "audioPackFormatIDRef"
 })
-public class AudioTrackUIDType {
+@XmlRootElement(name = "audioTrackUID")
+public class AudioTrackUID
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected AudioMXFLookUpType audioMXFLookUp;
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -62,7 +68,7 @@ public class AudioTrackUIDType {
     protected Integer bitDepth;
 
     /**
-     * Gets the value of the audioMXFLookUp property.
+     * Obtient la valeur de la propriété audioMXFLookUp.
      * 
      * @return
      *     possible object is
@@ -74,7 +80,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Sets the value of the audioMXFLookUp property.
+     * Définit la valeur de la propriété audioMXFLookUp.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +92,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Gets the value of the audioTrackFormatIDRef property.
+     * Obtient la valeur de la propriété audioTrackFormatIDRef.
      * 
      * @return
      *     possible object is
@@ -98,7 +104,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Sets the value of the audioTrackFormatIDRef property.
+     * Définit la valeur de la propriété audioTrackFormatIDRef.
      * 
      * @param value
      *     allowed object is
@@ -110,7 +116,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Gets the value of the audioPackFormatIDRef property.
+     * Obtient la valeur de la propriété audioPackFormatIDRef.
      * 
      * @return
      *     possible object is
@@ -122,7 +128,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Sets the value of the audioPackFormatIDRef property.
+     * Définit la valeur de la propriété audioPackFormatIDRef.
      * 
      * @param value
      *     allowed object is
@@ -134,7 +140,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Gets the value of the uid property.
+     * Obtient la valeur de la propriété uid.
      * 
      * @return
      *     possible object is
@@ -146,7 +152,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Sets the value of the uid property.
+     * Définit la valeur de la propriété uid.
      * 
      * @param value
      *     allowed object is
@@ -158,7 +164,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Gets the value of the sampleRate property.
+     * Obtient la valeur de la propriété sampleRate.
      * 
      * @return
      *     possible object is
@@ -170,7 +176,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Sets the value of the sampleRate property.
+     * Définit la valeur de la propriété sampleRate.
      * 
      * @param value
      *     allowed object is
@@ -182,7 +188,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Gets the value of the bitDepth property.
+     * Obtient la valeur de la propriété bitDepth.
      * 
      * @return
      *     possible object is
@@ -194,7 +200,7 @@ public class AudioTrackUIDType {
     }
 
     /**
-     * Sets the value of the bitDepth property.
+     * Définit la valeur de la propriété bitDepth.
      * 
      * @param value
      *     allowed object is

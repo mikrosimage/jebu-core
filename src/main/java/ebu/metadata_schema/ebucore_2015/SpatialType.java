@@ -1,17 +1,19 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for spatialType complex type.
+ * <p>Classe Java pour spatialType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="spatialType">
@@ -29,25 +31,29 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "spatialType", propOrder = {
-    "location"
+    "locations"
 })
-public class SpatialType {
+public class SpatialType
+    implements Serializable
+{
 
-    protected List<LocationType> location;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "location")
+    protected List<LocationType> locations;
 
     /**
-     * Gets the value of the location property.
+     * Gets the value of the locations property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
+     * This is why there is not a <CODE>set</CODE> method for the locations property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLocation().add(newItem);
+     *    getLocations().add(newItem);
      * </pre>
      * 
      * 
@@ -57,11 +63,11 @@ public class SpatialType {
      * 
      * 
      */
-    public List<LocationType> getLocation() {
-        if (location == null) {
-            location = new ArrayList<>();
+    public List<LocationType> getLocations() {
+        if (locations == null) {
+            locations = new ArrayList<>();
         }
-        return this.location;
+        return this.locations;
     }
 
 }

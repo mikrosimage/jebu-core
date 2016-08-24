@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  Detailed contact information for a person or organisation.
  * 			
  * 
- * <p>Java class for detailsType complex type.
+ * <p>Classe Java pour detailsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="detailsType">
@@ -41,15 +43,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "detailsType", propOrder = {
-    "emailAddress",
+    "emailAddresses",
     "webAddress",
     "address",
     "telephoneNumber",
     "mobileTelephoneNumber"
 })
-public class DetailsType {
+public class DetailsType
+    implements Serializable
+{
 
-    protected List<java.lang.String> emailAddress;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "emailAddress")
+    protected List<java.lang.String> emailAddresses;
     protected java.lang.String webAddress;
     protected AddressType address;
     protected java.lang.String telephoneNumber;
@@ -71,18 +77,18 @@ public class DetailsType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the emailAddress property.
+     * Gets the value of the emailAddresses property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the emailAddress property.
+     * This is why there is not a <CODE>set</CODE> method for the emailAddresses property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEmailAddress().add(newItem);
+     *    getEmailAddresses().add(newItem);
      * </pre>
      * 
      * 
@@ -92,15 +98,15 @@ public class DetailsType {
      * 
      * 
      */
-    public List<java.lang.String> getEmailAddress() {
-        if (emailAddress == null) {
-            emailAddress = new ArrayList<>();
+    public List<java.lang.String> getEmailAddresses() {
+        if (emailAddresses == null) {
+            emailAddresses = new ArrayList<>();
         }
-        return this.emailAddress;
+        return this.emailAddresses;
     }
 
     /**
-     * Gets the value of the webAddress property.
+     * Obtient la valeur de la propriété webAddress.
      * 
      * @return
      *     possible object is
@@ -112,7 +118,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the webAddress property.
+     * Définit la valeur de la propriété webAddress.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +130,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the address property.
+     * Obtient la valeur de la propriété address.
      * 
      * @return
      *     possible object is
@@ -136,7 +142,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the address property.
+     * Définit la valeur de la propriété address.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +154,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the telephoneNumber property.
+     * Obtient la valeur de la propriété telephoneNumber.
      * 
      * @return
      *     possible object is
@@ -160,7 +166,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the telephoneNumber property.
+     * Définit la valeur de la propriété telephoneNumber.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +178,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the mobileTelephoneNumber property.
+     * Obtient la valeur de la propriété mobileTelephoneNumber.
      * 
      * @return
      *     possible object is
@@ -184,7 +190,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the mobileTelephoneNumber property.
+     * Définit la valeur de la propriété mobileTelephoneNumber.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +202,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -208,7 +214,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +226,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -232,7 +238,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -244,7 +250,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -256,7 +262,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -268,7 +274,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -280,7 +286,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -292,7 +298,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -304,7 +310,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -316,7 +322,7 @@ public class DetailsType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -328,7 +334,7 @@ public class DetailsType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -24,9 +25,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				identification number or ID where the related item can be obtained or found.
  * 			
  * 
- * <p>Java class for relationType complex type.
+ * <p>Classe Java pour relationType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="relationType">
@@ -51,20 +52,23 @@ import org.purl.dc.elements._1.ElementType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "relationType", propOrder = {
-    "relation",
+    "relationLink",
     "relationIdentifier",
-    "relationLink"
+    "relation"
 })
 @XmlSeeAlso({
     ebu.metadata_schema.ebucore_2015.CoreMetadataType.HasTrackPart.class
 })
-public class RelationType {
+public class RelationType
+    implements Serializable
+{
 
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
-    protected ElementType relation;
-    protected IdentifierType relationIdentifier;
+    private final static long serialVersionUID = -1L;
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String relationLink;
+    protected IdentifierType relationIdentifier;
+    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
+    protected ElementType relation;
     @XmlAttribute(name = "runningOrderNumber")
     protected BigInteger runningOrderNumber;
     @XmlAttribute(name = "totalNumberOfGroupMembers")
@@ -90,6 +94,54 @@ public class RelationType {
     protected java.lang.String typeLanguage;
 
     /**
+     * Obtient la valeur de la propriété relationLink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getRelationLink() {
+        return relationLink;
+    }
+
+    /**
+     * Définit la valeur de la propriété relationLink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setRelationLink(java.lang.String value) {
+        this.relationLink = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété relationIdentifier.
+     * 
+     * @return
+     *     possible object is
+     *     {@link IdentifierType }
+     *     
+     */
+    public IdentifierType getRelationIdentifier() {
+        return relationIdentifier;
+    }
+
+    /**
+     * Définit la valeur de la propriété relationIdentifier.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link IdentifierType }
+     *     
+     */
+    public void setRelationIdentifier(IdentifierType value) {
+        this.relationIdentifier = value;
+    }
+
+    /**
      *  The EBU core metadata set is built as a refinement of the Dublin
      * 						Core. A title would be given using this element.
      * 
@@ -103,7 +155,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the relation property.
+     * Définit la valeur de la propriété relation.
      * 
      * @param value
      *     allowed object is
@@ -115,55 +167,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the relationIdentifier property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link IdentifierType }
-     *     
-     */
-    public IdentifierType getRelationIdentifier() {
-        return relationIdentifier;
-    }
-
-    /**
-     * Sets the value of the relationIdentifier property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IdentifierType }
-     *     
-     */
-    public void setRelationIdentifier(IdentifierType value) {
-        this.relationIdentifier = value;
-    }
-
-    /**
-     * Gets the value of the relationLink property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getRelationLink() {
-        return relationLink;
-    }
-
-    /**
-     * Sets the value of the relationLink property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setRelationLink(java.lang.String value) {
-        this.relationLink = value;
-    }
-
-    /**
-     * Gets the value of the runningOrderNumber property.
+     * Obtient la valeur de la propriété runningOrderNumber.
      * 
      * @return
      *     possible object is
@@ -175,7 +179,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the runningOrderNumber property.
+     * Définit la valeur de la propriété runningOrderNumber.
      * 
      * @param value
      *     allowed object is
@@ -187,7 +191,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the totalNumberOfGroupMembers property.
+     * Obtient la valeur de la propriété totalNumberOfGroupMembers.
      * 
      * @return
      *     possible object is
@@ -199,7 +203,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the totalNumberOfGroupMembers property.
+     * Définit la valeur de la propriété totalNumberOfGroupMembers.
      * 
      * @param value
      *     allowed object is
@@ -211,19 +215,19 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the orderedGroupFlag property.
+     * Obtient la valeur de la propriété orderedGroupFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getOrderedGroupFlag() {
+    public java.lang.Boolean isOrderedGroupFlag() {
         return orderedGroupFlag;
     }
 
     /**
-     * Sets the value of the orderedGroupFlag property.
+     * Définit la valeur de la propriété orderedGroupFlag.
      * 
      * @param value
      *     allowed object is
@@ -235,7 +239,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -247,7 +251,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -259,7 +263,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -271,7 +275,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -283,7 +287,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -295,7 +299,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -307,7 +311,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -319,7 +323,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -331,7 +335,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -343,7 +347,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -355,7 +359,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -367,7 +371,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -379,7 +383,7 @@ public class RelationType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -391,7 +395,7 @@ public class RelationType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

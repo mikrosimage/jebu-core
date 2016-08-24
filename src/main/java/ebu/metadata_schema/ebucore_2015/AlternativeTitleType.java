@@ -1,8 +1,10 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,16 +16,17 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.purl.dc.elements._1.ElementType;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
  *  The name given to a resource e.g. a media item, media object, sequence.
- * 				For a series � use the series title; for a programme � a programme title; for an
- * 				item � an item title. etc. Titles are recorded as they appear.
+ * 				For a series – use the series title; for a programme – a programme title; for an
+ * 				item – an item title. etc. Titles are recorded as they appear.
  * 
- * <p>Java class for alternativeTitleType complex type.
+ * <p>Classe Java pour alternativeTitleType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="alternativeTitleType">
@@ -32,9 +35,9 @@ import org.purl.dc.elements._1.ElementType;
  *       &lt;sequence>
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}title" maxOccurs="unbounded"/>
  *       &lt;/sequence>
- *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}statusGroup"/>
- *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}dateGroup"/>
  *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}typeGroup"/>
+ *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}dateGroup"/>
+ *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}statusGroup"/>
  *       &lt;attribute name="length" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
  *       &lt;attribute name="geographicalScope" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="geographicalExclusionScope" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -48,12 +51,15 @@ import org.purl.dc.elements._1.ElementType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "alternativeTitleType", propOrder = {
-    "title"
+    "titles"
 })
-public class AlternativeTitleType {
+public class AlternativeTitleType
+    implements Serializable
+{
 
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    protected List<ElementType> title;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "title", namespace = "http://purl.org/dc/elements/1.1/", required = true)
+    protected List<ElementType> titles;
     @XmlAttribute(name = "length")
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger length;
@@ -63,41 +69,6 @@ public class AlternativeTitleType {
     protected java.lang.String geographicalExclusionScope;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
-    @XmlAttribute(name = "statusLabel")
-    protected java.lang.String statusLabel;
-    @XmlAttribute(name = "statusDefinition")
-    protected java.lang.String statusDefinition;
-    @XmlAttribute(name = "statusLink")
-    @XmlSchemaType(name = "anyURI")
-    protected java.lang.String statusLink;
-    @XmlAttribute(name = "statusSource")
-    protected java.lang.String statusSource;
-    @XmlAttribute(name = "statusNamespace")
-    protected java.lang.String statusNamespace;
-    @XmlAttribute(name = "statusLanguage")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "language")
-    protected java.lang.String statusLanguage;
-    @XmlAttribute(name = "startYear")
-    @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar startYear;
-    @XmlAttribute(name = "startDate")
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDate;
-    @XmlAttribute(name = "startTime")
-    @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar startTime;
-    @XmlAttribute(name = "endYear")
-    @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar endYear;
-    @XmlAttribute(name = "endDate")
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endDate;
-    @XmlAttribute(name = "endTime")
-    @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar endTime;
-    @XmlAttribute(name = "period")
-    protected java.lang.String period;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -113,23 +84,60 @@ public class AlternativeTitleType {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "language")
     protected java.lang.String typeLanguage;
+    @XmlAttribute(name = "startYear")
+    @XmlSchemaType(name = "gYear")
+    protected XMLGregorianCalendar startYear;
+    @XmlAttribute(name = "startDate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
+    @XmlSchemaType(name = "date")
+    protected Date startDate;
+    @XmlAttribute(name = "startTime")
+    @XmlSchemaType(name = "time")
+    protected XMLGregorianCalendar startTime;
+    @XmlAttribute(name = "endYear")
+    @XmlSchemaType(name = "gYear")
+    protected XMLGregorianCalendar endYear;
+    @XmlAttribute(name = "endDate")
+    @XmlJavaTypeAdapter(XmlDateAdapter .class)
+    @XmlSchemaType(name = "date")
+    protected Date endDate;
+    @XmlAttribute(name = "endTime")
+    @XmlSchemaType(name = "time")
+    protected XMLGregorianCalendar endTime;
+    @XmlAttribute(name = "period")
+    protected java.lang.String period;
+    @XmlAttribute(name = "statusLabel")
+    protected java.lang.String statusLabel;
+    @XmlAttribute(name = "statusDefinition")
+    protected java.lang.String statusDefinition;
+    @XmlAttribute(name = "statusLink")
+    @XmlSchemaType(name = "anyURI")
+    protected java.lang.String statusLink;
+    @XmlAttribute(name = "statusSource")
+    protected java.lang.String statusSource;
+    @XmlAttribute(name = "statusNamespace")
+    protected java.lang.String statusNamespace;
+    @XmlAttribute(name = "statusLanguage")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "language")
+    protected java.lang.String statusLanguage;
 
     /**
      *  The EBU core metadata set is built as a refinement of the Dublin
      * 						Core. Free-text to provide alternative titles by which the resource is
      * 						known. The language in which the title is provided can be provided using
-     * 						elementType�s lang attribute. Example: �the fifth element� Gets the value of the title property.
+     * 						elementType’s lang attribute. Example: ‘the fifth element’ Gets the value of the titles property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the title property.
+     * This is why there is not a <CODE>set</CODE> method for the titles property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTitle().add(newItem);
+     *    getTitles().add(newItem);
      * </pre>
      * 
      * 
@@ -139,15 +147,15 @@ public class AlternativeTitleType {
      * 
      * 
      */
-    public List<ElementType> getTitle() {
-        if (title == null) {
-            title = new ArrayList<>();
+    public List<ElementType> getTitles() {
+        if (titles == null) {
+            titles = new ArrayList<>();
         }
-        return this.title;
+        return this.titles;
     }
 
     /**
-     * Gets the value of the length property.
+     * Obtient la valeur de la propriété length.
      * 
      * @return
      *     possible object is
@@ -159,7 +167,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the length property.
+     * Définit la valeur de la propriété length.
      * 
      * @param value
      *     allowed object is
@@ -171,7 +179,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the geographicalScope property.
+     * Obtient la valeur de la propriété geographicalScope.
      * 
      * @return
      *     possible object is
@@ -183,7 +191,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the geographicalScope property.
+     * Définit la valeur de la propriété geographicalScope.
      * 
      * @param value
      *     allowed object is
@@ -195,7 +203,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the geographicalExclusionScope property.
+     * Obtient la valeur de la propriété geographicalExclusionScope.
      * 
      * @return
      *     possible object is
@@ -207,7 +215,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the geographicalExclusionScope property.
+     * Définit la valeur de la propriété geographicalExclusionScope.
      * 
      * @param value
      *     allowed object is
@@ -219,7 +227,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -231,7 +239,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -243,319 +251,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the statusLabel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getStatusLabel() {
-        return statusLabel;
-    }
-
-    /**
-     * Sets the value of the statusLabel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setStatusLabel(java.lang.String value) {
-        this.statusLabel = value;
-    }
-
-    /**
-     * Gets the value of the statusDefinition property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getStatusDefinition() {
-        return statusDefinition;
-    }
-
-    /**
-     * Sets the value of the statusDefinition property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setStatusDefinition(java.lang.String value) {
-        this.statusDefinition = value;
-    }
-
-    /**
-     * Gets the value of the statusLink property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getStatusLink() {
-        return statusLink;
-    }
-
-    /**
-     * Sets the value of the statusLink property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setStatusLink(java.lang.String value) {
-        this.statusLink = value;
-    }
-
-    /**
-     * Gets the value of the statusSource property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getStatusSource() {
-        return statusSource;
-    }
-
-    /**
-     * Sets the value of the statusSource property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setStatusSource(java.lang.String value) {
-        this.statusSource = value;
-    }
-
-    /**
-     * Gets the value of the statusNamespace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getStatusNamespace() {
-        return statusNamespace;
-    }
-
-    /**
-     * Sets the value of the statusNamespace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setStatusNamespace(java.lang.String value) {
-        this.statusNamespace = value;
-    }
-
-    /**
-     * Gets the value of the statusLanguage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getStatusLanguage() {
-        return statusLanguage;
-    }
-
-    /**
-     * Sets the value of the statusLanguage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setStatusLanguage(java.lang.String value) {
-        this.statusLanguage = value;
-    }
-
-    /**
-     * Gets the value of the startYear property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getStartYear() {
-        return startYear;
-    }
-
-    /**
-     * Sets the value of the startYear property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartYear(XMLGregorianCalendar value) {
-        this.startYear = value;
-    }
-
-    /**
-     * Gets the value of the startDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getStartDate() {
-        return startDate;
-    }
-
-    /**
-     * Sets the value of the startDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
-
-    /**
-     * Gets the value of the startTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getStartTime() {
-        return startTime;
-    }
-
-    /**
-     * Sets the value of the startTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartTime(XMLGregorianCalendar value) {
-        this.startTime = value;
-    }
-
-    /**
-     * Gets the value of the endYear property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getEndYear() {
-        return endYear;
-    }
-
-    /**
-     * Sets the value of the endYear property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndYear(XMLGregorianCalendar value) {
-        this.endYear = value;
-    }
-
-    /**
-     * Gets the value of the endDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getEndDate() {
-        return endDate;
-    }
-
-    /**
-     * Sets the value of the endDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
-
-    /**
-     * Gets the value of the endTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getEndTime() {
-        return endTime;
-    }
-
-    /**
-     * Sets the value of the endTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndTime(XMLGregorianCalendar value) {
-        this.endTime = value;
-    }
-
-    /**
-     * Gets the value of the period property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getPeriod() {
-        return period;
-    }
-
-    /**
-     * Sets the value of the period property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setPeriod(java.lang.String value) {
-        this.period = value;
-    }
-
-    /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -567,7 +263,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -579,7 +275,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -591,7 +287,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -603,7 +299,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -615,7 +311,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -627,7 +323,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -639,7 +335,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -651,7 +347,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -663,7 +359,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -675,7 +371,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -687,7 +383,7 @@ public class AlternativeTitleType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -696,6 +392,318 @@ public class AlternativeTitleType {
      */
     public void setTypeLanguage(java.lang.String value) {
         this.typeLanguage = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété startYear.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getStartYear() {
+        return startYear;
+    }
+
+    /**
+     * Définit la valeur de la propriété startYear.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setStartYear(XMLGregorianCalendar value) {
+        this.startYear = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété startDate.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    /**
+     * Définit la valeur de la propriété startDate.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStartDate(Date value) {
+        this.startDate = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété startTime.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * Définit la valeur de la propriété startTime.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setStartTime(XMLGregorianCalendar value) {
+        this.startTime = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété endYear.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getEndYear() {
+        return endYear;
+    }
+
+    /**
+     * Définit la valeur de la propriété endYear.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setEndYear(XMLGregorianCalendar value) {
+        this.endYear = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété endDate.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    /**
+     * Définit la valeur de la propriété endDate.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setEndDate(Date value) {
+        this.endDate = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété endTime.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * Définit la valeur de la propriété endTime.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setEndTime(XMLGregorianCalendar value) {
+        this.endTime = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété period.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getPeriod() {
+        return period;
+    }
+
+    /**
+     * Définit la valeur de la propriété period.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setPeriod(java.lang.String value) {
+        this.period = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statusLabel.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getStatusLabel() {
+        return statusLabel;
+    }
+
+    /**
+     * Définit la valeur de la propriété statusLabel.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStatusLabel(java.lang.String value) {
+        this.statusLabel = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statusDefinition.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getStatusDefinition() {
+        return statusDefinition;
+    }
+
+    /**
+     * Définit la valeur de la propriété statusDefinition.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStatusDefinition(java.lang.String value) {
+        this.statusDefinition = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statusLink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getStatusLink() {
+        return statusLink;
+    }
+
+    /**
+     * Définit la valeur de la propriété statusLink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStatusLink(java.lang.String value) {
+        this.statusLink = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statusSource.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getStatusSource() {
+        return statusSource;
+    }
+
+    /**
+     * Définit la valeur de la propriété statusSource.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStatusSource(java.lang.String value) {
+        this.statusSource = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statusNamespace.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getStatusNamespace() {
+        return statusNamespace;
+    }
+
+    /**
+     * Définit la valeur de la propriété statusNamespace.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStatusNamespace(java.lang.String value) {
+        this.statusNamespace = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statusLanguage.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getStatusLanguage() {
+        return statusLanguage;
+    }
+
+    /**
+     * Définit la valeur de la propriété statusLanguage.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setStatusLanguage(java.lang.String value) {
+        this.statusLanguage = value;
     }
 
 }

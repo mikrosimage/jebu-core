@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -16,9 +17,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 				defined by the formatGroup attributes. For use for contact and organisation names.
  * 			
  * 
- * <p>Java class for compoundNameType complex type.
+ * <p>Classe Java pour compoundNameType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="compoundNameType">
@@ -37,8 +38,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "compoundNameType")
 public class CompoundNameType
     extends ElementType
+    implements Serializable
 {
 
+    private final static long serialVersionUID = -1L;
     @XmlAttribute(name = "formatLabel")
     protected java.lang.String formatLabel;
     @XmlAttribute(name = "formatDefinition")
@@ -71,7 +74,7 @@ public class CompoundNameType
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the formatLabel property.
+     * Obtient la valeur de la propriété formatLabel.
      * 
      * @return
      *     possible object is
@@ -83,7 +86,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the formatLabel property.
+     * Définit la valeur de la propriété formatLabel.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +98,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -107,7 +110,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +122,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the formatLink property.
+     * Obtient la valeur de la propriété formatLink.
      * 
      * @return
      *     possible object is
@@ -131,7 +134,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the formatLink property.
+     * Définit la valeur de la propriété formatLink.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +146,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the formatSource property.
+     * Obtient la valeur de la propriété formatSource.
      * 
      * @return
      *     possible object is
@@ -155,7 +158,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the formatSource property.
+     * Définit la valeur de la propriété formatSource.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +170,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the formatNamespace property.
+     * Obtient la valeur de la propriété formatNamespace.
      * 
      * @return
      *     possible object is
@@ -179,7 +182,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the formatNamespace property.
+     * Définit la valeur de la propriété formatNamespace.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +194,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the formatLanguage property.
+     * Obtient la valeur de la propriété formatLanguage.
      * 
      * @return
      *     possible object is
@@ -203,7 +206,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the formatLanguage property.
+     * Définit la valeur de la propriété formatLanguage.
      * 
      * @param value
      *     allowed object is
@@ -215,7 +218,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -227,7 +230,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -239,7 +242,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -251,7 +254,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -263,7 +266,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -275,7 +278,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -287,7 +290,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -299,7 +302,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -311,7 +314,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -323,7 +326,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -335,7 +338,7 @@ public class CompoundNameType
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -347,7 +350,7 @@ public class CompoundNameType
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -10,6 +11,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -17,9 +19,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for audioContentType complex type.
+ * <p>Classe Java pour audioContentType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioContentType">
@@ -42,14 +44,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioContentType", propOrder = {
-    "audioObjectIDRef",
+    "audioObjectIDReves",
     "loudnessMetadata",
     "dialogue"
 })
-public class AudioContentType {
+@XmlRootElement(name = "audioContent")
+public class AudioContent
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElementRef(name = "audioObjectIDRef", namespace = "urn:ebu:metadata-schema:ebuCore_2015", type = JAXBElement.class, required = false)
-    protected List<JAXBElement<Object>> audioObjectIDRef;
+    protected List<JAXBElement<Object>> audioObjectIDReves;
     protected LoudnessMetadataType loudnessMetadata;
     @XmlElement(required = true)
     protected DialogueType dialogue;
@@ -66,18 +72,18 @@ public class AudioContentType {
     protected java.lang.String audioContentLanguage;
 
     /**
-     * Gets the value of the audioObjectIDRef property.
+     * Gets the value of the audioObjectIDReves property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioObjectIDRef property.
+     * This is why there is not a <CODE>set</CODE> method for the audioObjectIDReves property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioObjectIDRef().add(newItem);
+     *    getAudioObjectIDReves().add(newItem);
      * </pre>
      * 
      * 
@@ -87,15 +93,15 @@ public class AudioContentType {
      * 
      * 
      */
-    public List<JAXBElement<Object>> getAudioObjectIDRef() {
-        if (audioObjectIDRef == null) {
-            audioObjectIDRef = new ArrayList<>();
+    public List<JAXBElement<Object>> getAudioObjectIDReves() {
+        if (audioObjectIDReves == null) {
+            audioObjectIDReves = new ArrayList<>();
         }
-        return this.audioObjectIDRef;
+        return this.audioObjectIDReves;
     }
 
     /**
-     * Gets the value of the loudnessMetadata property.
+     * Obtient la valeur de la propriété loudnessMetadata.
      * 
      * @return
      *     possible object is
@@ -107,7 +113,7 @@ public class AudioContentType {
     }
 
     /**
-     * Sets the value of the loudnessMetadata property.
+     * Définit la valeur de la propriété loudnessMetadata.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +125,7 @@ public class AudioContentType {
     }
 
     /**
-     * Gets the value of the dialogue property.
+     * Obtient la valeur de la propriété dialogue.
      * 
      * @return
      *     possible object is
@@ -131,7 +137,7 @@ public class AudioContentType {
     }
 
     /**
-     * Sets the value of the dialogue property.
+     * Définit la valeur de la propriété dialogue.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +149,7 @@ public class AudioContentType {
     }
 
     /**
-     * Gets the value of the audioContentID property.
+     * Obtient la valeur de la propriété audioContentID.
      * 
      * @return
      *     possible object is
@@ -155,7 +161,7 @@ public class AudioContentType {
     }
 
     /**
-     * Sets the value of the audioContentID property.
+     * Définit la valeur de la propriété audioContentID.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +173,7 @@ public class AudioContentType {
     }
 
     /**
-     * Gets the value of the audioContentName property.
+     * Obtient la valeur de la propriété audioContentName.
      * 
      * @return
      *     possible object is
@@ -179,7 +185,7 @@ public class AudioContentType {
     }
 
     /**
-     * Sets the value of the audioContentName property.
+     * Définit la valeur de la propriété audioContentName.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +197,7 @@ public class AudioContentType {
     }
 
     /**
-     * Gets the value of the audioContentLanguage property.
+     * Obtient la valeur de la propriété audioContentLanguage.
      * 
      * @return
      *     possible object is
@@ -203,7 +209,7 @@ public class AudioContentType {
     }
 
     /**
-     * Sets the value of the audioContentLanguage property.
+     * Définit la valeur de la propriété audioContentLanguage.
      * 
      * @param value
      *     allowed object is

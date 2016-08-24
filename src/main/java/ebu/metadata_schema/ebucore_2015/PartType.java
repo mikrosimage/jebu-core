@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -23,9 +24,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  Each part can be described using the same level of detiled
  * 						information as provided by the coreMetadata element. 
  * 
- * <p>Java class for partType complex type.
+ * <p>Classe Java pour partType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="partType">
@@ -55,8 +56,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class PartType
     extends CoreMetadataType
+    implements Serializable
 {
 
+    private final static long serialVersionUID = -1L;
     protected TimeType partStartTime;
     protected DurationType partDuration;
     @XmlAttribute(name = "partId")
@@ -88,7 +91,7 @@ public class PartType
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the partStartTime property.
+     * Obtient la valeur de la propriété partStartTime.
      * 
      * @return
      *     possible object is
@@ -100,7 +103,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partStartTime property.
+     * Définit la valeur de la propriété partStartTime.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +115,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the partDuration property.
+     * Obtient la valeur de la propriété partDuration.
      * 
      * @return
      *     possible object is
@@ -124,7 +127,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partDuration property.
+     * Définit la valeur de la propriété partDuration.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +139,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the partId property.
+     * Obtient la valeur de la propriété partId.
      * 
      * @return
      *     possible object is
@@ -148,7 +151,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partId property.
+     * Définit la valeur de la propriété partId.
      * 
      * @param value
      *     allowed object is
@@ -160,7 +163,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the partName property.
+     * Obtient la valeur de la propriété partName.
      * 
      * @return
      *     possible object is
@@ -172,7 +175,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partName property.
+     * Définit la valeur de la propriété partName.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +187,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the partDefinition property.
+     * Obtient la valeur de la propriété partDefinition.
      * 
      * @return
      *     possible object is
@@ -196,7 +199,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partDefinition property.
+     * Définit la valeur de la propriété partDefinition.
      * 
      * @param value
      *     allowed object is
@@ -208,7 +211,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the partNumber property.
+     * Obtient la valeur de la propriété partNumber.
      * 
      * @return
      *     possible object is
@@ -220,7 +223,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partNumber property.
+     * Définit la valeur de la propriété partNumber.
      * 
      * @param value
      *     allowed object is
@@ -232,7 +235,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the partTotalNumber property.
+     * Obtient la valeur de la propriété partTotalNumber.
      * 
      * @return
      *     possible object is
@@ -244,7 +247,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the partTotalNumber property.
+     * Définit la valeur de la propriété partTotalNumber.
      * 
      * @param value
      *     allowed object is
@@ -256,7 +259,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -268,7 +271,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -280,7 +283,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -292,7 +295,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -304,7 +307,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -316,7 +319,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -328,7 +331,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -340,7 +343,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -352,7 +355,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -364,7 +367,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -376,7 +379,7 @@ public class PartType
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -388,7 +391,7 @@ public class PartType
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is

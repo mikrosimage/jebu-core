@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -13,9 +14,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * A set of references to lookup MXF essence IDs.
  * 
- * <p>Java class for audioMXFLookUpType complex type.
+ * <p>Classe Java pour audioMXFLookUpType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioMXFLookUpType">
@@ -39,8 +40,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "trackIDRef",
     "channelIDRef"
 })
-public class AudioMXFLookUpType {
+public class AudioMXFLookUpType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(required = true)
     protected java.lang.String packageUIDRef;
     @XmlElement(required = true)
@@ -53,7 +57,7 @@ public class AudioMXFLookUpType {
     protected java.lang.String channelIDRef;
 
     /**
-     * Gets the value of the packageUIDRef property.
+     * Obtient la valeur de la propriété packageUIDRef.
      * 
      * @return
      *     possible object is
@@ -65,7 +69,7 @@ public class AudioMXFLookUpType {
     }
 
     /**
-     * Sets the value of the packageUIDRef property.
+     * Définit la valeur de la propriété packageUIDRef.
      * 
      * @param value
      *     allowed object is
@@ -77,7 +81,7 @@ public class AudioMXFLookUpType {
     }
 
     /**
-     * Gets the value of the trackIDRef property.
+     * Obtient la valeur de la propriété trackIDRef.
      * 
      * @return
      *     possible object is
@@ -89,7 +93,7 @@ public class AudioMXFLookUpType {
     }
 
     /**
-     * Sets the value of the trackIDRef property.
+     * Définit la valeur de la propriété trackIDRef.
      * 
      * @param value
      *     allowed object is
@@ -101,7 +105,7 @@ public class AudioMXFLookUpType {
     }
 
     /**
-     * Gets the value of the channelIDRef property.
+     * Obtient la valeur de la propriété channelIDRef.
      * 
      * @return
      *     possible object is
@@ -113,7 +117,7 @@ public class AudioMXFLookUpType {
     }
 
     /**
-     * Sets the value of the channelIDRef property.
+     * Définit la valeur de la propriété channelIDRef.
      * 
      * @param value
      *     allowed object is

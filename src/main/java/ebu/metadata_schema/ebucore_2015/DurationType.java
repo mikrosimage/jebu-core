@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -14,9 +15,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  *  To specify a duration. 
  * 
- * <p>Java class for durationType complex type.
+ * <p>Classe Java pour durationType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="durationType">
@@ -46,17 +47,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "durationType", propOrder = {
-    "timecode",
-    "normalPlayTime",
+    "duration",
     "editUnitNumber",
-    "duration"
+    "normalPlayTime",
+    "timecode"
 })
-public class DurationType {
+public class DurationType
+    implements Serializable
+{
 
-    protected java.lang.String timecode;
-    protected javax.xml.datatype.Duration normalPlayTime;
-    protected EditUnitNumberType editUnitNumber;
+    private final static long serialVersionUID = -1L;
     protected DurationType.Duration duration;
+    protected EditUnitNumberType editUnitNumber;
+    protected javax.xml.datatype.Duration normalPlayTime;
+    protected java.lang.String timecode;
     @XmlAttribute(name = "typeLabel")
     protected java.lang.String typeLabel;
     @XmlAttribute(name = "typeDefinition")
@@ -74,79 +78,7 @@ public class DurationType {
     protected java.lang.String typeLanguage;
 
     /**
-     * Gets the value of the timecode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public java.lang.String getTimecode() {
-        return timecode;
-    }
-
-    /**
-     * Sets the value of the timecode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link java.lang.String }
-     *     
-     */
-    public void setTimecode(java.lang.String value) {
-        this.timecode = value;
-    }
-
-    /**
-     * Gets the value of the normalPlayTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link javax.xml.datatype.Duration }
-     *     
-     */
-    public javax.xml.datatype.Duration getNormalPlayTime() {
-        return normalPlayTime;
-    }
-
-    /**
-     * Sets the value of the normalPlayTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link javax.xml.datatype.Duration }
-     *     
-     */
-    public void setNormalPlayTime(javax.xml.datatype.Duration value) {
-        this.normalPlayTime = value;
-    }
-
-    /**
-     * Gets the value of the editUnitNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link EditUnitNumberType }
-     *     
-     */
-    public EditUnitNumberType getEditUnitNumber() {
-        return editUnitNumber;
-    }
-
-    /**
-     * Sets the value of the editUnitNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EditUnitNumberType }
-     *     
-     */
-    public void setEditUnitNumber(EditUnitNumberType value) {
-        this.editUnitNumber = value;
-    }
-
-    /**
-     * Gets the value of the duration property.
+     * Obtient la valeur de la propriété duration.
      * 
      * @return
      *     possible object is
@@ -158,7 +90,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the duration property.
+     * Définit la valeur de la propriété duration.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +102,79 @@ public class DurationType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété editUnitNumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EditUnitNumberType }
+     *     
+     */
+    public EditUnitNumberType getEditUnitNumber() {
+        return editUnitNumber;
+    }
+
+    /**
+     * Définit la valeur de la propriété editUnitNumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EditUnitNumberType }
+     *     
+     */
+    public void setEditUnitNumber(EditUnitNumberType value) {
+        this.editUnitNumber = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété normalPlayTime.
+     * 
+     * @return
+     *     possible object is
+     *     {@link javax.xml.datatype.Duration }
+     *     
+     */
+    public javax.xml.datatype.Duration getNormalPlayTime() {
+        return normalPlayTime;
+    }
+
+    /**
+     * Définit la valeur de la propriété normalPlayTime.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link javax.xml.datatype.Duration }
+     *     
+     */
+    public void setNormalPlayTime(javax.xml.datatype.Duration value) {
+        this.normalPlayTime = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété timecode.
+     * 
+     * @return
+     *     possible object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public java.lang.String getTimecode() {
+        return timecode;
+    }
+
+    /**
+     * Définit la valeur de la propriété timecode.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link java.lang.String }
+     *     
+     */
+    public void setTimecode(java.lang.String value) {
+        this.timecode = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -182,7 +186,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -194,7 +198,7 @@ public class DurationType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -206,7 +210,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -218,7 +222,7 @@ public class DurationType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -230,7 +234,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -242,7 +246,7 @@ public class DurationType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -254,7 +258,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -266,7 +270,7 @@ public class DurationType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -278,7 +282,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -290,7 +294,7 @@ public class DurationType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -302,7 +306,7 @@ public class DurationType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -315,9 +319,9 @@ public class DurationType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -335,8 +339,11 @@ public class DurationType {
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class Duration {
+    public static class Duration
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlValue
         protected java.lang.String value;
         @XmlAttribute(name = "formatLabel")
@@ -356,7 +363,7 @@ public class DurationType {
         protected java.lang.String formatLanguage;
 
         /**
-         * Gets the value of the value property.
+         * Obtient la valeur de la propriété value.
          * 
          * @return
          *     possible object is
@@ -368,7 +375,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the value property.
+         * Définit la valeur de la propriété value.
          * 
          * @param value
          *     allowed object is
@@ -380,7 +387,7 @@ public class DurationType {
         }
 
         /**
-         * Gets the value of the formatLabel property.
+         * Obtient la valeur de la propriété formatLabel.
          * 
          * @return
          *     possible object is
@@ -392,7 +399,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the formatLabel property.
+         * Définit la valeur de la propriété formatLabel.
          * 
          * @param value
          *     allowed object is
@@ -404,7 +411,7 @@ public class DurationType {
         }
 
         /**
-         * Gets the value of the formatDefinition property.
+         * Obtient la valeur de la propriété formatDefinition.
          * 
          * @return
          *     possible object is
@@ -416,7 +423,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the formatDefinition property.
+         * Définit la valeur de la propriété formatDefinition.
          * 
          * @param value
          *     allowed object is
@@ -428,7 +435,7 @@ public class DurationType {
         }
 
         /**
-         * Gets the value of the formatLink property.
+         * Obtient la valeur de la propriété formatLink.
          * 
          * @return
          *     possible object is
@@ -440,7 +447,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the formatLink property.
+         * Définit la valeur de la propriété formatLink.
          * 
          * @param value
          *     allowed object is
@@ -452,7 +459,7 @@ public class DurationType {
         }
 
         /**
-         * Gets the value of the formatSource property.
+         * Obtient la valeur de la propriété formatSource.
          * 
          * @return
          *     possible object is
@@ -464,7 +471,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the formatSource property.
+         * Définit la valeur de la propriété formatSource.
          * 
          * @param value
          *     allowed object is
@@ -476,7 +483,7 @@ public class DurationType {
         }
 
         /**
-         * Gets the value of the formatNamespace property.
+         * Obtient la valeur de la propriété formatNamespace.
          * 
          * @return
          *     possible object is
@@ -488,7 +495,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the formatNamespace property.
+         * Définit la valeur de la propriété formatNamespace.
          * 
          * @param value
          *     allowed object is
@@ -500,7 +507,7 @@ public class DurationType {
         }
 
         /**
-         * Gets the value of the formatLanguage property.
+         * Obtient la valeur de la propriété formatLanguage.
          * 
          * @return
          *     possible object is
@@ -512,7 +519,7 @@ public class DurationType {
         }
 
         /**
-         * Sets the value of the formatLanguage property.
+         * Définit la valeur de la propriété formatLanguage.
          * 
          * @param value
          *     allowed object is

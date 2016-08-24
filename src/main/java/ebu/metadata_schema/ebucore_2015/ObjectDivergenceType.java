@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for objectDivergenceType complex type.
+ * <p>Classe Java pour objectDivergenceType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="objectDivergenceType">
@@ -29,15 +30,17 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "objectDivergenceType", propOrder = {
     "value"
 })
-public class ObjectDivergenceType {
+public class ObjectDivergenceType implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected float value;
     @XmlAttribute(name = "azimuthRange")
     protected java.lang.Float azimuthRange;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public float getValue() {
@@ -45,7 +48,7 @@ public class ObjectDivergenceType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(float value) {
@@ -53,7 +56,7 @@ public class ObjectDivergenceType {
     }
 
     /**
-     * Gets the value of the azimuthRange property.
+     * Obtient la valeur de la propriété azimuthRange.
      * 
      * @return
      *     possible object is
@@ -65,7 +68,7 @@ public class ObjectDivergenceType {
     }
 
     /**
-     * Sets the value of the azimuthRange property.
+     * Définit la valeur de la propriété azimuthRange.
      * 
      * @param value
      *     allowed object is

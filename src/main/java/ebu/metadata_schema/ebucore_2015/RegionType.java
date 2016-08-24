@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -16,9 +18,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *  A copmplexType to define a region as a country and / or one or more
  * 				regions (e.g. administrative regions or states) within a country. 
  * 
- * <p>Java class for regionType complex type.
+ * <p>Classe Java pour regionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="regionType">
@@ -54,15 +56,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "regionType", propOrder = {
     "country",
-    "countryRegion"
+    "countryRegions"
 })
-public class RegionType {
+public class RegionType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     protected RegionType.Country country;
-    protected List<RegionType.CountryRegion> countryRegion;
+    @XmlElement(name = "countryRegion")
+    protected List<RegionType.CountryRegion> countryRegions;
 
     /**
-     * Gets the value of the country property.
+     * Obtient la valeur de la propriété country.
      * 
      * @return
      *     possible object is
@@ -74,7 +80,7 @@ public class RegionType {
     }
 
     /**
-     * Sets the value of the country property.
+     * Définit la valeur de la propriété country.
      * 
      * @param value
      *     allowed object is
@@ -86,18 +92,18 @@ public class RegionType {
     }
 
     /**
-     * Gets the value of the countryRegion property.
+     * Gets the value of the countryRegions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the countryRegion property.
+     * This is why there is not a <CODE>set</CODE> method for the countryRegions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCountryRegion().add(newItem);
+     *    getCountryRegions().add(newItem);
      * </pre>
      * 
      * 
@@ -107,18 +113,18 @@ public class RegionType {
      * 
      * 
      */
-    public List<RegionType.CountryRegion> getCountryRegion() {
-        if (countryRegion == null) {
-            countryRegion = new ArrayList<>();
+    public List<RegionType.CountryRegion> getCountryRegions() {
+        if (countryRegions == null) {
+            countryRegions = new ArrayList<>();
         }
-        return this.countryRegion;
+        return this.countryRegions;
     }
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -134,8 +140,11 @@ public class RegionType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Country {
+    public static class Country
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -153,7 +162,7 @@ public class RegionType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -165,7 +174,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -177,7 +186,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -189,7 +198,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -201,7 +210,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -213,7 +222,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -225,7 +234,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -237,7 +246,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -249,7 +258,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -261,7 +270,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -273,7 +282,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -285,7 +294,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -300,9 +309,9 @@ public class RegionType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -318,8 +327,11 @@ public class RegionType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class CountryRegion {
+    public static class CountryRegion
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -337,7 +349,7 @@ public class RegionType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -349,7 +361,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -361,7 +373,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -373,7 +385,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -385,7 +397,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -397,7 +409,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -409,7 +421,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -421,7 +433,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -433,7 +445,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -445,7 +457,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -457,7 +469,7 @@ public class RegionType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -469,7 +481,7 @@ public class RegionType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

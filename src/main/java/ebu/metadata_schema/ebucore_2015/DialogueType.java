@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for dialogueType complex type.
+ * <p>Classe Java pour dialogueType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="dialogueType">
@@ -31,8 +32,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "dialogueType", propOrder = {
     "value"
 })
-public class DialogueType {
+public class DialogueType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlValue
     protected int value;
     @XmlAttribute(name = "nonDialogueContentKind")
@@ -43,7 +47,7 @@ public class DialogueType {
     protected Integer mixedContentKind;
 
     /**
-     * Gets the value of the value property.
+     * Obtient la valeur de la propriété value.
      * 
      */
     public int getValue() {
@@ -51,7 +55,7 @@ public class DialogueType {
     }
 
     /**
-     * Sets the value of the value property.
+     * Définit la valeur de la propriété value.
      * 
      */
     public void setValue(int value) {
@@ -59,7 +63,7 @@ public class DialogueType {
     }
 
     /**
-     * Gets the value of the nonDialogueContentKind property.
+     * Obtient la valeur de la propriété nonDialogueContentKind.
      * 
      * @return
      *     possible object is
@@ -71,7 +75,7 @@ public class DialogueType {
     }
 
     /**
-     * Sets the value of the nonDialogueContentKind property.
+     * Définit la valeur de la propriété nonDialogueContentKind.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +87,7 @@ public class DialogueType {
     }
 
     /**
-     * Gets the value of the dialogueContentKind property.
+     * Obtient la valeur de la propriété dialogueContentKind.
      * 
      * @return
      *     possible object is
@@ -95,7 +99,7 @@ public class DialogueType {
     }
 
     /**
-     * Sets the value of the dialogueContentKind property.
+     * Définit la valeur de la propriété dialogueContentKind.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +111,7 @@ public class DialogueType {
     }
 
     /**
-     * Gets the value of the mixedContentKind property.
+     * Obtient la valeur de la propriété mixedContentKind.
      * 
      * @return
      *     possible object is
@@ -119,7 +123,7 @@ public class DialogueType {
     }
 
     /**
-     * Sets the value of the mixedContentKind property.
+     * Définit la valeur de la propriété mixedContentKind.
      * 
      * @param value
      *     allowed object is

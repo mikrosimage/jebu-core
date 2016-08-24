@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -17,9 +19,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * A container with all definitions related to the audioContents and
  * 				associated components contained in the material.
  * 
- * <p>Java class for audioFormatExtendedType complex type.
+ * <p>Classe Java pour audioFormatExtendedType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="audioFormatExtendedType">
@@ -47,27 +49,39 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "audioFormatExtendedType", propOrder = {
-    "audioProgramme",
-    "audioContent",
-    "audioObject",
-    "audioPackFormat",
-    "audioChannelFormat",
-    "audioBlockFormat",
-    "audioStreamFormat",
-    "audioTrackFormat",
-    "audioTrackUID"
+    "audioProgrammes",
+    "audioContents",
+    "audioObjects",
+    "audioPackFormats",
+    "audioChannelFormats",
+    "audioBlockFormats",
+    "audioStreamFormats",
+    "audioTrackFormats",
+    "audioTrackUIDs"
 })
-public class AudioFormatExtendedType {
+public class AudioFormatExtendedType
+    implements Serializable
+{
 
-    protected List<AudioProgrammeType> audioProgramme;
-    protected List<AudioContentType> audioContent;
-    protected List<AudioObjectType> audioObject;
-    protected List<AudioPackFormatType> audioPackFormat;
-    protected List<AudioChannelFormatType> audioChannelFormat;
-    protected List<AudioBlockFormatType> audioBlockFormat;
-    protected List<AudioStreamFormatType> audioStreamFormat;
-    protected List<AudioTrackFormatType> audioTrackFormat;
-    protected List<AudioTrackUIDType> audioTrackUID;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "audioProgramme")
+    protected List<AudioProgramme> audioProgrammes;
+    @XmlElement(name = "audioContent")
+    protected List<AudioContent> audioContents;
+    @XmlElement(name = "audioObject")
+    protected List<AudioObject> audioObjects;
+    @XmlElement(name = "audioPackFormat")
+    protected List<AudioPackFormat> audioPackFormats;
+    @XmlElement(name = "audioChannelFormat")
+    protected List<AudioChannelFormat> audioChannelFormats;
+    @XmlElement(name = "audioBlockFormat")
+    protected List<AudioBlockFormat> audioBlockFormats;
+    @XmlElement(name = "audioStreamFormat")
+    protected List<AudioStreamFormat> audioStreamFormats;
+    @XmlElement(name = "audioTrackFormat")
+    protected List<AudioTrackFormat> audioTrackFormats;
+    @XmlElement(name = "audioTrackUID")
+    protected List<AudioTrackUID> audioTrackUIDs;
     @XmlAttribute(name = "audioFormatExtendedID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -77,270 +91,270 @@ public class AudioFormatExtendedType {
     protected java.lang.String audioFormatExtendedName;
 
     /**
-     * One set of content associated with the	material.Gets the value of the audioProgramme property.
+     * One set of content associated with the	material.Gets the value of the audioProgrammes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioProgramme property.
+     * This is why there is not a <CODE>set</CODE> method for the audioProgrammes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioProgramme().add(newItem);
+     *    getAudioProgrammes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioProgrammeType }
+     * {@link AudioProgramme }
      * 
      * 
      */
-    public List<AudioProgrammeType> getAudioProgramme() {
-        if (audioProgramme == null) {
-            audioProgramme = new ArrayList<>();
+    public List<AudioProgramme> getAudioProgrammes() {
+        if (audioProgrammes == null) {
+            audioProgrammes = new ArrayList<>();
         }
-        return this.audioProgramme;
+        return this.audioProgrammes;
     }
 
     /**
      * One or more audioContents associated with an audioProgramme.
-     * 						audioContent refers to an audioObject which contains the audio and its format description.Gets the value of the audioContent property.
+     * 						audioContent refers to an audioObject which contains the audio and its format description.Gets the value of the audioContents property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioContent property.
+     * This is why there is not a <CODE>set</CODE> method for the audioContents property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioContent().add(newItem);
+     *    getAudioContents().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioContentType }
+     * {@link AudioContent }
      * 
      * 
      */
-    public List<AudioContentType> getAudioContent() {
-        if (audioContent == null) {
-            audioContent = new ArrayList<>();
+    public List<AudioContent> getAudioContents() {
+        if (audioContents == null) {
+            audioContents = new ArrayList<>();
         }
-        return this.audioContent;
+        return this.audioContents;
     }
 
     /**
-     * A time limited (if required) set of audio tracks with a format defined by audioPackFormat.Gets the value of the audioObject property.
+     * A time limited (if required) set of audio tracks with a format defined by audioPackFormat.Gets the value of the audioObjects property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioObject property.
+     * This is why there is not a <CODE>set</CODE> method for the audioObjects property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioObject().add(newItem);
+     *    getAudioObjects().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioObjectType }
+     * {@link AudioObject }
      * 
      * 
      */
-    public List<AudioObjectType> getAudioObject() {
-        if (audioObject == null) {
-            audioObject = new ArrayList<>();
+    public List<AudioObject> getAudioObjects() {
+        if (audioObjects == null) {
+            audioObjects = new ArrayList<>();
         }
-        return this.audioObject;
+        return this.audioObjects;
     }
 
     /**
-     * A set of audioChannels that belong together.Gets the value of the audioPackFormat property.
+     * A set of audioChannels that belong together.Gets the value of the audioPackFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioPackFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the audioPackFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioPackFormat().add(newItem);
+     *    getAudioPackFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioPackFormatType }
+     * {@link AudioPackFormat }
      * 
      * 
      */
-    public List<AudioPackFormatType> getAudioPackFormat() {
-        if (audioPackFormat == null) {
-            audioPackFormat = new ArrayList<>();
+    public List<AudioPackFormat> getAudioPackFormats() {
+        if (audioPackFormats == null) {
+            audioPackFormats = new ArrayList<>();
         }
-        return this.audioPackFormat;
+        return this.audioPackFormats;
     }
 
     /**
-     * A single sequence of audio samples.Gets the value of the audioChannelFormat property.
+     * A single sequence of audio samples.Gets the value of the audioChannelFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioChannelFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the audioChannelFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioChannelFormat().add(newItem);
+     *    getAudioChannelFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioChannelFormatType }
+     * {@link AudioChannelFormat }
      * 
      * 
      */
-    public List<AudioChannelFormatType> getAudioChannelFormat() {
-        if (audioChannelFormat == null) {
-            audioChannelFormat = new ArrayList<>();
+    public List<AudioChannelFormat> getAudioChannelFormats() {
+        if (audioChannelFormats == null) {
+            audioChannelFormats = new ArrayList<>();
         }
-        return this.audioChannelFormat;
+        return this.audioChannelFormats;
     }
 
     /**
-     * A division of an audioChannel in time.Gets the value of the audioBlockFormat property.
+     * A division of an audioChannel in time.Gets the value of the audioBlockFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioBlockFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the audioBlockFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioBlockFormat().add(newItem);
+     *    getAudioBlockFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioBlockFormatType }
+     * {@link AudioBlockFormat }
      * 
      * 
      */
-    public List<AudioBlockFormatType> getAudioBlockFormat() {
-        if (audioBlockFormat == null) {
-            audioBlockFormat = new ArrayList<>();
+    public List<AudioBlockFormat> getAudioBlockFormats() {
+        if (audioBlockFormats == null) {
+            audioBlockFormats = new ArrayList<>();
         }
-        return this.audioBlockFormat;
+        return this.audioBlockFormats;
     }
 
     /**
      *  A combination of one or more tracks required to represent a
-     * 						channel, an object, or a group.Gets the value of the audioStreamFormat property.
+     * 						channel, an object, or a group.Gets the value of the audioStreamFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioStreamFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the audioStreamFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioStreamFormat().add(newItem);
+     *    getAudioStreamFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioStreamFormatType }
+     * {@link AudioStreamFormat }
      * 
      * 
      */
-    public List<AudioStreamFormatType> getAudioStreamFormat() {
-        if (audioStreamFormat == null) {
-            audioStreamFormat = new ArrayList<>();
+    public List<AudioStreamFormat> getAudioStreamFormats() {
+        if (audioStreamFormats == null) {
+            audioStreamFormats = new ArrayList<>();
         }
-        return this.audioStreamFormat;
+        return this.audioStreamFormats;
     }
 
     /**
-     * A single set of samples of data in the storage medium.Gets the value of the audioTrackFormat property.
+     * A single set of samples of data in the storage medium.Gets the value of the audioTrackFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioTrackFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the audioTrackFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioTrackFormat().add(newItem);
+     *    getAudioTrackFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioTrackFormatType }
+     * {@link AudioTrackFormat }
      * 
      * 
      */
-    public List<AudioTrackFormatType> getAudioTrackFormat() {
-        if (audioTrackFormat == null) {
-            audioTrackFormat = new ArrayList<>();
+    public List<AudioTrackFormat> getAudioTrackFormats() {
+        if (audioTrackFormats == null) {
+            audioTrackFormats = new ArrayList<>();
         }
-        return this.audioTrackFormat;
+        return this.audioTrackFormats;
     }
 
     /**
-     * The UID of a track in the file. Gets the value of the audioTrackUID property.
+     * The UID of a track in the file. Gets the value of the audioTrackUIDs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioTrackUID property.
+     * This is why there is not a <CODE>set</CODE> method for the audioTrackUIDs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioTrackUID().add(newItem);
+     *    getAudioTrackUIDs().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AudioTrackUIDType }
+     * {@link AudioTrackUID }
      * 
      * 
      */
-    public List<AudioTrackUIDType> getAudioTrackUID() {
-        if (audioTrackUID == null) {
-            audioTrackUID = new ArrayList<>();
+    public List<AudioTrackUID> getAudioTrackUIDs() {
+        if (audioTrackUIDs == null) {
+            audioTrackUIDs = new ArrayList<>();
         }
-        return this.audioTrackUID;
+        return this.audioTrackUIDs;
     }
 
     /**
-     * Gets the value of the audioFormatExtendedID property.
+     * Obtient la valeur de la propriété audioFormatExtendedID.
      * 
      * @return
      *     possible object is
@@ -352,7 +366,7 @@ public class AudioFormatExtendedType {
     }
 
     /**
-     * Sets the value of the audioFormatExtendedID property.
+     * Définit la valeur de la propriété audioFormatExtendedID.
      * 
      * @param value
      *     allowed object is
@@ -364,7 +378,7 @@ public class AudioFormatExtendedType {
     }
 
     /**
-     * Gets the value of the audioFormatExtendedName property.
+     * Obtient la valeur de la propriété audioFormatExtendedName.
      * 
      * @return
      *     possible object is
@@ -376,7 +390,7 @@ public class AudioFormatExtendedType {
     }
 
     /**
-     * Sets the value of the audioFormatExtendedName property.
+     * Définit la valeur de la propriété audioFormatExtendedName.
      * 
      * @param value
      *     allowed object is

@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for matrixType complex type.
+ * <p>Classe Java pour matrixType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="matrixType">
@@ -30,26 +31,28 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "matrixType", propOrder = {
-    "coefficient"
+    "coefficients"
 })
-public class MatrixType {
+public class MatrixType implements Serializable
+{
 
-    @XmlElement(required = true)
-    protected List<CoefficientType> coefficient;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "coefficient", required = true)
+    protected List<CoefficientType> coefficients;
 
     /**
-     * Gets the value of the coefficient property.
+     * Gets the value of the coefficients property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the coefficient property.
+     * This is why there is not a <CODE>set</CODE> method for the coefficients property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCoefficient().add(newItem);
+     *    getCoefficients().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +62,11 @@ public class MatrixType {
      * 
      * 
      */
-    public List<CoefficientType> getCoefficient() {
-        if (coefficient == null) {
-            coefficient = new ArrayList<>();
+    public List<CoefficientType> getCoefficients() {
+        if (coefficients == null) {
+            coefficients = new ArrayList<>();
         }
-        return this.coefficient;
+        return this.coefficients;
     }
 
 }

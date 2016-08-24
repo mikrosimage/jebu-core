@@ -1,11 +1,13 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
@@ -13,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * To provide information about the publication history.
  * 
- * <p>Java class for planningType complex type.
+ * <p>Classe Java pour planningType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="planningType">
@@ -34,28 +36,32 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "planningType", propOrder = {
-    "publicationEvent"
+    "publicationEvents"
 })
-public class PlanningType {
+public class PlanningType
+    implements Serializable
+{
 
-    protected List<PublicationEventType> publicationEvent;
+    private final static long serialVersionUID = -1L;
+    @XmlElement(name = "publicationEvent")
+    protected List<PublicationEventType> publicationEvents;
     @XmlAttribute(name = "planningId")
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String planningId;
 
     /**
-     * Gets the value of the publicationEvent property.
+     * Gets the value of the publicationEvents property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the publicationEvent property.
+     * This is why there is not a <CODE>set</CODE> method for the publicationEvents property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPublicationEvent().add(newItem);
+     *    getPublicationEvents().add(newItem);
      * </pre>
      * 
      * 
@@ -65,15 +71,15 @@ public class PlanningType {
      * 
      * 
      */
-    public List<PublicationEventType> getPublicationEvent() {
-        if (publicationEvent == null) {
-            publicationEvent = new ArrayList<>();
+    public List<PublicationEventType> getPublicationEvents() {
+        if (publicationEvents == null) {
+            publicationEvents = new ArrayList<>();
         }
-        return this.publicationEvent;
+        return this.publicationEvents;
     }
 
     /**
-     * Gets the value of the planningId property.
+     * Obtient la valeur de la propriété planningId.
      * 
      * @return
      *     possible object is
@@ -85,7 +91,7 @@ public class PlanningType {
     }
 
     /**
-     * Sets the value of the planningId property.
+     * Définit la valeur de la propriété planningId.
      * 
      * @param value
      *     allowed object is

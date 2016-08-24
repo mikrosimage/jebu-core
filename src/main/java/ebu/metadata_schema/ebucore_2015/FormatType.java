@@ -1,7 +1,9 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,6 +16,7 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.purl.dc.elements._1.ElementType;
+import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
 
 
 /**
@@ -24,9 +27,9 @@ import org.purl.dc.elements._1.ElementType;
  * 				drive. Format may be used to determine the software, hardware or other equipment
  * 				needed to display or operate the resource. 
  * 
- * <p>Java class for formatType complex type.
+ * <p>Classe Java pour formatType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="formatType">
@@ -93,80 +96,109 @@ import org.purl.dc.elements._1.ElementType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "formatType", propOrder = {
     "format",
-    "medium",
-    "imageFormat",
-    "videoFormat",
-    "audioFormat",
-    "audioFormatExtended",
-    "containerFormat",
+    "media",
+    "imageFormats",
+    "videoFormats",
+    "audioFormats",
+    "audioFormatExtendeds",
+    "containerFormats",
     "signingFormat",
-    "dataFormat",
-    "timecodeFormat",
-    "metadataFormat",
-    "start",
-    "end",
-    "duration",
+    "dataFormats",
+    "timecodeFormats",
+    "metadataFormats",
+    "starts",
+    "ends",
+    "durations",
     "fileSize",
     "fileName",
-    "mimeType",
-    "locator",
+    "mimeTypes",
+    "locators",
     "hash",
     "overallBitRate",
     "documentFormat",
-    "technicalAttributeString",
-    "technicalAttributeByte",
-    "technicalAttributeShort",
-    "technicalAttributeInteger",
-    "technicalAttributeLong",
-    "technicalAttributeUnsignedByte",
-    "technicalAttributeUnsignedShort",
-    "technicalAttributeUnsignedInteger",
-    "technicalAttributeUnsignedLong",
-    "technicalAttributeBoolean",
-    "technicalAttributeFloat",
-    "technicalAttributeRational",
-    "technicalAttributeUri",
+    "technicalAttributeStrings",
+    "technicalAttributeBytes",
+    "technicalAttributeShorts",
+    "technicalAttributeIntegers",
+    "technicalAttributeLongs",
+    "technicalAttributeUnsignedBytes",
+    "technicalAttributeUnsignedShorts",
+    "technicalAttributeUnsignedIntegers",
+    "technicalAttributeUnsignedLongs",
+    "technicalAttributeBooleen",
+    "technicalAttributeFloats",
+    "technicalAttributeRationals",
+    "technicalAttributeUris",
     "dateCreated",
     "dateModified"
 })
-public class FormatType {
+public class FormatType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
     protected ElementType format;
-    protected List<FormatType.Medium> medium;
-    protected List<ImageFormatType> imageFormat;
-    protected List<VideoFormatType> videoFormat;
-    protected List<AudioFormatType> audioFormat;
-    protected List<AudioFormatExtendedType> audioFormatExtended;
-    protected List<ContainerFormatType> containerFormat;
+    @XmlElement(name = "medium")
+    protected List<FormatType.Medium> media;
+    @XmlElement(name = "imageFormat")
+    protected List<ImageFormatType> imageFormats;
+    @XmlElement(name = "videoFormat")
+    protected List<VideoFormatType> videoFormats;
+    @XmlElement(name = "audioFormat")
+    protected List<AudioFormatType> audioFormats;
+    @XmlElement(name = "audioFormatExtended")
+    protected List<AudioFormatExtendedType> audioFormatExtendeds;
+    @XmlElement(name = "containerFormat")
+    protected List<ContainerFormatType> containerFormats;
     protected SigningFormatType signingFormat;
-    protected List<DataFormatType> dataFormat;
-    protected List<TimecodeFormatType> timecodeFormat;
-    protected List<MetadataFormatType> metadataFormat;
-    protected List<TimeType> start;
-    protected List<TimeType> end;
-    protected List<DurationType> duration;
+    @XmlElement(name = "dataFormat")
+    protected List<DataFormatType> dataFormats;
+    @XmlElement(name = "timecodeFormat")
+    protected List<TimecodeFormatType> timecodeFormats;
+    @XmlElement(name = "metadataFormat")
+    protected List<MetadataFormatType> metadataFormats;
+    @XmlElement(name = "start")
+    protected List<TimeType> starts;
+    @XmlElement(name = "end")
+    protected List<TimeType> ends;
+    @XmlElement(name = "duration")
+    protected List<DurationType> durations;
     protected DimensionType fileSize;
     protected java.lang.String fileName;
-    protected List<FormatType.MimeType> mimeType;
-    protected List<FormatType.Locator> locator;
+    @XmlElement(name = "mimeType")
+    protected List<FormatType.MimeType> mimeTypes;
+    @XmlElement(name = "locator")
+    protected List<FormatType.Locator> locators;
     protected HashType hash;
     protected DimensionType overallBitRate;
     protected DocumentFormatType documentFormat;
-    protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeString;
-    protected List<Int8> technicalAttributeByte;
-    protected List<Int16> technicalAttributeShort;
-    protected List<Int32> technicalAttributeInteger;
-    protected List<Int64> technicalAttributeLong;
-    protected List<UInt8> technicalAttributeUnsignedByte;
-    protected List<UInt16> technicalAttributeUnsignedShort;
-    protected List<UInt32> technicalAttributeUnsignedInteger;
-    protected List<UInt64> technicalAttributeUnsignedLong;
-    protected List<Boolean> technicalAttributeBoolean;
-    protected List<Float> technicalAttributeFloat;
-    @XmlElement(defaultValue = "1")
-    protected List<TechnicalAttributeRationalType> technicalAttributeRational;
-    protected List<TechnicalAttributeUriType> technicalAttributeUri;
+    @XmlElement(name = "technicalAttributeString")
+    protected List<ebu.metadata_schema.ebucore_2015.String> technicalAttributeStrings;
+    @XmlElement(name = "technicalAttributeByte")
+    protected List<Int8> technicalAttributeBytes;
+    @XmlElement(name = "technicalAttributeShort")
+    protected List<Int16> technicalAttributeShorts;
+    @XmlElement(name = "technicalAttributeInteger")
+    protected List<Int32> technicalAttributeIntegers;
+    @XmlElement(name = "technicalAttributeLong")
+    protected List<Int64> technicalAttributeLongs;
+    @XmlElement(name = "technicalAttributeUnsignedByte")
+    protected List<UInt8> technicalAttributeUnsignedBytes;
+    @XmlElement(name = "technicalAttributeUnsignedShort")
+    protected List<UInt16> technicalAttributeUnsignedShorts;
+    @XmlElement(name = "technicalAttributeUnsignedInteger")
+    protected List<UInt32> technicalAttributeUnsignedIntegers;
+    @XmlElement(name = "technicalAttributeUnsignedLong")
+    protected List<UInt64> technicalAttributeUnsignedLongs;
+    @XmlElement(name = "technicalAttributeBoolean")
+    protected List<Boolean> technicalAttributeBooleen;
+    @XmlElement(name = "technicalAttributeFloat")
+    protected List<Float> technicalAttributeFloats;
+    @XmlElement(name = "technicalAttributeRational", defaultValue = "1")
+    protected List<TechnicalAttributeRationalType> technicalAttributeRationals;
+    @XmlElement(name = "technicalAttributeUri")
+    protected List<TechnicalAttributeUriType> technicalAttributeUris;
     protected FormatType.DateCreated dateCreated;
     protected FormatType.DateModified dateModified;
     @XmlAttribute(name = "formatId")
@@ -208,7 +240,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the format property.
+     * Définit la valeur de la propriété format.
      * 
      * @param value
      *     allowed object is
@@ -220,18 +252,18 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the medium property.
+     * Gets the value of the media property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the medium property.
+     * This is why there is not a <CODE>set</CODE> method for the media property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMedium().add(newItem);
+     *    getMedia().add(newItem);
      * </pre>
      * 
      * 
@@ -241,26 +273,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<FormatType.Medium> getMedium() {
-        if (medium == null) {
-            medium = new ArrayList<>();
+    public List<FormatType.Medium> getMedia() {
+        if (media == null) {
+            media = new ArrayList<>();
         }
-        return this.medium;
+        return this.media;
     }
 
     /**
-     * Gets the value of the imageFormat property.
+     * Gets the value of the imageFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the imageFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the imageFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getImageFormat().add(newItem);
+     *    getImageFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -270,26 +302,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<ImageFormatType> getImageFormat() {
-        if (imageFormat == null) {
-            imageFormat = new ArrayList<>();
+    public List<ImageFormatType> getImageFormats() {
+        if (imageFormats == null) {
+            imageFormats = new ArrayList<>();
         }
-        return this.imageFormat;
+        return this.imageFormats;
     }
 
     /**
-     * Gets the value of the videoFormat property.
+     * Gets the value of the videoFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the videoFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getVideoFormat().add(newItem);
+     *    getVideoFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -299,26 +331,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<VideoFormatType> getVideoFormat() {
-        if (videoFormat == null) {
-            videoFormat = new ArrayList<>();
+    public List<VideoFormatType> getVideoFormats() {
+        if (videoFormats == null) {
+            videoFormats = new ArrayList<>();
         }
-        return this.videoFormat;
+        return this.videoFormats;
     }
 
     /**
-     * Gets the value of the audioFormat property.
+     * Gets the value of the audioFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the audioFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioFormat().add(newItem);
+     *    getAudioFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -328,26 +360,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<AudioFormatType> getAudioFormat() {
-        if (audioFormat == null) {
-            audioFormat = new ArrayList<>();
+    public List<AudioFormatType> getAudioFormats() {
+        if (audioFormats == null) {
+            audioFormats = new ArrayList<>();
         }
-        return this.audioFormat;
+        return this.audioFormats;
     }
 
     /**
-     * Gets the value of the audioFormatExtended property.
+     * Gets the value of the audioFormatExtendeds property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioFormatExtended property.
+     * This is why there is not a <CODE>set</CODE> method for the audioFormatExtendeds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAudioFormatExtended().add(newItem);
+     *    getAudioFormatExtendeds().add(newItem);
      * </pre>
      * 
      * 
@@ -357,26 +389,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<AudioFormatExtendedType> getAudioFormatExtended() {
-        if (audioFormatExtended == null) {
-            audioFormatExtended = new ArrayList<>();
+    public List<AudioFormatExtendedType> getAudioFormatExtendeds() {
+        if (audioFormatExtendeds == null) {
+            audioFormatExtendeds = new ArrayList<>();
         }
-        return this.audioFormatExtended;
+        return this.audioFormatExtendeds;
     }
 
     /**
-     * Gets the value of the containerFormat property.
+     * Gets the value of the containerFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the containerFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the containerFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getContainerFormat().add(newItem);
+     *    getContainerFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -386,15 +418,15 @@ public class FormatType {
      * 
      * 
      */
-    public List<ContainerFormatType> getContainerFormat() {
-        if (containerFormat == null) {
-            containerFormat = new ArrayList<>();
+    public List<ContainerFormatType> getContainerFormats() {
+        if (containerFormats == null) {
+            containerFormats = new ArrayList<>();
         }
-        return this.containerFormat;
+        return this.containerFormats;
     }
 
     /**
-     * Gets the value of the signingFormat property.
+     * Obtient la valeur de la propriété signingFormat.
      * 
      * @return
      *     possible object is
@@ -406,7 +438,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the signingFormat property.
+     * Définit la valeur de la propriété signingFormat.
      * 
      * @param value
      *     allowed object is
@@ -418,18 +450,18 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the dataFormat property.
+     * Gets the value of the dataFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the dataFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDataFormat().add(newItem);
+     *    getDataFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -439,26 +471,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<DataFormatType> getDataFormat() {
-        if (dataFormat == null) {
-            dataFormat = new ArrayList<>();
+    public List<DataFormatType> getDataFormats() {
+        if (dataFormats == null) {
+            dataFormats = new ArrayList<>();
         }
-        return this.dataFormat;
+        return this.dataFormats;
     }
 
     /**
-     * Gets the value of the timecodeFormat property.
+     * Gets the value of the timecodeFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the timecodeFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the timecodeFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTimecodeFormat().add(newItem);
+     *    getTimecodeFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -468,26 +500,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<TimecodeFormatType> getTimecodeFormat() {
-        if (timecodeFormat == null) {
-            timecodeFormat = new ArrayList<>();
+    public List<TimecodeFormatType> getTimecodeFormats() {
+        if (timecodeFormats == null) {
+            timecodeFormats = new ArrayList<>();
         }
-        return this.timecodeFormat;
+        return this.timecodeFormats;
     }
 
     /**
-     * Gets the value of the metadataFormat property.
+     * Gets the value of the metadataFormats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the metadataFormat property.
+     * This is why there is not a <CODE>set</CODE> method for the metadataFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMetadataFormat().add(newItem);
+     *    getMetadataFormats().add(newItem);
      * </pre>
      * 
      * 
@@ -497,26 +529,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<MetadataFormatType> getMetadataFormat() {
-        if (metadataFormat == null) {
-            metadataFormat = new ArrayList<>();
+    public List<MetadataFormatType> getMetadataFormats() {
+        if (metadataFormats == null) {
+            metadataFormats = new ArrayList<>();
         }
-        return this.metadataFormat;
+        return this.metadataFormats;
     }
 
     /**
-     * Gets the value of the start property.
+     * Gets the value of the starts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the start property.
+     * This is why there is not a <CODE>set</CODE> method for the starts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStart().add(newItem);
+     *    getStarts().add(newItem);
      * </pre>
      * 
      * 
@@ -526,26 +558,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<TimeType> getStart() {
-        if (start == null) {
-            start = new ArrayList<>();
+    public List<TimeType> getStarts() {
+        if (starts == null) {
+            starts = new ArrayList<>();
         }
-        return this.start;
+        return this.starts;
     }
 
     /**
-     * Gets the value of the end property.
+     * Gets the value of the ends property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the end property.
+     * This is why there is not a <CODE>set</CODE> method for the ends property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEnd().add(newItem);
+     *    getEnds().add(newItem);
      * </pre>
      * 
      * 
@@ -555,26 +587,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<TimeType> getEnd() {
-        if (end == null) {
-            end = new ArrayList<>();
+    public List<TimeType> getEnds() {
+        if (ends == null) {
+            ends = new ArrayList<>();
         }
-        return this.end;
+        return this.ends;
     }
 
     /**
-     * Gets the value of the duration property.
+     * Gets the value of the durations property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the duration property.
+     * This is why there is not a <CODE>set</CODE> method for the durations property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDuration().add(newItem);
+     *    getDurations().add(newItem);
      * </pre>
      * 
      * 
@@ -584,15 +616,15 @@ public class FormatType {
      * 
      * 
      */
-    public List<DurationType> getDuration() {
-        if (duration == null) {
-            duration = new ArrayList<>();
+    public List<DurationType> getDurations() {
+        if (durations == null) {
+            durations = new ArrayList<>();
         }
-        return this.duration;
+        return this.durations;
     }
 
     /**
-     * Gets the value of the fileSize property.
+     * Obtient la valeur de la propriété fileSize.
      * 
      * @return
      *     possible object is
@@ -604,7 +636,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the fileSize property.
+     * Définit la valeur de la propriété fileSize.
      * 
      * @param value
      *     allowed object is
@@ -616,7 +648,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the fileName property.
+     * Obtient la valeur de la propriété fileName.
      * 
      * @return
      *     possible object is
@@ -628,7 +660,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the fileName property.
+     * Définit la valeur de la propriété fileName.
      * 
      * @param value
      *     allowed object is
@@ -640,18 +672,18 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the mimeType property.
+     * Gets the value of the mimeTypes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mimeType property.
+     * This is why there is not a <CODE>set</CODE> method for the mimeTypes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMimeType().add(newItem);
+     *    getMimeTypes().add(newItem);
      * </pre>
      * 
      * 
@@ -661,26 +693,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<FormatType.MimeType> getMimeType() {
-        if (mimeType == null) {
-            mimeType = new ArrayList<>();
+    public List<FormatType.MimeType> getMimeTypes() {
+        if (mimeTypes == null) {
+            mimeTypes = new ArrayList<>();
         }
-        return this.mimeType;
+        return this.mimeTypes;
     }
 
     /**
-     * Gets the value of the locator property.
+     * Gets the value of the locators property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the locator property.
+     * This is why there is not a <CODE>set</CODE> method for the locators property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLocator().add(newItem);
+     *    getLocators().add(newItem);
      * </pre>
      * 
      * 
@@ -690,15 +722,15 @@ public class FormatType {
      * 
      * 
      */
-    public List<FormatType.Locator> getLocator() {
-        if (locator == null) {
-            locator = new ArrayList<>();
+    public List<FormatType.Locator> getLocators() {
+        if (locators == null) {
+            locators = new ArrayList<>();
         }
-        return this.locator;
+        return this.locators;
     }
 
     /**
-     * Gets the value of the hash property.
+     * Obtient la valeur de la propriété hash.
      * 
      * @return
      *     possible object is
@@ -710,7 +742,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the hash property.
+     * Définit la valeur de la propriété hash.
      * 
      * @param value
      *     allowed object is
@@ -722,7 +754,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the overallBitRate property.
+     * Obtient la valeur de la propriété overallBitRate.
      * 
      * @return
      *     possible object is
@@ -734,7 +766,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the overallBitRate property.
+     * Définit la valeur de la propriété overallBitRate.
      * 
      * @param value
      *     allowed object is
@@ -746,7 +778,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the documentFormat property.
+     * Obtient la valeur de la propriété documentFormat.
      * 
      * @return
      *     possible object is
@@ -758,7 +790,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the documentFormat property.
+     * Définit la valeur de la propriété documentFormat.
      * 
      * @param value
      *     allowed object is
@@ -770,18 +802,18 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the technicalAttributeString property.
+     * Gets the value of the technicalAttributeStrings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeString property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeStrings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeString().add(newItem);
+     *    getTechnicalAttributeStrings().add(newItem);
      * </pre>
      * 
      * 
@@ -791,26 +823,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeString() {
-        if (technicalAttributeString == null) {
-            technicalAttributeString = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.String> getTechnicalAttributeStrings() {
+        if (technicalAttributeStrings == null) {
+            technicalAttributeStrings = new ArrayList<>();
         }
-        return this.technicalAttributeString;
+        return this.technicalAttributeStrings;
     }
 
     /**
-     * Gets the value of the technicalAttributeByte property.
+     * Gets the value of the technicalAttributeBytes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeByte property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBytes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeByte().add(newItem);
+     *    getTechnicalAttributeBytes().add(newItem);
      * </pre>
      * 
      * 
@@ -820,26 +852,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<Int8> getTechnicalAttributeByte() {
-        if (technicalAttributeByte == null) {
-            technicalAttributeByte = new ArrayList<>();
+    public List<Int8> getTechnicalAttributeBytes() {
+        if (technicalAttributeBytes == null) {
+            technicalAttributeBytes = new ArrayList<>();
         }
-        return this.technicalAttributeByte;
+        return this.technicalAttributeBytes;
     }
 
     /**
-     * Gets the value of the technicalAttributeShort property.
+     * Gets the value of the technicalAttributeShorts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShort property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeShorts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeShort().add(newItem);
+     *    getTechnicalAttributeShorts().add(newItem);
      * </pre>
      * 
      * 
@@ -849,26 +881,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<Int16> getTechnicalAttributeShort() {
-        if (technicalAttributeShort == null) {
-            technicalAttributeShort = new ArrayList<>();
+    public List<Int16> getTechnicalAttributeShorts() {
+        if (technicalAttributeShorts == null) {
+            technicalAttributeShorts = new ArrayList<>();
         }
-        return this.technicalAttributeShort;
+        return this.technicalAttributeShorts;
     }
 
     /**
-     * Gets the value of the technicalAttributeInteger property.
+     * Gets the value of the technicalAttributeIntegers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeInteger property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeIntegers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeInteger().add(newItem);
+     *    getTechnicalAttributeIntegers().add(newItem);
      * </pre>
      * 
      * 
@@ -878,26 +910,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<Int32> getTechnicalAttributeInteger() {
-        if (technicalAttributeInteger == null) {
-            technicalAttributeInteger = new ArrayList<>();
+    public List<Int32> getTechnicalAttributeIntegers() {
+        if (technicalAttributeIntegers == null) {
+            technicalAttributeIntegers = new ArrayList<>();
         }
-        return this.technicalAttributeInteger;
+        return this.technicalAttributeIntegers;
     }
 
     /**
-     * Gets the value of the technicalAttributeLong property.
+     * Gets the value of the technicalAttributeLongs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLong property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeLongs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeLong().add(newItem);
+     *    getTechnicalAttributeLongs().add(newItem);
      * </pre>
      * 
      * 
@@ -907,26 +939,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<Int64> getTechnicalAttributeLong() {
-        if (technicalAttributeLong == null) {
-            technicalAttributeLong = new ArrayList<>();
+    public List<Int64> getTechnicalAttributeLongs() {
+        if (technicalAttributeLongs == null) {
+            technicalAttributeLongs = new ArrayList<>();
         }
-        return this.technicalAttributeLong;
+        return this.technicalAttributeLongs;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedByte property.
+     * Gets the value of the technicalAttributeUnsignedBytes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedByte property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedBytes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedByte().add(newItem);
+     *    getTechnicalAttributeUnsignedBytes().add(newItem);
      * </pre>
      * 
      * 
@@ -936,26 +968,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<UInt8> getTechnicalAttributeUnsignedByte() {
-        if (technicalAttributeUnsignedByte == null) {
-            technicalAttributeUnsignedByte = new ArrayList<>();
+    public List<UInt8> getTechnicalAttributeUnsignedBytes() {
+        if (technicalAttributeUnsignedBytes == null) {
+            technicalAttributeUnsignedBytes = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedByte;
+        return this.technicalAttributeUnsignedBytes;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedShort property.
+     * Gets the value of the technicalAttributeUnsignedShorts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShort property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedShorts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedShort().add(newItem);
+     *    getTechnicalAttributeUnsignedShorts().add(newItem);
      * </pre>
      * 
      * 
@@ -965,26 +997,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<UInt16> getTechnicalAttributeUnsignedShort() {
-        if (technicalAttributeUnsignedShort == null) {
-            technicalAttributeUnsignedShort = new ArrayList<>();
+    public List<UInt16> getTechnicalAttributeUnsignedShorts() {
+        if (technicalAttributeUnsignedShorts == null) {
+            technicalAttributeUnsignedShorts = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedShort;
+        return this.technicalAttributeUnsignedShorts;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedInteger property.
+     * Gets the value of the technicalAttributeUnsignedIntegers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedInteger property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedIntegers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedInteger().add(newItem);
+     *    getTechnicalAttributeUnsignedIntegers().add(newItem);
      * </pre>
      * 
      * 
@@ -994,26 +1026,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<UInt32> getTechnicalAttributeUnsignedInteger() {
-        if (technicalAttributeUnsignedInteger == null) {
-            technicalAttributeUnsignedInteger = new ArrayList<>();
+    public List<UInt32> getTechnicalAttributeUnsignedIntegers() {
+        if (technicalAttributeUnsignedIntegers == null) {
+            technicalAttributeUnsignedIntegers = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedInteger;
+        return this.technicalAttributeUnsignedIntegers;
     }
 
     /**
-     * Gets the value of the technicalAttributeUnsignedLong property.
+     * Gets the value of the technicalAttributeUnsignedLongs property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLong property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUnsignedLongs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUnsignedLong().add(newItem);
+     *    getTechnicalAttributeUnsignedLongs().add(newItem);
      * </pre>
      * 
      * 
@@ -1023,26 +1055,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<UInt64> getTechnicalAttributeUnsignedLong() {
-        if (technicalAttributeUnsignedLong == null) {
-            technicalAttributeUnsignedLong = new ArrayList<>();
+    public List<UInt64> getTechnicalAttributeUnsignedLongs() {
+        if (technicalAttributeUnsignedLongs == null) {
+            technicalAttributeUnsignedLongs = new ArrayList<>();
         }
-        return this.technicalAttributeUnsignedLong;
+        return this.technicalAttributeUnsignedLongs;
     }
 
     /**
-     * Gets the value of the technicalAttributeBoolean property.
+     * Gets the value of the technicalAttributeBooleen property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBoolean property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeBooleen property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeBoolean().add(newItem);
+     *    getTechnicalAttributeBooleen().add(newItem);
      * </pre>
      * 
      * 
@@ -1052,26 +1084,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<Boolean> getTechnicalAttributeBoolean() {
-        if (technicalAttributeBoolean == null) {
-            technicalAttributeBoolean = new ArrayList<>();
+    public List<Boolean> getTechnicalAttributeBooleen() {
+        if (technicalAttributeBooleen == null) {
+            technicalAttributeBooleen = new ArrayList<>();
         }
-        return this.technicalAttributeBoolean;
+        return this.technicalAttributeBooleen;
     }
 
     /**
-     * Gets the value of the technicalAttributeFloat property.
+     * Gets the value of the technicalAttributeFloats property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloat property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeFloats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeFloat().add(newItem);
+     *    getTechnicalAttributeFloats().add(newItem);
      * </pre>
      * 
      * 
@@ -1081,26 +1113,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<Float> getTechnicalAttributeFloat() {
-        if (technicalAttributeFloat == null) {
-            technicalAttributeFloat = new ArrayList<>();
+    public List<Float> getTechnicalAttributeFloats() {
+        if (technicalAttributeFloats == null) {
+            technicalAttributeFloats = new ArrayList<>();
         }
-        return this.technicalAttributeFloat;
+        return this.technicalAttributeFloats;
     }
 
     /**
-     * Gets the value of the technicalAttributeRational property.
+     * Gets the value of the technicalAttributeRationals property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRational property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeRationals property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeRational().add(newItem);
+     *    getTechnicalAttributeRationals().add(newItem);
      * </pre>
      * 
      * 
@@ -1110,26 +1142,26 @@ public class FormatType {
      * 
      * 
      */
-    public List<TechnicalAttributeRationalType> getTechnicalAttributeRational() {
-        if (technicalAttributeRational == null) {
-            technicalAttributeRational = new ArrayList<>();
+    public List<TechnicalAttributeRationalType> getTechnicalAttributeRationals() {
+        if (technicalAttributeRationals == null) {
+            technicalAttributeRationals = new ArrayList<>();
         }
-        return this.technicalAttributeRational;
+        return this.technicalAttributeRationals;
     }
 
     /**
-     * Gets the value of the technicalAttributeUri property.
+     * Gets the value of the technicalAttributeUris property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUri property.
+     * This is why there is not a <CODE>set</CODE> method for the technicalAttributeUris property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getTechnicalAttributeUri().add(newItem);
+     *    getTechnicalAttributeUris().add(newItem);
      * </pre>
      * 
      * 
@@ -1139,15 +1171,15 @@ public class FormatType {
      * 
      * 
      */
-    public List<TechnicalAttributeUriType> getTechnicalAttributeUri() {
-        if (technicalAttributeUri == null) {
-            technicalAttributeUri = new ArrayList<>();
+    public List<TechnicalAttributeUriType> getTechnicalAttributeUris() {
+        if (technicalAttributeUris == null) {
+            technicalAttributeUris = new ArrayList<>();
         }
-        return this.technicalAttributeUri;
+        return this.technicalAttributeUris;
     }
 
     /**
-     * Gets the value of the dateCreated property.
+     * Obtient la valeur de la propriété dateCreated.
      * 
      * @return
      *     possible object is
@@ -1159,7 +1191,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the dateCreated property.
+     * Définit la valeur de la propriété dateCreated.
      * 
      * @param value
      *     allowed object is
@@ -1171,7 +1203,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the dateModified property.
+     * Obtient la valeur de la propriété dateModified.
      * 
      * @return
      *     possible object is
@@ -1183,7 +1215,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the dateModified property.
+     * Définit la valeur de la propriété dateModified.
      * 
      * @param value
      *     allowed object is
@@ -1195,7 +1227,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the formatId property.
+     * Obtient la valeur de la propriété formatId.
      * 
      * @return
      *     possible object is
@@ -1207,7 +1239,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the formatId property.
+     * Définit la valeur de la propriété formatId.
      * 
      * @param value
      *     allowed object is
@@ -1219,7 +1251,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the formatVersionId property.
+     * Obtient la valeur de la propriété formatVersionId.
      * 
      * @return
      *     possible object is
@@ -1231,7 +1263,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the formatVersionId property.
+     * Définit la valeur de la propriété formatVersionId.
      * 
      * @param value
      *     allowed object is
@@ -1243,7 +1275,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the formatName property.
+     * Obtient la valeur de la propriété formatName.
      * 
      * @return
      *     possible object is
@@ -1255,7 +1287,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the formatName property.
+     * Définit la valeur de la propriété formatName.
      * 
      * @param value
      *     allowed object is
@@ -1267,7 +1299,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the formatDefinition property.
+     * Obtient la valeur de la propriété formatDefinition.
      * 
      * @return
      *     possible object is
@@ -1279,7 +1311,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the formatDefinition property.
+     * Définit la valeur de la propriété formatDefinition.
      * 
      * @param value
      *     allowed object is
@@ -1291,7 +1323,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -1303,7 +1335,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -1315,7 +1347,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -1327,7 +1359,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -1339,7 +1371,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -1351,7 +1383,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -1363,7 +1395,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -1375,7 +1407,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -1387,7 +1419,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -1399,7 +1431,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -1411,7 +1443,7 @@ public class FormatType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -1423,7 +1455,7 @@ public class FormatType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -1436,222 +1468,9 @@ public class FormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}dateGroup"/>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "")
-    public static class DateCreated {
-
-        @XmlAttribute(name = "startYear")
-        @XmlSchemaType(name = "gYear")
-        protected XMLGregorianCalendar startYear;
-        @XmlAttribute(name = "startDate")
-        @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
-        @XmlAttribute(name = "startTime")
-        @XmlSchemaType(name = "time")
-        protected XMLGregorianCalendar startTime;
-        @XmlAttribute(name = "endYear")
-        @XmlSchemaType(name = "gYear")
-        protected XMLGregorianCalendar endYear;
-        @XmlAttribute(name = "endDate")
-        @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
-        @XmlAttribute(name = "endTime")
-        @XmlSchemaType(name = "time")
-        protected XMLGregorianCalendar endTime;
-        @XmlAttribute(name = "period")
-        protected java.lang.String period;
-
-        /**
-         * Gets the value of the startYear property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getStartYear() {
-            return startYear;
-        }
-
-        /**
-         * Sets the value of the startYear property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setStartYear(XMLGregorianCalendar value) {
-            this.startYear = value;
-        }
-
-        /**
-         * Gets the value of the startDate property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getStartDate() {
-            return startDate;
-        }
-
-        /**
-         * Sets the value of the startDate property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setStartDate(XMLGregorianCalendar value) {
-            this.startDate = value;
-        }
-
-        /**
-         * Gets the value of the startTime property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getStartTime() {
-            return startTime;
-        }
-
-        /**
-         * Sets the value of the startTime property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setStartTime(XMLGregorianCalendar value) {
-            this.startTime = value;
-        }
-
-        /**
-         * Gets the value of the endYear property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getEndYear() {
-            return endYear;
-        }
-
-        /**
-         * Sets the value of the endYear property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setEndYear(XMLGregorianCalendar value) {
-            this.endYear = value;
-        }
-
-        /**
-         * Gets the value of the endDate property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getEndDate() {
-            return endDate;
-        }
-
-        /**
-         * Sets the value of the endDate property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setEndDate(XMLGregorianCalendar value) {
-            this.endDate = value;
-        }
-
-        /**
-         * Gets the value of the endTime property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getEndTime() {
-            return endTime;
-        }
-
-        /**
-         * Sets the value of the endTime property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setEndTime(XMLGregorianCalendar value) {
-            this.endTime = value;
-        }
-
-        /**
-         * Gets the value of the period property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link java.lang.String }
-         *     
-         */
-        public java.lang.String getPeriod() {
-            return period;
-        }
-
-        /**
-         * Sets the value of the period property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link java.lang.String }
-         *     
-         */
-        public void setPeriod(java.lang.String value) {
-            this.period = value;
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1667,14 +1486,18 @@ public class FormatType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class DateModified {
+    public static class DateCreated
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "startYear")
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar startYear;
         @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
+        protected Date startDate;
         @XmlAttribute(name = "startTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar startTime;
@@ -1682,8 +1505,9 @@ public class FormatType {
         @XmlSchemaType(name = "gYear")
         protected XMLGregorianCalendar endYear;
         @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar endDate;
+        protected Date endDate;
         @XmlAttribute(name = "endTime")
         @XmlSchemaType(name = "time")
         protected XMLGregorianCalendar endTime;
@@ -1691,7 +1515,7 @@ public class FormatType {
         protected java.lang.String period;
 
         /**
-         * Gets the value of the startYear property.
+         * Obtient la valeur de la propriété startYear.
          * 
          * @return
          *     possible object is
@@ -1703,7 +1527,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the startYear property.
+         * Définit la valeur de la propriété startYear.
          * 
          * @param value
          *     allowed object is
@@ -1715,31 +1539,31 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the startDate property.
+         * Obtient la valeur de la propriété startDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getStartDate() {
+        public Date getStartDate() {
             return startDate;
         }
 
         /**
-         * Sets the value of the startDate property.
+         * Définit la valeur de la propriété startDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setStartDate(XMLGregorianCalendar value) {
+        public void setStartDate(Date value) {
             this.startDate = value;
         }
 
         /**
-         * Gets the value of the startTime property.
+         * Obtient la valeur de la propriété startTime.
          * 
          * @return
          *     possible object is
@@ -1751,7 +1575,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the startTime property.
+         * Définit la valeur de la propriété startTime.
          * 
          * @param value
          *     allowed object is
@@ -1763,7 +1587,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the endYear property.
+         * Obtient la valeur de la propriété endYear.
          * 
          * @return
          *     possible object is
@@ -1775,7 +1599,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the endYear property.
+         * Définit la valeur de la propriété endYear.
          * 
          * @param value
          *     allowed object is
@@ -1787,31 +1611,31 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the endDate property.
+         * Obtient la valeur de la propriété endDate.
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public XMLGregorianCalendar getEndDate() {
+        public Date getEndDate() {
             return endDate;
         }
 
         /**
-         * Sets the value of the endDate property.
+         * Définit la valeur de la propriété endDate.
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link java.lang.String }
          *     
          */
-        public void setEndDate(XMLGregorianCalendar value) {
+        public void setEndDate(Date value) {
             this.endDate = value;
         }
 
         /**
-         * Gets the value of the endTime property.
+         * Obtient la valeur de la propriété endTime.
          * 
          * @return
          *     possible object is
@@ -1823,7 +1647,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the endTime property.
+         * Définit la valeur de la propriété endTime.
          * 
          * @param value
          *     allowed object is
@@ -1835,7 +1659,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the period property.
+         * Obtient la valeur de la propriété period.
          * 
          * @return
          *     possible object is
@@ -1847,7 +1671,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the period property.
+         * Définit la valeur de la propriété period.
          * 
          * @param value
          *     allowed object is
@@ -1862,9 +1686,227 @@ public class FormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;attGroup ref="{urn:ebu:metadata-schema:ebuCore_2015}dateGroup"/>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "")
+    public static class DateModified
+        implements Serializable
+    {
+
+        private final static long serialVersionUID = -1L;
+        @XmlAttribute(name = "startYear")
+        @XmlSchemaType(name = "gYear")
+        protected XMLGregorianCalendar startYear;
+        @XmlAttribute(name = "startDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
+        @XmlSchemaType(name = "date")
+        protected Date startDate;
+        @XmlAttribute(name = "startTime")
+        @XmlSchemaType(name = "time")
+        protected XMLGregorianCalendar startTime;
+        @XmlAttribute(name = "endYear")
+        @XmlSchemaType(name = "gYear")
+        protected XMLGregorianCalendar endYear;
+        @XmlAttribute(name = "endDate")
+        @XmlJavaTypeAdapter(XmlDateAdapter .class)
+        @XmlSchemaType(name = "date")
+        protected Date endDate;
+        @XmlAttribute(name = "endTime")
+        @XmlSchemaType(name = "time")
+        protected XMLGregorianCalendar endTime;
+        @XmlAttribute(name = "period")
+        protected java.lang.String period;
+
+        /**
+         * Obtient la valeur de la propriété startYear.
+         * 
+         * @return
+         *     possible object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public XMLGregorianCalendar getStartYear() {
+            return startYear;
+        }
+
+        /**
+         * Définit la valeur de la propriété startYear.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public void setStartYear(XMLGregorianCalendar value) {
+            this.startYear = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété startDate.
+         * 
+         * @return
+         *     possible object is
+         *     {@link java.lang.String }
+         *     
+         */
+        public Date getStartDate() {
+            return startDate;
+        }
+
+        /**
+         * Définit la valeur de la propriété startDate.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link java.lang.String }
+         *     
+         */
+        public void setStartDate(Date value) {
+            this.startDate = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété startTime.
+         * 
+         * @return
+         *     possible object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public XMLGregorianCalendar getStartTime() {
+            return startTime;
+        }
+
+        /**
+         * Définit la valeur de la propriété startTime.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public void setStartTime(XMLGregorianCalendar value) {
+            this.startTime = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété endYear.
+         * 
+         * @return
+         *     possible object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public XMLGregorianCalendar getEndYear() {
+            return endYear;
+        }
+
+        /**
+         * Définit la valeur de la propriété endYear.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public void setEndYear(XMLGregorianCalendar value) {
+            this.endYear = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété endDate.
+         * 
+         * @return
+         *     possible object is
+         *     {@link java.lang.String }
+         *     
+         */
+        public Date getEndDate() {
+            return endDate;
+        }
+
+        /**
+         * Définit la valeur de la propriété endDate.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link java.lang.String }
+         *     
+         */
+        public void setEndDate(Date value) {
+            this.endDate = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété endTime.
+         * 
+         * @return
+         *     possible object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public XMLGregorianCalendar getEndTime() {
+            return endTime;
+        }
+
+        /**
+         * Définit la valeur de la propriété endTime.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link XMLGregorianCalendar }
+         *     
+         */
+        public void setEndTime(XMLGregorianCalendar value) {
+            this.endTime = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété period.
+         * 
+         * @return
+         *     possible object is
+         *     {@link java.lang.String }
+         *     
+         */
+        public java.lang.String getPeriod() {
+            return period;
+        }
+
+        /**
+         * Définit la valeur de la propriété period.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link java.lang.String }
+         *     
+         */
+        public void setPeriod(java.lang.String value) {
+            this.period = value;
+        }
+
+    }
+
+
+    /**
+     * <p>Classe Java pour anonymous complex type.
+     * 
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -1882,8 +1924,11 @@ public class FormatType {
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class Locator {
+    public static class Locator
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlValue
         @XmlSchemaType(name = "anyURI")
         protected java.lang.String value;
@@ -1904,7 +1949,7 @@ public class FormatType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the value property.
+         * Obtient la valeur de la propriété value.
          * 
          * @return
          *     possible object is
@@ -1916,7 +1961,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the value property.
+         * Définit la valeur de la propriété value.
          * 
          * @param value
          *     allowed object is
@@ -1928,7 +1973,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -1940,7 +1985,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -1952,7 +1997,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -1964,7 +2009,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -1976,7 +2021,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -1988,7 +2033,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -2000,7 +2045,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -2012,7 +2057,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -2024,7 +2069,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -2036,7 +2081,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -2048,7 +2093,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -2060,7 +2105,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -2075,9 +2120,9 @@ public class FormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -2094,8 +2139,11 @@ public class FormatType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Medium {
+    public static class Medium
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "mediumId")
         @XmlSchemaType(name = "anyURI")
         protected java.lang.String mediumId;
@@ -2116,7 +2164,7 @@ public class FormatType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the mediumId property.
+         * Obtient la valeur de la propriété mediumId.
          * 
          * @return
          *     possible object is
@@ -2128,7 +2176,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the mediumId property.
+         * Définit la valeur de la propriété mediumId.
          * 
          * @param value
          *     allowed object is
@@ -2140,7 +2188,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -2152,7 +2200,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -2164,7 +2212,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -2176,7 +2224,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -2188,7 +2236,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -2200,7 +2248,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -2212,7 +2260,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -2224,7 +2272,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -2236,7 +2284,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -2248,7 +2296,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -2260,7 +2308,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -2272,7 +2320,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
@@ -2287,9 +2335,9 @@ public class FormatType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -2305,8 +2353,11 @@ public class FormatType {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class MimeType {
+    public static class MimeType
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlAttribute(name = "typeLabel")
         protected java.lang.String typeLabel;
         @XmlAttribute(name = "typeDefinition")
@@ -2324,7 +2375,7 @@ public class FormatType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -2336,7 +2387,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -2348,7 +2399,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -2360,7 +2411,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -2372,7 +2423,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -2384,7 +2435,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -2396,7 +2447,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -2408,7 +2459,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -2420,7 +2471,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -2432,7 +2483,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -2444,7 +2495,7 @@ public class FormatType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -2456,7 +2507,7 @@ public class FormatType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is

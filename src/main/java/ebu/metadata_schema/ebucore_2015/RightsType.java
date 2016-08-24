@@ -1,6 +1,7 @@
 
 package ebu.metadata_schema.ebucore_2015;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +24,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 				included. If the Rights element is absent, no assumptions can be made about the
  * 				status of these and other rights with respect to the resource. 
  * 
- * <p>Java class for rightsType complex type.
+ * <p>Classe Java pour rightsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="rightsType">
@@ -69,30 +70,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "rightsType", propOrder = {
     "rights",
     "rightsLink",
-    "rightsHolder",
+    "rightsHolders",
     "exploitationIssues",
-    "copyrightStatement",
-    "coverage",
+    "copyrightStatements",
+    "coverages",
     "rightsClearanceFlag",
     "processingRestrictionFlag",
-    "disclaimer",
-    "rightsAttributedId",
+    "disclaimers",
+    "rightsAttributedIds",
     "contactDetails"
 })
-public class RightsType {
+public class RightsType
+    implements Serializable
+{
 
+    private final static long serialVersionUID = -1L;
     @XmlElement(namespace = "http://purl.org/dc/elements/1.1/")
     protected List<org.purl.dc.elements._1.ElementType> rights;
     @XmlSchemaType(name = "anyURI")
     protected java.lang.String rightsLink;
-    protected List<EntityType> rightsHolder;
+    @XmlElement(name = "rightsHolder")
+    protected List<EntityType> rightsHolders;
     protected List<ebu.metadata_schema.ebucore_2015.ElementType> exploitationIssues;
-    protected List<ebu.metadata_schema.ebucore_2015.ElementType> copyrightStatement;
-    protected List<CoverageType> coverage;
+    @XmlElement(name = "copyrightStatement")
+    protected List<ebu.metadata_schema.ebucore_2015.ElementType> copyrightStatements;
+    @XmlElement(name = "coverage")
+    protected List<CoverageType> coverages;
     protected java.lang.Boolean rightsClearanceFlag;
     protected RightsType.ProcessingRestrictionFlag processingRestrictionFlag;
-    protected List<ebu.metadata_schema.ebucore_2015.ElementType> disclaimer;
-    protected List<IdentifierType> rightsAttributedId;
+    @XmlElement(name = "disclaimer")
+    protected List<ebu.metadata_schema.ebucore_2015.ElementType> disclaimers;
+    @XmlElement(name = "rightsAttributedId")
+    protected List<IdentifierType> rightsAttributedIds;
     protected List<ContactDetailsType> contactDetails;
     @XmlAttribute(name = "note")
     protected java.lang.String note;
@@ -150,7 +159,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the rightsLink property.
+     * Obtient la valeur de la propriété rightsLink.
      * 
      * @return
      *     possible object is
@@ -162,7 +171,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the rightsLink property.
+     * Définit la valeur de la propriété rightsLink.
      * 
      * @param value
      *     allowed object is
@@ -174,18 +183,18 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the rightsHolder property.
+     * Gets the value of the rightsHolders property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rightsHolder property.
+     * This is why there is not a <CODE>set</CODE> method for the rightsHolders property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRightsHolder().add(newItem);
+     *    getRightsHolders().add(newItem);
      * </pre>
      * 
      * 
@@ -195,11 +204,11 @@ public class RightsType {
      * 
      * 
      */
-    public List<EntityType> getRightsHolder() {
-        if (rightsHolder == null) {
-            rightsHolder = new ArrayList<>();
+    public List<EntityType> getRightsHolders() {
+        if (rightsHolders == null) {
+            rightsHolders = new ArrayList<>();
         }
-        return this.rightsHolder;
+        return this.rightsHolders;
     }
 
     /**
@@ -232,18 +241,18 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the copyrightStatement property.
+     * Gets the value of the copyrightStatements property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the copyrightStatement property.
+     * This is why there is not a <CODE>set</CODE> method for the copyrightStatements property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCopyrightStatement().add(newItem);
+     *    getCopyrightStatements().add(newItem);
      * </pre>
      * 
      * 
@@ -253,26 +262,26 @@ public class RightsType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.ElementType> getCopyrightStatement() {
-        if (copyrightStatement == null) {
-            copyrightStatement = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.ElementType> getCopyrightStatements() {
+        if (copyrightStatements == null) {
+            copyrightStatements = new ArrayList<>();
         }
-        return this.copyrightStatement;
+        return this.copyrightStatements;
     }
 
     /**
-     * Gets the value of the coverage property.
+     * Gets the value of the coverages property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the coverage property.
+     * This is why there is not a <CODE>set</CODE> method for the coverages property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCoverage().add(newItem);
+     *    getCoverages().add(newItem);
      * </pre>
      * 
      * 
@@ -282,27 +291,27 @@ public class RightsType {
      * 
      * 
      */
-    public List<CoverageType> getCoverage() {
-        if (coverage == null) {
-            coverage = new ArrayList<>();
+    public List<CoverageType> getCoverages() {
+        if (coverages == null) {
+            coverages = new ArrayList<>();
         }
-        return this.coverage;
+        return this.coverages;
     }
 
     /**
-     * Gets the value of the rightsClearanceFlag property.
+     * Obtient la valeur de la propriété rightsClearanceFlag.
      * 
      * @return
      *     possible object is
      *     {@link java.lang.Boolean }
      *     
      */
-    public java.lang.Boolean getRightsClearanceFlag() {
+    public java.lang.Boolean isRightsClearanceFlag() {
         return rightsClearanceFlag;
     }
 
     /**
-     * Sets the value of the rightsClearanceFlag property.
+     * Définit la valeur de la propriété rightsClearanceFlag.
      * 
      * @param value
      *     allowed object is
@@ -314,7 +323,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the processingRestrictionFlag property.
+     * Obtient la valeur de la propriété processingRestrictionFlag.
      * 
      * @return
      *     possible object is
@@ -326,7 +335,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the processingRestrictionFlag property.
+     * Définit la valeur de la propriété processingRestrictionFlag.
      * 
      * @param value
      *     allowed object is
@@ -338,18 +347,18 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the disclaimer property.
+     * Gets the value of the disclaimers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the disclaimer property.
+     * This is why there is not a <CODE>set</CODE> method for the disclaimers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getDisclaimer().add(newItem);
+     *    getDisclaimers().add(newItem);
      * </pre>
      * 
      * 
@@ -359,26 +368,26 @@ public class RightsType {
      * 
      * 
      */
-    public List<ebu.metadata_schema.ebucore_2015.ElementType> getDisclaimer() {
-        if (disclaimer == null) {
-            disclaimer = new ArrayList<>();
+    public List<ebu.metadata_schema.ebucore_2015.ElementType> getDisclaimers() {
+        if (disclaimers == null) {
+            disclaimers = new ArrayList<>();
         }
-        return this.disclaimer;
+        return this.disclaimers;
     }
 
     /**
-     * Gets the value of the rightsAttributedId property.
+     * Gets the value of the rightsAttributedIds property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rightsAttributedId property.
+     * This is why there is not a <CODE>set</CODE> method for the rightsAttributedIds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRightsAttributedId().add(newItem);
+     *    getRightsAttributedIds().add(newItem);
      * </pre>
      * 
      * 
@@ -388,11 +397,11 @@ public class RightsType {
      * 
      * 
      */
-    public List<IdentifierType> getRightsAttributedId() {
-        if (rightsAttributedId == null) {
-            rightsAttributedId = new ArrayList<>();
+    public List<IdentifierType> getRightsAttributedIds() {
+        if (rightsAttributedIds == null) {
+            rightsAttributedIds = new ArrayList<>();
         }
-        return this.rightsAttributedId;
+        return this.rightsAttributedIds;
     }
 
     /**
@@ -425,7 +434,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the note property.
+     * Obtient la valeur de la propriété note.
      * 
      * @return
      *     possible object is
@@ -437,7 +446,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the note property.
+     * Définit la valeur de la propriété note.
      * 
      * @param value
      *     allowed object is
@@ -449,7 +458,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the formatIDRefs property.
+     * Obtient la valeur de la propriété formatIDRefs.
      * 
      * @return
      *     possible object is
@@ -461,7 +470,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the formatIDRefs property.
+     * Définit la valeur de la propriété formatIDRefs.
      * 
      * @param value
      *     allowed object is
@@ -473,7 +482,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the rightsID property.
+     * Obtient la valeur de la propriété rightsID.
      * 
      * @return
      *     possible object is
@@ -485,7 +494,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the rightsID property.
+     * Définit la valeur de la propriété rightsID.
      * 
      * @param value
      *     allowed object is
@@ -497,7 +506,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the typeLabel property.
+     * Obtient la valeur de la propriété typeLabel.
      * 
      * @return
      *     possible object is
@@ -509,7 +518,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the typeLabel property.
+     * Définit la valeur de la propriété typeLabel.
      * 
      * @param value
      *     allowed object is
@@ -521,7 +530,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the typeDefinition property.
+     * Obtient la valeur de la propriété typeDefinition.
      * 
      * @return
      *     possible object is
@@ -533,7 +542,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the typeDefinition property.
+     * Définit la valeur de la propriété typeDefinition.
      * 
      * @param value
      *     allowed object is
@@ -545,7 +554,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the typeLink property.
+     * Obtient la valeur de la propriété typeLink.
      * 
      * @return
      *     possible object is
@@ -557,7 +566,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the typeLink property.
+     * Définit la valeur de la propriété typeLink.
      * 
      * @param value
      *     allowed object is
@@ -569,7 +578,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the typeSource property.
+     * Obtient la valeur de la propriété typeSource.
      * 
      * @return
      *     possible object is
@@ -581,7 +590,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the typeSource property.
+     * Définit la valeur de la propriété typeSource.
      * 
      * @param value
      *     allowed object is
@@ -593,7 +602,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the typeNamespace property.
+     * Obtient la valeur de la propriété typeNamespace.
      * 
      * @return
      *     possible object is
@@ -605,7 +614,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the typeNamespace property.
+     * Définit la valeur de la propriété typeNamespace.
      * 
      * @param value
      *     allowed object is
@@ -617,7 +626,7 @@ public class RightsType {
     }
 
     /**
-     * Gets the value of the typeLanguage property.
+     * Obtient la valeur de la propriété typeLanguage.
      * 
      * @return
      *     possible object is
@@ -629,7 +638,7 @@ public class RightsType {
     }
 
     /**
-     * Sets the value of the typeLanguage property.
+     * Définit la valeur de la propriété typeLanguage.
      * 
      * @param value
      *     allowed object is
@@ -642,9 +651,9 @@ public class RightsType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
      * &lt;complexType>
@@ -664,8 +673,11 @@ public class RightsType {
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class ProcessingRestrictionFlag {
+    public static class ProcessingRestrictionFlag
+        implements Serializable
+    {
 
+        private final static long serialVersionUID = -1L;
         @XmlValue
         protected boolean value;
         @XmlAttribute(name = "qualityClass")
@@ -689,7 +701,7 @@ public class RightsType {
         protected java.lang.String typeLanguage;
 
         /**
-         * Gets the value of the value property.
+         * Obtient la valeur de la propriété value.
          * 
          */
         public boolean isValue() {
@@ -697,7 +709,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the value property.
+         * Définit la valeur de la propriété value.
          * 
          */
         public void setValue(boolean value) {
@@ -705,7 +717,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the qualityClass property.
+         * Obtient la valeur de la propriété qualityClass.
          * 
          * @return
          *     possible object is
@@ -717,7 +729,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the qualityClass property.
+         * Définit la valeur de la propriété qualityClass.
          * 
          * @param value
          *     allowed object is
@@ -729,7 +741,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the restrictions property.
+         * Obtient la valeur de la propriété restrictions.
          * 
          * @return
          *     possible object is
@@ -741,7 +753,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the restrictions property.
+         * Définit la valeur de la propriété restrictions.
          * 
          * @param value
          *     allowed object is
@@ -753,7 +765,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the typeLabel property.
+         * Obtient la valeur de la propriété typeLabel.
          * 
          * @return
          *     possible object is
@@ -765,7 +777,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the typeLabel property.
+         * Définit la valeur de la propriété typeLabel.
          * 
          * @param value
          *     allowed object is
@@ -777,7 +789,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the typeDefinition property.
+         * Obtient la valeur de la propriété typeDefinition.
          * 
          * @return
          *     possible object is
@@ -789,7 +801,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the typeDefinition property.
+         * Définit la valeur de la propriété typeDefinition.
          * 
          * @param value
          *     allowed object is
@@ -801,7 +813,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the typeLink property.
+         * Obtient la valeur de la propriété typeLink.
          * 
          * @return
          *     possible object is
@@ -813,7 +825,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the typeLink property.
+         * Définit la valeur de la propriété typeLink.
          * 
          * @param value
          *     allowed object is
@@ -825,7 +837,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the typeSource property.
+         * Obtient la valeur de la propriété typeSource.
          * 
          * @return
          *     possible object is
@@ -837,7 +849,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the typeSource property.
+         * Définit la valeur de la propriété typeSource.
          * 
          * @param value
          *     allowed object is
@@ -849,7 +861,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the typeNamespace property.
+         * Obtient la valeur de la propriété typeNamespace.
          * 
          * @return
          *     possible object is
@@ -861,7 +873,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the typeNamespace property.
+         * Définit la valeur de la propriété typeNamespace.
          * 
          * @param value
          *     allowed object is
@@ -873,7 +885,7 @@ public class RightsType {
         }
 
         /**
-         * Gets the value of the typeLanguage property.
+         * Obtient la valeur de la propriété typeLanguage.
          * 
          * @return
          *     possible object is
@@ -885,7 +897,7 @@ public class RightsType {
         }
 
         /**
-         * Sets the value of the typeLanguage property.
+         * Définit la valeur de la propriété typeLanguage.
          * 
          * @param value
          *     allowed object is
