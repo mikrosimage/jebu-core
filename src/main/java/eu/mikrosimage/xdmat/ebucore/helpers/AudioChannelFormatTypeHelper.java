@@ -8,7 +8,7 @@ package eu.mikrosimage.xdmat.ebucore.helpers;
  */
 public class AudioChannelFormatTypeHelper {
 	
-	private static final String AUDIO_CHANNEL_PREFIX = "AC";
+	private static final String AUDIO_CHANNEL_PREFIX = "AC_";
 
 	private AudioChannelFormatTypeHelper() {}
 	

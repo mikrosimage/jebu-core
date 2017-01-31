@@ -17,7 +17,7 @@ import ebu.metadata_schema.ebucore_2015.ObjectFactory;
  */
 public final class AudioTrackUIDTypeHelper {
 	
-	private static final String AUDIO_TRACK_UID_PREFIX = "ATU";
+	private static final String AUDIO_TRACK_UID_PREFIX = "ATU_";
 
 	private AudioTrackUIDTypeHelper() {}
 	
