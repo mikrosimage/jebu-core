@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ebu.metadata_schema</groupId>
 	<artifactId>jebu-core</artifactId>
-	<version>1.6.2</version>
-	<description>Java port of TECH 3293 EBU CORE METADATA SET (EBUCore) SPECIFICATION v. 1.6, including Audio Definition Model and 
+	<version>1.7.0</version>
+	<description>Java port of TECH 3293 EBU CORE METADATA SET (EBUCore) SPECIFICATION v. 1.7, including Audio Definition Model and 
 R-REC-BS.2094-0 Common definitions for the audio definition mode</description>
 	<developers>
 		<developer>

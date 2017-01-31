@@ -4,7 +4,7 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
  
     <public
-        publicId="urn:ebu:metadata-schema:ebuCore_2014"
+        publicId="urn:ebu:metadata-schema:ebuCore_2016"
         uri="ebucore.xsd"/>
     <public
         publicId="http://purl.org/dc/elements/1.1/"
