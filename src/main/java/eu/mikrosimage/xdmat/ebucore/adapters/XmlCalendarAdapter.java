@@ -1,6 +1,7 @@
 package eu.mikrosimage.xdmat.ebucore.adapters;
 
 import java.util.Calendar;
+
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
