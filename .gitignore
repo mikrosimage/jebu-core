@@ -1,0 +1,56 @@
+# Java
+#~~~~~~~~~~
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Maven
+#~~~~~~~~~~
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+pom.properties
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+*.lst
+
+# Eclipse
+#~~~~~~~~~~
+.classpath
+.project
+.settings/
+*.pydevproject
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.log
+
+# Lib Cpp
+#~~~~~~~~~~
+*.os
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath

@@ -1,0 +1,16 @@
+<!DOCTYPE catalog
+    PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+           "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+ 
+    <public
+        publicId="urn:ebu:metadata-schema:ebuCore_2014"
+        uri="ebucore.xsd"/>
+    <public
+        publicId="http://purl.org/dc/elements/1.1/"
+        uri="simpledc20021212.xsd"/>
+    <public
+        publicId="http://www.w3.org/XML/1998/namespace"
+        uri="xml.xsd"/>
+ 
+</catalog>
