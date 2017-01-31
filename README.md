@@ -16,16 +16,20 @@ The current schema version is __2015.06.30__. One can find all of them at [EBU' 
 9. add contactDetails/additionalInformation + typeGroup 
 10. add typeGroup to ebuCoreMain in prevision of IMF metadata insertion 
 11. change cardinality of contact/additionalInformation from "1" to "0/unbounded" 
-12. add additionalInformation element to location with cardinality "0/unbounded" ALIGN WITH EBUCore RDF 1. add date ingested 
+12. add additionalInformation element to location with cardinality "0/unbounded" ALIGN WITH EBUCore RDF 1. add date ingested
+
 ### EBUCORE ROOT PROPERTIES for EBUSPORT 
 1. Add Event start/end/description/name (e.g. key personal and career events) in entity 
+
 ### FIMS MAPPING 
 1. add relations like hasChild, isChildOf, hasParent, isParentOf, hasMaster, isMasterOf 
+
 ### SMPTE MAPPING 
 1. add "thesaurus" to the type, format and status groups 
 2. add "editrate" to the fileInfo element group 
 3. add "imageFormatProfileLevel" to imageFormatType 
 4. add version, definition and presenceFlag to extendedAudioFormat 
+
 ### CORRECTIONS 
 1. affiliation type, start and end dates are redundant. remove end date and rename startDate in period
 
