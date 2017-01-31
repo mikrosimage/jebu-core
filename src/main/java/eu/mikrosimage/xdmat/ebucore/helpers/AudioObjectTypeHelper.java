@@ -3,8 +3,8 @@
  */
 package eu.mikrosimage.xdmat.ebucore.helpers;
 
-import ebu.metadata_schema.ebucore_2015.AudioObject;
-import ebu.metadata_schema.ebucore_2015.ObjectFactory;
+import ebu.metadata_schema.ebucore_2016.AudioObject;
+import ebu.metadata_schema.ebucore_2016.ObjectFactory;
 
 /**
  * @author gma

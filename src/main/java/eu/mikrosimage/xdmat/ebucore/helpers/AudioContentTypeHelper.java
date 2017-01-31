@@ -5,8 +5,8 @@ package eu.mikrosimage.xdmat.ebucore.helpers;
 
 import java.util.Objects;
 
-import ebu.metadata_schema.ebucore_2015.AudioContent;
-import ebu.metadata_schema.ebucore_2015.ObjectFactory;
+import ebu.metadata_schema.ebucore_2016.AudioContent;
+import ebu.metadata_schema.ebucore_2016.ObjectFactory;
 
 /**
  * @author gma

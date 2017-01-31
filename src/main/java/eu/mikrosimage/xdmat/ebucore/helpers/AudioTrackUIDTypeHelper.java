@@ -6,8 +6,8 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-import ebu.metadata_schema.ebucore_2015.AudioTrackUID;
-import ebu.metadata_schema.ebucore_2015.ObjectFactory;
+import ebu.metadata_schema.ebucore_2016.AudioTrackUID;
+import ebu.metadata_schema.ebucore_2016.ObjectFactory;
 
 /**
  * Provides Helpers for creating and reversing uids of {@link AudioTrackUIDType}.

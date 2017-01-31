@@ -10,9 +10,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ebu.metadata_schema.ebucore_2015.AudioFormatExtendedType;
-import ebu.metadata_schema.ebucore_2015.AudioTrackUID;
-import ebu.metadata_schema.ebucore_2015.ObjectFactory;
+import ebu.metadata_schema.ebucore_2016.AudioFormatExtendedType;
+import ebu.metadata_schema.ebucore_2016.AudioTrackUID;
+import ebu.metadata_schema.ebucore_2016.ObjectFactory;
 import eu.mikrosimage.xdmat.ebucore.helpers.AudioTrackUIDTypeHelper;
 
 /**
