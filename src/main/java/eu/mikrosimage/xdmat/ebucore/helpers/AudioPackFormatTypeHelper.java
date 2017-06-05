@@ -12,7 +12,7 @@ import ebu.metadata_schema.ebucore_2015.ObjectFactory;
  */
 public final class AudioPackFormatTypeHelper {
 	
-	private static final String AUDIO_PACK_PREFIX = "AP";
+	private static final String AUDIO_PACK_PREFIX = "AP_";
 
 	private AudioPackFormatTypeHelper() {}
 	

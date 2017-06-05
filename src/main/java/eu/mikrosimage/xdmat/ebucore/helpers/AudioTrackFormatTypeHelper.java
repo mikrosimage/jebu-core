@@ -8,7 +8,7 @@ package eu.mikrosimage.xdmat.ebucore.helpers;
  */
 public class AudioTrackFormatTypeHelper {
 	
-	private static final String AUDIO_TRACK_PREFIX = "AT";
+	private static final String AUDIO_TRACK_PREFIX = "AT_";
 
 	private AudioTrackFormatTypeHelper(){}
 	

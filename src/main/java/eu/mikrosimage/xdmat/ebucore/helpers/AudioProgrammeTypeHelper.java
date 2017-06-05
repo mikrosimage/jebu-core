@@ -14,7 +14,7 @@ import ebu.metadata_schema.ebucore_2015.ObjectFactory;
  */
 public final class AudioProgrammeTypeHelper {
 	
-	private static final String AUDIO_PROGRAMME_PREFIX = "APR";
+	private static final String AUDIO_PROGRAMME_PREFIX = "APR_";
 
 	private AudioProgrammeTypeHelper() {}
 

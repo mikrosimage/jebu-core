@@ -14,7 +14,7 @@ import ebu.metadata_schema.ebucore_2015.ObjectFactory;
  */
 public final class AudioContentTypeHelper {
 	
-	private static final String AUDIO_CONTENT_PREFIX = "ACO";
+	private static final String AUDIO_CONTENT_PREFIX = "ACO_";
 
 	private AudioContentTypeHelper() {}
 

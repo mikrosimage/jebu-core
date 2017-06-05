@@ -12,7 +12,7 @@ import ebu.metadata_schema.ebucore_2015.ObjectFactory;
  */
 public final class AudioObjectTypeHelper {
 	
-	private static final String AUDIO_OBJECT_PREFIX = "AO";
+	private static final String AUDIO_OBJECT_PREFIX = "AO_";
 
 	private AudioObjectTypeHelper() {}
 	
