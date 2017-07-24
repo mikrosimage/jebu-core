@@ -71,7 +71,7 @@ public final class AudioTrackUIDTypeHelper {
 		Preconditions.checkArgument(from <= to);
 		Preconditions.checkArgument(from > 0);
 		final ObjectFactory objectFactory = new ObjectFactory();
-		final Set<AudioTrackUIDType> collection = new HashSet<AudioTrackUIDType>();
+		final Set<AudioTrackUIDType> collection = new HashSet<>();
 		for(int i = from; i <= to ; ++i) {
 			final AudioTrackUIDType audioTrackUIDType = objectFactory.createAudioTrackUIDType();
 			audioTrackUIDType.setUID(AudioTrackUIDTypeHelper.getAudioTrackUID(i));

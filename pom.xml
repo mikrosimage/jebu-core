@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ebu.metadata_schema</groupId>
 	<artifactId>jebu-core</artifactId>
-	<version>1.5</version>
+	<version>1.5.1</version>
 	<description></description>
 	<developers>
 		<developer>
@@ -76,7 +76,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>19.0</version>
+			<version>22.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.purl.dc</groupId>
