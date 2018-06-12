@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioContentTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioContentTypeHelper;
 
 
 /**

@@ -19,8 +19,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioPackFormatTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioTrackUIDTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioPackFormatTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioTrackUIDTypeHelper;
 
 
 /**

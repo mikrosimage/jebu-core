@@ -1,4 +1,4 @@
-package eu.mikrosimage.xdmat.ebucore.helpers;
+package eu.mikrosimage.xdmat.ebucore_2014.helpers;
 
 import ebu.metadata_schema.ebucore_2014.AudioTrackFormatType;
 

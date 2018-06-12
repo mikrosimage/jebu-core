@@ -1,4 +1,4 @@
-package eu.mikrosimage.xdmat.ebucore.helpers;
+package eu.mikrosimage.xdmat.ebucore_2014.helpers;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -20,11 +20,11 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioContentTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioObjectTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioProgrammeTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioTrackFormatTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioTrackUIDTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioContentTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioObjectTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioProgrammeTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioTrackFormatTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2014.helpers.AudioTrackUIDTypeHelper;
 
 
 /**
