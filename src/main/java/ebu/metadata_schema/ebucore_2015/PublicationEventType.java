@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
-import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
+import eu.mikrosimage.xdmat.ebucore_2015.adapters.XmlDateAdapter;
 
 
 /**

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.mikrosimage.xdmat.ebucore.helpers;
+package eu.mikrosimage.xdmat.ebucore_2015.helpers;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -28,7 +28,7 @@ public class AudioChannelFormatTypeHelpertest {
 	}
 
 	/**
-	 * Test method for {@link eu.mikrosimage.xdmat.ebucore.helpers.AudioChannelFormatTypeHelper#getAudioChannelPrefix(int)}.
+	 * Test method for {@link eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioChannelFormatTypeHelper#getAudioChannelPrefix(int)}.
 	 */
 	@Test
 	public void testGetAudioChannelPrefix() {
@@ -37,7 +37,7 @@ public class AudioChannelFormatTypeHelpertest {
 	}
 
 	/**
-	 * Test method for {@link eu.mikrosimage.xdmat.ebucore.helpers.AudioChannelFormatTypeHelper#getAudioChannelIdFromIndex(int)}.
+	 * Test method for {@link eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioChannelFormatTypeHelper#getAudioChannelIdFromIndex(int)}.
 	 */
 	@Test
 	public void testGetAudioChannelIdFromIndex() {
@@ -46,7 +46,7 @@ public class AudioChannelFormatTypeHelpertest {
 	}
 
 	/**
-	 * Test method for {@link eu.mikrosimage.xdmat.ebucore.helpers.AudioChannelFormatTypeHelper#getAudioChannelIndexFromId(java.lang.String)}.
+	 * Test method for {@link eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioChannelFormatTypeHelper#getAudioChannelIndexFromId(java.lang.String)}.
 	 */
 	@Test
 	public void testGetAudioChannelIndexFromId() {

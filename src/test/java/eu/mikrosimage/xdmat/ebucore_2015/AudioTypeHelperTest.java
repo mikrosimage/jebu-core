@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.mikrosimage.xdmat.ebucore;
+package eu.mikrosimage.xdmat.ebucore_2015;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,9 +9,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioContentTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioObjectTypeHelper;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioProgrammeTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioContentTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioObjectTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioProgrammeTypeHelper;
 
 /**
  * @author Guillaume Maucomble <gma@mikrosimage.eu>
