@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.mikrosimage.xdmat.ebucore;
+package eu.mikrosimage.xdmat.ebucore_2015;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.junit.Test;
 import ebu.metadata_schema.ebucore_2015.AudioFormatExtendedType;
 import ebu.metadata_schema.ebucore_2015.AudioTrackUID;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;
-import eu.mikrosimage.xdmat.ebucore.helpers.AudioTrackUIDTypeHelper;
+import eu.mikrosimage.xdmat.ebucore_2015.helpers.AudioTrackUIDTypeHelper;
 
 /**
  * @author gma

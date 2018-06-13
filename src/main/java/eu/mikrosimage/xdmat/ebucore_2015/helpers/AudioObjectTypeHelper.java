@@ -1,7 +1,7 @@
 /**
  * 
  */
-package eu.mikrosimage.xdmat.ebucore.helpers;
+package eu.mikrosimage.xdmat.ebucore_2015.helpers;
 
 import ebu.metadata_schema.ebucore_2015.AudioObject;
 import ebu.metadata_schema.ebucore_2015.ObjectFactory;

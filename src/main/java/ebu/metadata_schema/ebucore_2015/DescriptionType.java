@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.purl.dc.elements._1.ElementType;
-import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
+import eu.mikrosimage.xdmat.ebucore_2015.adapters.XmlDateAdapter;
 
 
 /**

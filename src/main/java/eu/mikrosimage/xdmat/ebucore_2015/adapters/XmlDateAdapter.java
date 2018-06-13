@@ -1,4 +1,4 @@
-package eu.mikrosimage.xdmat.ebucore.adapters;
+package eu.mikrosimage.xdmat.ebucore_2015.adapters;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

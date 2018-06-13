@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import eu.mikrosimage.xdmat.ebucore.adapters.XmlDateAdapter;
+import eu.mikrosimage.xdmat.ebucore_2015.adapters.XmlDateAdapter;
 
 
 /**

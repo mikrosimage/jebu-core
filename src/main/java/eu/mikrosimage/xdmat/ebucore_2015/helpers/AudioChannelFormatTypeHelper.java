@@ -1,4 +1,4 @@
-package eu.mikrosimage.xdmat.ebucore.helpers;
+package eu.mikrosimage.xdmat.ebucore_2015.helpers;
 
 /**
  * 
